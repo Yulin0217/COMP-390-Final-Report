@@ -3,13 +3,16 @@
 \geometry{a4paper}
 \usepackage{graphicx} % Needed for including images
 \usepackage{mdframed} % For creating framed boxes
+\usepackage[backend=biber, style=ieee]{biblatex} % Adding biblatex with IEEE style
+\addbibresource{Reference.bib} % Specify the bibliography file, here 'references.bib'
+
 
 \begin{document}
 
 \begin{titlepage}
     \centering
 
-    \vspace*{1cm}
+    
     \includegraphics[width=0.6\textwidth]{Liverpool.jpg} % Increased width
     \vspace*{1cm}
 
@@ -21,7 +24,7 @@
 
     \vspace{0.5cm}
     \Huge
-    \textbf{Project Title}
+    \textbf{Computer Vision and AR for Endovascular Intervention}
 
     \vspace{1.5cm}
 
@@ -40,12 +43,99 @@
     \vspace{0.1cm} % Adjust line spacing
     \textbf{COMPUTER SCIENCE}
 
-    \vspace{3cm} % Large space as required
+    \vspace{4cm} % Large space as required
     \large
     University of Liverpool\\
     Liverpool L69 3BX
 
 
 \end{titlepage}
+% Acknowledgements page
+\newpage
+\thispagestyle{empty} % Remove page number from the acknowledgements page
+\begin{center}
+    \Large \textbf{Acknowledgements}
+\end{center}
+\vspace{1cm}
+\normalsize
 
+\newpage
+\begin{titlepage}
+    \centering
+
+    
+    \includegraphics[width=0.6\textwidth]{Liverpool.jpg} % Increased width
+    \vspace*{1cm}
+
+    \Large
+    COMP390
+
+    \large
+    2023/24
+
+    \vspace{4.5cm}
+    \Huge
+    \textbf{Computer Vision and AR for Endovascular Intervention}
+
+    \vspace{1.5cm}
+
+
+
+    \vspace{4cm} % Adjust space as necessary
+    \Large
+    \textbf{DEPARTMENT OF}\\
+    \vspace{0.1cm} % Adjust line spacing
+    \textbf{COMPUTER SCIENCE}
+
+    \vspace{1cm} % Large space as required
+    \large
+    University of Liverpool\\
+    Liverpool L69 3BX
+
+
+\end{titlepage}
+\tableofcontents
+\newpage
+
+% Abstract
+\section*{Abstract}
+This section should contain a concise summary of the document content.
+
+% Statement of Ethical Compliance
+\section*{Statement of Ethical Compliance}
+This section should detail how the project complies with ethical standards.
+
+\newpage
+
+% Introduction & Background
+\section{Introduction \& Background}
+This section should introduce the project, its objectives, and the background information.
+
+% Requirements Analysis (optional)
+\section{Requirements Analysis}
+This section should detail the requirements analysis phase of the project.
+
+% Design & Implementation
+\section{Design \& Implementation}
+This section should describe the design and implementation details of the project.
+
+% Testing & Evaluation
+\section{Testing \& Evaluation}
+This section should cover the testing methods and the evaluation of the results.
+
+% Project Ethics
+\section{Project Ethics}
+This section should discuss any ethical considerations associated with the project.
+
+% Conclusion & Future Work
+\section{Conclusion \& Future Work}
+This section should provide a conclusion and discuss potential future work.
+
+% BCS Criteria & Self-Reflection
+\section{BCS Criteria \& Self-Reflection}
+This section should reflect on the project with respect to the BCS criteria.
+
+
+% References (The bibliography will be printed here)
+\printbibliography
 \end{document}
