@@ -58,6 +58,7 @@
 \end{center}
 \vspace{1cm}
 \normalsize
+%Here for the Acknowledgements
 
 \newpage
 \begin{titlepage}
@@ -105,9 +106,8 @@ This section should contain a concise summary of the document content.
 \section*{Statement of Ethical Compliance}
 \begin{mdframed}
     \Large % Larger font size for the first two lines
-    Data Category: A \\
-    Participant Category: 0 \\
-
+Data Category: A \\
+Participant Category: 0 \\
     \normalsize % Normal font size for the rest of the text
     I confirm that I have read the ethical guidelines and will follow them during this project. Further details can be found in the relevant sections of this proposal.
 \end{mdframed}
@@ -118,13 +118,87 @@ This section should contain a concise summary of the document content.
 
 
 
-% Design & Implementation
 \section{Design \& Implementation}
-\subsection{Design}
+
+\subsection{Part1: Real-world Model Interaction and Tracking}
+% 这一部分集中讨论与现实世界模型的交互与跟踪的设计和实现。
+
+In this part, I used OpenCV\cite{opencv_library} and SciKit-Surgery Augmented Reality\cite{Thompson_SciKit-Surgery_Compact_Libraries_2020} libraries for image 
+processing and  model tracking, while QT\cite{QtWebsite} is used to design the graphical interface. OpenCV and SciKit-Surgery help in processing images 
+and tracking ArUco Markers\cite{1467495} within these images, essential for enhancing interaction between virtual and real-world elements. 
+QT allows me to create a user-friendly interface, ensuring that the system is accessible and manageable for users with different levels of technical expertise. 
+This section will detail the system's architecture and functionality, focusing on System Components and Organization, Data Structures and Algorithms, 
+User Interface Design, and Design Notation and Diagrams.
 
 
-\subsection{Implementation}
+\subsubsection{Design}
+\begin{enumerate}
+    \item \textbf{System Components and Organization}
+          % 描述系统中各组件的组织和协作方式。
 
+    \item \textbf{Data Structures and Algorithms}
+          % 详细说明系统所使用的数据结构和算法。
+          \begin{enumerate}
+              \item \textbf{Frame Storage}
+                    % 描述如何存储和处理连续的图像帧，例如使用循环缓冲区或队列来管理实时视频帧。
+
+              \item \textbf{Feature Data Structures}
+                    % 详细说明用于存储从视频中提取的特征（如ArUco标记的位置、角点检测等）的数据结构，可能涉及到空间哈希表或树结构（如KD树、四叉树）。
+
+              \item \textbf{Image Processing Algorithms}
+                    % 讨论用于视频帧处理的基本算法，如灰度转换、滤波、边缘检测等。
+
+              \item \textbf{Marker Detection and Tracking}
+                    % 详述用于检测和追踪ArUco标记的算法，包括图像分割、模式识别和机器学习技术。
+
+              \item \textbf{Model Positioning and Rendering}
+                    % 介绍如何将三维模型精确地放置在虚拟环境中，可能涉及计算几何和物体识别算法。
+
+              \item \textbf{Optimization Techniques}
+                    % 如果涉及到性能瓶颈，可以介绍用于优化上述算法的技术，如多线程处理、GPU加速或使用更高效的算法（如快速傅里叶变换代替传统卷积）。
+
+              \item \textbf{Algorithm Efficiency and Complexity}
+                    % 分析关键算法的时间和空间复杂度，讨论在不同操作环境（如不同硬件或软件平台）下的性能表现。
+          \end{enumerate}
+
+
+    \item \textbf{User Interface Design}
+          \begin{enumerate}
+              \item \textbf{Screen Mockups, Sketches, and Screenshots}
+                    % 包括界面设计的屏幕模拟图、草图和截图。
+
+              \item \textbf{OpenCV-Based Real-world Interaction Component}
+                    % 描述该组件如何将模拟整合到AR/VR平台，以及实时视频捕捉与覆盖的技术细节。
+
+              \item \textbf{ArUco Marker Detection and Model Positioning}
+                    % 讨论如何在视频帧中自动检测ArUco标记，并实现模型在虚拟环境中的精确定位。
+          \end{enumerate}
+
+
+    \item \textbf{Design Notation and Diagrams}
+          \begin{enumerate}
+              \item \textbf{Use Case Diagrams}
+                    % 描述用例图及其在设计中的应用。
+
+              \item \textbf{Interaction Diagrams and Class Diagrams}
+                    % 介绍交互图和类图的设计和功能。
+
+              \item \textbf{Pseudocode and Data Flow Diagrams}
+                    % 提供系统关键部分的伪代码及数据流图。
+          \end{enumerate}
+\end{enumerate}
+
+\subsubsection{Implementation}
+% 在这里描述 Part1: Real-world Model Interaction and Tracking 部分的具体实现细节。
+
+\subsection{Part2: Endovascular Intervention Simulation}
+% 在这里详细介绍关于“Endovascular Intervention Simulation”的设计和实现。
+
+\subsubsection{Design}
+% 描述“Endovascular Intervention Simulation”部分的设计细节。
+
+\subsubsection{Implementation}
+% 描述“Endovascular Intervention Simulation”部分的具体实现细节。
 
 
 % Testing & Evaluation
@@ -135,6 +209,9 @@ This section should contain a concise summary of the document content.
 
 % Conclusion & Future Work
 \section{Conclusion \& Future Work}
+\subsection{Conclusion}
+
+\subsection{Future Work}
 
 \section{BCS Criteria \& Self-Reflection}
 
