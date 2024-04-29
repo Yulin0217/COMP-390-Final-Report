@@ -1,52 +1,78 @@
 \documentclass[12pt]{article}
 \usepackage{geometry}
 \geometry{a4paper}
+\usepackage[colorlinks, linkcolor=blue, citecolor=blue, urlcolor=blue]{hyperref}
+\usepackage[automake]{glossaries-extra}
+\usepackage{appendix}
 \usepackage{graphicx} % Needed for including images
 \usepackage{mdframed} % For creating framed boxes
 \usepackage[backend=biber, style=ieee]{biblatex} % Adding biblatex with IEEE style
+
 \addbibresource{Reference.bib} % Specify the bibliography file, here 'references.bib'
 
 
+\makeglossaries % 初始化术语表系统
+
+% 定义一些术语
+ 
+\newglossaryentry{opencv}{
+    name=OpenCV,
+    description={OpenCV (Open Source Computer Vision Library) is a library of programming functions mainly for real-time computer vision. Originally developed by Intel, it was later supported by Willow Garage, then Itseez (which was later acquired by Intel). The library is cross-platform and licensed as free and open-source software under Apache License 2. Starting in 2011, OpenCV features GPU acceleration for real-time operations.\cite{qt}}
+}
+
+\newglossaryentry{QT}{
+    name=Qt,
+    description={Qt (pronounced "cute" or as an initialism) is cross-platform application development framework for creating graphical user interfaces as well as cross-platform applications that run on various software and hardware platforms such as Linux, Windows, macOS, Android or embedded systems with little or no change in the underlying codebase while still being a native application with native capabilities and speed.\cite{cv}}
+}
+
+\newglossaryentry{aruco}{
+    name=Aruco Marker,
+    description={ArUco markers are 2D binary-encoded fiducial patterns designed to be quickly located by computer vision systems. ArUco marker patterns are defined by a binary dictionary in OpenCV, and the various library functions return pattern IDs and pose information from scanned images.\cite{arucomarkers}}
+}
+
+
+% 定义一个缩写词
+%\newabbreviation{gcd}{GCD}{最大公约数}
+
+
 \begin{document}
-
 \begin{titlepage}
-    \centering
+      \centering
+
+      \includegraphics[width=0.6\textwidth]{Liverpool.jpg} % Increased width
+      \vspace*{1cm}
+
+      \Large
+      COMP390
+
+      \large
+      2023/24
+
+      \vspace{0.5cm}
+      \Huge
+      \textbf{Computer Vision and AR for Endovascular Intervention}
+
+      \vspace{1.5cm}
 
 
-    \includegraphics[width=0.6\textwidth]{Liverpool.jpg} % Increased width
-    \vspace*{1cm}
+      % Framed box for student information
+      \begin{mdframed}
+            \normalsize % Smaller text size within the box
+            \textbf{Student Name:} [Yulin Huang]\\[20pt] % Name on the same line, add vertical space
+            \textbf{Student ID:} [201676465]\\[20pt] % ID on the same line, add vertical space
+            \textbf{Supervisor Name:} [Anh Nguyen] % Supervisor on the same line
+      \end{mdframed}
 
-    \Large
-    COMP390
+      \vspace{2cm} % Adjust space as necessary
+      \Large
+      \textbf{DEPARTMENT OF}\\
+      \vspace{0.1cm} % Adjust line spacing
+      \textbf{COMPUTER SCIENCE}
 
-    \large
-    2023/24
-
-    \vspace{0.5cm}
-    \Huge
-    \textbf{Computer Vision and AR for Endovascular Intervention}
-
-    \vspace{1.5cm}
-
-
-    % Framed box for student information
-    \begin{mdframed}
-        \normalsize % Smaller text size within the box
-        \textbf{Student Name:} [Yulin Huang]\\[20pt] % Name on the same line, add vertical space
-        \textbf{Student ID:} [201676465]\\[20pt] % ID on the same line, add vertical space
-        \textbf{Supervisor Name:} [Anh Nguyen] % Supervisor on the same line
-    \end{mdframed}
-
-    \vspace{2cm} % Adjust space as necessary
-    \Large
-    \textbf{DEPARTMENT OF}\\
-    \vspace{0.1cm} % Adjust line spacing
-    \textbf{COMPUTER SCIENCE}
-
-    \vspace{4cm} % Large space as required
-    \large
-    University of Liverpool\\
-    Liverpool L69 3BX
+      \vspace{4cm} % Large space as required
+      \large
+      University of Liverpool\\
+      Liverpool L69 3BX
 
 
 \end{titlepage}
@@ -54,7 +80,7 @@
 \newpage
 \thispagestyle{empty} % Remove page number from the acknowledgements page
 \begin{center}
-    \Large \textbf{Acknowledgements}
+      \Large \textbf{Acknowledgements}
 \end{center}
 \vspace{1cm}
 \normalsize
@@ -62,130 +88,156 @@
 
 \newpage
 \begin{titlepage}
-    \centering
+      \centering
 
 
-    \includegraphics[width=0.6\textwidth]{Liverpool.jpg} % Increased width
-    \vspace*{1cm}
+      \includegraphics[width=0.6\textwidth]{Liverpool.jpg} % Increased width
+      \vspace*{1cm}
 
-    \Large
-    COMP390
+      \Large
+      COMP390
+      \large
+      2023/24
 
-    \large
-    2023/24
+      \vspace{4.5cm}
+      \Huge
+      \textbf{Computer Vision and AR for Endovascular Intervention}
 
-    \vspace{4.5cm}
-    \Huge
-    \textbf{Computer Vision and AR for Endovascular Intervention}
-
-    \vspace{1.5cm}
-
+      \vspace{1.5cm}
 
 
-    \vspace{4cm} % Adjust space as necessary
-    \Large
-    \textbf{DEPARTMENT OF}\\
-    \vspace{0.1cm} % Adjust line spacing
-    \textbf{COMPUTER SCIENCE}
 
-    \vspace{1cm} % Large space as required
-    \large
-    University of Liverpool\\
-    Liverpool L69 3BX
+      \vspace{4cm} % Adjust space as necessary
+      \Large
+      \textbf{DEPARTMENT OF}\\
+      \vspace{0.1cm} % Adjust line spacing
+      \textbf{COMPUTER SCIENCE}
 
+      \vspace{1cm} % Large space as required
+      \large
+      University of Liverpool\\
+      Liverpool L69 3BX
 
 \end{titlepage}
 \tableofcontents
 \newpage
 
-% Abstract
+% Abstract 
 \section*{Abstract}
 This section should contain a concise summary of the document content.
-
 % Statement of Ethical Compliance
 \section*{Statement of Ethical Compliance}
 \begin{mdframed}
-    \Large % Larger font size for the first two lines
-Data Category: A \\
-Participant Category: 0 \\
-    \normalsize % Normal font size for the rest of the text
-    I confirm that I have read the ethical guidelines and will follow them during this project. Further details can be found in the relevant sections of this proposal.
+      \Large % Larger font size for the first two lines
+      Data Category: A \\
+      Participant Category: 0 \\
+      \normalsize % Normal font size for the rest of the text
+      I confirm that I have read the ethical guidelines and will follow them during this project. Further details can be found in the relevant sections of this proposal.
 \end{mdframed}
 \newpage
 
 % Introduction & Background
 \section{Introduction \& Background}
 
-
+ 
 
 \section{Design \& Implementation}
 
 \subsection{Part1: Real-world Model Interaction and Tracking}
 % 这一部分集中讨论与现实世界模型的交互与跟踪的设计和实现。
 
-In this part, I used OpenCV\cite{opencv_library} and SciKit-Surgery Augmented Reality\cite{Thompson_SciKit-Surgery_Compact_Libraries_2020} libraries for image 
-processing and  model tracking, while QT\cite{QtWebsite} is used to design the graphical interface. OpenCV and SciKit-Surgery help in processing images 
-and tracking ArUco Markers\cite{1467495} within these images, essential for enhancing interaction between virtual and real-world elements. 
-QT allows me to create a user-friendly interface, ensuring that the system is accessible and manageable for users with different levels of technical expertise. 
-This section will detail the system's architecture and functionality, focusing on System Components and Organization, Data Structures and Algorithms, 
+In this part, I used \gls{opencv}\cite{opencv_library} and SciKit-Surgery Augmented Reality\cite{Thompson_SciKit-Surgery_Compact_Libraries_2020} libraries for image
+processing and  model tracking, while \gls{QT}\cite{QtWebsite} is used to design the graphical interface. OpenCV and SciKit-Surgery help in processing images
+and tracking \gls{aruco}\cite{1467495} within these images. Qt allows me to create a user-friendly interface that ensures multiple settings can be made more easily, enhancing the user experience.
+An ArUco Marker Generator is also included, which enables the user to generate different ArUco Markers and save them.
+This section will detail the system's design, focusing on System Components and Organization, Data Structures and Algorithms,
 User Interface Design, and Design Notation and Diagrams.
 
 
 \subsubsection{Design}
 \begin{enumerate}
-    \item \textbf{System Components and Organization}
-          % 描述系统中各组件的组织和协作方式。
+      \item \textbf{System Components and Organization}
+            \\The project is structured into three primary components, each responsible for distinct functionalities within the system.
+            Here’s a detailed breakdown of these components and their organization:
+            \begin{enumerate}
+                  \item \textbf{Frontend - User Interface}
+                        \\The system's user interface is developed using Qt, a framework that enables the creation of graphically applications.
+                        The main class controlling the UI is \emph{Overlay\_and\_Tracking.py}, which serves as the central hub for user interactions and display functionalities. 
+                        This class manages the overlay of models on video streams and provides interactive elements for users to control various settings, such as model color changes,
+                        video source switching, models uploading and changing ,or adjusting ArUco marker types and sizes, and more.
+                  \item \textbf{Backend - Helper Classes}
+                        \\The backend is composed of various helper classes, each setted to handle specific tasks:
+                        \begin{itemize}
+                              \item \textit{Image Capture:} The \emph{video\_source.py} class is responsible for capturing video input. This class can handle input from different sources,
+                                    such as live camera feeds or pre\-recorded videos, ensuring the system's flexibility in choosing and processing visual data.
+                              \item \textit{Model Loading:} The task of loading and initializing 3D models is managed by \emph{model\_loader.py}.
+                                    This class ensures that models are correctly parsed and ready for manipulation and rendering within the application.
+                              \item \textit{ArUco Marker Tracking:} \emph{arucotracker.py} is dedicated to the tracking of ArUco markers, a type of augmented reality marker.
+                                    This class detects and tracks these markers within the video stream.
+                        \end{itemize}
 
-    \item \textbf{Data Structures and Algorithms}
-          % 详细说明系统所使用的数据结构和算法。
-          \begin{enumerate}
-              \item \textbf{Frame Storage}
-                    % 描述如何存储和处理连续的图像帧，例如使用循环缓冲区或队列来管理实时视频帧。
+                  \item \textbf{Additional Component - ArUco Marker Generator}
+                        \\An independent component in the system is the ArUco Marker Generator, managed by \emph{Aruco\_Generator.py}.
+                        This tool allows users to select and visualize different ArUco markers. Users can also save these markers as separate image files,
+                        facilitating easy integration and use.
+            \end{enumerate}
+      \paragraph{Organizational Flow:\\}
+      The system’s architecture is designed to easy maintenance and scalability. 
+      The modular nature of the helper classes allows for isolated development and testing, 
+      which enhances the system's robustness and flexibility. 
+      This organization simplifies development and testing 
+    and enables the integration of additional functionalities in the future with minimal disruption to the existing system.
 
-              \item \textbf{Feature Data Structures}
-                    % 详细说明用于存储从视频中提取的特征（如ArUco标记的位置、角点检测等）的数据结构，可能涉及到空间哈希表或树结构（如KD树、四叉树）。
+      \item \textbf{Data Structures and Algorithms}
+            % 详细说明系统所使用的数据结构和算法。
+            \begin{enumerate}
+                  \item \textbf{Frame Storage}
+                        % 描述如何存储和处理连续的图像帧，例如使用循环缓冲区或队列来管理实时视频帧。
 
-              \item \textbf{Image Processing Algorithms}
-                    % 讨论用于视频帧处理的基本算法，如灰度转换、滤波、边缘检测等。
+                  \item \textbf{Feature Data Structures}
+                        % 详细说明用于存储从视频中提取的特征（如ArUco标记的位置、角点检测等）的数据结构，可能涉及到空间哈希表或树结构（如KD树、四叉树）。
 
-              \item \textbf{Marker Detection and Tracking}
-                    % 详述用于检测和追踪ArUco标记的算法，包括图像分割、模式识别和机器学习技术。
+                  \item \textbf{Image Processing Algorithms}
+                        % 讨论用于视频帧处理的基本算法，如灰度转换、滤波、边缘检测等。
 
-              \item \textbf{Model Positioning and Rendering}
-                    % 介绍如何将三维模型精确地放置在虚拟环境中，可能涉及计算几何和物体识别算法。
+                  \item \textbf{Marker Detection and Tracking}
+                        % 详述用于检测和追踪ArUco标记的算法，包括图像分割、模式识别和机器学习技术。
 
-              \item \textbf{Optimization Techniques}
-                    % 如果涉及到性能瓶颈，可以介绍用于优化上述算法的技术，如多线程处理、GPU加速或使用更高效的算法（如快速傅里叶变换代替传统卷积）。
+                  \item \textbf{Model Positioning and Rendering}
+                        % 介绍如何将三维模型精确地放置在虚拟环境中，可能涉及计算几何和物体识别算法。
 
-              \item \textbf{Algorithm Efficiency and Complexity}
-                    % 分析关键算法的时间和空间复杂度，讨论在不同操作环境（如不同硬件或软件平台）下的性能表现。
-          \end{enumerate}
+                  \item \textbf{Optimization Techniques}
+                        % 如果涉及到性能瓶颈，可以介绍用于优化上述算法的技术，如多线程处理、GPU加速或使用更高效的算法（如快速傅里叶变换代替传统卷积）。
 
-
-    \item \textbf{User Interface Design}
-          \begin{enumerate}
-              \item \textbf{Screen Mockups, Sketches, and Screenshots}
-                    % 包括界面设计的屏幕模拟图、草图和截图。
-
-              \item \textbf{OpenCV-Based Real-world Interaction Component}
-                    % 描述该组件如何将模拟整合到AR/VR平台，以及实时视频捕捉与覆盖的技术细节。
-
-              \item \textbf{ArUco Marker Detection and Model Positioning}
-                    % 讨论如何在视频帧中自动检测ArUco标记，并实现模型在虚拟环境中的精确定位。
-          \end{enumerate}
+                  \item \textbf{Algorithm Efficiency and Complexity}
+                        % 分析关键算法的时间和空间复杂度，讨论在不同操作环境（如不同硬件或软件平台）下的性能表现。
+            \end{enumerate}
 
 
-    \item \textbf{Design Notation and Diagrams}
-          \begin{enumerate}
-              \item \textbf{Use Case Diagrams}
-                    % 描述用例图及其在设计中的应用。
+      \item \textbf{User Interface Design}
+            \begin{enumerate}
+                  \item \textbf{Screen Mockups, Sketches, and Screenshots}
+                        % 包括界面设计的屏幕模拟图、草图和截图。
 
-              \item \textbf{Interaction Diagrams and Class Diagrams}
-                    % 介绍交互图和类图的设计和功能。
+                  \item \textbf{OpenCV-Based Real-world Interaction Component}
+                        % 描述该组件如何将模拟整合到AR/VR平台，以及实时视频捕捉与覆盖的技术细节。
 
-              \item \textbf{Pseudocode and Data Flow Diagrams}
-                    % 提供系统关键部分的伪代码及数据流图。
-          \end{enumerate}
+                  \item \textbf{ArUco Marker Detection and Model Positioning}
+                        % 讨论如何在视频帧中自动检测ArUco标记，并实现模型在虚拟环境中的精确定位。
+            \end{enumerate}
+
+
+      \item \textbf{Design Notation and Diagrams}
+            \begin{enumerate}
+                  \item \textbf{Use Case Diagrams}
+                        % 描述用例图及其在设计中的应用。
+
+                  \item \textbf{Interaction Diagrams and Class Diagrams}
+                        % 介绍交互图和类图的设计和功能。
+
+                  \item \textbf{Pseudocode and Data Flow Diagrams}
+                        % 提供系统关键部分的伪代码及数据流图。
+            \end{enumerate}
 \end{enumerate}
 
 \subsubsection{Implementation}
@@ -236,4 +288,6 @@ User Interface Design, and Design Notation and Diagrams.
 
 % References (The bibliography will be printed here)
 \printbibliography
+\printglossaries
+
 \end{document}
