@@ -30,6 +30,10 @@
     description={ArUco markers are 2D binary-encoded fiducial patterns designed to be quickly located by computer vision systems. ArUco marker patterns are defined by a binary dictionary in OpenCV, and the various library functions return pattern IDs and pose information from scanned images.\cite{arucomarkers}}
 }
 
+\newglossaryentry{vtk}{
+      name=VTK,
+      description={The Visualization Toolkit (VTK) is an open-source, freely available software system for 3D computer graphics, modeling, image processing, volume rendering, scientific visualization, and 2D plotting. It supports a wide variety of visualization algorithms and advanced modeling techniques, and it takes advantage of both threaded and distributed memory parallel processing for speed and scalability, respectively.\cite{vtkBook}}
+}
 
 % 定义一个缩写词
 %\newabbreviation{gcd}{GCD}{最大公约数}
@@ -147,8 +151,9 @@ This section should contain a concise summary of the document content.
 % 这一部分集中讨论与现实世界模型的交互与跟踪的设计和实现。
 
 In this part, I used \gls{opencv}\cite{opencv_library} and SciKit-Surgery Augmented Reality\cite{Thompson_SciKit-Surgery_Compact_Libraries_2020} libraries for image
-processing and  model tracking, while \gls{QT}\cite{QtWebsite} is used to design the graphical interface. OpenCV and SciKit-Surgery help in processing images
-and tracking \gls{aruco}\cite{1467495} within these images. Qt allows me to create a user-friendly interface that ensures multiple settings can be made more easily, enhancing the user experience.
+processing and  model tracking, while \gls{QT}\cite{QtWebsite} is used to design the graphical interface, and also \gls{vtk}\cite{vtkBook}. OpenCV and SciKit-Surgery help in processing images
+and tracking \gls{aruco}\cite{1467495} within these images. Qt allows me to create a user-friendly interface that ensures multiple settings can be made more easily, enhancing the user experience. 
+VTK facilitates the management of overlay and multi-layer video rendering in my project.
 An ArUco Marker Generator is also included, which enables the user to generate different ArUco Markers and save them.
 This section will detail the system's design, focusing on System Components and Organization, Data Structures and Algorithms,
 User Interface Design, and Design Notation and Diagrams.
@@ -164,24 +169,28 @@ User Interface Design, and Design Notation and Diagrams.
                         \\The system's user interface is developed using Qt, a framework that enables the creation of graphically applications.
                         The main class controlling the UI is \emph{Overlay\_and\_Tracking.py}, which serves as the central hub for user interactions and display functionalities. 
                         This class manages the overlay of models on video streams and provides interactive elements for users to control various settings, such as model color changes,
-                        video source switching, models uploading and changing ,or adjusting ArUco marker types and sizes, and more.
+                        video source switching, models uploading and changing, or adjusting ArUco marker types and sizes, and more.
                   \item \textbf{Backend - Helper Classes}
-                        \\The backend is composed of various helper classes, each setted to handle specific tasks:
+                        \\The backend is composed of various helper classes, each set to handle specific tasks:
                         \begin{itemize}
-                              \item \textit{Image Capture:} The \emph{video\_source.py} class is responsible for capturing video input. This class can handle input from different sources,
-                                    such as live camera feeds or pre\-recorded videos, ensuring the system's flexibility in choosing and processing visual data.
-                              \item \textit{Model Loading:} The task of loading and initializing 3D models is managed by \emph{model\_loader.py}.
-                                    This class ensures that models are correctly parsed and ready for manipulation and rendering within the application.
-                              \item \textit{ArUco Marker Tracking:} \emph{arucotracker.py} is dedicated to the tracking of ArUco markers, a type of augmented reality marker.
-                                    This class detects and tracks these markers within the video stream.
-                        \end{itemize}
+                              \item \textit{Image Capture:} The \emph{video\_source.py} class handles the acquisition of video streams from various sources, 
+                              including live cameras and recorded media. It is responsible for configuring camera settings, initializing video capture, and video frame cropping to adapted to screen size. This component ensures the reliability and stability of video feed intake.
+                          
+                              \item \textit{Model Loading:} Managed by \emph{model\_loader.py}, this component is important for the model loading and initializing. It loads ".stl" model files from external files, sets up texture mapping, and prepares the models for real-time overlay. The class also checks for errors in model data to prevent crashes or rendering issues during operation. It also optimizes the structures of model data to enhance rendering efficiency and reduce memory overhead.
+                          
+                              \item \textit{Model Overlay:} The \emph{overlay\_window.py} is central to integrating 3D models with live or recorded video. With the help of VTK, this module could set up a multi-layered rendering environment where each layer can independently handle elements like video backgrounds, 3D models, or some GUI overlays(In the future, maybe.).
+                              
+                              \item \textit{Transform Management:} The \emph{transform\_manager.py} class provides a method for managing 4x4 transformation matrices crucial for spatial adjustments of models in 3D space. It stores and retrieves transformations efficiently. And allow it for dynamic modifications of object orientations and positions.
+                          
+                              \item \textit{ArUco Marker Tracking:} Functionality provided by \emph{arucotracker.py} includes detecting and decoding ArUco markers from the video stream using OpenCV. This module calculates position and orientation of detected marker, and handle the spatial position data for model tracking. 
+                          \end{itemize}
+                          
 
                   \item \textbf{Additional Component - ArUco Marker Generator}
                         \\An independent component in the system is the ArUco Marker Generator, managed by \emph{Aruco\_Generator.py}.
-                        This tool allows users to select and visualize different ArUco markers. Users can also save these markers as separate image files,
-                        facilitating easy integration and use.
+                        This tool allows users to select and visualize different ArUco markers. Users can also save these markers as separate image files.
             \end{enumerate}
-      \paragraph{Organizational Flow:\\}
+      \paragraph{Organization:\\}
       The system’s architecture is designed to easy maintenance and scalability. 
       The modular nature of the helper classes allows for isolated development and testing, 
       which enhances the system's robustness and flexibility. 
