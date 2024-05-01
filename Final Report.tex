@@ -57,7 +57,15 @@
 }
 
 
+\newglossaryentry{mrtkl}{
+      name=Microsoft Mixed Reality Toolkit-Unityde,
+      description={MRTK-Unity is a Microsoft-driven project that provides a set of components and features, used to accelerate cross-platform MR app development in Unity. Here are some of its functions: 1.Provides the cross-platform input system and building blocks for spatial interactions and UI. 2.Enables rapid prototyping via in-editor simulation that allows you to see changes immediately. 3.Operates as an extensible framework that provides developers the ability to swap out core components.\cite{MRTKUnity2024}}
+}
 
+\newglossaryentry{blender}{
+      name=Blender,
+      description={Blender is a free and open-source 3D computer graphics software tool set used for creating animated films, visual effects, art, 3D-printed models, motion graphics, interactive 3D applications, virtual reality, and, formerly, video games. Blender's features include 3D modelling, UV mapping, texturing, digital drawing, raster graphics editing, rigging and skinning, fluid and smoke simulation, particle simulation, soft body simulation, sculpting, animation, match moving, rendering, motion graphics, video editing, and compositing\cite{Blender2024,blender}.}
+}
 
 
 % 定义一个缩写词
@@ -70,6 +78,9 @@
 \newabbreviation{ces}{CES}{
       Complex Exponential Smoothing}    
 
+\newabbreviation{mrtk}{MRTK}{
+      Microsoft Mixed Reality Toolkit-Unity}    
+      
 
 \begin{document}
 
@@ -241,18 +252,18 @@ User Interface Design, and Design Notation and Diagrams.
                   \item \textbf{Image Processing Algorithms in Multi-Layer Video Rendering}
                         % 描述如何存储和处理连续的图像帧，例如使用循环缓冲区或队列来管理实时视频帧。
                         \\ In a video rendering system, video frames need to be dynamically managed to create complex visual effects, such as models and real-time video overlays in this project. This also involved real-time adjustments to the \gls{alpha}\cite{Alpha} and video. A greyscale image with alpha blending of the RGBA stream was used to precisely control transparency and layering effects to enable the superimposition of a layer's frame (e.g. the model) onto the original frame\cite{9979846}. Ensuring overlay accuracy and visual fidelity is crucial for applications such as augmented reality\cite{SETTIMI2022104272}.
-                        \\
+                        \\\\
                         In addition, it is necessary to update and align the video frames to the appropriate layers by adjusting the data range according to the size of the incoming video frames. This incorporation of real-time processing improves the continuity of the video image by preventing visual interruptions caused by frame misalignment\cite{Wang}.
-                        \\
+                        \\\\
                         I also introduced \gls{aesl} into the multi-layer video rendering system (\emph{Overlay\_and\_Tracking.py}). This enhances image processing, such as when processing video streams involving complex dynamic scenes\cite{7410724}. By dynamically adjusting its smoothing parameter (Alpha), \gls{aes} is able to more accurately adapt to changes in content within a video frame, such as lighting adjustments, scene switching, or object movement, and can reduce visual jitter and blurring due to rapid changes \cite{7410724}.
-                        \\
+                        \\\\
                         Compared with the traditional \gls{emal}, the adaptive feature of AES has a greater advantage. \gls{ema}, although fast in processing and low in computational cost, may not be able to adequately adapt its fixed smoothing parameters to real-time changes in the video content in the face of complex scene variations, thus affecting the final image quality\cite{aes,aes2,InvestopediaEMA}.
                         In a multilayer rendering system, combining AES for real-time video transmission and dynamically adjusting the smoothing parameters according to the content differences between the previous and previous frames can maintain the continuity and naturalness of the visual effects, especially when dealing with moving objects and changing backgrounds. In addition, AES's also better handles scenes with large lighting variations, maintaining the balance of colors and shades of light and dark \cite{7298776}.
-                        \\
+                        \\\\
                         I have similarly experimented with \gls{cesl}, and while it excels in handling data with clear trends and cyclical variations, its application in video rendering systems may not be as straightforward and effective as AES. Because \gls{ces} is designed to provide a more comprehensive understanding of the multiple influences on the data \cite{ComplexES2018,Complex}, its use in non-predictive applications may lead to overly complex processing and increased computational burden.
-                        \\
+                        \\\\
                         Therefore, AES is ultimately used in video rendering systems to respond more directly to real-time changes in video content, reduce visual jitter, and improve the viewing experience.
-                        \\
+                        \\\\
                         To summarize, AES can improve image stability and visual quality, as well as enhance the system's responsiveness to environmental changes. By intelligently adjusting processing parameters, AES helps to ensure high efficiency while also adapting to visual jitter or lighting changes that may be encountered with ArUco marker tracking.
                         \paragraph{Code for the AES:}
                         \begin{minted}[frame=single, linenos=true, fontsize=\footnotesize]{python}
@@ -374,9 +385,22 @@ ethical approval. Therefore, there are no other ethical issues involved in this 
 \subsection{Future Work}
 
 \section{BCS Criteria \& Self-Reflection}
-
+This section will be used to state that my project met the six outcomes expected by the Chartered Institute of Information Technology\cite{BCS2020}. 
+I will focus on illustrating an ability to self-manage a significant piece of work and the critical self-evaluation component.
 \subsection{An Ability to Apply Practical and Analytical Skills}
-% Describe how you applied practical and analytical skills gained during your degree programme to your project.
+The project has demonstrated the practical and analytical skills I have learnt during my time at university. Throughout the degree I have gained a deeper understanding of programming languages such as Python, C\# , Java and C\+\+ and have gradually begun to experiment with them. The theoretical and practical foundations of these languages have been key in enabling me to achieve the complex functionality required for development and realisation projects. For example, in the Part1: Real-world Model Interaction and Tracking section of my project, which was written entirely in Python, there was a high level of theoretical and practical demand for the Python language. In my Part2: Endovascular Intervention Simulation, I needed to acquire and apply knowledge such as the application of Unity and the development and application of the C\# language that I had learnt in my degree programme. These technical skills were acquired and refined through a careful learning process and were directly applied to the project, which dealt with the development of a real model interaction and tracking system and the development of a Unity-based Endovascular Intervention Simulation.
+\\\\
+In developing Part1: Real-world Model Interaction and Tracking and Part2: Endovascular Intervention Simulation, I have also made extensive use of the Artificial Intelligence, Game Development and Computer Vision knowledge that I have learnt on my degree course.
+\\\\
+For Part1: Real-world Model Interaction and Tracking, I utilised the techniques learnt in the Computer Vision course to process the images and used the OpenCV package usage learnt in the course to implement the tracking of the ArUco markers. By utilising the image processing and tracking capabilities of OpenCV, accurate model interaction in complex environments is carried out in practice.
+\\\\
+In Part2: Endovascular Intervention Simulation, I used my knowledge of game development to develop a Unity project, using \gls{blender} to modify and optimise the model, and applying Unity techniques to ensure that Rope interacts with the blood vessels.
+\\\\
+This project, dedicated to the development of a realistic simulation used for endovascular interventions in a virtual reality environment, emphasised my ability to integrate practical skills and theoretical insights, demonstrating a deep understanding of the technical and theoretical aspects I have learnt during the course.
+\\\\
+Overall, this project clearly demonstrated my ability to apply the analytical and practical skills acquired during my degree programme. It also demonstrated my understanding and use of complex programming techniques and frameworks, as well as my ability to use multidisciplinary knowledge to cross-cut problem solving. Through this project, I have accomplished the ability to translate my learning into practical applications in the real world.
+
+
 
 \subsection{Innovation and/or Creativity}
 % Discuss any innovative or creative approaches employed in your project.

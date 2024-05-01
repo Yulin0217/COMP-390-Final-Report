@@ -667,6 +667,35 @@
       \verb https://student.csc.liv.ac.uk/internal/modules/comp390/2023-24/ethics.php
       \endverb
     \endentry
+    \entry{BCS2020}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=ae9178757dd2a29cf80c1f5b9f34882e}{%
+           family={{BCS}},
+           familyi={B\bibinitperiod}}}%
+      }
+      \strng{namehash}{ae9178757dd2a29cf80c1f5b9f34882e}
+      \strng{fullhash}{ae9178757dd2a29cf80c1f5b9f34882e}
+      \strng{fullhashraw}{ae9178757dd2a29cf80c1f5b9f34882e}
+      \strng{bibnamehash}{ae9178757dd2a29cf80c1f5b9f34882e}
+      \strng{authorbibnamehash}{ae9178757dd2a29cf80c1f5b9f34882e}
+      \strng{authornamehash}{ae9178757dd2a29cf80c1f5b9f34882e}
+      \strng{authorfullhash}{ae9178757dd2a29cf80c1f5b9f34882e}
+      \strng{authorfullhashraw}{ae9178757dd2a29cf80c1f5b9f34882e}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{1}
+      \field{note}{Accessed: 2024-05-01}
+      \field{title}{Guidelines on Course Accreditation: Information for Universities and Colleges}
+      \field{year}{2020}
+      \verb{urlraw}
+      \verb https://www.bcs.org/media/11ofljxo/course-accreditation-guidelines.pdf
+      \endverb
+      \verb{url}
+      \verb https://www.bcs.org/media/11ofljxo/course-accreditation-guidelines.pdf
+      \endverb
+    \endentry
     \entry{arucomarkers}{online}{}{}
       \field{sortinit}{1}
       \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
@@ -684,7 +713,36 @@
       \verb https://fab.cba.mit.edu/classes/865.21/people/zach/arucomarkers.html
       \endverb
     \endentry
-    \entry{qt}{misc}{}{}
+    \entry{Blender2024}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=38b863a4731f9082165e291d08953ee2}{%
+           family={{Blender Foundation}},
+           familyi={B\bibinitperiod}}}%
+      }
+      \strng{namehash}{38b863a4731f9082165e291d08953ee2}
+      \strng{fullhash}{38b863a4731f9082165e291d08953ee2}
+      \strng{fullhashraw}{38b863a4731f9082165e291d08953ee2}
+      \strng{bibnamehash}{38b863a4731f9082165e291d08953ee2}
+      \strng{authorbibnamehash}{38b863a4731f9082165e291d08953ee2}
+      \strng{authornamehash}{38b863a4731f9082165e291d08953ee2}
+      \strng{authorfullhash}{38b863a4731f9082165e291d08953ee2}
+      \strng{authorfullhashraw}{38b863a4731f9082165e291d08953ee2}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://www.blender.org}}
+      \field{note}{Accessed on: 2024-05-01}
+      \field{title}{Blender}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://www.blender.org
+      \endverb
+      \verb{url}
+      \verb https://www.blender.org
+      \endverb
+    \endentry
+    \entry{blender}{misc}{}{}
       \name{author}{1}{}{%
         {{hash=b6aea1a416c89509a7df1cbb69249cb6}{%
            family={{Wikipedia contributors}},
@@ -699,6 +757,35 @@
       \strng{authorfullhash}{b6aea1a416c89509a7df1cbb69249cb6}
       \strng{authorfullhashraw}{b6aea1a416c89509a7df1cbb69249cb6}
       \field{extraname}{2}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{[Online; accessed 1-May-2024]}
+      \field{title}{Blender (software) --- {Wikipedia}{,} The Free Encyclopedia}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://en.wikipedia.org/w/index.php?title=Blender_(software)&oldid=1220122561
+      \endverb
+      \verb{url}
+      \verb https://en.wikipedia.org/w/index.php?title=Blender_(software)&oldid=1220122561
+      \endverb
+    \endentry
+    \entry{qt}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=b6aea1a416c89509a7df1cbb69249cb6}{%
+           family={{Wikipedia contributors}},
+           familyi={W\bibinitperiod}}}%
+      }
+      \strng{namehash}{b6aea1a416c89509a7df1cbb69249cb6}
+      \strng{fullhash}{b6aea1a416c89509a7df1cbb69249cb6}
+      \strng{fullhashraw}{b6aea1a416c89509a7df1cbb69249cb6}
+      \strng{bibnamehash}{b6aea1a416c89509a7df1cbb69249cb6}
+      \strng{authorbibnamehash}{b6aea1a416c89509a7df1cbb69249cb6}
+      \strng{authornamehash}{b6aea1a416c89509a7df1cbb69249cb6}
+      \strng{authorfullhash}{b6aea1a416c89509a7df1cbb69249cb6}
+      \strng{authorfullhashraw}{b6aea1a416c89509a7df1cbb69249cb6}
+      \field{extraname}{3}
       \field{sortinit}{2}
       \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
@@ -727,7 +814,7 @@
       \strng{authornamehash}{b6aea1a416c89509a7df1cbb69249cb6}
       \strng{authorfullhash}{b6aea1a416c89509a7df1cbb69249cb6}
       \strng{authorfullhashraw}{b6aea1a416c89509a7df1cbb69249cb6}
-      \field{extraname}{3}
+      \field{extraname}{4}
       \field{sortinit}{2}
       \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
