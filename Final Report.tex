@@ -35,8 +35,26 @@
       description={The Visualization Toolkit (VTK) is an open-source, freely available software system for 3D computer graphics, modeling, image processing, volume rendering, scientific visualization, and 2D plotting. It supports a wide variety of visualization algorithms and advanced modeling techniques, and it takes advantage of both threaded and distributed memory parallel processing for speed and scalability, respectively.\cite{vtkBook}}
 }
 
+\newglossaryentry{alpha}{
+      name=Alpha Blending,
+      description={In computer graphics, alpha compositing or alpha blending is the process of combining one image with a background to create the appearance of partial or full transparency. It is often useful to render picture elements (pixels) in separate passes or layers and then combine the resulting 2D images into a single, final image called the composite. Compositing is used extensively in film when combining computer-rendered image elements with live footage. Alpha blending is also used in 2D computer graphics to put rasterized foreground elements over a background.\cite{Alpha}}
+}
+
+\newglossaryentry{aesl}{
+      name=Adaptive Exponential Smoothing,
+      description={Adaptive exponential smoothing models are designed to improve performance by letting the smoothing parameter vary according to the most recent forecasting accuracy. \cite{aes,aes2}}
+}
+
+\newglossaryentry{emal}{
+      name=Exponential Moving Average,
+      description={An exponential moving average (EMA) is a type of moving average (MA) that places a greater weight and significance on the most recent data points. The exponential moving average is also referred to as the exponentially weighted moving average. An exponentially weighted moving average reacts more significantly to recent price changes than a simple moving average simple moving average (SMA), which applies an equal weight to all observations in the period.\cite{InvestopediaEMA}}
+}
 % 定义一个缩写词
-%\newabbreviation{gcd}{GCD}{最大公约数}
+\newabbreviation{aes}{AES}{
+      Adaptive Exponential Smoothing}
+
+\newabbreviation{ema}{EMA}{
+      Exponential Moving Average}
 
 
 \begin{document}
@@ -143,7 +161,7 @@ This section should contain a concise summary of the document content.
 % Introduction & Background
 \section{Introduction \& Background}
 
- 
+
 
 \section{Design \& Implementation}
 
@@ -152,7 +170,7 @@ This section should contain a concise summary of the document content.
 
 In this part, I used \gls{opencv}\cite{opencv_library} and SciKit-Surgery Augmented Reality\cite{Thompson_SciKit-Surgery_Compact_Libraries_2020} libraries for image
 processing and  model tracking, while \gls{QT}\cite{QtWebsite} is used to design the graphical interface, and also \gls{vtk}\cite{vtkBook}. OpenCV and SciKit-Surgery help in processing images
-and tracking \gls{aruco}\cite{1467495} within these images. Qt allows me to create a user-friendly interface that ensures multiple settings can be made more easily, enhancing the user experience. 
+and tracking \gls{aruco}\cite{1467495} within these images. Qt allows me to create a user-friendly interface that ensures multiple settings can be made more easily, enhancing the user experience.
 VTK facilitates the management of overlay and multi-layer video rendering in my project.
 An ArUco Marker Generator is also included, which enables the user to generate different ArUco Markers and save them.
 This section will detail the system's design, focusing on System Components and Organization, Data Structures and Algorithms,
@@ -167,47 +185,55 @@ User Interface Design, and Design Notation and Diagrams.
             \begin{enumerate}
                   \item \textbf{Frontend - User Interface}
                         \\The system's user interface is developed using Qt, a framework that enables the creation of graphically applications.
-                        The main class controlling the UI is \emph{Overlay\_and\_Tracking.py}, which serves as the central hub for user interactions and display functionalities. 
+                        The main class controlling the UI is \emph{Overlay\_and\_Tracking.py}, which serves as the central hub for user interactions and display functionalities.
                         This class manages the overlay of models on video streams and provides interactive elements for users to control various settings, such as model color changes,
                         video source switching, models uploading and changing, or adjusting ArUco marker types and sizes, and more.
                   \item \textbf{Backend - Helper Classes}
                         \\The backend is composed of various helper classes, each set to handle specific tasks:
                         \begin{itemize}
-                              \item \textit{Image Capture:} The \emph{video\_source.py} class handles the acquisition of video streams from various sources, 
-                              including live cameras and recorded media. It is responsible for configuring camera settings, initializing video capture, and video frame cropping to adapted to screen size. This component ensures the reliability and stability of video feed intake.
-                          
+                              \item \textit{Image Capture:} The \emph{video\_source.py} class handles the acquisition of video streams from various sources,
+                                    including live cameras and recorded media. It is responsible for configuring camera settings, initializing video capture, and video frame cropping to adapted to screen size. This component ensures the reliability and stability of video feed intake.
+
                               \item \textit{Model Loading:} Managed by \emph{model\_loader.py}, this component is important for the model loading and initializing. It loads ".stl" model files from external files, sets up texture mapping, and prepares the models for real-time overlay. The class also checks for errors in model data to prevent crashes or rendering issues during operation. It also optimizes the structures of model data to enhance rendering efficiency and reduce memory overhead.
-                          
+
                               \item \textit{Model Overlay:} The \emph{overlay\_window.py} is central to integrating 3D models with live or recorded video. With the help of VTK, this module could set up a multi-layered rendering environment where each layer can independently handle elements like video backgrounds, 3D models, or some GUI overlays(In the future, maybe.).
-                              
+
                               \item \textit{Transform Management:} The \emph{transform\_manager.py} class provides a method for managing 4x4 transformation matrices crucial for spatial adjustments of models in 3D space. It stores and retrieves transformations efficiently. And allow it for dynamic modifications of object orientations and positions.
-                          
-                              \item \textit{ArUco Marker Tracking:} Functionality provided by \emph{arucotracker.py} includes detecting and decoding ArUco markers from the video stream using OpenCV. This module calculates position and orientation of detected marker, and handle the spatial position data for model tracking. 
-                          \end{itemize}
-                          
+
+                              \item \textit{ArUco Marker Tracking:} Functionality provided by \emph{arucotracker.py} includes detecting and decoding ArUco markers from the video stream using OpenCV. This module calculates position and orientation of detected marker, and handle the spatial position data for model tracking.
+                        \end{itemize}
+
 
                   \item \textbf{Additional Component - ArUco Marker Generator}
                         \\An independent component in the system is the ArUco Marker Generator, managed by \emph{Aruco\_Generator.py}.
                         This tool allows users to select and visualize different ArUco markers. Users can also save these markers as separate image files.
             \end{enumerate}
-      \paragraph{Organization:\\}
-      The system’s architecture is designed to easy maintenance and scalability. 
-      The modular nature of the helper classes allows for isolated development and testing, 
-      which enhances the system's robustness and flexibility. 
-      This organization simplifies development and testing 
-    and enables the integration of additional functionalities in the future with minimal disruption to the existing system.
+            \paragraph{Organization:\\}
+            The system’s architecture is designed to easy maintenance and scalability.
+            The modular nature of the helper classes allows for isolated development and testing,
+            which enhances the system's robustness and flexibility.
+            This organization simplifies development and testing
+            and enables the integration of additional functionalities in the future with minimal disruption to the existing system.
 
       \item \textbf{Data Structures and Algorithms}
             % 详细说明系统所使用的数据结构和算法。
             \begin{enumerate}
-                  \item \textbf{Frame Storage}
-                        % 描述如何存储和处理连续的图像帧，例如使用循环缓冲区或队列来管理实时视频帧。
-
+                  \item \textbf{Pre-processing for video capture and upload}
+                  
                   \item \textbf{Feature Data Structures}
                         % 详细说明用于存储从视频中提取的特征（如ArUco标记的位置、角点检测等）的数据结构，可能涉及到空间哈希表或树结构（如KD树、四叉树）。
 
-                  \item \textbf{Image Processing Algorithms}
-                        % 讨论用于视频帧处理的基本算法，如灰度转换、滤波、边缘检测等。
+                  \item \textbf{Image Processing Algorithms in Multi-Layer Video Rendering}
+                       % 描述如何存储和处理连续的图像帧，例如使用循环缓冲区或队列来管理实时视频帧。
+                       \\ In a video rendering system, video frames need to be de-dynamically managed to create complex visual effects, such as models and real-time video overlays in this project. This also involved real-time adjustments to the \gls{alpha}\cite{Alpha} and video. A greyscale image with alpha blending of the RGBA stream was used to precisely control transparency and layering effects to enable the superimposition of a layer's frame (e.g. the model) onto the original frame\cite{9979846}. Ensuring overlay accuracy and visual fidelity is crucial for applications such as augmented reality\cite{SETTIMI2022104272}.
+                       \\
+                       In addition, it is necessary to update and align the video frames to the appropriate layers by adjusting the data range according to the size of the incoming video frames. This incorporation of real-time processing improves the continuity of the video image by preventing visual interruptions caused by frame misalignment\cite{Wang_2021}.
+                       \\
+                       I also introduced \gls{aesl} into the multi-layer video rendering system (\emph{Overlay\_and\_Tracking.py}). This enhances image processing, such as when processing video streams involving complex dynamic scenes\cite{7410724}. By dynamically adjusting its smoothing parameter (Alpha), \gls{aes} is able to more accurately adapt to changes in content within a video frame, such as lighting adjustments, scene switching, or object movement, and can reduce visual jitter and blurring due to rapid changes \cite{7410724}.
+                       \\
+                       Compared with the traditional \gls{emal}, the adaptive feature of \gls{aes} has a greater advantage. \gls{ema}, although fast in processing and low in computational cost, may not be able to adequately adapt its fixed smoothing parameters to real-time changes in the video content in the face of complex scene variations, thus affecting the final image quality\cite{aes,aes2,InvestopediaEMA}.
+                       In a multilayer rendering system, combining \gls{aes} for real-time video transmission and dynamically adjusting the smoothing parameters according to the content differences between the previous and previous frames can maintain the continuity and naturalness of the visual effects, especially when dealing with moving objects and changing backgrounds. In addition, \gls{aes}'s also better handles scenes with large lighting variations, maintaining the balance of colors and shades of light and dark \cite{7298776}.
+
 
                   \item \textbf{Marker Detection and Tracking}
                         % 详述用于检测和追踪ArUco标记的算法，包括图像分割、模式识别和机器学习技术。

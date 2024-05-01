@@ -206,9 +206,367 @@
       \endverb
       \keyw{Robustness;Forward error correction;Digital cameras;Detection algorithms;Augmented reality;Robotics and automation;Navigation;Robot vision systems;Codes;Joining processes}
     \endentry
-    \entry{arucomarkers}{online}{}{}
+    \entry{Alpha}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=b6aea1a416c89509a7df1cbb69249cb6}{%
+           family={{Wikipedia contributors}},
+           familyi={W\bibinitperiod}}}%
+      }
+      \strng{namehash}{b6aea1a416c89509a7df1cbb69249cb6}
+      \strng{fullhash}{b6aea1a416c89509a7df1cbb69249cb6}
+      \strng{fullhashraw}{b6aea1a416c89509a7df1cbb69249cb6}
+      \strng{bibnamehash}{b6aea1a416c89509a7df1cbb69249cb6}
+      \strng{authorbibnamehash}{b6aea1a416c89509a7df1cbb69249cb6}
+      \strng{authornamehash}{b6aea1a416c89509a7df1cbb69249cb6}
+      \strng{authorfullhash}{b6aea1a416c89509a7df1cbb69249cb6}
+      \strng{authorfullhashraw}{b6aea1a416c89509a7df1cbb69249cb6}
+      \field{extraname}{1}
       \field{sortinit}{6}
       \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{[Online; accessed 1-May-2024]}
+      \field{title}{Alpha compositing --- {Wikipedia}{,} The Free Encyclopedia}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://en.wikipedia.org/w/index.php?title=Alpha_compositing&oldid=1220212606
+      \endverb
+      \verb{url}
+      \verb https://en.wikipedia.org/w/index.php?title=Alpha_compositing&oldid=1220212606
+      \endverb
+    \endentry
+    \entry{9979846}{inproceedings}{}{}
+      \name{author}{3}{}{%
+        {{hash=c37bc6d260f189e4068cd436e1ac74af}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={Chengming},
+           giveni={C\bibinitperiod}}}%
+        {{hash=ef05644038925fa133f152cb25a2a2ef}{%
+           family={Liang},
+           familyi={L\bibinitperiod},
+           given={Yihui},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=d6642ae6f9f7bcd940a0660b93ed9433}{%
+           family={Wen},
+           familyi={W\bibinitperiod},
+           given={Wen},
+           giveni={W\bibinitperiod}}}%
+      }
+      \strng{namehash}{7740077d64b9c7c8a59951f0d531f7ea}
+      \strng{fullhash}{7740077d64b9c7c8a59951f0d531f7ea}
+      \strng{fullhashraw}{7740077d64b9c7c8a59951f0d531f7ea}
+      \strng{bibnamehash}{7740077d64b9c7c8a59951f0d531f7ea}
+      \strng{authorbibnamehash}{7740077d64b9c7c8a59951f0d531f7ea}
+      \strng{authornamehash}{7740077d64b9c7c8a59951f0d531f7ea}
+      \strng{authorfullhash}{7740077d64b9c7c8a59951f0d531f7ea}
+      \strng{authorfullhashraw}{7740077d64b9c7c8a59951f0d531f7ea}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{2022 15th International Congress on Image and Signal Processing, BioMedical Engineering and Informatics (CISP-BMEI)}
+      \field{title}{Fire Image Augmentation based on Diverse Alpha Compositing for Fire Detection}
+      \field{year}{2022}
+      \field{pages}{1\bibrangedash 6}
+      \range{pages}{6}
+      \verb{doi}
+      \verb 10.1109/CISP-BMEI56279.2022.9979846
+      \endverb
+      \keyw{Fires;Signal processing;Task analysis;Informatics;Biomedical engineering;Fire image augmentation;alpha compositing;fire detection}
+    \endentry
+    \entry{SETTIMI2022104272}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=13076fbcb53e24629a9fe860acf3d1d8}{%
+           family={Settimi},
+           familyi={S\bibinitperiod},
+           given={Andrea},
+           giveni={A\bibinitperiod}}}%
+        {{hash=04c91163607c9415f64d9f61461e8b96}{%
+           family={Gamerro},
+           familyi={G\bibinitperiod},
+           given={Julien},
+           giveni={J\bibinitperiod}}}%
+        {{hash=7f4d397b969f029aa77dc1475ae1f214}{%
+           family={Weinand},
+           familyi={W\bibinitperiod},
+           given={Yves},
+           giveni={Y\bibinitperiod}}}%
+      }
+      \strng{namehash}{c476baf75d4a44785196eaceded3efe8}
+      \strng{fullhash}{c476baf75d4a44785196eaceded3efe8}
+      \strng{fullhashraw}{c476baf75d4a44785196eaceded3efe8}
+      \strng{bibnamehash}{c476baf75d4a44785196eaceded3efe8}
+      \strng{authorbibnamehash}{c476baf75d4a44785196eaceded3efe8}
+      \strng{authornamehash}{c476baf75d4a44785196eaceded3efe8}
+      \strng{authorfullhash}{c476baf75d4a44785196eaceded3efe8}
+      \strng{authorfullhashraw}{c476baf75d4a44785196eaceded3efe8}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{An ordinary electric drill was integrated into a context-aware augmented reality (AR) framework to assist in timber-drilling tasks. This study is a preliminary evaluation to detail technical challenges, potential bottlenecks, and accuracy of the proposed object- and tool-aware AR-assisted fabrication systems. In the designed workflow, computer vision tools and sensors are used to implement an inside-out tracking technique for retrofitted drills based on a reverse engineering approach. The approach allows workers to perform complex drilling angle operations according to computer-processed feedback instead of drawing, marking, or jigs. First, the developed methodology was presented, and its various devices and functioning phases were detailed. Second, this first proof of concept was evaluated by experimentally scanning produced drillings and comparing the discrepancies with their respective three-dimensional execution models. This study outlined improvements in the proposed tool-aware fabrication process and clarified the potential role of augmented carpentry in the digital fabrication landscape.}
+      \field{issn}{0926-5805}
+      \field{journaltitle}{Automation in Construction}
+      \field{title}{Augmented-reality-assisted timber drilling with smart retrofitted tools}
+      \field{volume}{139}
+      \field{year}{2022}
+      \field{pages}{104272}
+      \range{pages}{1}
+      \verb{doi}
+      \verb https://doi.org/10.1016/j.autcon.2022.104272
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/S0926580522001455
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/S0926580522001455
+      \endverb
+      \keyw{Timber construction,Digital fabrication,Augmented reality,Assisted fabrication,Tool tracking,Smart tool}
+    \endentry
+    \entry{Wang_2021}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=eb0f5d04cb7c2d44307313da92ff08bf}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Songlan},
+           giveni={S\bibinitperiod}}}%
+        {{hash=f83176d7990e7bd6ad17dee08c194d1c}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Ji},
+           giveni={J\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {IOP Publishing}%
+      }
+      \strng{namehash}{7b64ea6b018ed9fc80a22ce3e7cc5e59}
+      \strng{fullhash}{7b64ea6b018ed9fc80a22ce3e7cc5e59}
+      \strng{fullhashraw}{7b64ea6b018ed9fc80a22ce3e7cc5e59}
+      \strng{bibnamehash}{7b64ea6b018ed9fc80a22ce3e7cc5e59}
+      \strng{authorbibnamehash}{7b64ea6b018ed9fc80a22ce3e7cc5e59}
+      \strng{authornamehash}{7b64ea6b018ed9fc80a22ce3e7cc5e59}
+      \strng{authorfullhash}{7b64ea6b018ed9fc80a22ce3e7cc5e59}
+      \strng{authorfullhashraw}{7b64ea6b018ed9fc80a22ce3e7cc5e59}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{In the continuous optimization of computer graphics, game engine and virtual reality have become the focus of research and innovation in the current technology field. Rendering is a core technology to show a variety of graphic effects, which has been attached great importance to and applied by the whole society. Nowadays, although the rendering of large-scale and complex scenes has a wide range of applications, the actual optimization requirements are very high. Therefore, in the future technology application and research and development, based on higher and higher technical requirements, it is necessary to improve the efficiency of actual rendering while ensuring or improving the rendering quality. Therefore, this paper studies how to use the algorithm to improve the efficiency of actual rendering, so as to provide a new basis for future computer graphics research.}
+      \field{journaltitle}{Journal of Physics: Conference Series}
+      \field{month}{12}
+      \field{number}{1}
+      \field{title}{Research and Implementation of Real-time Render Optimization Algorithm Based on GPU}
+      \field{volume}{2136}
+      \field{year}{2021}
+      \field{pages}{012059}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1088/1742-6596/2136/1/012059
+      \endverb
+      \verb{urlraw}
+      \verb https://dx.doi.org/10.1088/1742-6596/2136/1/012059
+      \endverb
+      \verb{url}
+      \verb https://dx.doi.org/10.1088/1742-6596/2136/1/012059
+      \endverb
+    \endentry
+    \entry{7410724}{inproceedings}{}{}
+      \name{author}{3}{}{%
+        {{hash=38492f8b3a570eb9c1a0697384a15e84}{%
+           family={Dang},
+           familyi={D\bibinitperiod},
+           given={Kang},
+           giveni={K\bibinitperiod}}}%
+        {{hash=df7964e44c59618d377ea26520d99168}{%
+           family={Yang},
+           familyi={Y\bibinitperiod},
+           given={Jiong},
+           giveni={J\bibinitperiod}}}%
+        {{hash=61d69a2ddeb1bb221c75d9b920f83e57}{%
+           family={Yuan},
+           familyi={Y\bibinitperiod},
+           given={Junsong},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{8216b27ae3fb92a1814dc1ca75144a24}
+      \strng{fullhash}{8216b27ae3fb92a1814dc1ca75144a24}
+      \strng{fullhashraw}{8216b27ae3fb92a1814dc1ca75144a24}
+      \strng{bibnamehash}{8216b27ae3fb92a1814dc1ca75144a24}
+      \strng{authorbibnamehash}{8216b27ae3fb92a1814dc1ca75144a24}
+      \strng{authornamehash}{8216b27ae3fb92a1814dc1ca75144a24}
+      \strng{authorfullhash}{8216b27ae3fb92a1814dc1ca75144a24}
+      \strng{authorfullhashraw}{8216b27ae3fb92a1814dc1ca75144a24}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{2015 IEEE International Conference on Computer Vision (ICCV)}
+      \field{title}{Adaptive Exponential Smoothing for Online Filtering of Pixel Prediction Maps}
+      \field{year}{2015}
+      \field{pages}{3209\bibrangedash 3217}
+      \range{pages}{9}
+      \verb{doi}
+      \verb 10.1109/ICCV.2015.367
+      \endverb
+      \keyw{Smoothing methods;Streaming media;Filtering;Real-time systems;Noise reduction;Measurement;Probabilistic logic}
+    \endentry
+    \entry{aes}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=c272cca250fdae927e51976272c855ac}{%
+           family={Ekern},
+           familyi={E\bibinitperiod},
+           given={Steinar},
+           giveni={S\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Palgrave Macmillan Journals}%
+      }
+      \strng{namehash}{c272cca250fdae927e51976272c855ac}
+      \strng{fullhash}{c272cca250fdae927e51976272c855ac}
+      \strng{fullhashraw}{c272cca250fdae927e51976272c855ac}
+      \strng{bibnamehash}{c272cca250fdae927e51976272c855ac}
+      \strng{authorbibnamehash}{c272cca250fdae927e51976272c855ac}
+      \strng{authornamehash}{c272cca250fdae927e51976272c855ac}
+      \strng{authorfullhash}{c272cca250fdae927e51976272c855ac}
+      \strng{authorfullhashraw}{c272cca250fdae927e51976272c855ac}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Adaptive exponential smoothing models are designed to improve performance by letting the smoothing parameter vary according to the most recent forecasting accuracy. This paper argues that the constant exponential smoothing results used in two comparative studies are inadequate as benchmarks. A reexamination does not indicate that adaptive exponential smoothing methods provide superior forecasts compared to those obtainable from constant exponential smoothing with a considerate choice of the smoothing constant. No support was found for the alleged advantages of the Dennis run based adaptive procedure.}
+      \field{issn}{01605682, 14769360}
+      \field{journaltitle}{The Journal of the Operational Research Society}
+      \field{number}{9}
+      \field{title}{Adaptive Exponential Smoothing Revisited}
+      \field{urlday}{1}
+      \field{urlmonth}{5}
+      \field{urlyear}{2024}
+      \field{volume}{32}
+      \field{year}{1981}
+      \field{urldateera}{ce}
+      \field{pages}{775\bibrangedash 782}
+      \range{pages}{8}
+      \verb{urlraw}
+      \verb http://www.jstor.org/stable/2581393
+      \endverb
+      \verb{url}
+      \verb http://www.jstor.org/stable/2581393
+      \endverb
+    \endentry
+    \entry{aes2}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=7c4c1f7ebef2fa82c9f9594521c1c14f}{%
+           family={Taylor},
+           familyi={T\bibinitperiod},
+           given={James\bibnamedelima W.},
+           giveni={J\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
+      }
+      \strng{namehash}{7c4c1f7ebef2fa82c9f9594521c1c14f}
+      \strng{fullhash}{7c4c1f7ebef2fa82c9f9594521c1c14f}
+      \strng{fullhashraw}{7c4c1f7ebef2fa82c9f9594521c1c14f}
+      \strng{bibnamehash}{7c4c1f7ebef2fa82c9f9594521c1c14f}
+      \strng{authorbibnamehash}{7c4c1f7ebef2fa82c9f9594521c1c14f}
+      \strng{authornamehash}{7c4c1f7ebef2fa82c9f9594521c1c14f}
+      \strng{authorfullhash}{7c4c1f7ebef2fa82c9f9594521c1c14f}
+      \strng{authorfullhashraw}{7c4c1f7ebef2fa82c9f9594521c1c14f}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Abstract Adaptive exponential smoothing methods allow a smoothing parameter to change over time, in order to adapt to changes in the characteristics of the time series. However, these methods have tended to produce unstable forecasts and have performed poorly in empirical studies. This paper presents a new adaptive method, which enables a smoothing parameter to be modelled as a logistic function of a user-specified variable. The approach is analogous to that used to model the time-varying parameter in smooth transition models. Using simulated data, we show that the new approach has the potential to outperform existing adaptive methods and constant parameter methods when the estimation and evaluation samples both contain a level shift or both contain an outlier. An empirical study, using the monthly time series from the M3-Competition, gave encouraging results for the new approach. Copyright © 2004 John Wiley \& Sons, Ltd.}
+      \field{journaltitle}{Journal of Forecasting}
+      \field{number}{6}
+      \field{title}{Smooth transition exponential smoothing}
+      \field{volume}{23}
+      \field{year}{2004}
+      \field{pages}{385\bibrangedash 404}
+      \range{pages}{20}
+      \verb{doi}
+      \verb https://doi.org/10.1002/for.918
+      \endverb
+      \verb{eprint}
+      \verb https://onlinelibrary.wiley.com/doi/pdf/10.1002/for.918
+      \endverb
+      \verb{urlraw}
+      \verb https://onlinelibrary.wiley.com/doi/abs/10.1002/for.918
+      \endverb
+      \verb{url}
+      \verb https://onlinelibrary.wiley.com/doi/abs/10.1002/for.918
+      \endverb
+      \keyw{adaptive exponential smoothing,smooth transition,level shifts,outliers}
+    \endentry
+    \entry{InvestopediaEMA}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=abcdb78a564e00abcb81ee953f22cf04}{%
+           family={Investopedia},
+           familyi={I\bibinitperiod}}}%
+      }
+      \strng{namehash}{abcdb78a564e00abcb81ee953f22cf04}
+      \strng{fullhash}{abcdb78a564e00abcb81ee953f22cf04}
+      \strng{fullhashraw}{abcdb78a564e00abcb81ee953f22cf04}
+      \strng{bibnamehash}{abcdb78a564e00abcb81ee953f22cf04}
+      \strng{authorbibnamehash}{abcdb78a564e00abcb81ee953f22cf04}
+      \strng{authornamehash}{abcdb78a564e00abcb81ee953f22cf04}
+      \strng{authorfullhash}{abcdb78a564e00abcb81ee953f22cf04}
+      \strng{authorfullhashraw}{abcdb78a564e00abcb81ee953f22cf04}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://www.investopedia.com/terms/e/ema.asp}}
+      \field{note}{Accessed: 2024-05-01}
+      \field{title}{Exponential Moving Average (EMA) - Definition}
+      \field{year}{2024}
+    \endentry
+    \entry{7298776}{inproceedings}{}{}
+      \name{author}{4}{}{%
+        {{hash=28c0a8d69bafa2141b0e222c7904615c}{%
+           family={Hsieh},
+           familyi={H\bibinitperiod},
+           given={Pei-Lun},
+           giveni={P\bibinithyphendelim L\bibinitperiod}}}%
+        {{hash=2e999ccc73c7e59592e06040e5e1107b}{%
+           family={Ma},
+           familyi={M\bibinitperiod},
+           given={Chongyang},
+           giveni={C\bibinitperiod}}}%
+        {{hash=350821fb6c095ff95a15b92474587a62}{%
+           family={Yu},
+           familyi={Y\bibinitperiod},
+           given={Jihun},
+           giveni={J\bibinitperiod}}}%
+        {{hash=2620b9afd37cca5b9b7354f67c036d4d}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={Hao},
+           giveni={H\bibinitperiod}}}%
+      }
+      \strng{namehash}{fbae77b542896b647f450348d6eefe9c}
+      \strng{fullhash}{1b14cf1ffcb4e7dcc83413fa1176be49}
+      \strng{fullhashraw}{1b14cf1ffcb4e7dcc83413fa1176be49}
+      \strng{bibnamehash}{1b14cf1ffcb4e7dcc83413fa1176be49}
+      \strng{authorbibnamehash}{1b14cf1ffcb4e7dcc83413fa1176be49}
+      \strng{authornamehash}{fbae77b542896b647f450348d6eefe9c}
+      \strng{authorfullhash}{1b14cf1ffcb4e7dcc83413fa1176be49}
+      \strng{authorfullhashraw}{1b14cf1ffcb4e7dcc83413fa1176be49}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{2015 IEEE Conference on Computer Vision and Pattern Recognition (CVPR)}
+      \field{title}{Unconstrained realtime facial performance capture}
+      \field{year}{2015}
+      \field{pages}{1675\bibrangedash 1683}
+      \range{pages}{9}
+      \verb{doi}
+      \verb 10.1109/CVPR.2015.7298776
+      \endverb
+      \keyw{Face;Tracking;Computational modeling;Adaptation models;Facial features;Shape;Image color analysis}
+    \endentry
+    \entry{arucomarkers}{online}{}{}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labeltitlesource}{title}
       \field{title}{ArUco Markers}
       \field{urlday}{29}
@@ -237,9 +595,9 @@
       \strng{authornamehash}{b6aea1a416c89509a7df1cbb69249cb6}
       \strng{authorfullhash}{b6aea1a416c89509a7df1cbb69249cb6}
       \strng{authorfullhashraw}{b6aea1a416c89509a7df1cbb69249cb6}
-      \field{extraname}{1}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{extraname}{2}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{[Online; accessed 29-April-2024]}
@@ -266,9 +624,9 @@
       \strng{authornamehash}{b6aea1a416c89509a7df1cbb69249cb6}
       \strng{authorfullhash}{b6aea1a416c89509a7df1cbb69249cb6}
       \strng{authorfullhashraw}{b6aea1a416c89509a7df1cbb69249cb6}
-      \field{extraname}{2}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{extraname}{3}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{[Online; accessed 29-April-2024]}
