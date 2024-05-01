@@ -1,4 +1,34 @@
 {"spellright.documentTypes": [
     "latex"
-]
+],
+
+    "latex-workshop.latex.recipes": [
+        {
+            "name": "latexmk (lualatex)",
+            "tools": [
+                "latexmk_lualatex"
+            ]
+        }
+    ],
+    "latex-workshop.latex.tools": [
+        {
+            "name": "latexmk_lualatex",
+            "command": "latexmk",
+            "args": [
+                "-lualatex",
+                "-interaction=nonstopmode",
+                "-synctex=1",
+                "-shell-escape",
+                "%DOC%"
+            ]
+        },
+        {
+            "name": "makeglossaries",
+            "command": "makeglossaries",
+            "args": [
+                "%DOCFILE%"
+            ]
+        }
+    ]
+
 }

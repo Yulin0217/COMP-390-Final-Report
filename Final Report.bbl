@@ -639,6 +639,34 @@
       \endverb
       \keyw{complex variables,exponential smoothing,forecasting,state space models}
     \endentry
+    \entry{UoL_COMP390_2023-24}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=3920f197e7c0faf9673548b734d15e37}{%
+           family={{University of Liverpool}},
+           familyi={U\bibinitperiod}}}%
+      }
+      \strng{namehash}{3920f197e7c0faf9673548b734d15e37}
+      \strng{fullhash}{3920f197e7c0faf9673548b734d15e37}
+      \strng{fullhashraw}{3920f197e7c0faf9673548b734d15e37}
+      \strng{bibnamehash}{3920f197e7c0faf9673548b734d15e37}
+      \strng{authorbibnamehash}{3920f197e7c0faf9673548b734d15e37}
+      \strng{authornamehash}{3920f197e7c0faf9673548b734d15e37}
+      \strng{authorfullhash}{3920f197e7c0faf9673548b734d15e37}
+      \strng{authorfullhashraw}{3920f197e7c0faf9673548b734d15e37}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Accessed: 2023-11-03}
+      \field{title}{COMP390 Honours Year Project 2023-24 Ethical Guidance}
+      \field{year}{2023}
+      \verb{urlraw}
+      \verb https://student.csc.liv.ac.uk/internal/modules/comp390/2023-24/ethics.php
+      \endverb
+      \verb{url}
+      \verb https://student.csc.liv.ac.uk/internal/modules/comp390/2023-24/ethics.php
+      \endverb
+    \endentry
     \entry{arucomarkers}{online}{}{}
       \field{sortinit}{1}
       \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}

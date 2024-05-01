@@ -7,6 +7,7 @@
 \usepackage{graphicx} % Needed for including images
 \usepackage{mdframed} % For creating framed boxes
 \usepackage[backend=biber, style=ieee]{biblatex} % Adding biblatex with IEEE style
+\usepackage{minted}
 
 \addbibresource{Reference.bib} % Specify the bibliography file, here 'references.bib'
 
@@ -71,6 +72,7 @@
 
 
 \begin{document}
+
 \begin{titlepage}
       \centering
 
@@ -184,7 +186,7 @@ This section should contain a concise summary of the document content.
 In this part, I used \gls{opencv}\cite{opencv_library} and SciKit-Surgery Augmented Reality\cite{Thompson_SciKit-Surgery_Compact_Libraries_2020} libraries for image
 processing and  model tracking. \gls{QT}\cite{QtWebsite} is used to design the graphical interface, and also \gls{vtk}\cite{vtkBook}. OpenCV and SciKit-Surgery libraries help me process images
 and track \gls{aruco}\cite{1467495} within video steaming. Qt allows me to create a user interface that ensures  user could more easily change multiple settings, which can enhance the user experience.
-VTK library is the management of overlay and multi-layer video rendering in my project.
+VTK and SciKit-Surgery Augmented Reality library are the management of overlay and multi-layer video rendering in my project.
 An ArUco Marker Generator is also included, which enables the user to generate different ArUco Markers and save them.
 This section will detail the system's design, focusing on System Components and Organization, Data Structures and Algorithms,
 User Interface Design, and Design Notation and Diagrams.
@@ -228,7 +230,7 @@ User Interface Design, and Design Notation and Diagrams.
             This organization simplifies development and testing
             and enables the integration of additional functionalities in the future with minimal disruption to the existing system.
 
-      \item \textbf{Data Structures and Algorithms}
+      \item \textbf{Data Processing and Tracking Algorithms}
             % 详细说明系统所使用的数据结构和算法。
             \begin{enumerate}
                   \item \textbf{Pre-processing for video capture and upload}
@@ -252,7 +254,52 @@ User Interface Design, and Design Notation and Diagrams.
                         Therefore, AES is ultimately used in video rendering systems to respond more directly to real-time changes in video content, reduce visual jitter, and improve the viewing experience.
                         \\
                         To summarize, AES can improve image stability and visual quality, as well as enhance the system's responsiveness to environmental changes. By intelligently adjusting processing parameters, AES helps to ensure high efficiency while also adapting to visual jitter or lighting changes that may be encountered with ArUco marker tracking.
-                      
+                        \paragraph{Code for the AES:}
+                        \begin{minted}[frame=single, linenos=true, fontsize=\footnotesize]{python}
+def adjust_alpha(self, new_transform):
+      """
+      Adjusts the smoothing factor alpha based on the difference 
+      between the new transform and the current transform to 
+      better adapt to recent data changes.
+                                    
+      Parameters:
+      new_transform (float): The new data point used to 
+      update the transform.
+      """
+      if self.transform is not None:
+      # Calculate the absolute difference between the current 
+      # and new transforms
+      error = abs(new_transform - self.transform)
+      # Dynamically adjust alpha based on the error, 
+      # inversely scaling it
+      self.alpha = max(self.min_alpha, min(self.max_alpha, 
+      1 / (1 + error)))
+                        
+def update(self, new_transform):
+      """
+      Updates the current transform with a new data point using
+      adaptive exponential smoothing.
+                                    
+      Parameters:
+      new_transform (float): The new data point to incorporate
+      into the smoothed data.
+                                    
+      Returns:
+      float: The updated transform value.
+      """
+      if self.transform is None:
+      # If no transform has been set yet, initialize it 
+      # with the new transform
+      self.transform = new_transform
+      else:
+      # Adjust alpha based on the new data point
+      self.adjust_alpha(new_transform)
+      # Apply the adjusted alpha to compute 
+      # the new smoothed transform
+      self.transform = self.alpha * new_transform + 
+      (1 - self.alpha) * self.transform
+      return self.transform
+                              \end{minted}
                   \item \textbf{Marker Detection and Tracking}
                         % 详述用于检测和追踪ArUco标记的算法，包括图像分割、模式识别和机器学习技术。
 
@@ -262,21 +309,25 @@ User Interface Design, and Design Notation and Diagrams.
                   \item \textbf{Optimization Techniques}
                         % 如果涉及到性能瓶颈，可以介绍用于优化上述算法的技术，如多线程处理、GPU加速或使用更高效的算法（如快速傅里叶变换代替传统卷积）。
 
-                  \item \textbf{Algorithm Efficiency and Complexity}
+                  \item \textbf{Model Color change}
                         % 分析关键算法的时间和空间复杂度，讨论在不同操作环境（如不同硬件或软件平台）下的性能表现。
+
+                  \item \textbf{ArUco Generator}
+
             \end{enumerate}
 
 
       \item \textbf{User Interface Design}
             \begin{enumerate}
+                  \item \textbf{Main Menu(Overlay and Tracking)}
+
+
+                  \item \textbf{ArUco Generator}
+
+
                   \item \textbf{Screen Mockups, Sketches, and Screenshots}
-                        % 包括界面设计的屏幕模拟图、草图和截图。
 
-                  \item \textbf{OpenCV-Based Real-world Interaction Component}
-                        % 描述该组件如何将模拟整合到AR/VR平台，以及实时视频捕捉与覆盖的技术细节。
 
-                  \item \textbf{ArUco Marker Detection and Model Positioning}
-                        % 讨论如何在视频帧中自动检测ArUco标记，并实现模型在虚拟环境中的精确定位。
             \end{enumerate}
 
 
@@ -285,10 +336,10 @@ User Interface Design, and Design Notation and Diagrams.
                   \item \textbf{Use Case Diagrams}
                         % 描述用例图及其在设计中的应用。
 
-                  \item \textbf{Interaction Diagrams and Class Diagrams}
+                  \item \textbf{Interaction Diagrams}
                         % 介绍交互图和类图的设计和功能。
 
-                  \item \textbf{Pseudocode and Data Flow Diagrams}
+                  \item \textbf{Data Flow Diagrams}
                         % 提供系统关键部分的伪代码及数据流图。
             \end{enumerate}
 \end{enumerate}
@@ -311,7 +362,11 @@ User Interface Design, and Design Notation and Diagrams.
 
 % Project Ethics
 \section{Project Ethics}
-
+I have read and abide by the University’s ethical guidelines\cite{UoL_COMP390_2023-24}. The project did not involve direct interaction with human
+participants during the design, implementation or evaluation phases. An extensive review of the project scope and methodology
+confirmed that no personal data was collected, analyzed or used. In addition, all activities were within the scope of activities
+permitted by our ethical guidelines. It was verified with the project supervisor that no customized activities required separate
+ethical approval. Therefore, there are no other ethical issues involved in this project.
 % Conclusion & Future Work
 \section{Conclusion \& Future Work}
 \subsection{Conclusion}
