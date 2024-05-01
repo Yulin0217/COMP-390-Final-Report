@@ -324,7 +324,7 @@
       \endverb
       \keyw{Timber construction,Digital fabrication,Augmented reality,Assisted fabrication,Tool tracking,Smart tool}
     \endentry
-    \entry{Wang_2021}{article}{}{}
+    \entry{Wang}{article}{}{}
       \name{author}{2}{}{%
         {{hash=eb0f5d04cb7c2d44307313da92ff08bf}{%
            family={Wang},
@@ -564,6 +564,81 @@
       \endverb
       \keyw{Face;Tracking;Computational modeling;Adaptation models;Facial features;Shape;Image color analysis}
     \endentry
+    \entry{ComplexES2018}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=bdff898770186da749cb63755cb1db09}{%
+           family={Vinay},
+           familyi={V\bibinitperiod}}}%
+      }
+      \strng{namehash}{bdff898770186da749cb63755cb1db09}
+      \strng{fullhash}{bdff898770186da749cb63755cb1db09}
+      \strng{fullhashraw}{bdff898770186da749cb63755cb1db09}
+      \strng{bibnamehash}{bdff898770186da749cb63755cb1db09}
+      \strng{authorbibnamehash}{bdff898770186da749cb63755cb1db09}
+      \strng{authornamehash}{bdff898770186da749cb63755cb1db09}
+      \strng{authorfullhash}{bdff898770186da749cb63755cb1db09}
+      \strng{authorfullhashraw}{bdff898770186da749cb63755cb1db09}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://medium.com/@vinay1996/complex-exponential-smoothing-ces-63d1c6ddfc78}}
+      \field{note}{Accessed: 2024-05-01}
+      \field{title}{Complex Exponential Smoothing (CES)}
+      \field{year}{2018}
+    \endentry
+    \entry{Complex}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=09a06cd61628aeb8780b9b24e7884aa3}{%
+           family={Svetunkov},
+           familyi={S\bibinitperiod},
+           given={Ivan},
+           giveni={I\bibinitperiod}}}%
+        {{hash=1ef5c7d50e5aae1dfaf4d280be2a78e9}{%
+           family={Kourentzes},
+           familyi={K\bibinitperiod},
+           given={Nikolaos},
+           giveni={N\bibinitperiod}}}%
+        {{hash=31f25bcde1569e2677174301ec8c2049}{%
+           family={Ord},
+           familyi={O\bibinitperiod},
+           given={John\bibnamedelima Keith},
+           giveni={J\bibinitperiod\bibinitdelim K\bibinitperiod}}}%
+      }
+      \strng{namehash}{4b104476e3ec36ef94de52f31c93357f}
+      \strng{fullhash}{4b104476e3ec36ef94de52f31c93357f}
+      \strng{fullhashraw}{4b104476e3ec36ef94de52f31c93357f}
+      \strng{bibnamehash}{4b104476e3ec36ef94de52f31c93357f}
+      \strng{authorbibnamehash}{4b104476e3ec36ef94de52f31c93357f}
+      \strng{authornamehash}{4b104476e3ec36ef94de52f31c93357f}
+      \strng{authorfullhash}{4b104476e3ec36ef94de52f31c93357f}
+      \strng{authorfullhashraw}{4b104476e3ec36ef94de52f31c93357f}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Abstract Exponential smoothing has been one of the most popular forecasting methods used to support various decisions in organizations, in activities such as inventory management, scheduling, revenue management, and other areas. Although its relative simplicity and transparency have made it very attractive for research and practice, identifying the underlying trend remains challenging with significant impact on the resulting accuracy. This has resulted in the development of various modifications of trend models, introducing a model selection problem. With the aim of addressing this problem, we propose the complex exponential smoothing (CES), based on the theory of functions of complex variables. The basic CES approach involves only two parameters and does not require a model selection procedure. Despite these simplifications, CES proves to be competitive with, or even superior to existing methods. We show that CES has several advantages over conventional exponential smoothing models: it can model and forecast both stationary and non-stationary processes, and CES can capture both level and trend cases, as defined in the conventional exponential smoothing classification. CES is evaluated on several forecasting competition datasets, demonstrating better performance than established benchmarks. We conclude that CES has desirable features for time series modeling and opens new promising avenues for research.}
+      \field{journaltitle}{Naval Research Logistics (NRL)}
+      \field{number}{8}
+      \field{title}{Complex exponential smoothing}
+      \field{volume}{69}
+      \field{year}{2022}
+      \field{pages}{1108\bibrangedash 1123}
+      \range{pages}{16}
+      \verb{doi}
+      \verb https://doi.org/10.1002/nav.22074
+      \endverb
+      \verb{eprint}
+      \verb https://onlinelibrary.wiley.com/doi/pdf/10.1002/nav.22074
+      \endverb
+      \verb{urlraw}
+      \verb https://onlinelibrary.wiley.com/doi/abs/10.1002/nav.22074
+      \endverb
+      \verb{url}
+      \verb https://onlinelibrary.wiley.com/doi/abs/10.1002/nav.22074
+      \endverb
+      \keyw{complex variables,exponential smoothing,forecasting,state space models}
+    \endentry
     \entry{arucomarkers}{online}{}{}
       \field{sortinit}{1}
       \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
@@ -596,8 +671,8 @@
       \strng{authorfullhash}{b6aea1a416c89509a7df1cbb69249cb6}
       \strng{authorfullhashraw}{b6aea1a416c89509a7df1cbb69249cb6}
       \field{extraname}{2}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{[Online; accessed 29-April-2024]}
@@ -625,8 +700,8 @@
       \strng{authorfullhash}{b6aea1a416c89509a7df1cbb69249cb6}
       \strng{authorfullhashraw}{b6aea1a416c89509a7df1cbb69249cb6}
       \field{extraname}{3}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{[Online; accessed 29-April-2024]}
