@@ -250,7 +250,39 @@ User Interface Design, and Design Notation and Diagrams.
             This organization simplifies development and testing
             and enables the integration of additional functionalities in the future with minimal disruption to the existing system.
 
-      \item \textbf{Data Processing and Tracking Algorithms}
+
+
+      \item \textbf{User Interface Design}
+            \begin{enumerate}
+                  \item \textbf{Main Menu(Overlay and Tracking)}
+
+
+                  \item \textbf{ArUco Generator}
+
+
+                  \item \textbf{Screen Mockups, Sketches, and Screenshots}
+
+
+            \end{enumerate}
+
+
+      \item \textbf{Design Notation and Diagrams}
+            \begin{enumerate}
+                  \item \textbf{Use Case Diagrams}
+                        % 描述用例图及其在设计中的应用。
+
+                  \item \textbf{Interaction Diagrams}
+                        % 介绍交互图和类图的设计和功能。
+
+                  \item \textbf{Data Flow Diagrams}
+                        % 提供系统关键部分的伪代码及数据流图。
+            \end{enumerate}
+\end{enumerate}
+
+\subsubsection{Implementation}
+\begin{enumerate}
+
+      \item \textbf{Backend Implementation}
             % 详细说明系统所使用的数据结构和算法。
             \begin{enumerate}
                   \item \textbf{Pre-processing for video capture and upload}
@@ -352,37 +384,9 @@ class SmoothedTransform:
                   \item \textbf{ArUco Generator}
 
             \end{enumerate}
-
-
-      \item \textbf{User Interface Design}
-            \begin{enumerate}
-                  \item \textbf{Main Menu(Overlay and Tracking)}
-
-
-                  \item \textbf{ArUco Generator}
-
-
-                  \item \textbf{Screen Mockups, Sketches, and Screenshots}
-
-
-            \end{enumerate}
-
-
-      \item \textbf{Design Notation and Diagrams}
-            \begin{enumerate}
-                  \item \textbf{Use Case Diagrams}
-                        % 描述用例图及其在设计中的应用。
-
-                  \item \textbf{Interaction Diagrams}
-                        % 介绍交互图和类图的设计和功能。
-
-                  \item \textbf{Data Flow Diagrams}
-                        % 提供系统关键部分的伪代码及数据流图。
-            \end{enumerate}
+            \item \textbf{Frontend Implementation}
+            % 详细说明系统的用户界面设计和实现。
 \end{enumerate}
-
-\subsubsection{Implementation}
-% 在这里描述 Part1: Real-world Model Interaction and Tracking 部分的具体实现细节。
 
 \subsection{Part2: Endovascular Intervention Simulation}
 % 在这里详细介绍关于“Endovascular Intervention Simulation”的设计和实现。
@@ -411,7 +415,7 @@ ethical approval. Therefore, there are no other ethical issues involved in this 
 \subsection{Future Work}
 
 \section{BCS Criteria \& Self-Reflection}
-This section will be used to state that my project met the six outcomes expected by the Chartered Institute of Information Technology\cite{BCS2020}. 
+This section will be used to state that my project met the six outcomes expected by the Chartered Institute of Information Technology\cite{BCS2020}.
 I will focus on illustrating an ability to self-manage a significant piece of work and the critical self-evaluation component.
 \subsection{An Ability to Apply Practical and Analytical Skills}
 The project has demonstrated the practical and analytical skills I have learnt during my time at university. Throughout the degree I have gained a deeper understanding of programming languages such as Python, C\# , Java and C\+\+ and have gradually begun to experiment with them. The theoretical and practical foundations of these languages have been key in enabling me to achieve the complex functionality required for development and realisation projects. For example, in the Part1: Real-world Model Interaction and Tracking section of my project, which was written entirely in Python, there was a high level of theoretical and practical demand for the Python language. In my Part2: Endovascular Intervention Simulation, I needed to acquire and apply knowledge such as the application of Unity and the development and application of the C\# language that I had learnt in my degree programme. These technical skills were acquired and refined through a careful learning process and were directly applied to the project, which dealt with the development of a real model interaction and tracking system and the development of a Unity-based Endovascular Intervention Simulation.
@@ -431,7 +435,7 @@ Overall, this project clearly demonstrated my ability to apply the analytical an
 \subsection{Innovation and/or Creativity}
 There are some innovations in the field of medical simulation technology in my project, especially Part2: Endovascular Intervention Simulation, The aim of Part2 is to create one of the few open source endovascular intervention simulation projects in the field to make training tools more accessible to the medical community. The project combines traditional surgical simulation with augmented reality/virtual reality technology to make surgical simulation procedures visual and easy to practice. Compared to traditional simulations that are limited to 2D screen displays, this approach uses virtual reality to present surgical simulations in 3D space, which not only enhances the realism of the simulation and interactions, but also allows users to experience and understand the steps involved in the surgery more clearly by allowing them to interact with the simulated environment in a more intuitive and natural way.
 \\\\
-The project uses an open source framework (\gls{mrtk}) and the integration of Augmented Reality/Virtual Reality (AR/VR) technology to provide a practical and innovative application for educational tools in the medical field. 
+The project uses an open source framework (\gls{mrtk}) and the integration of Augmented Reality/Virtual Reality (AR/VR) technology to provide a practical and innovative application for educational tools in the medical field.
 
 
 \subsection{Synthesis of Information, Ideas, and Practices}
@@ -468,8 +472,15 @@ In addition, I had problems with teamwork when using GitHub for project manageme
 \\\\
 Overall, this project demonstrated my ability to self-manage a significant piece of work, but it also demonstrated my shortcomings in some of these areas. This project gave me a great opportunity to optimise my ability to manage projects, such as time planning skills and communication with team members, as well as making me realise what I need to learn and improve in project management.
 \subsection{Critical Self-Evaluation of the Process}
-% Provide a critical self-evaluation of the process involved in your project.
-
+In my projects, Part1: Real-world Model Interaction and Tracking and Part2: Endovascular Intervention Simulation, although both have been accomplished, there have been many challenges and difficulties in the development process, and so far there have been some shortcomings. Through in-depth critical self-evaluation, I was able to comprehensively analyse the successes and shortcomings of the project, as well as gain experience and lessons learned.
+\\\\
+First of all, the functionality of my project Part1 is relatively complete, which can effectively implement real-time model overlay and ArUco marker tracking, and complete the basic function of my plan. At the same time, I also added extra features such as ArUco icon parameter tuning and ArUco icon generator. However, there are some technical limitations in this part, mainly in platform compatibility. Currently, the system only runs on the Linux platform and has not yet implemented support for other operating systems such as Windows or macOS, nor has it been able to complete deployment on VR/AR devices such as HoloLens. This limitation may have impacted the project's widespread adoption. In this regard, I believe that my Part1 met the requirements of my plan, but still needs to be improved and extended in terms of compatibility.
+\\\\
+For Part2, the development process encountered significant technical challenges, especially during the stages of designing the Rope and developing the method of interaction between the Rope and the vessel wall. These technical issues led to delays in the development progress and the final product implemented only the most basic functionality and did not achieve the level of Rope-vessel wall interaction required at the beginning of the design. This difficulty stemmed from my lack of skill in using development tools such as Unity and Blender, and my underestimation of the complexity of the interaction logic of physical simulation and model interaction. Nonetheless, the development process has greatly strengthened my technical skills in 3D modelling, Unity development and physics simulation simulation.
+\\\\
+By critically reflecting on and analysing these issues, I realised that I should plan better in the upfront technical assessment and time management phases when undertaking future project management. This includes analysing in detail the technical difficulty and time required for each development phase during the project planning stage, as well as being prepared in advance to deal with unforeseen circumstances as they occur. In addition, it is also important to communicate more with team members and supervisors at the technical level during the project to accelerate the speed of breaking through the development challenges.
+\\\\
+Overall, the development process of this project was full of difficulties and challenges, but it also strengthened my technical level, project management skills and the ability to solve unknown problems. Through this project, I was able to improve my professional skills in a variety of different technical areas, as well as develop my ability to effectively self-manage and work in a team on projects with complex environments. Through this critical self-assessment and reflection, I was able to better identify and improve on my shortcomings in my work and prepare myself for the greater challenges I may face in the future.
 
 % References (The bibliography will be printed here)
 \printbibliography
