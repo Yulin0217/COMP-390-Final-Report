@@ -1,0 +1,62 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{class} \PYG{n+nc}{SmoothedTransform}\PYG{p}{:}
+    \PYG{k}{def} \PYG{n+nf+fm}{\PYGZus{}\PYGZus{}init\PYGZus{}\PYGZus{}}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{p}{,} \PYG{n}{alpha}\PYG{p}{,} \PYG{n}{min\PYGZus{}alpha}\PYG{o}{=}\PYG{l+m+mf}{0.01}\PYG{p}{,} \PYG{n}{max\PYGZus{}alpha}\PYG{o}{=}\PYG{l+m+mf}{0.9}\PYG{p}{):}
+\PYG{+w}{        }\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s+sd}{        Initializes the adaptive smoothing transform class.}
+
+\PYG{l+s+sd}{        Parameters:}
+\PYG{l+s+sd}{        alpha (float): The initial smoothing factor.}
+\PYG{l+s+sd}{        min\PYGZus{}alpha (float): The minimum allowable value for alpha}
+\PYG{l+s+sd}{        to prevent it from becoming too low.}
+\PYG{l+s+sd}{        max\PYGZus{}alpha (float): The maximum allowable value for alpha}
+\PYG{l+s+sd}{        to prevent it from becoming too high.}
+\PYG{l+s+sd}{        \PYGZdq{}\PYGZdq{}\PYGZdq{}}
+        \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{alpha} \PYG{o}{=} \PYG{n}{alpha}
+        \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{min\PYGZus{}alpha} \PYG{o}{=} \PYG{n}{min\PYGZus{}alpha}
+        \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{max\PYGZus{}alpha} \PYG{o}{=} \PYG{n}{max\PYGZus{}alpha}
+        \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{transform} \PYG{o}{=} \PYG{k+kc}{None}
+      \PYG{k}{def} \PYG{n+nf}{adjust\PYGZus{}alpha}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{p}{,} \PYG{n}{new\PYGZus{}transform}\PYG{p}{):}
+\PYG{+w}{            }\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s+sd}{            Adjusts the smoothing factor alpha based on the}
+\PYG{l+s+sd}{            difference between the new transform and the}
+\PYG{l+s+sd}{            current transform to}
+\PYG{l+s+sd}{            better adapt to recent data changes.}
+
+\PYG{l+s+sd}{            Parameters:}
+\PYG{l+s+sd}{            new\PYGZus{}transform (float): The new data point used to}
+\PYG{l+s+sd}{            update the transform.}
+\PYG{l+s+sd}{            \PYGZdq{}\PYGZdq{}\PYGZdq{}}
+            \PYG{k}{if} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{transform} \PYG{o+ow}{is} \PYG{o+ow}{not} \PYG{k+kc}{None}\PYG{p}{:}
+            \PYG{c+c1}{\PYGZsh{} Calculate the absolute difference between the current}
+            \PYG{c+c1}{\PYGZsh{} and new transforms}
+            \PYG{n}{error} \PYG{o}{=} \PYG{n+nb}{abs}\PYG{p}{(}\PYG{n}{new\PYGZus{}transform} \PYG{o}{\PYGZhy{}} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{transform}\PYG{p}{)}
+            \PYG{c+c1}{\PYGZsh{} Dynamically adjust alpha based on the error,}
+            \PYG{c+c1}{\PYGZsh{} inversely scaling it}
+            \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{alpha} \PYG{o}{=} \PYG{n+nb}{max}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{min\PYGZus{}alpha}\PYG{p}{,} \PYG{n+nb}{min}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{max\PYGZus{}alpha}\PYG{p}{,}
+            \PYG{l+m+mi}{1} \PYG{o}{/} \PYG{p}{(}\PYG{l+m+mi}{1} \PYG{o}{+} \PYG{n}{error}\PYG{p}{)))}
+
+      \PYG{k}{def} \PYG{n+nf}{update}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{p}{,} \PYG{n}{new\PYGZus{}transform}\PYG{p}{):}
+\PYG{+w}{            }\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s+sd}{            Updates the current transform with a new data point using}
+\PYG{l+s+sd}{            adaptive exponential smoothing.}
+
+\PYG{l+s+sd}{            Parameters:}
+\PYG{l+s+sd}{            new\PYGZus{}transform (float): The new data point to incorporate}
+\PYG{l+s+sd}{            into the smoothed data.}
+
+\PYG{l+s+sd}{            Returns:}
+\PYG{l+s+sd}{            float: The updated transform value.}
+\PYG{l+s+sd}{            \PYGZdq{}\PYGZdq{}\PYGZdq{}}
+            \PYG{k}{if} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{transform} \PYG{o+ow}{is} \PYG{k+kc}{None}\PYG{p}{:}
+            \PYG{c+c1}{\PYGZsh{} If no transform has been set yet, initialize it}
+            \PYG{c+c1}{\PYGZsh{} with the new transform}
+            \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{transform} \PYG{o}{=} \PYG{n}{new\PYGZus{}transform}
+            \PYG{k}{else}\PYG{p}{:}
+            \PYG{c+c1}{\PYGZsh{} Adjust alpha based on the new data point}
+            \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{adjust\PYGZus{}alpha}\PYG{p}{(}\PYG{n}{new\PYGZus{}transform}\PYG{p}{)}
+            \PYG{c+c1}{\PYGZsh{} Apply the adjusted alpha to compute}
+            \PYG{c+c1}{\PYGZsh{} the new smoothed transform}
+            \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{transform} \PYG{o}{=} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{alpha} \PYG{o}{*} \PYG{n}{new\PYGZus{}transform} \PYG{o}{+}
+            \PYG{p}{(}\PYG{l+m+mi}{1} \PYG{o}{\PYGZhy{}} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{alpha}\PYG{p}{)} \PYG{o}{*} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{transform}
+            \PYG{k}{return} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{transform}
+\end{Verbatim}

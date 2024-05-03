@@ -771,7 +771,7 @@
       \verb https://en.wikipedia.org/w/index.php?title=Blender_(software)&oldid=1220122561
       \endverb
     \endentry
-    \entry{qt}{misc}{}{}
+    \entry{git}{misc}{}{}
       \name{author}{1}{}{%
         {{hash=b6aea1a416c89509a7df1cbb69249cb6}{%
            family={{Wikipedia contributors}},
@@ -786,6 +786,87 @@
       \strng{authorfullhash}{b6aea1a416c89509a7df1cbb69249cb6}
       \strng{authorfullhashraw}{b6aea1a416c89509a7df1cbb69249cb6}
       \field{extraname}{3}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{[Online; accessed 3-May-2024]}
+      \field{title}{GitHub --- {Wikipedia}{,} The Free Encyclopedia}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://en.wikipedia.org/w/index.php?title=GitHub&oldid=1221852262
+      \endverb
+      \verb{url}
+      \verb https://en.wikipedia.org/w/index.php?title=GitHub&oldid=1221852262
+      \endverb
+    \endentry
+    \entry{holo1}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=b6aea1a416c89509a7df1cbb69249cb6}{%
+           family={{Wikipedia contributors}},
+           familyi={W\bibinitperiod}}}%
+      }
+      \strng{namehash}{b6aea1a416c89509a7df1cbb69249cb6}
+      \strng{fullhash}{b6aea1a416c89509a7df1cbb69249cb6}
+      \strng{fullhashraw}{b6aea1a416c89509a7df1cbb69249cb6}
+      \strng{bibnamehash}{b6aea1a416c89509a7df1cbb69249cb6}
+      \strng{authorbibnamehash}{b6aea1a416c89509a7df1cbb69249cb6}
+      \strng{authornamehash}{b6aea1a416c89509a7df1cbb69249cb6}
+      \strng{authorfullhash}{b6aea1a416c89509a7df1cbb69249cb6}
+      \strng{authorfullhashraw}{b6aea1a416c89509a7df1cbb69249cb6}
+      \field{extraname}{4}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{[Online; accessed 3-May-2024]}
+      \field{title}{Microsoft HoloLens --- {Wikipedia}{,} The Free Encyclopedia}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://en.wikipedia.org/w/index.php?title=Microsoft_HoloLens&oldid=1221749039
+      \endverb
+      \verb{url}
+      \verb https://en.wikipedia.org/w/index.php?title=Microsoft_HoloLens&oldid=1221749039
+      \endverb
+    \endentry
+    \entry{holo2}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=140864078aeca1c7c35b4beb33c53c34}{%
+           family={Microsoft},
+           familyi={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{140864078aeca1c7c35b4beb33c53c34}
+      \strng{fullhash}{140864078aeca1c7c35b4beb33c53c34}
+      \strng{fullhashraw}{140864078aeca1c7c35b4beb33c53c34}
+      \strng{bibnamehash}{140864078aeca1c7c35b4beb33c53c34}
+      \strng{authorbibnamehash}{140864078aeca1c7c35b4beb33c53c34}
+      \strng{authornamehash}{140864078aeca1c7c35b4beb33c53c34}
+      \strng{authorfullhash}{140864078aeca1c7c35b4beb33c53c34}
+      \strng{authorfullhashraw}{140864078aeca1c7c35b4beb33c53c34}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://www.microsoft.com/en-us/hololens}}
+      \field{note}{Accessed: 2024-05-01}
+      \field{title}{Microsoft HoloLens}
+      \field{year}{2024}
+    \endentry
+    \entry{qt}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=b6aea1a416c89509a7df1cbb69249cb6}{%
+           family={{Wikipedia contributors}},
+           familyi={W\bibinitperiod}}}%
+      }
+      \strng{namehash}{b6aea1a416c89509a7df1cbb69249cb6}
+      \strng{fullhash}{b6aea1a416c89509a7df1cbb69249cb6}
+      \strng{fullhashraw}{b6aea1a416c89509a7df1cbb69249cb6}
+      \strng{bibnamehash}{b6aea1a416c89509a7df1cbb69249cb6}
+      \strng{authorbibnamehash}{b6aea1a416c89509a7df1cbb69249cb6}
+      \strng{authornamehash}{b6aea1a416c89509a7df1cbb69249cb6}
+      \strng{authorfullhash}{b6aea1a416c89509a7df1cbb69249cb6}
+      \strng{authorfullhashraw}{b6aea1a416c89509a7df1cbb69249cb6}
+      \field{extraname}{5}
       \field{sortinit}{2}
       \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
@@ -814,7 +895,7 @@
       \strng{authornamehash}{b6aea1a416c89509a7df1cbb69249cb6}
       \strng{authorfullhash}{b6aea1a416c89509a7df1cbb69249cb6}
       \strng{authorfullhashraw}{b6aea1a416c89509a7df1cbb69249cb6}
-      \field{extraname}{4}
+      \field{extraname}{6}
       \field{sortinit}{2}
       \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}

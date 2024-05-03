@@ -67,6 +67,15 @@
       description={Blender is a free and open-source 3D computer graphics software tool set used for creating animated films, visual effects, art, 3D-printed models, motion graphics, interactive 3D applications, virtual reality, and, formerly, video games. Blender's features include 3D modelling, UV mapping, texturing, digital drawing, raster graphics editing, rigging and skinning, fluid and smoke simulation, particle simulation, soft body simulation, sculpting, animation, match moving, rendering, motion graphics, video editing, and compositing\cite{Blender2024,blender}.}
 }
 
+\newglossaryentry{holo}{
+      name=Microsoft Hololens,
+      description={Microsoft HoloLens is an augmented reality (AR)/mixed reality (MR) headset developed and manufactured by Microsoft. HoloLens runs the Windows Mixed Reality platform under the Windows 10 operating system. Some of the positional tracking technology used in HoloLens can trace its lineage to the Microsoft Kinect, an accessory for Microsoft's Xbox 360 and Xbox One game consoles that was introduced in 2010\cite{holo1,holo2}}
+}
+
+\newglossaryentry{git}{
+      name=GitHub,
+      description={GitHub is a developer platform that allows developers to create, store, manage and share their code. It uses Git software, providing the distributed version control of Git plus access control, bug tracking, software feature requests, task management, continuous integration, and wikis for every project. Headquartered in California, it has been a subsidiary of Microsoft since 2018. It is commonly used to host open source software development projects. As of January 2023, GitHub reported having over 100 million developers and more than 420 million repositories, including at least 28 million public repositories. It is the world's largest source code host as of June 2023.\cite{git}}
+}
 
 % 定义一个缩写词
 \newabbreviation{aes}{AES}{
@@ -267,49 +276,66 @@ User Interface Design, and Design Notation and Diagrams.
                         To summarize, AES can improve image stability and visual quality, as well as enhance the system's responsiveness to environmental changes. By intelligently adjusting processing parameters, AES helps to ensure high efficiency while also adapting to visual jitter or lighting changes that may be encountered with ArUco marker tracking.
                         \paragraph{Code for the AES:}
                         \begin{minted}[frame=single, linenos=true, fontsize=\footnotesize]{python}
-def adjust_alpha(self, new_transform):
-      """
-      Adjusts the smoothing factor alpha based on the difference 
-      between the new transform and the current transform to 
-      better adapt to recent data changes.
-                                    
-      Parameters:
-      new_transform (float): The new data point used to 
-      update the transform.
-      """
-      if self.transform is not None:
-      # Calculate the absolute difference between the current 
-      # and new transforms
-      error = abs(new_transform - self.transform)
-      # Dynamically adjust alpha based on the error, 
-      # inversely scaling it
-      self.alpha = max(self.min_alpha, min(self.max_alpha, 
-      1 / (1 + error)))
-                        
-def update(self, new_transform):
-      """
-      Updates the current transform with a new data point using
-      adaptive exponential smoothing.
-                                    
-      Parameters:
-      new_transform (float): The new data point to incorporate
-      into the smoothed data.
-                                    
-      Returns:
-      float: The updated transform value.
-      """
-      if self.transform is None:
-      # If no transform has been set yet, initialize it 
-      # with the new transform
-      self.transform = new_transform
-      else:
-      # Adjust alpha based on the new data point
-      self.adjust_alpha(new_transform)
-      # Apply the adjusted alpha to compute 
-      # the new smoothed transform
-      self.transform = self.alpha * new_transform + 
-      (1 - self.alpha) * self.transform
-      return self.transform
+class SmoothedTransform:
+    def __init__(self, alpha, min_alpha=0.01, max_alpha=0.9):
+        """
+        Initializes the adaptive smoothing transform class.
+        
+        Parameters:
+        alpha (float): The initial smoothing factor.
+        min_alpha (float): The minimum allowable value for alpha 
+        to prevent it from becoming too low.
+        max_alpha (float): The maximum allowable value for alpha 
+        to prevent it from becoming too high.
+        """
+        self.alpha = alpha
+        self.min_alpha = min_alpha
+        self.max_alpha = max_alpha
+        self.transform = None
+      def adjust_alpha(self, new_transform):
+            """
+            Adjusts the smoothing factor alpha based on the 
+            difference between the new transform and the 
+            current transform to 
+            better adapt to recent data changes.
+                                          
+            Parameters:
+            new_transform (float): The new data point used to 
+            update the transform.
+            """
+            if self.transform is not None:
+            # Calculate the absolute difference between the current 
+            # and new transforms
+            error = abs(new_transform - self.transform)
+            # Dynamically adjust alpha based on the error, 
+            # inversely scaling it
+            self.alpha = max(self.min_alpha, min(self.max_alpha, 
+            1 / (1 + error)))
+                              
+      def update(self, new_transform):
+            """
+            Updates the current transform with a new data point using
+            adaptive exponential smoothing.
+                                          
+            Parameters:
+            new_transform (float): The new data point to incorporate
+            into the smoothed data.
+                                          
+            Returns:
+            float: The updated transform value.
+            """
+            if self.transform is None:
+            # If no transform has been set yet, initialize it 
+            # with the new transform
+            self.transform = new_transform
+            else:
+            # Adjust alpha based on the new data point
+            self.adjust_alpha(new_transform)
+            # Apply the adjusted alpha to compute 
+            # the new smoothed transform
+            self.transform = self.alpha * new_transform + 
+            (1 - self.alpha) * self.transform
+            return self.transform
                               \end{minted}
                   \item \textbf{Marker Detection and Tracking}
                         % 详述用于检测和追踪ArUco标记的算法，包括图像分割、模式识别和机器学习技术。
@@ -405,7 +431,7 @@ Overall, this project clearly demonstrated my ability to apply the analytical an
 \subsection{Innovation and/or Creativity}
 There are some innovations in the field of medical simulation technology in my project, especially Part2: Endovascular Intervention Simulation, The aim of Part2 is to create one of the few open source endovascular intervention simulation projects in the field to make training tools more accessible to the medical community. The project combines traditional surgical simulation with augmented reality/virtual reality technology to make surgical simulation procedures visual and easy to practice. Compared to traditional simulations that are limited to 2D screen displays, this approach uses virtual reality to present surgical simulations in 3D space, which not only enhances the realism of the simulation and interactions, but also allows users to experience and understand the steps involved in the surgery more clearly by allowing them to interact with the simulated environment in a more intuitive and natural way.
 \\\\
-The project uses an open source framework (Microsoft MRTK) and the integration of Augmented Reality/Virtual Reality (AR/VR) technology to provide a practical and innovative application for educational tools in the medical field. 
+The project uses an open source framework (\gls{mrtk}) and the integration of Augmented Reality/Virtual Reality (AR/VR) technology to provide a practical and innovative application for educational tools in the medical field. 
 
 
 \subsection{Synthesis of Information, Ideas, and Practices}
@@ -413,7 +439,7 @@ This project integrates development tools and theoretical principles from differ
 \\\\
 In the first part of the project, Real-world Model Interaction and Tracking, open source development tools such as OpenCV, VTK and SciKit-Surgery were used. The use of these powerful tools allows me to design user-friendly graphical interfaces or to enhance the model rendering capabilities and real-world model tracking capabilities of my application. OpenCV provides a rich set of image processing tools to help me perform complex image processing and tracking, while VTK and SciKit-Surgery provide powerful tools for medical impacts, such as multilayer image rendering and overlays. This can help me combine tracking capabilities with augmented reality to create a more interactive virtual reality system for users. This section combines knowledge, tools and ideas from various fields to create a high quality solution.
 \\\\
-Part 2: Endovascular Intervention Simulation Developing an application on HoloLens using \gls{mrtk} translates the theoretical knowledge I have learnt in my school course such as C\# and Unity development into a practical solution. The development utilised model modification and knowledge related to Unity development, C\# development, etc. to transform Endovascular Intervention Simulation, which is traditionally limited to a flat display, into a virtual reality simulation with immersive, interactive features. This part of the development demonstrates how AR application development techniques and Unity development can be combined to provide a virtual reality surgical simulation with multiple functionalities.
+Part 2: Endovascular Intervention Simulation Developing an application on \gls{holo} using \gls{mrtk} translates the theoretical knowledge I have learnt in my school course such as C\# and Unity development into a practical solution. The development utilised model modification and knowledge related to Unity development, C\# development, etc. to transform Endovascular Intervention Simulation, which is traditionally limited to a flat display, into a virtual reality simulation with immersive, interactive features. This part of the development demonstrates how AR application development techniques and Unity development can be combined to provide a virtual reality surgical simulation with multiple functionalities.
 \\\\
 Both parts of the project exemplify how technical and theoretical knowledge from the fields of computer vision, artificial intelligence and software development can be applied to create effective and innovative medical training tools.
 \subsection{Meeting a Real Need in a Wider Context}
@@ -421,13 +447,26 @@ Both parts of the project, Part1: Real-world Model Interaction and Tracking and 
 \\\\
 For Part1: Real-world Model Interaction and Trac, current market systems usually lack user-friendly graphical interfaces, and features such as model colour, selection of different ArUco markers, and resizing are lacking or incomplete, which can cause some degree of difficulty for users. For Part1 the project adds a graphical interface and provides a variety of modifiable parameters to optimise these shortcomings, making the software less difficult to use and better adapted to the needs of a wide range of scenarios.
 \\\\
-Part2 considers the lack of open source endovascular intervention simulation in the market and the fact that most existing simulation tools are limited to 2D planar presentation and cannot meet the complex 3D visual and operational needs. The aim is to develop an open source platform that supports immersive 3D simulation, AR/VR and other functions. The system can support 3D simulation in AR/VR (deployed in Microsoft Hololens), and by lowering the barrier to use through more intuitive and simple controls, it can be used in the future to allow healthcare professionals or non-professionals alike to experience or learn surgical skills. This simulation tool can not only be used for professional training, but also meets the need for telemedicine services that can provide remote diagnosis and treatment in the future.
+Part2 considers the lack of open source endovascular intervention simulation in the market and the fact that most existing simulation tools are limited to 2D planar presentation and cannot meet the complex 3D visual and operational needs. The aim is to develop an open source platform that supports immersive 3D simulation, AR/VR and other functions. The system can support 3D simulation in AR/VR (deployed in Microsoft \gls{holo}), and by lowering the barrier to use through more intuitive and simple controls, it can be used in the future to allow healthcare professionals or non-professionals alike to experience or learn surgical skills. This simulation tool can not only be used for professional training, but also meets the need for telemedicine services that can provide remote diagnosis and treatment in the future.
 \\\\
 Overall, it is planned that these two components will be combined in future work, which can meet the needs for simulation of surgical training simulation for simplicity, remote operation, and 3D highly experiential simulation. In the future it may be possible to expand into more areas to meet a wider range of needs, such as providing an immersive experience of Endovascular Intervention Simulation for lay people.
 
 \subsection{An Ability to Self-Manage a Significant Piece of Work}
-% Reflect on your ability to self-manage the significant piece of work that is your project.
-
+In my project I demonstrated the ability to self-manage a significant piece of work, but it was partially flawed. The project consisted of two widely differing parts, which added to the difficulty of managing the project as a whole, and in order to keep both of the major parts of the project accurately planned and executed, I used a variety of tools and methods to ensure that the project ran smoothly.
+\\\\
+Firstly, I used a number of time management tools to map out the timeline of the project, including key milestones, time required, and deadlines for each progress module. I created some Gantt charts and schedules to help me monitor the progress of the project and try my best to make sure that the tasks in each phase are completed on time. In this way I could get a clear picture of the overall progress of the project and adjust the plan as much as possible in time to cope with possible delays. However, as this was my second time working on a larger volume project (the last time was COMP208 Group Project), I was not able to be very perfect in creating the schedule and Gantt chart, and some mistakes were made.
+\\\\
+Secondly, in terms of project management, I used GitHub to maintain version control of the project and writing between team members. I used \gls{git} to effectively track code updates and backups, as well as to enable team members to view the latest progress of the project in real time and provide feedback. GitHub's version control and backup features have many times saved errors caused by mistakes, effectively avoiding many accidents. Using this open source platform has helped me to manage a major task and increase the efficiency of multi-person collaboration.
+\\\\
+In addition, in order to control the development progress and quality, I also hold weekly progress meetings with my team members and supervisor to report the progress of this week's work and discuss and plan the next work. In these meetings, I can get sufficient feedback to help me modify and optimise my previous work, and make reasonable planning and arrangement for the next work. This regular reporting and discussion has ensured that the project has developed according to the set objectives.
+\\\\
+I also focus on stage-by-stage problem analysis and risk management during project implementation. Whenever the project progresses to a certain stage, I will review the previous work, check and improve any possible problems in the completed work, and make sure that the previous work is accurate before proceeding to the next stage1. This is a good way to ensure that I make fewer mistakes when managing a large volume of work.
+\\\\
+Whilst I have adopted a variety of methods during the project management process to ensure that the project is executed efficiently and to a high quality as planned, I still have some shortcomings in my ability to self-manage a significant piece of work. For example, although I produced a Gantt chart and schedule to monitor the progress of the project, at the beginning of the project I did not properly consider the time required for some parts and the difficulties I may have encountered, for example, I encountered great difficulties in carrying out the initial design and import of the Rope in Part2: Endovascular Intervention Simulation, etc., and the rate of progress was not as fast as expected. This resulted in the project progressing at a much slower pace than expected and led to the project being put on hold for some time. In addition, although we had weekly meetings, some of them were of minimal effect. These meetings usually took place when the project was experiencing some major difficulties, and in these meetings the solutions to the problems and the planning for the next phase of the project progress were not discussed very effectively.
+\\\\
+In addition, I had problems with teamwork when using GitHub for project management. Poor documentation, different operating systems used by each member, conflicting versions of various software packages, and GitHub's file size limitations for uploading files caused many difficulties for team members when sharing through GitHub.
+\\\\
+Overall, this project demonstrated my ability to self-manage a significant piece of work, but it also demonstrated my shortcomings in some of these areas. This project gave me a great opportunity to optimise my ability to manage projects, such as time planning skills and communication with team members, as well as making me realise what I need to learn and improve in project management.
 \subsection{Critical Self-Evaluation of the Process}
 % Provide a critical self-evaluation of the process involved in your project.
 
