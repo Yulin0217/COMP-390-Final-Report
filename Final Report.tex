@@ -253,16 +253,100 @@ User Interface Design, and Design Notation and Diagrams.
 
 
       \item \textbf{User Interface Design}
+            \\
+            In this section, I will show the user interface design of the two main applications of my Part1. Both applications use the Python-based Qt package for user GUI design.
+            I will also provide a brief description of the Main menu and the ArUco Marker Generator interface.
+            Screenshots of the main layout and main interface will be included in the (a) Main Menu (Overlay and Tracking) and (b) ArUco Generator sections, and screenshots of settings and functionality will be listed separately in the (c) Screen Mockups, Sketches, and Screenshots section.
             \begin{enumerate}
                   \item \textbf{Main Menu(Overlay and Tracking)}
+                        % 描述主菜单的设计和功能。
+                        \begin{figure}[H]
+                              \centering
+                              \includegraphics[width=1.2\textwidth]{design_overlay.jpg}
+                              \caption{Design of Overlay and Tracking Main Menu}
+                        \end{figure}
 
+                        \begin{figure}[H]
+                              \centering
+                              \includegraphics[width=0.4\textwidth]{main_page.png}
+                              \caption{Overlay and Tracking Main Menu(Without Overlay Activated)}
+                        \end{figure}
+                        The main menu of Overlay and Tracking is the central hub of the application, providing users with access to all the functionalities.
+                        The Main Menu consists of the Video and Overlay Area, which displays the video image and overlay of the model, and the Menu Area, which is responsible for setting various parameters.
+                        The menu includes buttons for model uploading, video source selection, ArUco marker settings, and model color adjustments.
+                        \\\\
+                        When you click on the "Upload Model" button, a file explorer will pop up to select the folder where you want to upload the model. The program will read two files in the folder, one is the model file in ".stl" format, and the other is a file named "colours.txt". the first field in the txt file is the file name of the model, and the last three fields are The first field in the txt file is the file name of the model, and the last three fields are the RGB data of the default colours of the model (the model colours can be changed in the application interface after uploading). After uploading the model will be overlayed onto the video display as Overlay. The second button is the video source selection button, when clicked, a drop-down menu with three options will appear, "Camera1", "Camera2" and "Upload Video Camera1", "Camera2" and "Upload Video". The app will default to "Camera1" as the video source when it is initially launched. Selecting "Camera1" or "Camera2" will directly switch to the corresponding video source. After selecting the "Upload Video" option, an "Upload Video File" button will appear at the bottom. Clicking on the "Upload Video File" button will start the file explorer, you can select ".mp4", ".avi", ".webm" format video for uploading. After the video has been uploaded the tracking of Overlay and ArUco markers will start automatically if there is already an uploaded model present. Similarly, the video source can be switched back to the Camera input by selecting Camera1. After uploading the model, you can change the colour of the model by clicking the "Change Model Color" button.
+                        \\\\
+                        To ensure the accuracy of ArUco marker tracking, you need to modify the "ArUco Dictionary" to the corresponding dictionary of the marker you are using and click "Update ArUco "button. You also need to change the "ArUco Marker Size", which represents the size of the real ArUco marker in millimetres, and click the "Update Marker Size" button when you are done.
 
                   \item \textbf{ArUco Generator}
+                        % ArUco生成器设计图
+                        \begin{figure}[H]
+                              \centering
+                              \includegraphics[width=1.2\textwidth]{design_generator.jpg}
+                              \caption{Design of ArUco Generator}
+                        \end{figure}
+                        % 描述ArUco生成器的设计和功能。
+                        \begin{figure}[H]
+                              \centering
+                              \includegraphics[width=0.4\textwidth]{main_arucuo.png}
+                              \caption{ArUco Generator}
+                        \end{figure}
+                        The ArUco Generator interface allows users to select different ArUco markers from a predefined list and visualize them in real-time.
+                        The interface provides a clear preview of the selected marker and allows users to save the marker as an image file for later use.
+                        The design is simple and user-friendly, with intuitive controls for easy marker customization.
+                        \\\\
+                        You can first select the ArUco marker you want to use by launching the drop-down menu via "Select Aruco" and the selected ArUco marker will be displayed on the screen in real time. After that, you can click the "Save Marker" button to start the file explorer to save the marker, the file name will be set to the corresponding dictionary of the ArUco marker by default.
 
-
-                  \item \textbf{Screen Mockups, Sketches, and Screenshots}
-
-
+                  \item \textbf{Screenshots of Settings and Functionality}
+                        % Overlay截图展示
+                        \begin{figure}[H]
+                              \centering
+                              \includegraphics[width=0.4\textwidth]{overlay.png}
+                              \caption{Overlay and Tracking Main Menu(With Overlay Activated)}
+                        \end{figure}
+                        % 模型颜色修改截图展示
+                        \begin{figure}[H]
+                              \centering
+                              \includegraphics[width=0.6\textwidth]{coulor.png}
+                              \caption{Model Color Change}
+                        \end{figure}
+                        % 视频源切换截图展示
+                        \begin{figure}[H]
+                              \centering
+                              \includegraphics[width=0.4\textwidth]{stream_change.jpg}
+                              \caption{Video Source Switching}
+                        \end{figure}
+                        % 视频上传按钮截图展示
+                        \begin{figure}[H]
+                              \centering
+                              \includegraphics[width=0.3\textwidth]{upload.png}
+                              \caption{Color Changed and Video Upload Button}
+                        \end{figure}
+                        % 选择ArUco字典截图展示
+                        \begin{figure}[H]
+                              \centering
+                              \includegraphics[width=0.3\textwidth]{select_aruco.jpg}
+                              \caption{ArUco Dictionary Selection}
+                        \end{figure}
+                        % 视频上传后展示
+                        \begin{figure}[H]
+                              \centering
+                              \includegraphics[width=0.4\textwidth]{vedio.png}
+                              \caption{Video Upload}
+                        \end{figure}
+                        % Aruco 修改后展示
+                        \begin{figure}[H]
+                              \centering
+                              \includegraphics[width=0.4\textwidth]{change_aruco.png}
+                              \caption{ArUco Dictionary Changed}     
+                        \end{figure}
+                        % ArUco 保存
+                        \begin{figure}[H]
+                              \centering
+                              \includegraphics[width=1.2\textwidth]{save.png}
+                              \caption{ArUco Marker Saved}  
+                        \end{figure}
             \end{enumerate}
 
 
@@ -369,22 +453,21 @@ class SmoothedTransform:
             (1 - self.alpha) * self.transform
             return self.transform
                               \end{minted}
-                  \item \textbf{Marker Detection and Tracking}
+                  \item \textbf{Model Rendering and Overlay}
                         % 详述用于检测和追踪ArUco标记的算法，包括图像分割、模式识别和机器学习技术。
 
-                  \item \textbf{Model Positioning and Rendering}
+                  \item \textbf{Marker Detection and Tracking}
                         % 介绍如何将三维模型精确地放置在虚拟环境中，可能涉及计算几何和物体识别算法。
-
-                  \item \textbf{Optimization Techniques}
-                        % 如果涉及到性能瓶颈，可以介绍用于优化上述算法的技术，如多线程处理、GPU加速或使用更高效的算法（如快速傅里叶变换代替传统卷积）。
 
                   \item \textbf{Model Color change}
                         % 分析关键算法的时间和空间复杂度，讨论在不同操作环境（如不同硬件或软件平台）下的性能表现。
+                  \item \textbf{ArUco Marker Settings}
+                        % 详细说明系统的用户界面设计和实现
 
                   \item \textbf{ArUco Generator}
 
             \end{enumerate}
-            \item \textbf{Frontend Implementation}
+      \item \textbf{Frontend Implementation}
             % 详细说明系统的用户界面设计和实现。
 \end{enumerate}
 
@@ -417,7 +500,7 @@ ethical approval. Therefore, there are no other ethical issues involved in this 
 \section{BCS Criteria \& Self-Reflection}
 This section will be used to state that my project met the six outcomes expected by the Chartered Institute of Information Technology\cite{BCS2020}.
 I will focus on illustrating an ability to self-manage a significant piece of work and the critical self-evaluation component.
-\subsection{An Ability to Apply Practical and Analytical Skills}
+\subsection{An Ability to Apply Practical and Analytical Skills during the degree programme.}
 The project has demonstrated the practical and analytical skills I have learnt during my time at university. Throughout the degree I have gained a deeper understanding of programming languages such as Python, C\# , Java and C\+\+ and have gradually begun to experiment with them. The theoretical and practical foundations of these languages have been key in enabling me to achieve the complex functionality required for development and realisation projects. For example, in the Part1: Real-world Model Interaction and Tracking section of my project, which was written entirely in Python, there was a high level of theoretical and practical demand for the Python language. In my Part2: Endovascular Intervention Simulation, I needed to acquire and apply knowledge such as the application of Unity and the development and application of the C\# language that I had learnt in my degree programme. These technical skills were acquired and refined through a careful learning process and were directly applied to the project, which dealt with the development of a real model interaction and tracking system and the development of a Unity-based Endovascular Intervention Simulation.
 \\\\
 In developing Part1: Real-world Model Interaction and Tracking and Part2: Endovascular Intervention Simulation, I have also made extensive use of the Artificial Intelligence, Game Development and Computer Vision knowledge that I have learnt on my degree course.

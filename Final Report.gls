@@ -2,34 +2,34 @@
 \begin{theglossary}\glossaryheader
 \glsgroupheading{A}\relax \glsresetentrylist %
 \glossentry{aesl}{\glossaryentrynumbers{\relax 
-		\setentrycounter[]{page}\glsnumberformat{5}}}%
+		\setentrycounter[]{page}\glsnumberformat{14}}}%
 \glossentry{aes}{\glossaryentrynumbers{\relax 
-		\setentrycounter[]{page}\glsnumberformat{5}}}%
+		\setentrycounter[]{page}\glsnumberformat{14}}}%
 \glossentry{alpha}{\glossaryentrynumbers{\relax 
-		\setentrycounter[]{page}\glsnumberformat{5}}}%
+		\setentrycounter[]{page}\glsnumberformat{13}}}%
 \glossentry{aruco}{\glossaryentrynumbers{\relax 
 		\setentrycounter[]{page}\glsnumberformat{3}}}\glsgroupskip
 \glsgroupheading{B}\relax \glsresetentrylist %
 \glossentry{blender}{\glossaryentrynumbers{\relax 
-		\setentrycounter[]{page}\glsnumberformat{9}}}\glsgroupskip
+		\setentrycounter[]{page}\glsnumberformat{18}}}\glsgroupskip
 \glsgroupheading{C}\relax \glsresetentrylist %
 \glossentry{ces}{\glossaryentrynumbers{\relax 
-		\setentrycounter[]{page}\glsnumberformat{6}}}%
+		\setentrycounter[]{page}\glsnumberformat{14}}}%
 \glossentry{cesl}{\glossaryentrynumbers{\relax 
-		\setentrycounter[]{page}\glsnumberformat{6}}}\glsgroupskip
+		\setentrycounter[]{page}\glsnumberformat{14}}}\glsgroupskip
 \glsgroupheading{E}\relax \glsresetentrylist %
 \glossentry{ema}{\glossaryentrynumbers{\relax 
-		\setentrycounter[]{page}\glsnumberformat{6}}}%
+		\setentrycounter[]{page}\glsnumberformat{14}}}%
 \glossentry{emal}{\glossaryentrynumbers{\relax 
-		\setentrycounter[]{page}\glsnumberformat{6}}}\glsgroupskip
+		\setentrycounter[]{page}\glsnumberformat{14}}}\glsgroupskip
 \glsgroupheading{G}\relax \glsresetentrylist %
 \glossentry{git}{\glossaryentrynumbers{\relax 
-		\setentrycounter[]{page}\glsnumberformat{12}}}\glsgroupskip
+		\setentrycounter[]{page}\glsnumberformat{21}}}\glsgroupskip
 \glsgroupheading{M}\relax \glsresetentrylist %
 \glossentry{holo}{\glossaryentrynumbers{\relax 
-		\setentrycounter[]{page}\glsnumberformat{11}}}%
+		\setentrycounter[]{page}\glsnumberformat{19\delimN 20}}}%
 \glossentry{mrtk}{\glossaryentrynumbers{\relax 
-		\setentrycounter[]{page}\glsnumberformat{10\delimN 11}}}\glsgroupskip
+		\setentrycounter[]{page}\glsnumberformat{18\delimN 19}}}\glsgroupskip
 \glsgroupheading{O}\relax \glsresetentrylist %
 \glossentry{opencv}{\glossaryentrynumbers{\relax 
 		\setentrycounter[]{page}\glsnumberformat{3}}}\glsgroupskip
