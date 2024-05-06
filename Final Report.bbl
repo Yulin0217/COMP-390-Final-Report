@@ -124,8 +124,8 @@
       \strng{authornamehash}{8fdd00b7aac42271736575410d6a2219}
       \strng{authorfullhash}{8fdd00b7aac42271736575410d6a2219}
       \strng{authorfullhashraw}{8fdd00b7aac42271736575410d6a2219}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{[Online; accessed 29-April-2024]}
@@ -167,8 +167,8 @@
       \strng{authornamehash}{340ff298ce91155ae09c9a40578df722}
       \strng{authorfullhash}{340ff298ce91155ae09c9a40578df722}
       \strng{authorfullhashraw}{340ff298ce91155ae09c9a40578df722}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{isbn}{978-1-930934-19-1}
@@ -191,8 +191,8 @@
       \strng{authornamehash}{094486b9bf66b2d238e3937cc49fca84}
       \strng{authorfullhash}{094486b9bf66b2d238e3937cc49fca84}
       \strng{authorfullhashraw}{094486b9bf66b2d238e3937cc49fca84}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{booktitle}{2005 IEEE Computer Society Conference on Computer Vision and Pattern Recognition (CVPR'05)}
@@ -221,8 +221,8 @@
       \strng{authorfullhash}{b6aea1a416c89509a7df1cbb69249cb6}
       \strng{authorfullhashraw}{b6aea1a416c89509a7df1cbb69249cb6}
       \field{extraname}{1}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{[Online; accessed 1-May-2024]}
@@ -261,8 +261,8 @@
       \strng{authornamehash}{7740077d64b9c7c8a59951f0d531f7ea}
       \strng{authorfullhash}{7740077d64b9c7c8a59951f0d531f7ea}
       \strng{authorfullhashraw}{7740077d64b9c7c8a59951f0d531f7ea}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{booktitle}{2022 15th International Congress on Image and Signal Processing, BioMedical Engineering and Informatics (CISP-BMEI)}
@@ -301,8 +301,8 @@
       \strng{authornamehash}{c476baf75d4a44785196eaceded3efe8}
       \strng{authorfullhash}{c476baf75d4a44785196eaceded3efe8}
       \strng{authorfullhashraw}{c476baf75d4a44785196eaceded3efe8}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{An ordinary electric drill was integrated into a context-aware augmented reality (AR) framework to assist in timber-drilling tasks. This study is a preliminary evaluation to detail technical challenges, potential bottlenecks, and accuracy of the proposed object- and tool-aware AR-assisted fabrication systems. In the designed workflow, computer vision tools and sensors are used to implement an inside-out tracking technique for retrofitted drills based on a reverse engineering approach. The approach allows workers to perform complex drilling angle operations according to computer-processed feedback instead of drawing, marking, or jigs. First, the developed methodology was presented, and its various devices and functioning phases were detailed. Second, this first proof of concept was evaluated by experimentally scanning produced drillings and comparing the discrepancies with their respective three-dimensional execution models. This study outlined improvements in the proposed tool-aware fabrication process and clarified the potential role of augmented carpentry in the digital fabrication landscape.}
@@ -348,8 +348,8 @@
       \strng{authornamehash}{7b64ea6b018ed9fc80a22ce3e7cc5e59}
       \strng{authorfullhash}{7b64ea6b018ed9fc80a22ce3e7cc5e59}
       \strng{authorfullhashraw}{7b64ea6b018ed9fc80a22ce3e7cc5e59}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{In the continuous optimization of computer graphics, game engine and virtual reality have become the focus of research and innovation in the current technology field. Rendering is a core technology to show a variety of graphic effects, which has been attached great importance to and applied by the whole society. Nowadays, although the rendering of large-scale and complex scenes has a wide range of applications, the actual optimization requirements are very high. Therefore, in the future technology application and research and development, based on higher and higher technical requirements, it is necessary to improve the efficiency of actual rendering while ensuring or improving the rendering quality. Therefore, this paper studies how to use the algorithm to improve the efficiency of actual rendering, so as to provide a new basis for future computer graphics research.}
@@ -697,8 +697,8 @@
       \endverb
     \endentry
     \entry{arucomarkers}{online}{}{}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labeltitlesource}{title}
       \field{title}{ArUco Markers}
       \field{urlday}{29}
@@ -847,7 +847,7 @@
       \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{howpublished}{\url{https://www.microsoft.com/en-us/hololens}}
+      \field{howpublished}{\url{https://www.microsoft.com/opencv_libraryen-us/hololens}}
       \field{note}{Accessed: 2024-05-01}
       \field{title}{Microsoft HoloLens}
       \field{year}{2024}

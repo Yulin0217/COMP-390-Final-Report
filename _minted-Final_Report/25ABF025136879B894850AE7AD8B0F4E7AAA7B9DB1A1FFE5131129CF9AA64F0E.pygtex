@@ -1,0 +1,53 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{Class} \PYG{n}{TimestampedVideoSource}\PYG{p}{:}
+    \PYG{n}{Initialize}\PYG{p}{(}\PYG{n}{source\PYGZus{}num\PYGZus{}or\PYGZus{}file}\PYG{p}{,} \PYG{n}{optional} \PYG{n}{dims}\PYG{p}{):}
+        \PYG{n}{Try}\PYG{p}{:}
+            \PYG{n}{Open} \PYG{n}{video} \PYG{n}{source} \PYG{k}{with} \PYG{n}{cv2}\PYG{o}{.}\PYG{n}{VideoCapture}\PYG{p}{(}\PYG{n}{source\PYGZus{}num\PYGZus{}or\PYGZus{}file}\PYG{p}{)}
+        \PYG{n}{If} \PYG{n}{source} \PYG{o+ow}{not} \PYG{n}{opened}\PYG{p}{:}
+            \PYG{n}{Raise} \PYG{n+ne}{RuntimeError}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}Failed to open Video camera\PYGZdq{}}\PYG{p}{)}
+
+        \PYG{n}{If} \PYG{n}{dimensions} \PYG{n}{provided}\PYG{p}{:}
+            \PYG{n}{Validate} \PYG{o+ow}{and} \PYG{n+nb}{set} \PYG{n}{video} \PYG{n}{resolution}\PYG{p}{:}
+                \PYG{n}{Check} \PYG{k}{if} \PYG{n}{dimensions} \PYG{n}{are} \PYG{n}{integers} \PYG{o+ow}{and} \PYG{o}{\PYGZgt{}=} \PYG{l+m+mi}{1}
+                \PYG{n}{Set} \PYG{n}{resolution} \PYG{n}{using} \PYG{n}{cv2}\PYG{o}{.}\PYG{n}{VideoCapture} \PYG{n}{properties}
+                \PYG{n}{If} \PYG{n}{resolution} \PYG{n}{setting} \PYG{n}{fails}\PYG{p}{:}
+                    \PYG{n}{Raise} \PYG{n+ne}{ValueError}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}Requested resolution not supported\PYGZdq{}}\PYG{p}{)}
+
+        \PYG{n}{Initialize} \PYG{n}{empty} \PYG{n}{frame} \PYG{n}{array} \PYG{n}{based} \PYG{n}{on} \PYG{n}{video} \PYG{n}{dimensions}
+        \PYG{n}{Initialize} \PYG{n}{timestamp}
+
+    \PYG{n}{Read}\PYG{p}{():}
+        \PYG{n}{Capture} \PYG{n}{frame} \PYG{o+ow}{and} \PYG{n}{current} \PYG{n}{time} \PYG{n}{using} \PYG{n}{cv2}\PYG{o}{.}\PYG{n}{VideoCapture}\PYG{o}{.}\PYG{n}{read}\PYG{p}{()}
+        \PYG{n}{If} \PYG{n}{frame} \PYG{n}{captured} \PYG{n}{successfully}\PYG{p}{:}
+            \PYG{n}{Update} \PYG{n}{timestamp} \PYG{k}{with} \PYG{n}{current} \PYG{n}{datetime}
+        \PYG{n}{Return} \PYG{n}{frame}\PYG{p}{,} \PYG{n}{timestamp}
+
+    \PYG{n}{Release}\PYG{p}{():}
+        \PYG{n}{Release} \PYG{n}{video} \PYG{n}{source} \PYG{n}{using} \PYG{n}{cv2}\PYG{o}{.}\PYG{n}{VideoCapture}\PYG{o}{.}\PYG{n}{release}\PYG{p}{()}
+
+    \PYG{n}{Update} \PYG{n}{source}\PYG{p}{(}\PYG{n}{new\PYGZus{}source}\PYG{p}{):}
+        \PYG{n}{Release} \PYG{n}{current} \PYG{n}{source}
+        \PYG{n}{Reinitialize} \PYG{k}{with} \PYG{n}{new} \PYG{n}{source}
+
+\PYG{n}{Class} \PYG{n}{VideoSourceWrapper}\PYG{p}{:}
+    \PYG{n}{Initialize}\PYG{p}{():}
+        \PYG{n}{Create} \PYG{n}{an} \PYG{n}{empty} \PYG{n+nb}{list} \PYG{k}{for} \PYG{n}{storing} \PYG{n}{video} \PYG{n}{sources}
+
+    \PYG{n}{Add} \PYG{n}{camera}\PYG{p}{(}\PYG{n}{camera\PYGZus{}number}\PYG{p}{,} \PYG{n}{optional} \PYG{n}{dims}\PYG{p}{):}
+        \PYG{n}{Validate} \PYG{n}{camera} \PYG{n+nb}{input} \PYG{p}{(}\PYG{n}{check} \PYG{k}{if} \PYG{n}{camera} \PYG{n}{number} \PYG{o+ow}{is} \PYG{n}{valid}\PYG{p}{)}
+        \PYG{n}{Add} \PYG{n}{camera} \PYG{n}{source} \PYG{k}{with} \PYG{n}{optional} \PYG{n}{dimensions} \PYG{n}{to} \PYG{n}{the} \PYG{n+nb}{list}
+
+    \PYG{n}{Add} \PYG{n}{file}\PYG{p}{(}\PYG{n}{filename}\PYG{p}{,} \PYG{n}{optional} \PYG{n}{dims}\PYG{p}{):}
+        \PYG{n}{Validate} \PYG{k}{if} \PYG{n}{filename} \PYG{n}{exists} \PYG{o+ow}{and} \PYG{o+ow}{is} \PYG{n}{a} \PYG{n}{valid} \PYG{n}{file}
+        \PYG{n}{Add} \PYG{n}{file} \PYG{n}{source} \PYG{k}{with} \PYG{n}{optional} \PYG{n}{dimensions} \PYG{n}{to} \PYG{n}{the} \PYG{n+nb}{list}
+
+    \PYG{n}{Get} \PYG{n+nb}{next} \PYG{n}{frames}\PYG{p}{():}
+        \PYG{n}{For} \PYG{n}{each} \PYG{n}{source} \PYG{o+ow}{in} \PYG{n}{the} \PYG{n+nb}{list}\PYG{p}{:}
+            \PYG{n}{If} \PYG{n}{source} \PYG{o+ow}{is} \PYG{n}{opened}\PYG{p}{:}
+                \PYG{n}{Read} \PYG{n}{frame} \PYG{k+kn}{from} \PYG{n+nn}{source}
+            \PYG{n}{Collect} \PYG{o+ow}{and} \PYG{k}{return} \PYG{n+nb}{all} \PYG{n}{frames}
+
+    \PYG{n}{Release} \PYG{n+nb}{all} \PYG{n}{sources}\PYG{p}{():}
+        \PYG{n}{For} \PYG{n}{each} \PYG{n}{source} \PYG{o+ow}{in} \PYG{n}{the} \PYG{n+nb}{list}\PYG{p}{:}
+            \PYG{n}{Release} \PYG{n}{source}
+\end{Verbatim}

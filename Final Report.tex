@@ -142,7 +142,17 @@
 \vspace{1cm}
 \normalsize
 %Here for the Acknowledgements
-
+I would like to express my deepest gratitude to my supervisor, Anh Nguyen, for his invaluable guidance and support throughout my research. His insights and expertise have been fundamental to the success of this work.
+\\\\
+Special thanks also go to Tudor Jianu for his advice and contributions that greatly enhanced this project.
+\\\\
+I would like to extend my heartfelt thanks to my family. Their unwavering support and love have been my strength and motivation throughout this journey.
+\\\\
+I am also immensely grateful to my girlfriend, Lucy Zhao, for her understanding and encouragement during the course of my thesis. Her support has been a cornerstone of my personal and academic journey.
+\\\\
+Furthermore, I wish to acknowledge the critical role played by open-source libraries in the realization of this project. I extend my thanks to the developers of OpenCV\cite{opencv_library} and SciKit-Surgery Augmented Reality\cite{Thompson_SciKit-Surgery_Compact_Libraries_2020} for providing essential tools and references that significantly contributed to my project.
+\\\\
+This work would not have been possible without the collective support and encouragement from each of these individuals and resources. Thank you.
 \newpage
 \begin{titlepage}
       \centering
@@ -339,13 +349,13 @@ User Interface Design, and Design Notation and Diagrams.
                         \begin{figure}[H]
                               \centering
                               \includegraphics[width=0.4\textwidth]{change_aruco.png}
-                              \caption{ArUco Dictionary Changed}     
+                              \caption{ArUco Dictionary Changed}
                         \end{figure}
                         % ArUco 保存
                         \begin{figure}[H]
                               \centering
                               \includegraphics[width=1.2\textwidth]{save.png}
-                              \caption{ArUco Marker Saved}  
+                              \caption{ArUco Marker Saved}
                         \end{figure}
             \end{enumerate}
 
@@ -353,13 +363,18 @@ User Interface Design, and Design Notation and Diagrams.
       \item \textbf{Design Notation and Diagrams}
             \begin{enumerate}
                   \item \textbf{Use Case Diagrams}
-                        % 描述用例图及其在设计中的应用。
-
-                  \item \textbf{Interaction Diagrams}
-                        % 介绍交互图和类图的设计和功能。
-
+                        \begin{figure}[H]
+                              \centering
+                              \includegraphics[width=1.1\textwidth]{case.jpg}
+                              \caption{Use Case Diagrams}
+                        \end{figure}
                   \item \textbf{Data Flow Diagrams}
                         % 提供系统关键部分的伪代码及数据流图。
+                        \begin{figure}[H]
+                              \centering
+                              \includegraphics[width=1.1\textwidth]{data.jpg}
+                              \caption{Data Flow Diagrams}
+                        \end{figure}
             \end{enumerate}
 \end{enumerate}
 
@@ -370,10 +385,77 @@ User Interface Design, and Design Notation and Diagrams.
             % 详细说明系统所使用的数据结构和算法。
             \begin{enumerate}
                   \item \textbf{Pre-processing for video capture and upload}
+                        \\\\
+                        This part is mainly controlled by \emph{video\_source.py} and is combined with a front-end Qt-based user interface to manage the core video processing functions. A robust video source management and processing system is implemented in \emph{video\_source.py} through the \emph{TimestampedVideoSource} class and \emph{VideoSourceWrapper} class. The system allows the user to interactively control the selection of video sources through a graphical interface, and it ensures accurate video stream processing.
+                        \begin{itemize}
+                              \item \textit{Video Source Configuration and Management:}
+                                    \\
+                                    The \emph{TimestampedVideoSource} class uses the OpenCV library's, emph{cv2.VideoCapture} method to initialise the video capture from the camera number or file path. It can support basic video capture functionality or provide the ability to validate the size of the video stream to ensure that the resolution is compatible with the system. If the resolution size provided by the setting is valid, the system sets the resolution accordingly. If the resolution is not valid, the system uses the camera's settings by default. If the requested resolution option is not supported by the camera, the system throws an error, which effectively prevents runtime problems that may result from unsupported video configurations and increases system stability and reliability.
+                              \item \textit{Synchronisation and Timestamping:}
+                                    \\
+                                     The \emph{TimestampedVideoSource} class also serves to synchronise the video stream with the modelled overlay, embedding a timestamp with the current date and time at each frame captured. Each time a video frame is successfully read, the \emph{datetime.datetime.now()} method gets the current system time. This timestamp is then converted to a string or other format and stored or passed along with the video frame, ensuring that each frame has an exact timestamp. In Augmented Reality (AR) or Virtual Reality (VR) systems, quasi-timestamping this timestamp ensures alignment between the 3D model and the actual environment.With such a timestamping feature, \emph{TimestampedVideoSource} can ensure the synchronisation of the video frames for the subsequent synchronisation of the model overlay.
+                              \item \textit{Handles multiple video sources:}
+                              \\
+                              The \emph{VideoSourceWrapper} class manages multiple video sources, allowing the addition of camera inputs or the uploading of video files, and verifying their existence and compatibility. A centralised method for releasing all video sources is provided in this class to ensure that resources that are no longer needed are managed and cleaned up in a timely manner. Each video source is encapsulated in an instance of the \emph{TimestampedVideoSource } class, which allows each source to be controlled and processed independently. This feature ensures that the system load is at an appropriate level.
+                              \item \textit{Retrieve and display video frames:}
+                              \\
+                              Retrieval of frames is achieved by system calls to the \emph{read()} method of each video source, which is implemented through OpenCV's \emph{ cv2.VideoCapture.read() }. This method captures a single frame from the video source and checks to see if it was successfully captured. If successfully captured, the frame is tagged using the current timestamp, ensuring that each frame has an accurate time reference. When processing multiple video sources, the system ensures synchronisation between frames. Synchronisation of frames is achieved by using the same frame rate setting for all sources and matching frames from different sources with timestamps. This allows for smoothness and synchronisation in the case of multiple video source inputs.
+                        \end{itemize}
 
-                  \item \textbf{Feature Data Structures}
-                        % 详细说明用于存储从视频中提取的特征（如ArUco标记的位置、角点检测等）的数据结构，可能涉及到空间哈希表或树结构（如KD树、四叉树）。
+                        \paragraph{pseudocode for the \emph{video\_source.py}:}
+                        \begin{minted}[frame=single, linenos=true, fontsize=\footnotesize]{python}
+Class TimestampedVideoSource:
+    Initialize(source_num_or_file, optional dims):
+        Try:
+            Open video source with cv2.VideoCapture(source_num_or_file)
+        If source not opened:
+            Raise RuntimeError("Failed to open Video camera")
 
+        If dimensions provided:
+            Validate and set video resolution:
+                Check if dimensions are integers and >= 1
+                Set resolution using cv2.VideoCapture properties
+                If resolution setting fails:
+                    Raise ValueError("Requested resolution not supported")
+
+        Initialize empty frame array based on video dimensions
+        Initialize timestamp
+
+    Read():
+        Capture frame and current time using cv2.VideoCapture.read()
+        If frame captured successfully:
+            Update timestamp with current datetime
+        Return frame, timestamp
+
+    Release():
+        Release video source using cv2.VideoCapture.release()
+
+    Update source(new_source):
+        Release current source
+        Reinitialize with new source
+
+Class VideoSourceWrapper:
+    Initialize():
+        Create an empty list for storing video sources
+
+    Add camera(camera_number, optional dims):
+        Validate camera input (check if camera number is valid)
+        Add camera source with optional dimensions to the list
+
+    Add file(filename, optional dims):
+        Validate if filename exists and is a valid file
+        Add file source with optional dimensions to the list
+
+    Get next frames():
+        For each source in the list:
+            If source is opened:
+                Read frame from source
+            Collect and return all frames
+
+    Release all sources():
+        For each source in the list:
+            Release source
+                        \end{minted}
                   \item \textbf{Image Processing Algorithms in Multi-Layer Video Rendering}
                         % 描述如何存储和处理连续的图像帧，例如使用循环缓冲区或队列来管理实时视频帧。
                         \\ In a video rendering system, video frames need to be dynamically managed to create complex visual effects, such as models and real-time video overlays in this project. This also involved real-time adjustments to the \gls{alpha}\cite{Alpha} and video. A greyscale image with alpha blending of the RGBA stream was used to precisely control transparency and layering effects to enable the superimposition of a layer's frame (e.g. the model) onto the original frame\cite{9979846}. Ensuring overlay accuracy and visual fidelity is crucial for applications such as augmented reality\cite{SETTIMI2022104272}.
@@ -455,7 +537,10 @@ class SmoothedTransform:
                               \end{minted}
                   \item \textbf{Model Rendering and Overlay}
                         % 详述用于检测和追踪ArUco标记的算法，包括图像分割、模式识别和机器学习技术。
-
+                        
+                        \begin{itemize}
+                              \item 
+                        \end{itemize}
                   \item \textbf{Marker Detection and Tracking}
                         % 介绍如何将三维模型精确地放置在虚拟环境中，可能涉及计算几何和物体识别算法。
 
@@ -469,6 +554,8 @@ class SmoothedTransform:
             \end{enumerate}
       \item \textbf{Frontend Implementation}
             % 详细说明系统的用户界面设计和实现。
+            %通过用户界面进行交互式控制：
+            %在用户界面中，用户可以通过一个下拉菜单（QComboBox）从可用视频源中进行选择，并且对于基于文件的视频源，一个上传按钮（QPushButton）允许用户通过文件对话框选择并上传视频文件。视频源选择的变更会触发后端VideoSourceWrapper类的更新，该类管理多个视频源，提供灵活性并增强用户交互。这种设计使用户可以轻松切换视频输入源，并根据需要上传自定义内容。
 \end{enumerate}
 
 \subsection{Part2: Endovascular Intervention Simulation}
