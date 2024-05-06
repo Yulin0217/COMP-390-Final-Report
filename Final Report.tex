@@ -563,10 +563,10 @@ renderWindow.AddRenderer(modelRenderer)
 renderWindow.AddRenderer(uiRenderer)
                               \end{minted}
                               \item \textit{Import and format conversion of video streams:}
-                              \\
-                              In order to implement VTK overlay, the video frames captured by OpenCV need to be converted into a format that VTK can handle. Here the video frames are converted by using VTK's \emph{vtkImageImport} method. The conversion process requires setting the correct data types and sizes and updating the memory pointers to the video frames to ensure that the video stream data captured from OpenCV can be integrated into the VTK rendering process. This ensures synchronisation and integrity of the video stream before and after conversion without causing video lag in VTK.\cite{vtk_image_import_doc,vtk_image_import_2023}
-                              \paragraph{Code for the video stream conversion:}
-                              \begin{minted}[frame=single, linenos=true, fontsize=\footnotesize]{python}
+                                    \\
+                                    In order to implement VTK overlay, the video frames captured by OpenCV need to be converted into a format that VTK can handle. Here the video frames are converted by using VTK's \emph{vtkImageImport} method. The conversion process requires setting the correct data types and sizes and updating the memory pointers to the video frames to ensure that the video stream data captured from OpenCV can be integrated into the VTK rendering process. This ensures synchronisation and integrity of the video stream before and after conversion without causing video lag in VTK.\cite{vtk_image_import_doc,vtk_image_import_2023}
+                                    \paragraph{Code for the video stream conversion:}
+                                    \begin{minted}[frame=single, linenos=true, fontsize=\footnotesize]{python}
 # Initialize video capture
 cap = cv2.VideoCapture(0)
 
@@ -583,10 +583,10 @@ imageImporter.SetImportVoidPointer(frame.data, frame.nbytes)
 imageImporter.Update()
                               \end{minted}
                               \item \textit{Dynamic rendering and adjustment of 3D models:}
-                              \\
-                              Rendering of 3D models is achieved by using components such as VTK's \emph{vtkActor} and \emph{vtkPolyDataMapper}. These components support loading models from external files (e.g. STL format) and allow transformations such as translation, scaling, rotation, etc. to be applied to the model. These transformations of the model can be adjusted in real time to support dynamic user interaction and visual modifications\cite{6037214}. The model can be rendered in the VTK overlay by using the \emph{vtkPolyDataMapper} map the model data to geometry and set the actor using the \emph{vtkActor} and \emph{AddActor} method to add the model to the corresponding rendering layer. Then can use the \emph{SetPosition} and \emph{SetOrientation} method to adjust the model position and orientation to match the video\cite{5357714}. 
-                              \paragraph{Code for the dynamic rendering and adjustment of 3D models:}
-                              \begin{minted}[frame=single, linenos=true, fontsize=\footnotesize]{python}
+                                    \\
+                                    Rendering of 3D models is achieved by using components such as VTK's \emph{vtkActor} and \emph{vtkPolyDataMapper}. These components support loading models from external files (e.g. STL format) and allow transformations such as translation, scaling, rotation, etc. to be applied to the model. These transformations of the model can be adjusted in real time to support dynamic user interaction and visual modifications\cite{6037214}. The model can be rendered in the VTK overlay by using the \emph{vtkPolyDataMapper} map the model data to geometry and set the actor using the \emph{vtkActor} and \emph{AddActor} method to add the model to the corresponding rendering layer. Then can use the \emph{SetPosition} and \emph{SetOrientation} method to adjust the model position and orientation to match the video\cite{5357714}.The function of modifying the position of the model will play an important role in section (f) Marker Detection and Tracking. 
+                                    \paragraph{Code for the dynamic rendering and adjustment of 3D models:}
+                                    \begin{minted}[frame=single, linenos=true, fontsize=\footnotesize]{python}
 # Load a 3D model from a file
 modelReader = vtk.vtkSTLReader()
 modelReader.SetFileName("model.stl")
@@ -601,11 +601,13 @@ actor.SetMapper(mapper)
 modelRenderer.AddActor(actor)
 
 # Adjust model position and orientation to match the video
+# The position data can be varied depending on 
+# tracking data in (f) Marker Detection and Tracking
 actor.SetPosition(10, 0, 0)
 actor.SetOrientation(0, 90, 45)
                               \end{minted}
                         \end{itemize}
-                        \item \textit{Optimization of Visual Effects and Depth Processing:}
+                  \item \textit{Optimization of Visual Effects and Depth Processing:}
                         \\
                         To enhance the visual quality of rendering, VTK's Depth Stripping technology can be enabled. Depth peeling is suitable for rendering transparent or semi-transparent objects and effectively solves visual artefacts and incorrect transparency problems during rendering. Through layer-by-layer rendering and compositing, Depth Stripping ensures visual correctness and is suitable for use in complex overlay or multi-object scenes.\cite{vtk_dualdepth_2016,5357714} The \emph{UseDepthPeelingOn} method is used to enable Depth Stripping, and the \emph{SetMaximumNumberOfPeels} and \emph{SetOcclusionRatio} methods are used to set the maximum number of peels and the occlusion ratio, respectively, to control the rendering quality and performance.
                         \paragraph{Code for Optimization of Visual Effects and Depth Processing:}
@@ -615,7 +617,7 @@ modelRenderer.UseDepthPeelingOn()
 modelRenderer.SetMaximumNumberOfPeels(100)
 modelRenderer.SetOcclusionRatio(0.1)
                         \end{minted}
-                        \item \textit{Precise Control of Camera and Viewing:}
+                  \item \textit{Precise Control of Camera and Viewing:}
                         \\
                         During the implementation of model overlay using VTK, it is important to maintain an accurate overlay between the 3D model and the background video stream. When using different cameras, deviations in the model overlay may occur due to different camera parameters such as focal length, projection, and position. In order to make the model appear accurately at the right position in the background video, the parameters of the camera should be modified. By getting the camera's focal length, position and projection parameters to modify the variables in video processing, the viewpoint between the 3D model view and the video stream background can be consistently matched when using a camera with different characteristics. It might be necessary to additionally adjust the cropping range and field of view of the camera to ensure the correct range of visual output. The \emph{vtkCamera} class is built to control the camera settings. Method like \emph{SetPosition}, \emph{SetFocalPoint}, and \emph{SetViewUp} are used to adjust the camera's position, focus point, and view direction, respectively.\cite{vtk_examples_camera,vtk_camera_doc_2023}
                         \paragraph{Code for Precise Control of Camera and Viewing:}
@@ -628,11 +630,103 @@ camera.SetViewUp(0, 1, 0)
                         \end{minted}
                   \item \textbf{Marker Detection and Tracking}
                         % 介绍如何将三维模型精确地放置在虚拟环境中，可能涉及计算几何和物体识别算法。
+                        \begin{itemize}
+                              \item \textit{Loading Calibration Data:}
 
+                                    \paragraph{Pseudocode for the Loading Calibration Data:}
+                                    \begin{minted}[frame=single, linenos=true, fontsize=\footnotesize]{python}
+Function _load_calibration(textfile):
+    Read 'projection_matrix' from  
+    '(e) Precise Control of Camera and Viewing'
+    Read 'distortion' from 
+    '(e) Precise Control of Camera and Viewing'
+    Return projection_matrix, distortion
+                              \end{minted}
+                              \item \textit{Initializing Video Source and Tracker Configuration:}
+
+                                    \paragraph{Pseudocode for the Initializing Video Source and Tracker Configuration:}
+                                    \begin{minted}[frame=single, linenos=true, fontsize=\footnotesize]{python}
+Method initialize_video_capture(video_source, configuration):
+    If video_source is not 'none':
+        self._capture = cv2.VideoCapture(video_source)
+        If "capture properties" in configuration:
+            For each property in configuration["capture properties"]:
+                self._capture.set(cv2 property, value)
+                              \end{minted}
+                              \item \textit{Load ArUco dictionary}
+
+                                    \paragraph{Pseudocode for the Load ArUco dictionary:}
+                                    \begin{minted}[frame=single, linenos=true, fontsize=\footnotesize]{python}
+Function get_aruco_dictionary(configuration):
+    aruco_dict = 
+    cv2.aruco.getPredefinedDictionary(cv2.aruco.DICT_ARUCO_ORIGINAL)
+    Return aruco_dict
+                              \end{minted}
+                              \item \textit{Real-Time Marker Detection using OpenCV:}
+
+                                    \paragraph{Pseudocode for the Real-Time Marker Detection and Data Capture:}
+                                    \begin{minted}[frame=single, linenos=true, fontsize=\footnotesize]{python}
+Method detect_markers(frame):
+    ar_dict = get_aruco_dictionary(configuration)
+      # Default parameters
+    parameters = cv2.aruco.DetectorParameters_create() 
+    marker_corners, marker_ids, _ = 
+    cv2.aruco.detectMarkers(frame, ar_dict, parameters=parameters)
+    If marker_corners are not empty:
+      # Optional: for visualization
+        cv2.aruco.drawDetectedMarkers(frame, marker_corners)  
+    Return marker_corners, marker_ids
+                              \end{minted}
+                              \item \textit{Estimate the pose of detected markers:}
+
+                                    \paragraph{Pseudocode for the Estimate the pose of detected markers:}
+                                    \begin{minted}[frame=single, linenos=true, fontsize=\footnotesize]{python}
+Method estimate_pose(marker_corners, marker_ids):
+    If marker_corners are not empty:
+        For each marker in marker_corners:
+            rvec, tvec, _ = cv2.aruco.estimatePoseSingleMarkers(marker_corners, marker_size, self._camera_projection_matrix, self._camera_distortion)
+            cv2.aruco.drawAxis(frame, self._camera_projection_matrix, self._camera_distortion, rvec, tvec, length_of_axis)  # Optional: for visualization
+        Return rvec, tvec
+                              \end{minted}
+                              \item \textit{Start Tracking and Outputting Marker Pose Data:}
+
+                                    \paragraph{Pseudocode for the Start Tracking and Outputting Marker Pose Data:}
+                                    \begin{minted}[frame=single, linenos=true, fontsize=\footnotesize]{python}
+MMethod start_tracking():
+    If self._state == "ready":
+        self._state = "tracking"
+        While self._state == "tracking":
+            ret, frame = self._capture.read()
+            If not ret:
+                Break  # End tracking if video ends or error occurs
+            marker_corners, marker_ids = detect_markers(frame)
+            rvec, tvec = estimate_pose(marker_corners, marker_ids)
+            Process and store marker pose data
+                              \end{minted}
+                              \item \textit{Tracking State Management:}
+                                    \paragraph{Pseudocode for the Tracking State Management:}
+                                    \begin{minted}[frame=single, linenos=true, fontsize=\footnotesize]{python}
+Method stop_tracking():
+    If self._state == "tracking":
+        self._state = "ready"
+        self._capture.release()
+                              \end{minted}
+                              \item \textit{Update the position of the model:}
+                                    \paragraph{Pseudocode for the Update the position of the model:}
+                                    \begin{minted}[frame=single, linenos=true, fontsize=\footnotesize]{python}
+Method update_model_position:
+    Read a frame from video source into 'image'
+    If frame read is successful:
+        Detect and follow ArUco markers in 'image'
+            If markers detected:
+                  Update model position based on marker pose
+        Render the overlay window with updated model position
+                                    \end{minted}
+                        \end{itemize}
                   \item \textbf{Model Color change}
-                        % 分析关键算法的时间和空间复杂度，讨论在不同操作环境（如不同硬件或软件平台）下的性能表现。
+                        
                   \item \textbf{ArUco Marker Settings}
-                        % 详细说明系统的用户界面设计和实现
+                        
 
                   \item \textbf{ArUco Generator}
 
@@ -655,6 +749,9 @@ camera.SetViewUp(0, 1, 0)
 
 % Testing & Evaluation
 \section{Testing \& Evaluation}
+\subsection{Part1: Real-world Model Interaction and Tracking}
+
+\subsection{Part2: Endovascular Intervention Simulation}
 
 % Project Ethics
 \section{Project Ethics}

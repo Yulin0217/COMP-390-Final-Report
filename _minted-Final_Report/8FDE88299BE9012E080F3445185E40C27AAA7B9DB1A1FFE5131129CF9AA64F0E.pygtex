@@ -1,0 +1,9 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{Method} \PYG{n}{update\PYGZus{}model\PYGZus{}position}\PYG{p}{:}
+    \PYG{n}{Read} \PYG{n}{a} \PYG{n}{frame} \PYG{k+kn}{from} \PYG{n+nn}{video} \PYG{n}{source} \PYG{n}{into} \PYG{l+s+s1}{\PYGZsq{}image\PYGZsq{}}
+    \PYG{n}{If} \PYG{n}{frame} \PYG{n}{read} \PYG{o+ow}{is} \PYG{n}{successful}\PYG{p}{:}
+        \PYG{n}{Detect} \PYG{o+ow}{and} \PYG{n}{follow} \PYG{n}{ArUco} \PYG{n}{markers} \PYG{o+ow}{in} \PYG{l+s+s1}{\PYGZsq{}image\PYGZsq{}}
+            \PYG{n}{If} \PYG{n}{markers} \PYG{n}{detected}\PYG{p}{:}
+                  \PYG{n}{Update} \PYG{n}{model} \PYG{n}{position} \PYG{n}{based} \PYG{n}{on} \PYG{n}{marker} \PYG{n}{pose}
+        \PYG{n}{Render} \PYG{n}{the} \PYG{n}{overlay} \PYG{n}{window} \PYG{k}{with} \PYG{n}{updated} \PYG{n}{model} \PYG{n}{position}
+\end{Verbatim}

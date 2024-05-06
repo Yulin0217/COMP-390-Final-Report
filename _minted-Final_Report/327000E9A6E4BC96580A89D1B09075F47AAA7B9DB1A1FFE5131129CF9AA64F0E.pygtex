@@ -1,0 +1,8 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{Method} \PYG{n}{initialize\PYGZus{}video\PYGZus{}capture}\PYG{p}{(}\PYG{n}{video\PYGZus{}source}\PYG{p}{,} \PYG{n}{configuration}\PYG{p}{):}
+    \PYG{n}{If} \PYG{n}{video\PYGZus{}source} \PYG{o+ow}{is} \PYG{o+ow}{not} \PYG{l+s+s1}{\PYGZsq{}none\PYGZsq{}}\PYG{p}{:}
+        \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{\PYGZus{}capture} \PYG{o}{=} \PYG{n}{cv2}\PYG{o}{.}\PYG{n}{VideoCapture}\PYG{p}{(}\PYG{n}{video\PYGZus{}source}\PYG{p}{)}
+        \PYG{n}{If} \PYG{l+s+s2}{\PYGZdq{}capture properties\PYGZdq{}} \PYG{o+ow}{in} \PYG{n}{configuration}\PYG{p}{:}
+            \PYG{n}{For} \PYG{n}{each} \PYG{n+nb}{property} \PYG{o+ow}{in} \PYG{n}{configuration}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}capture properties\PYGZdq{}}\PYG{p}{]:}
+                \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{\PYGZus{}capture}\PYG{o}{.}\PYG{n}{set}\PYG{p}{(}\PYG{n}{cv2} \PYG{n+nb}{property}\PYG{p}{,} \PYG{n}{value}\PYG{p}{)}
+\end{Verbatim}

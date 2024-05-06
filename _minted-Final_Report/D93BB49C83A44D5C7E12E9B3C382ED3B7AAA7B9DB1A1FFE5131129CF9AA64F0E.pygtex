@@ -1,0 +1,12 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{Method} \PYG{n}{detect\PYGZus{}markers}\PYG{p}{(}\PYG{n}{frame}\PYG{p}{):}
+    \PYG{n}{ar\PYGZus{}dict} \PYG{o}{=} \PYG{n}{get\PYGZus{}aruco\PYGZus{}dictionary}\PYG{p}{(}\PYG{n}{configuration}\PYG{p}{)}
+      \PYG{c+c1}{\PYGZsh{} Default parameters}
+    \PYG{n}{parameters} \PYG{o}{=} \PYG{n}{cv2}\PYG{o}{.}\PYG{n}{aruco}\PYG{o}{.}\PYG{n}{DetectorParameters\PYGZus{}create}\PYG{p}{()}
+    \PYG{n}{marker\PYGZus{}corners}\PYG{p}{,} \PYG{n}{marker\PYGZus{}ids}\PYG{p}{,} \PYG{n}{\PYGZus{}} \PYG{o}{=}
+    \PYG{n}{cv2}\PYG{o}{.}\PYG{n}{aruco}\PYG{o}{.}\PYG{n}{detectMarkers}\PYG{p}{(}\PYG{n}{frame}\PYG{p}{,} \PYG{n}{ar\PYGZus{}dict}\PYG{p}{,} \PYG{n}{parameters}\PYG{o}{=}\PYG{n}{parameters}\PYG{p}{)}
+    \PYG{n}{If} \PYG{n}{marker\PYGZus{}corners} \PYG{n}{are} \PYG{o+ow}{not} \PYG{n}{empty}\PYG{p}{:}
+      \PYG{c+c1}{\PYGZsh{} Optional: for visualization}
+        \PYG{n}{cv2}\PYG{o}{.}\PYG{n}{aruco}\PYG{o}{.}\PYG{n}{drawDetectedMarkers}\PYG{p}{(}\PYG{n}{frame}\PYG{p}{,} \PYG{n}{marker\PYGZus{}corners}\PYG{p}{)}
+    \PYG{n}{Return} \PYG{n}{marker\PYGZus{}corners}\PYG{p}{,} \PYG{n}{marker\PYGZus{}ids}
+\end{Verbatim}

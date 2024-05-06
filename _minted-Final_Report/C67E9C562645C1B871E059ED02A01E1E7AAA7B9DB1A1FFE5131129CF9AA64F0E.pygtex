@@ -1,0 +1,6 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{Method} \PYG{n}{stop\PYGZus{}tracking}\PYG{p}{():}
+    \PYG{n}{If} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{\PYGZus{}state} \PYG{o}{==} \PYG{l+s+s2}{\PYGZdq{}tracking\PYGZdq{}}\PYG{p}{:}
+        \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{\PYGZus{}state} \PYG{o}{=} \PYG{l+s+s2}{\PYGZdq{}ready\PYGZdq{}}
+        \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{\PYGZus{}capture}\PYG{o}{.}\PYG{n}{release}\PYG{p}{()}
+\end{Verbatim}

@@ -1,0 +1,6 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{Function} \PYG{n}{get\PYGZus{}aruco\PYGZus{}dictionary}\PYG{p}{(}\PYG{n}{configuration}\PYG{p}{):}
+    \PYG{n}{aruco\PYGZus{}dict} \PYG{o}{=}
+    \PYG{n}{cv2}\PYG{o}{.}\PYG{n}{aruco}\PYG{o}{.}\PYG{n}{getPredefinedDictionary}\PYG{p}{(}\PYG{n}{cv2}\PYG{o}{.}\PYG{n}{aruco}\PYG{o}{.}\PYG{n}{DICT\PYGZus{}ARUCO\PYGZus{}ORIGINAL}\PYG{p}{)}
+    \PYG{n}{Return} \PYG{n}{aruco\PYGZus{}dict}
+\end{Verbatim}

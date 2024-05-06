@@ -1,0 +1,12 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{MMethod} \PYG{n}{start\PYGZus{}tracking}\PYG{p}{():}
+    \PYG{n}{If} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{\PYGZus{}state} \PYG{o}{==} \PYG{l+s+s2}{\PYGZdq{}ready\PYGZdq{}}\PYG{p}{:}
+        \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{\PYGZus{}state} \PYG{o}{=} \PYG{l+s+s2}{\PYGZdq{}tracking\PYGZdq{}}
+        \PYG{n}{While} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{\PYGZus{}state} \PYG{o}{==} \PYG{l+s+s2}{\PYGZdq{}tracking\PYGZdq{}}\PYG{p}{:}
+            \PYG{n}{ret}\PYG{p}{,} \PYG{n}{frame} \PYG{o}{=} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{\PYGZus{}capture}\PYG{o}{.}\PYG{n}{read}\PYG{p}{()}
+            \PYG{n}{If} \PYG{o+ow}{not} \PYG{n}{ret}\PYG{p}{:}
+                \PYG{n}{Break}  \PYG{c+c1}{\PYGZsh{} End tracking if video ends or error occurs}
+            \PYG{n}{marker\PYGZus{}corners}\PYG{p}{,} \PYG{n}{marker\PYGZus{}ids} \PYG{o}{=} \PYG{n}{detect\PYGZus{}markers}\PYG{p}{(}\PYG{n}{frame}\PYG{p}{)}
+            \PYG{n}{rvec}\PYG{p}{,} \PYG{n}{tvec} \PYG{o}{=} \PYG{n}{estimate\PYGZus{}pose}\PYG{p}{(}\PYG{n}{marker\PYGZus{}corners}\PYG{p}{,} \PYG{n}{marker\PYGZus{}ids}\PYG{p}{)}
+            \PYG{n}{Process} \PYG{o+ow}{and} \PYG{n}{store} \PYG{n}{marker} \PYG{n}{pose} \PYG{n}{data}
+\end{Verbatim}

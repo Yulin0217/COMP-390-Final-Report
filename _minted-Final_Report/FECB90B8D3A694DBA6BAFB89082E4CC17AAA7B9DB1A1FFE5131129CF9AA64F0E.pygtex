@@ -1,0 +1,8 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{Function} \PYG{n}{\PYGZus{}load\PYGZus{}calibration}\PYG{p}{(}\PYG{n}{textfile}\PYG{p}{):}
+    \PYG{n}{Read} \PYG{l+s+s1}{\PYGZsq{}projection\PYGZus{}matrix\PYGZsq{}} \PYG{k+kn}{from}
+    \PYG{l+s+s1}{\PYGZsq{}(e) Precise Control of Camera and Viewing\PYGZsq{}}
+    \PYG{n}{Read} \PYG{l+s+s1}{\PYGZsq{}distortion\PYGZsq{}} \PYG{k+kn}{from}
+    \PYG{l+s+s1}{\PYGZsq{}(e) Precise Control of Camera and Viewing\PYGZsq{}}
+    \PYG{n}{Return} \PYG{n}{projection\PYGZus{}matrix}\PYG{p}{,} \PYG{n}{distortion}
+\end{Verbatim}
