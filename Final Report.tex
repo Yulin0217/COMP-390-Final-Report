@@ -266,8 +266,7 @@ User Interface Design, and Design Notation and Diagrams.
             \\
             In this section, I will show the user interface design of the two main applications of my Part1. Both applications use the Python-based Qt package for user GUI design.
             I will also provide a brief description of the Main menu and the ArUco Marker Generator interface.
-            Screenshots of the main layout and main interface will be included in the (a) Main Menu (Overlay and Tracking) and (b) ArUco Generator sections, and screenshots of settings and functionality will be listed separately in the (c) Screen Mockups, Sketches, and Screenshots section.
-            \begin{enumerate}
+               \begin{enumerate}
                   \item \textbf{Main Menu(Overlay and Tracking)}
                         % 描述主菜单的设计和功能。
                         \begin{figure}[H]
@@ -276,16 +275,13 @@ User Interface Design, and Design Notation and Diagrams.
                               \caption{Design of Overlay and Tracking Main Menu}
                         \end{figure}
 
-                        \begin{figure}[H]
-                              \centering
-                              \includegraphics[width=0.4\textwidth]{main_page.png}
-                              \caption{Overlay and Tracking Main Menu(Without Overlay Activated)}
-                        \end{figure}
+                     
                         The main menu of Overlay and Tracking is the central hub of the application, providing users with access to all the functionalities.
                         The Main Menu consists of the Video and Overlay Area, which displays the video image and overlay of the model, and the Menu Area, which is responsible for setting various parameters.
                         The menu includes buttons for model uploading, video source selection, ArUco marker settings, and model color adjustments.
                         \\\\
                         When you click on the "Upload Model" button, a file explorer will pop up to select the folder where you want to upload the model. The program will read two files in the folder, one is the model file in ".stl" format, and the other is a file named "colours.txt". the first field in the txt file is the file name of the model, and the last three fields are The first field in the txt file is the file name of the model, and the last three fields are the RGB data of the default colours of the model (the model colours can be changed in the application interface after uploading). After uploading the model will be overlayed onto the video display as Overlay. The second button is the video source selection button, when clicked, a drop-down menu with three options will appear, "Camera1", "Camera2" and "Upload Video Camera1", "Camera2" and "Upload Video". The app will default to "Camera1" as the video source when it is initially launched. Selecting "Camera1" or "Camera2" will directly switch to the corresponding video source. After selecting the "Upload Video" option, an "Upload Video File" button will appear at the bottom. Clicking on the "Upload Video File" button will start the file explorer, you can select ".mp4", ".avi", ".webm" format video for uploading. After the video has been uploaded the tracking of Overlay and ArUco markers will start automatically if there is already an uploaded model present. Similarly, the video source can be switched back to the Camera input by selecting Camera1. After uploading the model, you can change the colour of the model by clicking the "Change Model Color" button.
+                        \label{sec:upload}
                         \\\\
                         To ensure the accuracy of ArUco marker tracking, you need to modify the "ArUco Dictionary" to the corresponding dictionary of the marker you are using and click "Update ArUco "button. You also need to change the "ArUco Marker Size", which represents the size of the real ArUco marker in millimetres, and click the "Update Marker Size" button when you are done.
 
@@ -307,56 +303,6 @@ User Interface Design, and Design Notation and Diagrams.
                         The design is simple and user-friendly, with intuitive controls for easy marker customization.
                         \\\\
                         You can first select the ArUco marker you want to use by launching the drop-down menu via "Select Aruco" and the selected ArUco marker will be displayed on the screen in real time. After that, you can click the "Save Marker" button to start the file explorer to save the marker, the file name will be set to the corresponding dictionary of the ArUco marker by default.
-
-                  \item \textbf{Screenshots of Settings and Functionality}
-                        % Overlay截图展示
-                        \begin{figure}[H]
-                              \centering
-                              \includegraphics[width=0.4\textwidth]{overlay.png}
-                              \caption{Overlay and Tracking Main Menu(With Overlay Activated)}
-                        \end{figure}
-                        % 模型颜色修改截图展示
-                        \begin{figure}[H]
-                              \centering
-                              \includegraphics[width=0.6\textwidth]{coulor.png}
-                              \caption{Model Color Change}
-                        \end{figure}
-                        % 视频源切换截图展示
-                        \begin{figure}[H]
-                              \centering
-                              \includegraphics[width=0.4\textwidth]{stream_change.jpg}
-                              \caption{Video Source Switching}
-                        \end{figure}
-                        % 视频上传按钮截图展示
-                        \begin{figure}[H]
-                              \centering
-                              \includegraphics[width=0.3\textwidth]{upload.png}
-                              \caption{Color Changed and Video Upload Button}
-                        \end{figure}
-                        % 选择ArUco字典截图展示
-                        \begin{figure}[H]
-                              \centering
-                              \includegraphics[width=0.3\textwidth]{select_aruco.jpg}
-                              \caption{ArUco Dictionary Selection}
-                        \end{figure}
-                        % 视频上传后展示
-                        \begin{figure}[H]
-                              \centering
-                              \includegraphics[width=0.4\textwidth]{vedio.png}
-                              \caption{Video Upload}
-                        \end{figure}
-                        % Aruco 修改后展示
-                        \begin{figure}[H]
-                              \centering
-                              \includegraphics[width=0.4\textwidth]{change_aruco.png}
-                              \caption{ArUco Dictionary Changed}
-                        \end{figure}
-                        % ArUco 保存
-                        \begin{figure}[H]
-                              \centering
-                              \includegraphics[width=1.2\textwidth]{save.png}
-                              \caption{ArUco Marker Saved}
-                        \end{figure}
             \end{enumerate}
 
 
@@ -456,6 +402,17 @@ Class VideoSourceWrapper:
         For each source in the list:
             Release source
                         \end{minted}
+                            % 视频源切换截图展示
+                            \begin{figure}[H]
+                              \centering
+                              \includegraphics[width=0.4\textwidth]{stream_change.jpg}
+                              \caption{Video Source Switching}
+                        \end{figure}
+                        \begin{figure}[H]
+                              \centering
+                              \includegraphics[width=0.4\textwidth]{vedio.png}
+                              \caption{Video Upload}
+                        \end{figure}
                   \item \textbf{Image Processing Algorithms in Multi-Layer Video Rendering}
                         % 描述如何存储和处理连续的图像帧，例如使用循环缓冲区或队列来管理实时视频帧。
                         \\ In a video rendering system, video frames need to be dynamically managed to create complex visual effects, such as models and real-time video overlays in this project. This also involved real-time adjustments to the \gls{alpha}\cite{Alpha} and video. A greyscale image with alpha blending of the RGBA stream was used to precisely control transparency and layering effects to enable the superimposition of a layer's frame (e.g. the model) onto the original frame\cite{9979846}. Ensuring overlay accuracy and visual fidelity is crucial for applications such as augmented reality\cite{SETTIMI2022104272}.
@@ -535,6 +492,11 @@ class SmoothedTransform:
             (1 - self.alpha) * self.transform
             return self.transform
                               \end{minted}
+                                 \begin{figure}[H]
+                                    \centering
+                                    \includegraphics[width=0.4\textwidth]{main_page.png}
+                                    \caption{Overlay and Tracking Main Menu(Without Overlay Activated)}
+                              \end{figure}
                   \item \textbf{Model Rendering and Overlay}
                         % 详述用于检测和追踪ArUco标记的算法，包括图像分割、模式识别和机器学习技术。
                         \\
@@ -562,6 +524,7 @@ renderWindow.AddRenderer(videoRenderer)
 renderWindow.AddRenderer(modelRenderer)
 renderWindow.AddRenderer(uiRenderer)
                               \end{minted}
+                             
                               \item \textit{Import and format conversion of video streams:}
                                     \\
                                     In order to implement VTK overlay, the video frames captured by OpenCV need to be converted into a format that VTK can handle. Here the video frames are converted by using VTK's \emph{vtkImageImport} method. The conversion process requires setting the correct data types and sizes and updating the memory pointers to the video frames to ensure that the video stream data captured from OpenCV can be integrated into the VTK rendering process. This ensures synchronisation and integrity of the video stream before and after conversion without causing video lag in VTK.\cite{vtk_image_import_doc,vtk_image_import_2023}
@@ -607,7 +570,13 @@ actor.SetPosition(10, 0, 0)
 actor.SetOrientation(0, 90, 45)
                               \end{minted}
                         \end{itemize}
-                  \item \textit{Optimization of Visual Effects and Depth Processing:}
+                           % Overlay截图展示
+                           \begin{figure}[H]
+                              \centering
+                              \includegraphics[width=0.4\textwidth]{overlay.png}
+                              \caption{Overlay and Tracking Main Menu(With Overlay Activated)}
+                        \end{figure}
+                  \item \textbf{Optimization of Visual Effects and Depth Processing:}
                         \\
                         To enhance the visual quality of rendering, VTK's Depth Stripping technology can be enabled. Depth peeling is suitable for rendering transparent or semi-transparent objects and effectively solves visual artefacts and incorrect transparency problems during rendering. Through layer-by-layer rendering and compositing, Depth Stripping ensures visual correctness and is suitable for use in complex overlay or multi-object scenes.\cite{vtk_dualdepth_2016,5357714} The \emph{UseDepthPeelingOn} method is used to enable Depth Stripping, and the \emph{SetMaximumNumberOfPeels} and \emph{SetOcclusionRatio} methods are used to set the maximum number of peels and the occlusion ratio, respectively, to control the rendering quality and performance.
                         \paragraph{Code for Optimization of Visual Effects and Depth Processing:}
@@ -617,7 +586,7 @@ modelRenderer.UseDepthPeelingOn()
 modelRenderer.SetMaximumNumberOfPeels(100)
 modelRenderer.SetOcclusionRatio(0.1)
                         \end{minted}
-                  \item \textit{Precise Control of Camera and Viewing:}
+                  \item \textbf{Precise Control of Camera and Viewing:}
                         \\
                         During the implementation of model overlay using VTK, it is important to maintain an accurate overlay between the 3D model and the background video stream. When using different cameras, deviations in the model overlay may occur due to different camera parameters such as focal length, projection, and position. In order to make the model appear accurately at the right position in the background video, the parameters of the camera should be modified. By getting the camera's focal length, position and projection parameters to modify the variables in video processing, the viewpoint between the 3D model view and the video stream background can be consistently matched when using a camera with different characteristics. It might be necessary to additionally adjust the cropping range and field of view of the camera to ensure the correct range of visual output. The \emph{vtkCamera} class is built to control the camera settings. Method like \emph{SetPosition}, \emph{SetFocalPoint}, and \emph{SetViewUp} are used to adjust the camera's position, focus point, and view direction, respectively.\cite{vtk_examples_camera,vtk_camera_doc_2023}
                         \paragraph{Code for Precise Control of Camera and Viewing:}
@@ -723,13 +692,60 @@ Method update_model_position:
         Render the overlay window with updated model position
                                     \end{minted}
                         \end{itemize}
+                        \begin{figure}[H]
+                              \centering
+                              \includegraphics[width=0.6\textwidth]{tracking.png}
+                              \caption{Overlay and Tracking}
+                        \end{figure}
                   \item \textbf{Model Color change}
-                        
+                  \\
+                  In order to implement the model colour change functionality, it is necessary to reuse the model upload functionality mentioned in the \hyperref[sec:upload]{(a) Main Menu (Overlay and Tracking)} section. Before performing a model colour modification it will first check if a model exists in the VTK Overlay. If not, a warning box will be pushed to prompt the user to upload the model first. If the model is already loaded in VTK Overlay, when the model colour modification button is clicked in the Qt window, a colour picker dialog box will be opened in the Qt window allowing the user to select a colour. After the user selects a colour, a new model loader will be created and the model and colour will be reloaded using the model upload function mentioned in the \hyperref[sec:upload]{(a) Main Menu (Overlay and Tracking)} section. Once the model has been re-uploaded with the newly selected colours, update the VTK Render window to re-render the model Overlay to show the model with the modified colours.
+                  \paragraph{Code for the Model Color change:}
+                  \begin{minted}[frame=single, linenos=true, fontsize=\footnotesize]{python}
+Method change_model_color:
+    Check if the model directory has been loaded
+    If no models are loaded:
+        Display a warning dialog, "Please upload models first"
+        Return
+
+    Open a color picker dialog
+    If a valid color is chosen:
+        Convert the color to RGB format
+        Create a model loader with the model directory and RGB color
+        Add the loaded models to the VTK rendering window
+        Re-render the window to update the color
+                  \end{minted}
+                     % 模型颜色修改截图展示
+                     \begin{figure}[H]
+                        \centering
+                        \includegraphics[width=0.6\textwidth]{coulor.png}
+                        \caption{Colour Picker Dialog Box}
+                  \end{figure}
+                  \begin{figure}[H]
+                        \centering
+                        \includegraphics[width=0.3\textwidth]{upload.png}
+                        \caption{Color Changed Model}
+                  \end{figure}
                   \item \textbf{ArUco Marker Settings}
                         
-
+                  \begin{figure}[H]
+                        \centering
+                        \includegraphics[width=0.3\textwidth]{select_aruco.jpg}
+                        \caption{ArUco Dictionary Selection}
+                  \end{figure}
                   \item \textbf{ArUco Generator}
 
+                  \begin{figure}[H]
+                        \centering
+                        \includegraphics[width=0.4\textwidth]{change_aruco.png}
+                        \caption{ArUco Generator Dictionary Changed}
+                  \end{figure}
+                  % ArUco 保存
+                  \begin{figure}[H]
+                        \centering
+                        \includegraphics[width=1.2\textwidth]{save.png}
+                        \caption{ArUco Marker Saved}
+                  \end{figure}
             \end{enumerate}
       \item \textbf{Frontend Implementation}
             % 详细说明系统的用户界面设计和实现。
@@ -833,6 +849,7 @@ For Part2, the development process encountered significant technical challenges,
 By critically reflecting on and analysing these issues, I realised that I should plan better in the upfront technical assessment and time management phases when undertaking future project management. This includes analysing in detail the technical difficulty and time required for each development phase during the project planning stage, as well as being prepared in advance to deal with unforeseen circumstances as they occur. In addition, it is also important to communicate more with team members and supervisors at the technical level during the project to accelerate the speed of breaking through the development challenges.
 \\\\
 Overall, the development process of this project was full of difficulties and challenges, but it also strengthened my technical level, project management skills and the ability to solve unknown problems. Through this project, I was able to improve my professional skills in a variety of different technical areas, as well as develop my ability to effectively self-manage and work in a team on projects with complex environments. Through this critical self-assessment and reflection, I was able to better identify and improve on my shortcomings in my work and prepare myself for the greater challenges I may face in the future.
+
 
 % References (The bibliography will be printed here)
 \printbibliography

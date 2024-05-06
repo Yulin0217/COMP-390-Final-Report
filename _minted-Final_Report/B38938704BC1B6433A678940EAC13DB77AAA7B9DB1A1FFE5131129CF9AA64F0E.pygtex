@@ -1,0 +1,14 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{Method} \PYG{n}{change\PYGZus{}model\PYGZus{}color}\PYG{p}{:}
+    \PYG{n}{Check} \PYG{k}{if} \PYG{n}{the} \PYG{n}{model} \PYG{n}{directory} \PYG{n}{has} \PYG{n}{been} \PYG{n}{loaded}
+    \PYG{n}{If} \PYG{n}{no} \PYG{n}{models} \PYG{n}{are} \PYG{n}{loaded}\PYG{p}{:}
+        \PYG{n}{Display} \PYG{n}{a} \PYG{n}{warning} \PYG{n}{dialog}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}Please upload models first\PYGZdq{}}
+        \PYG{n}{Return}
+
+    \PYG{n}{Open} \PYG{n}{a} \PYG{n}{color} \PYG{n}{picker} \PYG{n}{dialog}
+    \PYG{n}{If} \PYG{n}{a} \PYG{n}{valid} \PYG{n}{color} \PYG{o+ow}{is} \PYG{n}{chosen}\PYG{p}{:}
+        \PYG{n}{Convert} \PYG{n}{the} \PYG{n}{color} \PYG{n}{to} \PYG{n}{RGB} \PYG{n+nb}{format}
+        \PYG{n}{Create} \PYG{n}{a} \PYG{n}{model} \PYG{n}{loader} \PYG{k}{with} \PYG{n}{the} \PYG{n}{model} \PYG{n}{directory} \PYG{o+ow}{and} \PYG{n}{RGB} \PYG{n}{color}
+        \PYG{n}{Add} \PYG{n}{the} \PYG{n}{loaded} \PYG{n}{models} \PYG{n}{to} \PYG{n}{the} \PYG{n}{VTK} \PYG{n}{rendering} \PYG{n}{window}
+        \PYG{n}{Re}\PYG{o}{\PYGZhy{}}\PYG{n}{render} \PYG{n}{the} \PYG{n}{window} \PYG{n}{to} \PYG{n}{update} \PYG{n}{the} \PYG{n}{color}
+\end{Verbatim}
