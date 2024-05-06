@@ -214,7 +214,7 @@ This section should contain a concise summary of the document content.
 % 这一部分集中讨论与现实世界模型的交互与跟踪的设计和实现。
 
 In this part, I used \gls{opencv}\cite{opencv_library} and SciKit-Surgery Augmented Reality\cite{Thompson_SciKit-Surgery_Compact_Libraries_2020} libraries for image
-processing and  model tracking. \gls{QT}\cite{QtWebsite} is used to design the graphical interface, and also \gls{vtk}\cite{vtkBook}. OpenCV and SciKit-Surgery libraries help me process images
+processing and  model tracking. \gls{QT}\cite{QtWebsite} is used to design the graphical interface, and \gls{vtk}\cite{vtkBook} to build a overlay window\cite{6864541}. OpenCV and SciKit-Surgery libraries help me process images
 and track \gls{aruco}\cite{1467495} within video steaming. Qt allows me to create a user interface that ensures  user could more easily change multiple settings, which can enhance the user experience.
 VTK and SciKit-Surgery Augmented Reality library are the management of overlay and multi-layer video rendering in my project.
 An ArUco Marker Generator is also included, which enables the user to generate different ArUco Markers and save them.
@@ -393,13 +393,13 @@ User Interface Design, and Design Notation and Diagrams.
                                     The \emph{TimestampedVideoSource} class uses the OpenCV library's, emph{cv2.VideoCapture} method to initialise the video capture from the camera number or file path. It can support basic video capture functionality or provide the ability to validate the size of the video stream to ensure that the resolution is compatible with the system. If the resolution size provided by the setting is valid, the system sets the resolution accordingly. If the resolution is not valid, the system uses the camera's settings by default. If the requested resolution option is not supported by the camera, the system throws an error, which effectively prevents runtime problems that may result from unsupported video configurations and increases system stability and reliability.
                               \item \textit{Synchronisation and Timestamping:}
                                     \\
-                                     The \emph{TimestampedVideoSource} class also serves to synchronise the video stream with the modelled overlay, embedding a timestamp with the current date and time at each frame captured. Each time a video frame is successfully read, the \emph{datetime.datetime.now()} method gets the current system time. This timestamp is then converted to a string or other format and stored or passed along with the video frame, ensuring that each frame has an exact timestamp. In Augmented Reality (AR) or Virtual Reality (VR) systems, quasi-timestamping this timestamp ensures alignment between the 3D model and the actual environment.With such a timestamping feature, \emph{TimestampedVideoSource} can ensure the synchronisation of the video frames for the subsequent synchronisation of the model overlay.
+                                    The \emph{TimestampedVideoSource} class also serves to synchronise the video stream with the modelled overlay, embedding a timestamp with the current date and time at each frame captured. Each time a video frame is successfully read, the \emph{datetime.datetime.now()} method gets the current system time. This timestamp is then converted to a string or other format and stored or passed along with the video frame, ensuring that each frame has an exact timestamp. In Augmented Reality (AR) or Virtual Reality (VR) systems, quasi-timestamping this timestamp ensures alignment between the 3D model and the actual environment.With such a timestamping feature, \emph{TimestampedVideoSource} can ensure the synchronisation of the video frames for the subsequent synchronisation of the model overlay.
                               \item \textit{Handles multiple video sources:}
-                              \\
-                              The \emph{VideoSourceWrapper} class manages multiple video sources, allowing the addition of camera inputs or the uploading of video files, and verifying their existence and compatibility. A centralised method for releasing all video sources is provided in this class to ensure that resources that are no longer needed are managed and cleaned up in a timely manner. Each video source is encapsulated in an instance of the \emph{TimestampedVideoSource } class, which allows each source to be controlled and processed independently. This feature ensures that the system load is at an appropriate level.
+                                    \\
+                                    The \emph{VideoSourceWrapper} class manages multiple video sources, allowing the addition of camera inputs or the uploading of video files, and verifying their existence and compatibility. A centralised method for releasing all video sources is provided in this class to ensure that resources that are no longer needed are managed and cleaned up in a timely manner. Each video source is encapsulated in an instance of the \emph{TimestampedVideoSource } class, which allows each source to be controlled and processed independently. This feature ensures that the system load is at an appropriate level.
                               \item \textit{Retrieve and display video frames:}
-                              \\
-                              Retrieval of frames is achieved by system calls to the \emph{read()} method of each video source, which is implemented through OpenCV's \emph{ cv2.VideoCapture.read() }. This method captures a single frame from the video source and checks to see if it was successfully captured. If successfully captured, the frame is tagged using the current timestamp, ensuring that each frame has an accurate time reference. When processing multiple video sources, the system ensures synchronisation between frames. Synchronisation of frames is achieved by using the same frame rate setting for all sources and matching frames from different sources with timestamps. This allows for smoothness and synchronisation in the case of multiple video source inputs.
+                                    \\
+                                    Retrieval of frames is achieved by system calls to the \emph{read()} method of each video source, which is implemented through OpenCV's \emph{ cv2.VideoCapture.read() }. This method captures a single frame from the video source and checks to see if it was successfully captured. If successfully captured, the frame is tagged using the current timestamp, ensuring that each frame has an accurate time reference. When processing multiple video sources, the system ensures synchronisation between frames. Synchronisation of frames is achieved by using the same frame rate setting for all sources and matching frames from different sources with timestamps. This allows for smoothness and synchronisation in the case of multiple video source inputs.
                         \end{itemize}
 
                         \paragraph{pseudocode for the \emph{video\_source.py}:}
@@ -537,10 +537,95 @@ class SmoothedTransform:
                               \end{minted}
                   \item \textbf{Model Rendering and Overlay}
                         % 详述用于检测和追踪ArUco标记的算法，包括图像分割、模式识别和机器学习技术。
-                        
+                        \\
+                        It is mainly implemented by \emph{overlay\_window.py}, in which the \emph{VTKOverlayWindow} class combines the functionality of VTK, Qt and OpenCV for real-time video streaming and model overlay.
                         \begin{itemize}
-                              \item 
+                              \item \textit{Multi-layer rendering settings for video and models:}
+                                    \\
+                                    When initialising the \emph{VTKOverlayWindow} class, the VTK library's \emph{vtkRenderWindow} and \emph{vtkRenderer} are used to build a multi-layered rendering environment\cite{7783818}. This multi-layer architecture allows independent control of content rendering on each layer, where the bottom layer is typically used to display live or pre-recorded video, while the top layer is used to add 3D models and other GUI elements\cite{5974642,6194820}. Such a layer setup ensures proper visual overlay between the rendered elements. The \emph{SetNumberOfLayers} method is used to define the number of layers in the rendering window, and the \emph{SetLayer} method is used to assign each renderer to a specific layer. This layering system ensures that the video stream and 3D models are correctly displayed and overlaid in the final output\cite{7783818}.
+                                    \paragraph{Code for the multi-layer rendering settings:}
+                                    \begin{minted}[frame=single, linenos=true, fontsize=\footnotesize]{python}
+# Create a rendering window and set multiple layers
+renderWindow = vtk.vtkRenderWindow()
+renderWindow.SetNumberOfLayers(3)
+
+# Create renderers for each layer
+videoRenderer = vtk.vtkRenderer()
+videoRenderer.SetLayer(0)  # Bottom layer for video
+modelRenderer = vtk.vtkRenderer()
+modelRenderer.SetLayer(1)  # Middle layer for 3D models
+uiRenderer = vtk.vtkRenderer()
+uiRenderer.SetLayer(2)  # Top layer for UI components
+
+# Add renderers to the rendering window
+renderWindow.AddRenderer(videoRenderer)
+renderWindow.AddRenderer(modelRenderer)
+renderWindow.AddRenderer(uiRenderer)
+                              \end{minted}
+                              \item \textit{Import and format conversion of video streams:}
+                              \\
+                              In order to implement VTK overlay, the video frames captured by OpenCV need to be converted into a format that VTK can handle. Here the video frames are converted by using VTK's \emph{vtkImageImport} method. The conversion process requires setting the correct data types and sizes and updating the memory pointers to the video frames to ensure that the video stream data captured from OpenCV can be integrated into the VTK rendering process. This ensures synchronisation and integrity of the video stream before and after conversion without causing video lag in VTK.\cite{vtk_image_import_doc,vtk_image_import_2023}
+                              \paragraph{Code for the video stream conversion:}
+                              \begin{minted}[frame=single, linenos=true, fontsize=\footnotesize]{python}
+# Initialize video capture
+cap = cv2.VideoCapture(0)
+
+# Read a frame from OpenCV and import it into VTK
+ret, frame = cap.read()
+vtkImage = vtk.vtkImageData()
+vtkImage.SetDimensions(frame.shape[1], frame.shape[0], 1)
+vtkImage.SetScalarTypeToUnsignedChar()
+
+# Create a VTK image importer and connect it to the image data
+imageImporter = vtk.vtkImageImport()
+imageImporter.SetInputData(vtkImage)
+imageImporter.SetImportVoidPointer(frame.data, frame.nbytes)
+imageImporter.Update()
+                              \end{minted}
+                              \item \textit{Dynamic rendering and adjustment of 3D models:}
+                              \\
+                              Rendering of 3D models is achieved by using components such as VTK's \emph{vtkActor} and \emph{vtkPolyDataMapper}. These components support loading models from external files (e.g. STL format) and allow transformations such as translation, scaling, rotation, etc. to be applied to the model. These transformations of the model can be adjusted in real time to support dynamic user interaction and visual modifications\cite{6037214}. The model can be rendered in the VTK overlay by using the \emph{vtkPolyDataMapper} map the model data to geometry and set the actor using the \emph{vtkActor} and \emph{AddActor} method to add the model to the corresponding rendering layer. Then can use the \emph{SetPosition} and \emph{SetOrientation} method to adjust the model position and orientation to match the video\cite{5357714}. 
+                              \paragraph{Code for the dynamic rendering and adjustment of 3D models:}
+                              \begin{minted}[frame=single, linenos=true, fontsize=\footnotesize]{python}
+# Load a 3D model from a file
+modelReader = vtk.vtkSTLReader()
+modelReader.SetFileName("model.stl")
+
+# Map the model data to geometry
+mapper = vtk.vtkPolyDataMapper()
+mapper.SetInputConnection(modelReader.GetOutputPort())
+
+# Create an actor for the model and add it to the renderer
+actor = vtk.vtkActor()
+actor.SetMapper(mapper)
+modelRenderer.AddActor(actor)
+
+# Adjust model position and orientation to match the video
+actor.SetPosition(10, 0, 0)
+actor.SetOrientation(0, 90, 45)
+                              \end{minted}
                         \end{itemize}
+                        \item \textit{Optimization of Visual Effects and Depth Processing:}
+                        \\
+                        To enhance the visual quality of rendering, VTK's Depth Stripping technology can be enabled. Depth peeling is suitable for rendering transparent or semi-transparent objects and effectively solves visual artefacts and incorrect transparency problems during rendering. Through layer-by-layer rendering and compositing, Depth Stripping ensures visual correctness and is suitable for use in complex overlay or multi-object scenes.\cite{vtk_dualdepth_2016,5357714} The \emph{UseDepthPeelingOn} method is used to enable Depth Stripping, and the \emph{SetMaximumNumberOfPeels} and \emph{SetOcclusionRatio} methods are used to set the maximum number of peels and the occlusion ratio, respectively, to control the rendering quality and performance.
+                        \paragraph{Code for Optimization of Visual Effects and Depth Processing:}
+                        \begin{minted}[frame=single, linenos=true, fontsize=\footnotesize]{python}
+# Enable depth peeling for better transparency handling
+modelRenderer.UseDepthPeelingOn()
+modelRenderer.SetMaximumNumberOfPeels(100)
+modelRenderer.SetOcclusionRatio(0.1)
+                        \end{minted}
+                        \item \textit{Precise Control of Camera and Viewing:}
+                        \\
+                        During the implementation of model overlay using VTK, it is important to maintain an accurate overlay between the 3D model and the background video stream. When using different cameras, deviations in the model overlay may occur due to different camera parameters such as focal length, projection, and position. In order to make the model appear accurately at the right position in the background video, the parameters of the camera should be modified. By getting the camera's focal length, position and projection parameters to modify the variables in video processing, the viewpoint between the 3D model view and the video stream background can be consistently matched when using a camera with different characteristics. It might be necessary to additionally adjust the cropping range and field of view of the camera to ensure the correct range of visual output. The \emph{vtkCamera} class is built to control the camera settings. Method like \emph{SetPosition}, \emph{SetFocalPoint}, and \emph{SetViewUp} are used to adjust the camera's position, focus point, and view direction, respectively.\cite{vtk_examples_camera,vtk_camera_doc_2023}
+                        \paragraph{Code for Precise Control of Camera and Viewing:}
+                        \begin{minted}[frame=single, linenos=true, fontsize=\footnotesize]{python}
+# Configure the camera to match the video view
+camera = modelRenderer.GetActiveCamera()
+camera.SetPosition(0, 0, 100)
+camera.SetFocalPoint(0, 0, 0)
+camera.SetViewUp(0, 1, 0)
+                        \end{minted}
                   \item \textbf{Marker Detection and Tracking}
                         % 介绍如何将三维模型精确地放置在虚拟环境中，可能涉及计算几何和物体识别算法。
 

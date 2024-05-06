@@ -1,0 +1,6 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{\PYGZsh{} Enable depth peeling for better transparency handling}
+\PYG{n}{modelRenderer}\PYG{o}{.}\PYG{n}{UseDepthPeelingOn}\PYG{p}{()}
+\PYG{n}{modelRenderer}\PYG{o}{.}\PYG{n}{SetMaximumNumberOfPeels}\PYG{p}{(}\PYG{l+m+mi}{100}\PYG{p}{)}
+\PYG{n}{modelRenderer}\PYG{o}{.}\PYG{n}{SetOcclusionRatio}\PYG{p}{(}\PYG{l+m+mf}{0.1}\PYG{p}{)}
+\end{Verbatim}

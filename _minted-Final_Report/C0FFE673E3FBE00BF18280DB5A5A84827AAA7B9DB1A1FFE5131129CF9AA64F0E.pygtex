@@ -1,0 +1,16 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{\PYGZsh{} Initialize video capture}
+\PYG{n}{cap} \PYG{o}{=} \PYG{n}{cv2}\PYG{o}{.}\PYG{n}{VideoCapture}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{)}
+
+\PYG{c+c1}{\PYGZsh{} Read a frame from OpenCV and import it into VTK}
+\PYG{n}{ret}\PYG{p}{,} \PYG{n}{frame} \PYG{o}{=} \PYG{n}{cap}\PYG{o}{.}\PYG{n}{read}\PYG{p}{()}
+\PYG{n}{vtkImage} \PYG{o}{=} \PYG{n}{vtk}\PYG{o}{.}\PYG{n}{vtkImageData}\PYG{p}{()}
+\PYG{n}{vtkImage}\PYG{o}{.}\PYG{n}{SetDimensions}\PYG{p}{(}\PYG{n}{frame}\PYG{o}{.}\PYG{n}{shape}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{],} \PYG{n}{frame}\PYG{o}{.}\PYG{n}{shape}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{],} \PYG{l+m+mi}{1}\PYG{p}{)}
+\PYG{n}{vtkImage}\PYG{o}{.}\PYG{n}{SetScalarTypeToUnsignedChar}\PYG{p}{()}
+
+\PYG{c+c1}{\PYGZsh{} Create a VTK image importer and connect it to the image data}
+\PYG{n}{imageImporter} \PYG{o}{=} \PYG{n}{vtk}\PYG{o}{.}\PYG{n}{vtkImageImport}\PYG{p}{()}
+\PYG{n}{imageImporter}\PYG{o}{.}\PYG{n}{SetInputData}\PYG{p}{(}\PYG{n}{vtkImage}\PYG{p}{)}
+\PYG{n}{imageImporter}\PYG{o}{.}\PYG{n}{SetImportVoidPointer}\PYG{p}{(}\PYG{n}{frame}\PYG{o}{.}\PYG{n}{data}\PYG{p}{,} \PYG{n}{frame}\PYG{o}{.}\PYG{n}{nbytes}\PYG{p}{)}
+\PYG{n}{imageImporter}\PYG{o}{.}\PYG{n}{Update}\PYG{p}{()}
+\end{Verbatim}

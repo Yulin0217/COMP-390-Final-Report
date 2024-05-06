@@ -1,0 +1,7 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{\PYGZsh{} Configure the camera to match the video view}
+\PYG{n}{camera} \PYG{o}{=} \PYG{n}{modelRenderer}\PYG{o}{.}\PYG{n}{GetActiveCamera}\PYG{p}{()}
+\PYG{n}{camera}\PYG{o}{.}\PYG{n}{SetPosition}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{,} \PYG{l+m+mi}{100}\PYG{p}{)}
+\PYG{n}{camera}\PYG{o}{.}\PYG{n}{SetFocalPoint}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{)}
+\PYG{n}{camera}\PYG{o}{.}\PYG{n}{SetViewUp}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{)}
+\end{Verbatim}

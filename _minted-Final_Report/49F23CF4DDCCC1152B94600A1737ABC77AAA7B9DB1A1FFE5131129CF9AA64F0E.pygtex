@@ -1,0 +1,18 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{\PYGZsh{} Create a rendering window and set multiple layers}
+\PYG{n}{renderWindow} \PYG{o}{=} \PYG{n}{vtk}\PYG{o}{.}\PYG{n}{vtkRenderWindow}\PYG{p}{()}
+\PYG{n}{renderWindow}\PYG{o}{.}\PYG{n}{SetNumberOfLayers}\PYG{p}{(}\PYG{l+m+mi}{3}\PYG{p}{)}
+
+\PYG{c+c1}{\PYGZsh{} Create renderers for each layer}
+\PYG{n}{videoRenderer} \PYG{o}{=} \PYG{n}{vtk}\PYG{o}{.}\PYG{n}{vtkRenderer}\PYG{p}{()}
+\PYG{n}{videoRenderer}\PYG{o}{.}\PYG{n}{SetLayer}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{)}  \PYG{c+c1}{\PYGZsh{} Bottom layer for video}
+\PYG{n}{modelRenderer} \PYG{o}{=} \PYG{n}{vtk}\PYG{o}{.}\PYG{n}{vtkRenderer}\PYG{p}{()}
+\PYG{n}{modelRenderer}\PYG{o}{.}\PYG{n}{SetLayer}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{)}  \PYG{c+c1}{\PYGZsh{} Middle layer for 3D models}
+\PYG{n}{uiRenderer} \PYG{o}{=} \PYG{n}{vtk}\PYG{o}{.}\PYG{n}{vtkRenderer}\PYG{p}{()}
+\PYG{n}{uiRenderer}\PYG{o}{.}\PYG{n}{SetLayer}\PYG{p}{(}\PYG{l+m+mi}{2}\PYG{p}{)}  \PYG{c+c1}{\PYGZsh{} Top layer for UI components}
+
+\PYG{c+c1}{\PYGZsh{} Add renderers to the rendering window}
+\PYG{n}{renderWindow}\PYG{o}{.}\PYG{n}{AddRenderer}\PYG{p}{(}\PYG{n}{videoRenderer}\PYG{p}{)}
+\PYG{n}{renderWindow}\PYG{o}{.}\PYG{n}{AddRenderer}\PYG{p}{(}\PYG{n}{modelRenderer}\PYG{p}{)}
+\PYG{n}{renderWindow}\PYG{o}{.}\PYG{n}{AddRenderer}\PYG{p}{(}\PYG{n}{uiRenderer}\PYG{p}{)}
+\end{Verbatim}
