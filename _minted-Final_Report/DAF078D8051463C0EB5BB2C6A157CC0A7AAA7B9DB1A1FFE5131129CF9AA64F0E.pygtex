@@ -1,0 +1,39 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{Method} \PYG{n}{setup\PYGZus{}marker\PYGZus{}size\PYGZus{}ui}\PYG{p}{:}
+    \PYG{n}{Create} \PYG{n}{label} \PYG{l+s+s2}{\PYGZdq{}Enter Marker Size (mm):\PYGZdq{}}
+    \PYG{n}{Add} \PYG{n}{label} \PYG{n}{to} \PYG{n}{layout}
+
+    \PYG{n}{Create} \PYG{n+nb}{input} \PYG{n}{field} \PYG{k}{for} \PYG{n}{marker} \PYG{n}{size}
+    \PYG{n}{Set} \PYG{n}{default} \PYG{n}{text} \PYG{n}{of} \PYG{n+nb}{input} \PYG{n}{field} \PYG{n}{to} \PYG{l+s+s2}{\PYGZdq{}50\PYGZdq{}}
+    \PYG{n}{Add} \PYG{n+nb}{input} \PYG{n}{field} \PYG{n}{to} \PYG{n}{layout}
+
+    \PYG{n}{Create} \PYG{n}{button} \PYG{l+s+s2}{\PYGZdq{}Update Marker Size\PYGZdq{}}
+    \PYG{n}{Connect} \PYG{n}{button} \PYG{n}{click} \PYG{n}{event} \PYG{n}{to} \PYG{n}{method} \PYG{n}{update\PYGZus{}marker\PYGZus{}size}
+    \PYG{n}{Add} \PYG{n}{button} \PYG{n}{to} \PYG{n}{layout}
+
+\PYG{n}{Method} \PYG{n}{update\PYGZus{}marker\PYGZus{}size}\PYG{p}{:}
+    \PYG{n}{Read} \PYG{n}{value} \PYG{k+kn}{from} \PYG{n+nn}{marker} \PYG{n}{size} \PYG{n+nb}{input} \PYG{n}{field}
+    \PYG{n}{Convert} \PYG{n+nb}{input} \PYG{n}{value} \PYG{n}{to} \PYG{n+nb}{float} \PYG{o+ow}{and} \PYG{n}{store} \PYG{o+ow}{in} \PYG{n}{marker} \PYG{n}{size} \PYG{n}{configuration}
+    \PYG{n}{Reinitialize} \PYG{n}{ArUco} \PYG{n}{tracker} \PYG{k}{with} \PYG{n}{updated} \PYG{n}{configuration}
+    \PYG{n}{Start} \PYG{n}{the} \PYG{n}{ArUco} \PYG{n}{tracker}
+
+\PYG{n}{Method} \PYG{n}{setup\PYGZus{}dictionary\PYGZus{}ui}\PYG{p}{:}
+    \PYG{n}{Create} \PYG{n}{label} \PYG{l+s+s2}{\PYGZdq{}Select ArUco Dictionary:\PYGZdq{}}
+    \PYG{n}{Add} \PYG{n}{label} \PYG{n}{to} \PYG{n}{layout}
+
+    \PYG{n}{Create} \PYG{n}{dropdown} \PYG{k}{for} \PYG{n}{dictionary} \PYG{n}{selection}
+    \PYG{n}{Populate} \PYG{n}{dropdown} \PYG{k}{with} \PYG{n}{dictionary} \PYG{n}{options}\PYG{p}{:}
+        \PYG{l+s+s1}{\PYGZsq{}DICT\PYGZus{}4X4\PYGZus{}50\PYGZsq{}}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}DICT\PYGZus{}4X4\PYGZus{}100\PYGZsq{}}\PYG{p}{,} \PYG{n}{etc}\PYG{o}{.}
+    \PYG{n}{Add} \PYG{n}{dropdown} \PYG{n}{to} \PYG{n}{layout}
+
+    \PYG{n}{Create} \PYG{n}{button} \PYG{l+s+s2}{\PYGZdq{}Update Aruco\PYGZdq{}}
+    \PYG{n}{Connect} \PYG{n}{button} \PYG{n}{click} \PYG{n}{event} \PYG{n}{to} \PYG{n}{method} \PYG{n}{update\PYGZus{}dictionary}
+    \PYG{n}{Add} \PYG{n}{button} \PYG{n}{to} \PYG{n}{layout}
+
+\PYG{n}{Method} \PYG{n}{update\PYGZus{}dictionary}\PYG{p}{:}
+    \PYG{n}{Get} \PYG{n}{selected} \PYG{n}{dictionary} \PYG{k+kn}{from} \PYG{n+nn}{dropdown}
+    \PYG{n}{Update} \PYG{n}{ArUco} \PYG{n}{dictionary} \PYG{o+ow}{in} \PYG{n}{configuration} \PYG{k}{with} \PYG{n}{selected} \PYG{n}{item}
+    \PYG{n}{Reinitialize} \PYG{n}{ArUco} \PYG{n}{tracker} \PYG{k}{with} \PYG{n}{updated} \PYG{n}{configuration}
+    \PYG{n}{Start} \PYG{n}{the} \PYG{n}{ArUco} \PYG{n}{tracker}
+
+\end{Verbatim}

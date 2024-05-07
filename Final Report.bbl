@@ -124,6 +124,7 @@
       \strng{authornamehash}{8fdd00b7aac42271736575410d6a2219}
       \strng{authorfullhash}{8fdd00b7aac42271736575410d6a2219}
       \strng{authorfullhashraw}{8fdd00b7aac42271736575410d6a2219}
+      \field{extraname}{1}
       \field{sortinit}{5}
       \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
@@ -977,6 +978,37 @@
       \field{note}{Accessed: 2024-05-05}
       \field{title}{Documentation for vtkCamera}
     \endentry
+    \entry{lazar2018mastering}{book}{}{}
+      \name{author}{2}{}{%
+        {{hash=a17074df613a11377a716a7dbd4fa2f2}{%
+           family={Lazar},
+           familyi={L\bibinitperiod},
+           given={Guillaume},
+           giveni={G\bibinitperiod}}}%
+        {{hash=cecb54c21e975c1521e07aba1c781207}{%
+           family={Penea},
+           familyi={P\bibinitperiod},
+           given={Robin},
+           giveni={R\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Packt Publishing Ltd}%
+      }
+      \strng{namehash}{04889672206db9bc8c1d312fc1f738ef}
+      \strng{fullhash}{04889672206db9bc8c1d312fc1f738ef}
+      \strng{fullhashraw}{04889672206db9bc8c1d312fc1f738ef}
+      \strng{bibnamehash}{04889672206db9bc8c1d312fc1f738ef}
+      \strng{authorbibnamehash}{04889672206db9bc8c1d312fc1f738ef}
+      \strng{authornamehash}{04889672206db9bc8c1d312fc1f738ef}
+      \strng{authorfullhash}{04889672206db9bc8c1d312fc1f738ef}
+      \strng{authorfullhashraw}{04889672206db9bc8c1d312fc1f738ef}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Mastering Qt 5: Create stunning cross-platform applications using C++ with Qt Widgets and QML with Qt Quick}
+      \field{year}{2018}
+    \endentry
     \entry{UoL_COMP390_2023-24}{misc}{}{}
       \name{author}{1}{}{%
         {{hash=3920f197e7c0faf9673548b734d15e37}{%
@@ -1219,7 +1251,7 @@
       \verb https://en.wikipedia.org/w/index.php?title=Qt_(software)&oldid=1219937369
       \endverb
     \endentry
-    \entry{cv}{misc}{}{}
+    \entry{pyside1}{misc}{}{}
       \name{author}{1}{}{%
         {{hash=b6aea1a416c89509a7df1cbb69249cb6}{%
            family={{Wikipedia contributors}},
@@ -1234,6 +1266,64 @@
       \strng{authorfullhash}{b6aea1a416c89509a7df1cbb69249cb6}
       \strng{authorfullhashraw}{b6aea1a416c89509a7df1cbb69249cb6}
       \field{extraname}{6}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{[Online; accessed 7-May-2024]}
+      \field{title}{PySide --- {Wikipedia}{,} The Free Encyclopedia}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://en.wikipedia.org/w/index.php?title=PySide&oldid=1214569279
+      \endverb
+      \verb{url}
+      \verb https://en.wikipedia.org/w/index.php?title=PySide&oldid=1214569279
+      \endverb
+    \endentry
+    \entry{pyside2}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=8fdd00b7aac42271736575410d6a2219}{%
+           family={{The Qt Company}},
+           familyi={T\bibinitperiod}}}%
+      }
+      \strng{namehash}{8fdd00b7aac42271736575410d6a2219}
+      \strng{fullhash}{8fdd00b7aac42271736575410d6a2219}
+      \strng{fullhashraw}{8fdd00b7aac42271736575410d6a2219}
+      \strng{bibnamehash}{8fdd00b7aac42271736575410d6a2219}
+      \strng{authorbibnamehash}{8fdd00b7aac42271736575410d6a2219}
+      \strng{authornamehash}{8fdd00b7aac42271736575410d6a2219}
+      \strng{authorfullhash}{8fdd00b7aac42271736575410d6a2219}
+      \strng{authorfullhashraw}{8fdd00b7aac42271736575410d6a2219}
+      \field{extraname}{2}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Accessed: 2024-05-01}
+      \field{title}{PySide6: Python bindings for the Qt cross-platform application framework}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://pypi.org/project/PySide6/
+      \endverb
+      \verb{url}
+      \verb https://pypi.org/project/PySide6/
+      \endverb
+    \endentry
+    \entry{cv}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=b6aea1a416c89509a7df1cbb69249cb6}{%
+           family={{Wikipedia contributors}},
+           familyi={W\bibinitperiod}}}%
+      }
+      \strng{namehash}{b6aea1a416c89509a7df1cbb69249cb6}
+      \strng{fullhash}{b6aea1a416c89509a7df1cbb69249cb6}
+      \strng{fullhashraw}{b6aea1a416c89509a7df1cbb69249cb6}
+      \strng{bibnamehash}{b6aea1a416c89509a7df1cbb69249cb6}
+      \strng{authorbibnamehash}{b6aea1a416c89509a7df1cbb69249cb6}
+      \strng{authornamehash}{b6aea1a416c89509a7df1cbb69249cb6}
+      \strng{authorfullhash}{b6aea1a416c89509a7df1cbb69249cb6}
+      \strng{authorfullhashraw}{b6aea1a416c89509a7df1cbb69249cb6}
+      \field{extraname}{7}
       \field{sortinit}{3}
       \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}

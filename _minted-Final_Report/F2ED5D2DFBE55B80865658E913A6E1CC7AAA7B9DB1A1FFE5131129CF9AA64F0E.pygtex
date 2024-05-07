@@ -1,0 +1,13 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{Method} \PYG{n}{estimate\PYGZus{}pose}\PYG{p}{(}\PYG{n}{marker\PYGZus{}corners}\PYG{p}{,} \PYG{n}{marker\PYGZus{}ids}\PYG{p}{):}
+    \PYG{n}{If} \PYG{n}{marker\PYGZus{}corners} \PYG{n}{are} \PYG{o+ow}{not} \PYG{n}{empty}\PYG{p}{:}
+        \PYG{n}{For} \PYG{n}{each} \PYG{n}{marker} \PYG{o+ow}{in} \PYG{n}{marker\PYGZus{}corners}\PYG{p}{:}
+            \PYG{n}{rvec}\PYG{p}{,} \PYG{n}{tvec}\PYG{p}{,} \PYG{n}{\PYGZus{}} \PYG{o}{=}
+            \PYG{n}{cv2}\PYG{o}{.}\PYG{n}{aruco}\PYG{o}{.}\PYG{n}{estimatePoseSingleMarkers}\PYG{p}{(}\PYG{n}{marker\PYGZus{}corners}\PYG{p}{,}
+            \PYG{n}{marker\PYGZus{}size}\PYG{p}{,} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{\PYGZus{}camera\PYGZus{}projection\PYGZus{}matrix}\PYG{p}{,}
+            \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{\PYGZus{}camera\PYGZus{}distortion}\PYG{p}{)}
+            \PYG{c+c1}{\PYGZsh{} Optional: for visualization}
+            \PYG{n}{cv2}\PYG{o}{.}\PYG{n}{aruco}\PYG{o}{.}\PYG{n}{drawAxis}\PYG{p}{(}\PYG{n}{frame}\PYG{p}{,} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{\PYGZus{}camera\PYGZus{}projection\PYGZus{}matrix}\PYG{p}{,}
+            \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{\PYGZus{}camera\PYGZus{}distortion}\PYG{p}{,} \PYG{n}{rvec}\PYG{p}{,} \PYG{n}{tvec}\PYG{p}{,} \PYG{n}{length\PYGZus{}of\PYGZus{}axis}\PYG{p}{)}
+        \PYG{n}{Return} \PYG{n}{rvec}\PYG{p}{,} \PYG{n}{tvec}
+\end{Verbatim}

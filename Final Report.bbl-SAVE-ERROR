@@ -124,8 +124,8 @@
       \strng{authornamehash}{8fdd00b7aac42271736575410d6a2219}
       \strng{authorfullhash}{8fdd00b7aac42271736575410d6a2219}
       \strng{authorfullhashraw}{8fdd00b7aac42271736575410d6a2219}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{[Online; accessed 29-April-2024]}
@@ -167,13 +167,48 @@
       \strng{authornamehash}{340ff298ce91155ae09c9a40578df722}
       \strng{authorfullhash}{340ff298ce91155ae09c9a40578df722}
       \strng{authorfullhashraw}{340ff298ce91155ae09c9a40578df722}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{isbn}{978-1-930934-19-1}
       \field{title}{The Visualization Toolkit (4th ed.)}
       \field{year}{2006}
+    \endentry
+    \entry{6864541}{inproceedings}{}{}
+      \name{author}{2}{}{%
+        {{hash=5f985edf6430df04915a6d0ce8fe04f4}{%
+           family={Sun},
+           familyi={S\bibinitperiod},
+           given={Mengmeng},
+           giveni={M\bibinitperiod}}}%
+        {{hash=3796f3f83da8ec53c0c6143abbebfa85}{%
+           family={Wu},
+           familyi={W\bibinitperiod},
+           given={Shuicai},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{f7949b6ad7d5637c17aa5eeb31480f83}
+      \strng{fullhash}{f7949b6ad7d5637c17aa5eeb31480f83}
+      \strng{fullhashraw}{f7949b6ad7d5637c17aa5eeb31480f83}
+      \strng{bibnamehash}{f7949b6ad7d5637c17aa5eeb31480f83}
+      \strng{authorbibnamehash}{f7949b6ad7d5637c17aa5eeb31480f83}
+      \strng{authornamehash}{f7949b6ad7d5637c17aa5eeb31480f83}
+      \strng{authorfullhash}{f7949b6ad7d5637c17aa5eeb31480f83}
+      \strng{authorfullhashraw}{f7949b6ad7d5637c17aa5eeb31480f83}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{2013 IEEE International Conference on Medical Imaging Physics and Engineering}
+      \field{title}{A software development of DICOM image processing based on QT, VTK and ITK}
+      \field{year}{2013}
+      \field{pages}{231\bibrangedash 235}
+      \range{pages}{5}
+      \verb{doi}
+      \verb 10.1109/ICMIPE.2013.6864541
+      \endverb
+      \keyw{DICOM;Software;Image edge detection;Smoothing methods;Graphical user interfaces;DICOM;Image Processing;ITK;VTK;QT}
     \endentry
     \entry{1467495}{inproceedings}{}{}
       \name{author}{1}{}{%
@@ -191,8 +226,8 @@
       \strng{authornamehash}{094486b9bf66b2d238e3937cc49fca84}
       \strng{authorfullhash}{094486b9bf66b2d238e3937cc49fca84}
       \strng{authorfullhashraw}{094486b9bf66b2d238e3937cc49fca84}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{booktitle}{2005 IEEE Computer Society Conference on Computer Vision and Pattern Recognition (CVPR'05)}
@@ -221,8 +256,8 @@
       \strng{authorfullhash}{b6aea1a416c89509a7df1cbb69249cb6}
       \strng{authorfullhashraw}{b6aea1a416c89509a7df1cbb69249cb6}
       \field{extraname}{1}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{[Online; accessed 1-May-2024]}
@@ -261,8 +296,8 @@
       \strng{authornamehash}{7740077d64b9c7c8a59951f0d531f7ea}
       \strng{authorfullhash}{7740077d64b9c7c8a59951f0d531f7ea}
       \strng{authorfullhashraw}{7740077d64b9c7c8a59951f0d531f7ea}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{booktitle}{2022 15th International Congress on Image and Signal Processing, BioMedical Engineering and Informatics (CISP-BMEI)}
@@ -301,8 +336,8 @@
       \strng{authornamehash}{c476baf75d4a44785196eaceded3efe8}
       \strng{authorfullhash}{c476baf75d4a44785196eaceded3efe8}
       \strng{authorfullhashraw}{c476baf75d4a44785196eaceded3efe8}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{An ordinary electric drill was integrated into a context-aware augmented reality (AR) framework to assist in timber-drilling tasks. This study is a preliminary evaluation to detail technical challenges, potential bottlenecks, and accuracy of the proposed object- and tool-aware AR-assisted fabrication systems. In the designed workflow, computer vision tools and sensors are used to implement an inside-out tracking technique for retrofitted drills based on a reverse engineering approach. The approach allows workers to perform complex drilling angle operations according to computer-processed feedback instead of drawing, marking, or jigs. First, the developed methodology was presented, and its various devices and functioning phases were detailed. Second, this first proof of concept was evaluated by experimentally scanning produced drillings and comparing the discrepancies with their respective three-dimensional execution models. This study outlined improvements in the proposed tool-aware fabrication process and clarified the potential role of augmented carpentry in the digital fabrication landscape.}
@@ -348,8 +383,8 @@
       \strng{authornamehash}{7b64ea6b018ed9fc80a22ce3e7cc5e59}
       \strng{authorfullhash}{7b64ea6b018ed9fc80a22ce3e7cc5e59}
       \strng{authorfullhashraw}{7b64ea6b018ed9fc80a22ce3e7cc5e59}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{In the continuous optimization of computer graphics, game engine and virtual reality have become the focus of research and innovation in the current technology field. Rendering is a core technology to show a variety of graphic effects, which has been attached great importance to and applied by the whole society. Nowadays, although the rendering of large-scale and complex scenes has a wide range of applications, the actual optimization requirements are very high. Therefore, in the future technology application and research and development, based on higher and higher technical requirements, it is necessary to improve the efficiency of actual rendering while ensuring or improving the rendering quality. Therefore, this paper studies how to use the algorithm to improve the efficiency of actual rendering, so as to provide a new basis for future computer graphics research.}
@@ -639,6 +674,309 @@
       \endverb
       \keyw{complex variables,exponential smoothing,forecasting,state space models}
     \endentry
+    \entry{7783818}{inproceedings}{}{}
+      \name{author}{5}{}{%
+        {{hash=53d85a2e985a6d964a2bfa1aef65fe0a}{%
+           family={Tan},
+           familyi={T\bibinitperiod},
+           given={Jianhao},
+           giveni={J\bibinitperiod}}}%
+        {{hash=95d25145789eb692784f0e434ed1b801}{%
+           family={Chen},
+           familyi={C\bibinitperiod},
+           given={Jia},
+           giveni={J\bibinitperiod}}}%
+        {{hash=346cb79193423976f1db1a60b2f33950}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Yaonan},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=da32ce59ebe295c8c0c7b1e010237b74}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={Lu},
+           giveni={L\bibinitperiod}}}%
+        {{hash=254e44735b77a7c6098d161825a7b8bd}{%
+           family={Bao},
+           familyi={B\bibinitperiod},
+           given={Yujie},
+           giveni={Y\bibinitperiod}}}%
+      }
+      \strng{namehash}{ac14f3e1ca141c9c20715b63d8f80806}
+      \strng{fullhash}{c28df58d80587042ead9c14ff330df3c}
+      \strng{fullhashraw}{c28df58d80587042ead9c14ff330df3c}
+      \strng{bibnamehash}{c28df58d80587042ead9c14ff330df3c}
+      \strng{authorbibnamehash}{c28df58d80587042ead9c14ff330df3c}
+      \strng{authornamehash}{ac14f3e1ca141c9c20715b63d8f80806}
+      \strng{authorfullhash}{c28df58d80587042ead9c14ff330df3c}
+      \strng{authorfullhashraw}{c28df58d80587042ead9c14ff330df3c}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{2016 8th International Conference on Intelligent Human-Machine Systems and Cybernetics (IHMSC)}
+      \field{title}{Design of 3D Visualization System Based on VTK Utilizing Marching Cubes and Ray Casting Algorithm}
+      \field{volume}{02}
+      \field{year}{2016}
+      \field{pages}{192\bibrangedash 197}
+      \range{pages}{6}
+      \verb{doi}
+      \verb 10.1109/IHMSC.2016.153
+      \endverb
+      \keyw{Rendering (computer graphics);Three-dimensional displays;Medical diagnostic imaging;Solid modeling;Isosurfaces;VTK;Medical image;3D visualization;Marching Cubes;Ray Casting}
+    \endentry
+    \entry{5974642}{inproceedings}{}{}
+      \name{author}{3}{}{%
+        {{hash=e21bd4c81d37320aeca148c9370541df}{%
+           family={Sun},
+           familyi={S\bibinitperiod},
+           given={Shaoping},
+           giveni={S\bibinitperiod}}}%
+        {{hash=a9e5d12bb4b9144cf65646878192d22a}{%
+           family={He},
+           familyi={H\bibinitperiod},
+           given={Jianfeng},
+           giveni={J\bibinitperiod}}}%
+        {{hash=631bdce5289be54717cd74a75f516b25}{%
+           family={Ma},
+           familyi={M\bibinitperiod},
+           given={Lei},
+           giveni={L\bibinitperiod}}}%
+      }
+      \strng{namehash}{6b29cd704dac7836015bb115870fdaa4}
+      \strng{fullhash}{6b29cd704dac7836015bb115870fdaa4}
+      \strng{fullhashraw}{6b29cd704dac7836015bb115870fdaa4}
+      \strng{bibnamehash}{6b29cd704dac7836015bb115870fdaa4}
+      \strng{authorbibnamehash}{6b29cd704dac7836015bb115870fdaa4}
+      \strng{authornamehash}{6b29cd704dac7836015bb115870fdaa4}
+      \strng{authorfullhash}{6b29cd704dac7836015bb115870fdaa4}
+      \strng{authorfullhashraw}{6b29cd704dac7836015bb115870fdaa4}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{2011 International Conference on Computer Science and Service System (CSSS)}
+      \field{title}{3D visualization system for medical image based on VTK and OK Series Image Board}
+      \field{year}{2011}
+      \field{pages}{951\bibrangedash 954}
+      \range{pages}{4}
+      \verb{doi}
+      \verb 10.1109/CSSS.2011.5974642
+      \endverb
+      \keyw{Visualization;Three dimensional displays;Biomedical imaging;Casting;Helium;Rendering (computer graphics);Computed tomography;VTK;Volume rendering;Surface rendering;OK series image board;Virtual slice.}
+    \endentry
+    \entry{6194820}{inproceedings}{}{}
+      \name{author}{5}{}{%
+        {{hash=8b4fb48f9deeb84a45d6d2aeb5df717e}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Yanan},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=83a6937037c9eb772889e841963be218}{%
+           family={Wan},
+           familyi={W\bibinitperiod},
+           given={Wanggen},
+           giveni={W\bibinitperiod}}}%
+        {{hash=ed75a7d4156dac086f53f0dd904eacc6}{%
+           family={Zhou},
+           familyi={Z\bibinitperiod},
+           given={Xueli},
+           giveni={X\bibinitperiod}}}%
+        {{hash=9fa73a67c01fa4eb105ae468ed048052}{%
+           family={Mao},
+           familyi={M\bibinitperiod},
+           given={Shuiling},
+           giveni={S\bibinitperiod}}}%
+        {{hash=18ba73252766a06dc14ce84e6f718773}{%
+           family={HuiLi},
+           familyi={H\bibinitperiod}}}%
+      }
+      \strng{namehash}{50c213e12555e4bc9861039be28f46b2}
+      \strng{fullhash}{e929a29c4e43afea9ce4b7b9eb464578}
+      \strng{fullhashraw}{e929a29c4e43afea9ce4b7b9eb464578}
+      \strng{bibnamehash}{e929a29c4e43afea9ce4b7b9eb464578}
+      \strng{authorbibnamehash}{e929a29c4e43afea9ce4b7b9eb464578}
+      \strng{authornamehash}{50c213e12555e4bc9861039be28f46b2}
+      \strng{authorfullhash}{e929a29c4e43afea9ce4b7b9eb464578}
+      \strng{authorfullhashraw}{e929a29c4e43afea9ce4b7b9eb464578}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{IET International Communication Conference on Wireless Mobile and Computing (CCWMC 2011)}
+      \field{title}{Local transparency technique for heart model from VTK}
+      \field{year}{2011}
+      \field{pages}{139\bibrangedash 142}
+      \range{pages}{4}
+      \verb{doi}
+      \verb 10.1049/cp.2011.0863
+      \endverb
+      \keyw{point clouds;overall transparency;three-dimensional reconstruction;local transparency;VTK}
+    \endentry
+    \entry{vtk_image_import_doc}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=7c213cbf3cf3c10dbb3ed50506b46aec}{%
+           family={vtk2jbean},
+           familyi={v\bibinitperiod}}}%
+      }
+      \strng{namehash}{7c213cbf3cf3c10dbb3ed50506b46aec}
+      \strng{fullhash}{7c213cbf3cf3c10dbb3ed50506b46aec}
+      \strng{fullhashraw}{7c213cbf3cf3c10dbb3ed50506b46aec}
+      \strng{bibnamehash}{7c213cbf3cf3c10dbb3ed50506b46aec}
+      \strng{authorbibnamehash}{7c213cbf3cf3c10dbb3ed50506b46aec}
+      \strng{authornamehash}{7c213cbf3cf3c10dbb3ed50506b46aec}
+      \strng{authorfullhash}{7c213cbf3cf3c10dbb3ed50506b46aec}
+      \strng{authorfullhashraw}{7c213cbf3cf3c10dbb3ed50506b46aec}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://jbeanvtk.sourceforge.net/apidocs/vtk/vtkImageImport.html}}
+      \field{note}{Accessed: 2024-05-05}
+      \field{title}{vtkImageImport Documentation}
+    \endentry
+    \entry{vtk_image_import_2023}{misc}{}{}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://vtk.org/doc/nightly/html/classvtkImageImport.html}}
+      \field{note}{Accessed: 2024-05-05}
+      \field{title}{vtkImageImport Class Reference}
+    \endentry
+    \entry{6037214}{inproceedings}{}{}
+      \name{author}{4}{}{%
+        {{hash=b7509e016482490970f7fb32cc464574}{%
+           family={Xiaoqi},
+           familyi={X\bibinitperiod},
+           given={Lu},
+           giveni={L\bibinitperiod}}}%
+        {{hash=c53dab107b97755e2e592d776d755c04}{%
+           family={Dongzheng},
+           familyi={D\bibinitperiod},
+           given={Jia},
+           giveni={J\bibinitperiod}}}%
+        {{hash=a38195cea21ad05656bc1dbfbcda72e5}{%
+           family={Baohua},
+           familyi={B\bibinitperiod},
+           given={Zhang},
+           giveni={Z\bibinitperiod}}}%
+        {{hash=2d3be6921e6fa01588312fcb217c99f6}{%
+           family={Xiaoying},
+           familyi={X\bibinitperiod},
+           given={Ren},
+           giveni={R\bibinitperiod}}}%
+      }
+      \strng{namehash}{092b0f48c0e1d7d8c4e4fdadb4142fa6}
+      \strng{fullhash}{44546ae60410eb807c59a310e36de8f3}
+      \strng{fullhashraw}{44546ae60410eb807c59a310e36de8f3}
+      \strng{bibnamehash}{44546ae60410eb807c59a310e36de8f3}
+      \strng{authorbibnamehash}{44546ae60410eb807c59a310e36de8f3}
+      \strng{authornamehash}{092b0f48c0e1d7d8c4e4fdadb4142fa6}
+      \strng{authorfullhash}{44546ae60410eb807c59a310e36de8f3}
+      \strng{authorfullhashraw}{44546ae60410eb807c59a310e36de8f3}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of 2011 Cross Strait Quad-Regional Radio Science and Wireless Technology Conference}
+      \field{title}{Study and implementation for interactive cutting of 3D medical image based on VTK}
+      \field{volume}{2}
+      \field{year}{2011}
+      \field{pages}{1351\bibrangedash 1354}
+      \range{pages}{4}
+      \verb{doi}
+      \verb 10.1109/CSQRWC.2011.6037214
+      \endverb
+      \keyw{Biomedical imaging;Three dimensional displays;Visualization;medical image;interactive cutting;3D reconstruction;VTK}
+    \endentry
+    \entry{5357714}{inproceedings}{}{}
+      \name{author}{3}{}{%
+        {{hash=84ed9f77c884220b21d8d401c9e80c2f}{%
+           family={Yang},
+           familyi={Y\bibinitperiod},
+           given={Wenli},
+           giveni={W\bibinitperiod}}}%
+        {{hash=4cdfa3914e557dc32c60d015d79dcfd5}{%
+           family={Zeng},
+           familyi={Z\bibinitperiod},
+           given={Zhiyuan},
+           giveni={Z\bibinitperiod}}}%
+        {{hash=d7075571323d1adcd2fae2745f4e94e1}{%
+           family={Bai},
+           familyi={B\bibinitperiod},
+           given={Yujie},
+           giveni={Y\bibinitperiod}}}%
+      }
+      \strng{namehash}{66113e03be87f580929ebbcadf3329a7}
+      \strng{fullhash}{66113e03be87f580929ebbcadf3329a7}
+      \strng{fullhashraw}{66113e03be87f580929ebbcadf3329a7}
+      \strng{bibnamehash}{66113e03be87f580929ebbcadf3329a7}
+      \strng{authorbibnamehash}{66113e03be87f580929ebbcadf3329a7}
+      \strng{authornamehash}{66113e03be87f580929ebbcadf3329a7}
+      \strng{authorfullhash}{66113e03be87f580929ebbcadf3329a7}
+      \strng{authorfullhashraw}{66113e03be87f580929ebbcadf3329a7}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{2009 IEEE International Conference on Intelligent Computing and Intelligent Systems}
+      \field{title}{3D reconstruction system on coarse aggregate microfabric based on VTK}
+      \field{volume}{4}
+      \field{year}{2009}
+      \field{pages}{85\bibrangedash 88}
+      \range{pages}{4}
+      \verb{doi}
+      \verb 10.1109/ICICISYS.2009.5357714
+      \endverb
+      \keyw{Aggregates;Image reconstruction;Surface reconstruction;Space technology;Computed tomography;Libraries;Rendering (computer graphics);Data mining;Data visualization;Graphics;three-dimensional reconstruction;coarse aggregate microfabric;VTK;surface reconstruction;volume reconstruction}
+    \endentry
+    \entry{vtk_dualdepth_2016}{misc}{}{}
+      \name{author}{2}{}{%
+        {{hash=91b89ceb331bee43204a1537f4a49b2b}{%
+           family={Vacanti},
+           familyi={V\bibinitperiod},
+           given={Allison},
+           giveni={A\bibinitperiod}}}%
+        {{hash=e5d2098c61fade0ed5633c03dd4ca08c}{%
+           family={DeMarle},
+           familyi={D\bibinitperiod},
+           given={David},
+           giveni={D\bibinitperiod}}}%
+      }
+      \strng{namehash}{91ba753c44af950b718777dd6f3fc886}
+      \strng{fullhash}{91ba753c44af950b718777dd6f3fc886}
+      \strng{fullhashraw}{91ba753c44af950b718777dd6f3fc886}
+      \strng{bibnamehash}{91ba753c44af950b718777dd6f3fc886}
+      \strng{authorbibnamehash}{91ba753c44af950b718777dd6f3fc886}
+      \strng{authornamehash}{91ba753c44af950b718777dd6f3fc886}
+      \strng{authorfullhash}{91ba753c44af950b718777dd6f3fc886}
+      \strng{authorfullhashraw}{91ba753c44af950b718777dd6f3fc886}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://www.kitware.com/vtk-technical-highlight-dual-depth-peeling/}}
+      \field{month}{10}
+      \field{note}{Accessed: 2024-05-05}
+      \field{title}{{VTK Technical Highlight: Dual Depth Peeling}}
+      \field{year}{2016}
+    \endentry
+    \entry{vtk_examples_camera}{misc}{}{}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://examples.vtk.org/site/Cxx/Visualization/Camera/}}
+      \field{note}{Accessed: 2024-05-05}
+      \field{title}{VTK Examples for Camera in C++}
+    \endentry
+    \entry{vtk_camera_doc_2023}{misc}{}{}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://www.geologie.uni-freiburg.de/root/manuals/vtkman/vtkCamera.html}}
+      \field{note}{Accessed: 2024-05-05}
+      \field{title}{Documentation for vtkCamera}
+    \endentry
     \entry{UoL_COMP390_2023-24}{misc}{}{}
       \name{author}{1}{}{%
         {{hash=3920f197e7c0faf9673548b734d15e37}{%
@@ -653,8 +991,8 @@
       \strng{authornamehash}{3920f197e7c0faf9673548b734d15e37}
       \strng{authorfullhash}{3920f197e7c0faf9673548b734d15e37}
       \strng{authorfullhashraw}{3920f197e7c0faf9673548b734d15e37}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{Accessed: 2023-11-03}
@@ -667,9 +1005,38 @@
       \verb https://student.csc.liv.ac.uk/internal/modules/comp390/2023-24/ethics.php
       \endverb
     \endentry
+    \entry{BCS2020}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=ae9178757dd2a29cf80c1f5b9f34882e}{%
+           family={{BCS}},
+           familyi={B\bibinitperiod}}}%
+      }
+      \strng{namehash}{ae9178757dd2a29cf80c1f5b9f34882e}
+      \strng{fullhash}{ae9178757dd2a29cf80c1f5b9f34882e}
+      \strng{fullhashraw}{ae9178757dd2a29cf80c1f5b9f34882e}
+      \strng{bibnamehash}{ae9178757dd2a29cf80c1f5b9f34882e}
+      \strng{authorbibnamehash}{ae9178757dd2a29cf80c1f5b9f34882e}
+      \strng{authornamehash}{ae9178757dd2a29cf80c1f5b9f34882e}
+      \strng{authorfullhash}{ae9178757dd2a29cf80c1f5b9f34882e}
+      \strng{authorfullhashraw}{ae9178757dd2a29cf80c1f5b9f34882e}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{1}
+      \field{note}{Accessed: 2024-05-01}
+      \field{title}{Guidelines on Course Accreditation: Information for Universities and Colleges}
+      \field{year}{2020}
+      \verb{urlraw}
+      \verb https://www.bcs.org/media/11ofljxo/course-accreditation-guidelines.pdf
+      \endverb
+      \verb{url}
+      \verb https://www.bcs.org/media/11ofljxo/course-accreditation-guidelines.pdf
+      \endverb
+    \endentry
     \entry{arucomarkers}{online}{}{}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labeltitlesource}{title}
       \field{title}{ArUco Markers}
       \field{urlday}{29}
@@ -683,6 +1050,145 @@
       \verb{url}
       \verb https://fab.cba.mit.edu/classes/865.21/people/zach/arucomarkers.html
       \endverb
+    \endentry
+    \entry{Blender2024}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=38b863a4731f9082165e291d08953ee2}{%
+           family={{Blender Foundation}},
+           familyi={B\bibinitperiod}}}%
+      }
+      \strng{namehash}{38b863a4731f9082165e291d08953ee2}
+      \strng{fullhash}{38b863a4731f9082165e291d08953ee2}
+      \strng{fullhashraw}{38b863a4731f9082165e291d08953ee2}
+      \strng{bibnamehash}{38b863a4731f9082165e291d08953ee2}
+      \strng{authorbibnamehash}{38b863a4731f9082165e291d08953ee2}
+      \strng{authornamehash}{38b863a4731f9082165e291d08953ee2}
+      \strng{authorfullhash}{38b863a4731f9082165e291d08953ee2}
+      \strng{authorfullhashraw}{38b863a4731f9082165e291d08953ee2}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://www.blender.org}}
+      \field{note}{Accessed on: 2024-05-01}
+      \field{title}{Blender}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://www.blender.org
+      \endverb
+      \verb{url}
+      \verb https://www.blender.org
+      \endverb
+    \endentry
+    \entry{blender}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=b6aea1a416c89509a7df1cbb69249cb6}{%
+           family={{Wikipedia contributors}},
+           familyi={W\bibinitperiod}}}%
+      }
+      \strng{namehash}{b6aea1a416c89509a7df1cbb69249cb6}
+      \strng{fullhash}{b6aea1a416c89509a7df1cbb69249cb6}
+      \strng{fullhashraw}{b6aea1a416c89509a7df1cbb69249cb6}
+      \strng{bibnamehash}{b6aea1a416c89509a7df1cbb69249cb6}
+      \strng{authorbibnamehash}{b6aea1a416c89509a7df1cbb69249cb6}
+      \strng{authornamehash}{b6aea1a416c89509a7df1cbb69249cb6}
+      \strng{authorfullhash}{b6aea1a416c89509a7df1cbb69249cb6}
+      \strng{authorfullhashraw}{b6aea1a416c89509a7df1cbb69249cb6}
+      \field{extraname}{2}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{[Online; accessed 1-May-2024]}
+      \field{title}{Blender (software) --- {Wikipedia}{,} The Free Encyclopedia}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://en.wikipedia.org/w/index.php?title=Blender_(software)&oldid=1220122561
+      \endverb
+      \verb{url}
+      \verb https://en.wikipedia.org/w/index.php?title=Blender_(software)&oldid=1220122561
+      \endverb
+    \endentry
+    \entry{git}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=b6aea1a416c89509a7df1cbb69249cb6}{%
+           family={{Wikipedia contributors}},
+           familyi={W\bibinitperiod}}}%
+      }
+      \strng{namehash}{b6aea1a416c89509a7df1cbb69249cb6}
+      \strng{fullhash}{b6aea1a416c89509a7df1cbb69249cb6}
+      \strng{fullhashraw}{b6aea1a416c89509a7df1cbb69249cb6}
+      \strng{bibnamehash}{b6aea1a416c89509a7df1cbb69249cb6}
+      \strng{authorbibnamehash}{b6aea1a416c89509a7df1cbb69249cb6}
+      \strng{authornamehash}{b6aea1a416c89509a7df1cbb69249cb6}
+      \strng{authorfullhash}{b6aea1a416c89509a7df1cbb69249cb6}
+      \strng{authorfullhashraw}{b6aea1a416c89509a7df1cbb69249cb6}
+      \field{extraname}{3}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{[Online; accessed 3-May-2024]}
+      \field{title}{GitHub --- {Wikipedia}{,} The Free Encyclopedia}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://en.wikipedia.org/w/index.php?title=GitHub&oldid=1221852262
+      \endverb
+      \verb{url}
+      \verb https://en.wikipedia.org/w/index.php?title=GitHub&oldid=1221852262
+      \endverb
+    \endentry
+    \entry{holo1}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=b6aea1a416c89509a7df1cbb69249cb6}{%
+           family={{Wikipedia contributors}},
+           familyi={W\bibinitperiod}}}%
+      }
+      \strng{namehash}{b6aea1a416c89509a7df1cbb69249cb6}
+      \strng{fullhash}{b6aea1a416c89509a7df1cbb69249cb6}
+      \strng{fullhashraw}{b6aea1a416c89509a7df1cbb69249cb6}
+      \strng{bibnamehash}{b6aea1a416c89509a7df1cbb69249cb6}
+      \strng{authorbibnamehash}{b6aea1a416c89509a7df1cbb69249cb6}
+      \strng{authornamehash}{b6aea1a416c89509a7df1cbb69249cb6}
+      \strng{authorfullhash}{b6aea1a416c89509a7df1cbb69249cb6}
+      \strng{authorfullhashraw}{b6aea1a416c89509a7df1cbb69249cb6}
+      \field{extraname}{4}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{[Online; accessed 3-May-2024]}
+      \field{title}{Microsoft HoloLens --- {Wikipedia}{,} The Free Encyclopedia}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://en.wikipedia.org/w/index.php?title=Microsoft_HoloLens&oldid=1221749039
+      \endverb
+      \verb{url}
+      \verb https://en.wikipedia.org/w/index.php?title=Microsoft_HoloLens&oldid=1221749039
+      \endverb
+    \endentry
+    \entry{holo2}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=140864078aeca1c7c35b4beb33c53c34}{%
+           family={Microsoft},
+           familyi={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{140864078aeca1c7c35b4beb33c53c34}
+      \strng{fullhash}{140864078aeca1c7c35b4beb33c53c34}
+      \strng{fullhashraw}{140864078aeca1c7c35b4beb33c53c34}
+      \strng{bibnamehash}{140864078aeca1c7c35b4beb33c53c34}
+      \strng{authorbibnamehash}{140864078aeca1c7c35b4beb33c53c34}
+      \strng{authornamehash}{140864078aeca1c7c35b4beb33c53c34}
+      \strng{authorfullhash}{140864078aeca1c7c35b4beb33c53c34}
+      \strng{authorfullhashraw}{140864078aeca1c7c35b4beb33c53c34}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://www.microsoft.com/opencv_libraryen-us/hololens}}
+      \field{note}{Accessed: 2024-05-01}
+      \field{title}{Microsoft HoloLens}
+      \field{year}{2024}
     \endentry
     \entry{qt}{misc}{}{}
       \name{author}{1}{}{%
@@ -698,9 +1204,9 @@
       \strng{authornamehash}{b6aea1a416c89509a7df1cbb69249cb6}
       \strng{authorfullhash}{b6aea1a416c89509a7df1cbb69249cb6}
       \strng{authorfullhashraw}{b6aea1a416c89509a7df1cbb69249cb6}
-      \field{extraname}{2}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{extraname}{5}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{[Online; accessed 29-April-2024]}
@@ -727,9 +1233,9 @@
       \strng{authornamehash}{b6aea1a416c89509a7df1cbb69249cb6}
       \strng{authorfullhash}{b6aea1a416c89509a7df1cbb69249cb6}
       \strng{authorfullhashraw}{b6aea1a416c89509a7df1cbb69249cb6}
-      \field{extraname}{3}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{extraname}{6}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{[Online; accessed 29-April-2024]}

@@ -1,0 +1,29 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{class} \PYG{n+nc}{QtWidget}\PYG{p}{(}\PYG{n}{QWidget}\PYG{p}{):}
+    \PYG{k}{def} \PYG{n+nf+fm}{\PYGZus{}\PYGZus{}init\PYGZus{}\PYGZus{}}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{p}{,} \PYG{n}{video\PYGZus{}source}\PYG{p}{,} \PYG{n}{dims}\PYG{o}{=}\PYG{k+kc}{None}\PYG{p}{):}
+        \PYG{n+nb}{super}\PYG{p}{()}\PYG{o}{.}\PYG{n+nf+fm}{\PYGZus{}\PYGZus{}init\PYGZus{}\PYGZus{}}\PYG{p}{()}
+        \PYG{c+c1}{\PYGZsh{} Setup the layout for the widget}
+        \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{color\PYGZus{}button} \PYG{o}{=} \PYG{k+kc}{None}
+        \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{layout} \PYG{o}{=} \PYG{n}{QVBoxLayout}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{p}{)}
+        \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{layout}\PYG{o}{.}\PYG{n}{setContentsMargins}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{)}
+        \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{layout}\PYG{o}{.}\PYG{n}{setSpacing}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{)}
+
+        \PYG{c+c1}{\PYGZsh{} Initialize the VTK overlay window, conditionally based on the OS}
+        \PYG{n}{init\PYGZus{}vtk\PYGZus{}widget} \PYG{o}{=} \PYG{n}{platform}\PYG{o}{.}\PYG{n}{system}\PYG{p}{()} \PYG{o}{!=} \PYG{l+s+s1}{\PYGZsq{}Linux\PYGZsq{}}
+        \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{vtk\PYGZus{}overlay\PYGZus{}window} \PYG{o}{=}
+        \PYG{n}{VTKOverlayWindow}\PYG{p}{(}\PYG{n}{offscreen}\PYG{o}{=}\PYG{k+kc}{False}\PYG{p}{,} \PYG{n}{init\PYGZus{}widget}\PYG{o}{=}\PYG{n}{init\PYGZus{}vtk\PYGZus{}widget}\PYG{p}{)}
+        \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{layout}\PYG{o}{.}\PYG{n}{addWidget}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{vtk\PYGZus{}overlay\PYGZus{}window}\PYG{p}{)}
+
+        \PYG{c+c1}{\PYGZsh{} Initialize the video source}
+        \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{video\PYGZus{}source} \PYG{o}{=} \PYG{n}{TimestampedVideoSource}\PYG{p}{(}\PYG{n}{video\PYGZus{}source}\PYG{p}{,} \PYG{n}{dims}\PYG{p}{)}
+
+        \PYG{c+c1}{\PYGZsh{} Set up a timer to update the view periodically}
+        \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{timer} \PYG{o}{=} \PYG{n}{QTimer}\PYG{p}{()}
+        \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{timer}\PYG{o}{.}\PYG{n}{timeout}\PYG{o}{.}\PYG{n}{connect}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{update\PYGZus{}view}\PYG{p}{)}
+        \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{update\PYGZus{}rate} \PYG{o}{=} \PYG{l+m+mi}{30}
+        \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{model\PYGZus{}dir} \PYG{o}{=} \PYG{k+kc}{None}
+        \PYG{c+c1}{\PYGZsh{} Setup additional controls}
+        \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{setup\PYGZus{}upload\PYGZus{}button}\PYG{p}{()}
+        \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{setup\PYGZus{}video\PYGZus{}source\PYGZus{}controls}\PYG{p}{()}
+        \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{setup\PYGZus{}color\PYGZus{}change\PYGZus{}button}\PYG{p}{()}
+\end{Verbatim}

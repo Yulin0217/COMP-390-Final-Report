@@ -1,0 +1,54 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{Class}\PYG{+w}{ }\PYG{n}{ArucoGenerator}\PYG{p}{:}
+\PYG{+w}{    }\PYG{n}{Method}\PYG{+w}{ }\PYG{n}{\PYGZus{}\PYGZus{}init\PYGZus{}\PYGZus{}}\PYG{p}{:}
+\PYG{+w}{        }\PYG{n}{Initialize}\PYG{+w}{ }\PYG{n}{GUI}\PYG{+w}{ }\PYG{n}{components}
+\PYG{+w}{        }\PYG{n}{Set}\PYG{+w}{ }\PYG{n}{initial}\PYG{+w}{ }\PYG{n}{ArUco}\PYG{+w}{ }\PYG{n}{dictionary}\PYG{+w}{ }\PYG{n}{to}\PYG{+w}{ }\PYG{n}{DICT\PYGZus{}4X4\PYGZus{}50}
+\PYG{+w}{        }\PYG{n}{Call}\PYG{+w}{ }\PYG{n}{init\PYGZus{}ui}\PYG{+w}{ }\PYG{n}{to}\PYG{+w}{ }\PYG{n}{set}\PYG{+w}{ }\PYG{n}{up}\PYG{+w}{ }\PYG{n}{the}\PYG{+w}{ }\PYG{n}{user}\PYG{+w}{ }\PYG{k+kd}{interface}
+
+    \PYG{n+nc}{Method}\PYG{+w}{ }\PYG{n}{init\PYGZus{}ui}\PYG{p}{:}
+\PYG{+w}{        }\PYG{n}{Set}\PYG{+w}{ }\PYG{n}{window}\PYG{+w}{ }\PYG{n}{title}\PYG{+w}{ }\PYG{n}{to}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}ArUco Marker Generator\PYGZdq{}}
+\PYG{+w}{        }\PYG{n}{Create}\PYG{+w}{ }\PYG{n}{vertical}\PYG{+w}{ }\PYG{n}{layout}\PYG{+w}{ }\PYG{k}{for}\PYG{+w}{ }\PYG{n}{widgets}
+
+\PYG{+w}{        }\PYG{n}{Create}\PYG{+w}{ }\PYG{n}{dropdown}\PYG{+w}{ }\PYG{k}{for}\PYG{+w}{ }\PYG{n}{ArUco}\PYG{+w}{ }\PYG{n}{dictionary}\PYG{+w}{ }\PYG{n}{selection}
+\PYG{+w}{        }\PYG{n}{Add}\PYG{+w}{ }\PYG{n}{ArUco}\PYG{+w}{ }\PYG{n}{dictionary}\PYG{+w}{ }\PYG{n}{options}\PYG{+w}{ }\PYG{n}{to}\PYG{+w}{ }\PYG{n}{dropdown}
+\PYG{+w}{        }\PYG{n}{Connect}\PYG{+w}{ }\PYG{n}{dropdown}\PYG{+w}{ }\PYG{n}{change}\PYG{+w}{ }\PYG{n}{event}\PYG{+w}{ }\PYG{n}{to}\PYG{+w}{ }\PYG{n}{update\PYGZus{}dictionary}\PYG{+w}{ }\PYG{n}{method}
+\PYG{+w}{        }\PYG{n}{Add}\PYG{+w}{ }\PYG{n}{dropdown}\PYG{+w}{ }\PYG{n}{to}\PYG{+w}{ }\PYG{n}{layout}
+
+\PYG{+w}{        }\PYG{n}{Create}\PYG{+w}{ }\PYG{n}{label}\PYG{+w}{ }\PYG{n}{to}\PYG{+w}{ }\PYG{n}{display}\PYG{+w}{ }\PYG{n}{marker}\PYG{+w}{ }\PYG{n}{image}
+\PYG{+w}{        }\PYG{n}{Add}\PYG{+w}{ }\PYG{n}{label}\PYG{+w}{ }\PYG{n}{to}\PYG{+w}{ }\PYG{n}{layout}
+
+\PYG{+w}{        }\PYG{n}{Create}\PYG{+w}{ }\PYG{n}{button}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}Save Marker\PYGZdq{}}
+\PYG{+w}{        }\PYG{n}{Connect}\PYG{+w}{ }\PYG{n}{button}\PYG{+w}{ }\PYG{n}{click}\PYG{+w}{ }\PYG{n}{event}\PYG{+w}{ }\PYG{n}{to}\PYG{+w}{ }\PYG{n}{save\PYGZus{}marker}\PYG{+w}{ }\PYG{n}{method}
+\PYG{+w}{        }\PYG{n}{Add}\PYG{+w}{ }\PYG{n}{button}\PYG{+w}{ }\PYG{n}{to}\PYG{+w}{ }\PYG{n}{layout}
+
+\PYG{+w}{        }\PYG{n}{Generate}\PYG{+w}{ }\PYG{n}{initial}\PYG{+w}{ }\PYG{n}{marker}
+
+\PYG{+w}{    }\PYG{n}{Method}\PYG{+w}{ }\PYG{n}{update\PYGZus{}dictionary}\PYG{p}{:}
+\PYG{+w}{        }\PYG{n}{Read}\PYG{+w}{ }\PYG{n}{selected}\PYG{+w}{ }\PYG{n}{dictionary}\PYG{+w}{ }\PYG{n}{name}\PYG{+w}{ }\PYG{n}{from}\PYG{+w}{ }\PYG{n}{dropdown}
+\PYG{+w}{        }\PYG{n}{Update}\PYG{+w}{ }\PYG{n}{ArUco}\PYG{+w}{ }\PYG{n}{dictionary}\PYG{+w}{ }\PYG{n}{using}\PYG{+w}{ }\PYG{n}{selected}\PYG{+w}{ }\PYG{n}{name}
+\PYG{+w}{        }\PYG{n}{Generate}\PYG{+w}{ }\PYG{k}{new}\PYG{+w}{ }\PYG{n}{marker}\PYG{+w}{ }\PYG{n}{based}\PYG{+w}{ }\PYG{n}{on}\PYG{+w}{ }\PYG{n}{updated}\PYG{+w}{ }\PYG{n}{dictionary}
+
+\PYG{+w}{    }\PYG{n}{Method}\PYG{+w}{ }\PYG{n}{generate\PYGZus{}marker}\PYG{p}{:}
+\PYG{+w}{        }\PYG{n}{Get}\PYG{+w}{ }\PYG{n}{predefined}\PYG{+w}{ }\PYG{n}{dictionary}\PYG{+w}{ }\PYG{n}{using}\PYG{+w}{ }\PYG{n}{current}\PYG{+w}{ }\PYG{n}{ArUco}\PYG{+w}{ }\PYG{n}{dictionary}\PYG{+w}{ }\PYG{n}{setting}
+\PYG{+w}{        }\PYG{n}{Generate}\PYG{+w}{ }\PYG{n}{marker}\PYG{+w}{ }\PYG{n}{image}\PYG{+w}{ }\PYG{k}{for}\PYG{+w}{ }\PYG{n}{marker}\PYG{+w}{ }\PYG{n}{ID}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{+w}{ }\PYG{n}{with}\PYG{+w}{ }\PYG{n}{size}\PYG{+w}{ }\PYG{l+m+mi}{400}\PYG{n}{x400}\PYG{+w}{ }\PYG{n}{pixels}
+\PYG{+w}{        }\PYG{n}{Call}\PYG{+w}{ }\PYG{n}{show\PYGZus{}marker}\PYG{+w}{ }\PYG{n}{with}\PYG{+w}{ }\PYG{n}{generated}\PYG{+w}{ }\PYG{n}{marker}\PYG{+w}{ }\PYG{n}{image}
+
+\PYG{+w}{    }\PYG{n}{Method}\PYG{+w}{ }\PYG{n+nf}{show\PYGZus{}marker}\PYG{p}{(}\PYG{n}{marker\PYGZus{}image}\PYG{p}{):}
+\PYG{+w}{        }\PYG{n}{Convert}\PYG{+w}{ }\PYG{n}{marker}\PYG{+w}{ }\PYG{n}{image}\PYG{+w}{ }\PYG{n}{to}\PYG{+w}{ }\PYG{n}{QImage}\PYG{+w}{ }\PYG{n}{with}\PYG{+w}{ }\PYG{n}{Grayscale}\PYG{+w}{ }\PYG{n}{format}
+\PYG{+w}{        }\PYG{n}{Convert}\PYG{+w}{ }\PYG{n}{QImage}\PYG{+w}{ }\PYG{n}{to}\PYG{+w}{ }\PYG{n}{QPixmap}
+\PYG{+w}{        }\PYG{n}{Set}\PYG{+w}{ }\PYG{n}{QPixmap}\PYG{+w}{ }\PYG{n}{on}\PYG{+w}{ }\PYG{n}{image}\PYG{+w}{ }\PYG{n}{label}\PYG{+w}{ }\PYG{k}{for}\PYG{+w}{ }\PYG{n}{display}
+
+\PYG{+w}{    }\PYG{n}{Method}\PYG{+w}{ }\PYG{n}{save\PYGZus{}marker}\PYG{p}{:}
+\PYG{+w}{        }\PYG{n}{Get}\PYG{+w}{ }\PYG{n}{current}\PYG{+w}{ }\PYG{n}{dictionary}\PYG{+w}{ }\PYG{n}{name}\PYG{+w}{ }\PYG{n}{from}\PYG{+w}{ }\PYG{n}{dropdown}
+\PYG{+w}{        }\PYG{n}{Set}\PYG{+w}{ }\PYG{k}{default}\PYG{+w}{ }\PYG{n}{filename}\PYG{+w}{ }\PYG{n}{based}\PYG{+w}{ }\PYG{n}{on}\PYG{+w}{ }\PYG{n}{selected}\PYG{+w}{ }\PYG{n}{dictionary}\PYG{+w}{ }\PYG{n}{and}\PYG{+w}{ }\PYG{p}{.}\PYG{n+na}{png}\PYG{+w}{ }\PYG{n}{extension}
+\PYG{+w}{        }\PYG{n}{Open}\PYG{+w}{ }\PYG{n}{save}\PYG{+w}{ }\PYG{n}{file}\PYG{+w}{ }\PYG{n}{dialog}\PYG{+w}{ }\PYG{n}{with}\PYG{+w}{ }\PYG{k}{default}\PYG{+w}{ }\PYG{n}{filename}\PYG{+w}{ }\PYG{n}{and}\PYG{+w}{ }\PYG{n}{filter}\PYG{+w}{ }\PYG{k}{for}\PYG{+w}{ }\PYG{n}{PNG}
+\PYG{+w}{        }\PYG{n}{If}\PYG{+w}{ }\PYG{n}{file}\PYG{+w}{ }\PYG{n}{path}\PYG{+w}{ }\PYG{n}{is}\PYG{+w}{ }\PYG{n}{provided}\PYG{p}{:}
+\PYG{+w}{            }\PYG{n}{Generate}\PYG{+w}{ }\PYG{n}{marker}\PYG{+w}{ }\PYG{n}{image}\PYG{+w}{ }\PYG{n}{again}\PYG{+w}{ }\PYG{n}{to}\PYG{+w}{ }\PYG{n}{ensure}\PYG{+w}{ }\PYG{n}{current}\PYG{+w}{ }\PYG{n}{settings}\PYG{+w}{ }\PYG{n}{are}\PYG{+w}{ }\PYG{n}{used}
+\PYG{+w}{            }\PYG{n}{Save}\PYG{+w}{ }\PYG{n}{marker}\PYG{+w}{ }\PYG{n}{image}\PYG{+w}{ }\PYG{n}{to}\PYG{+w}{ }\PYG{n}{file}\PYG{+w}{ }\PYG{n}{using}\PYG{+w}{ }\PYG{n}{OpenCV}
+
+\PYG{n}{Start}\PYG{+w}{ }\PYG{n}{Point}\PYG{p}{:}
+\PYG{+w}{    }\PYG{n}{Initialize}\PYG{+w}{ }\PYG{n}{QApplication}
+\PYG{+w}{    }\PYG{n}{Create}\PYG{+w}{ }\PYG{n}{instance}\PYG{+w}{ }\PYG{n}{of}\PYG{+w}{ }\PYG{n}{ArucoGenerator}
+\PYG{+w}{    }\PYG{n}{Show}\PYG{+w}{ }\PYG{n}{window}
+\PYG{+w}{    }\PYG{n}{Execute}\PYG{+w}{ }\PYG{n}{QApplication}
+\end{Verbatim}

@@ -77,6 +77,11 @@
       description={GitHub is a developer platform that allows developers to create, store, manage and share their code. It uses Git software, providing the distributed version control of Git plus access control, bug tracking, software feature requests, task management, continuous integration, and wikis for every project. Headquartered in California, it has been a subsidiary of Microsoft since 2018. It is commonly used to host open source software development projects. As of January 2023, GitHub reported having over 100 million developers and more than 420 million repositories, including at least 28 million public repositories. It is the world's largest source code host as of June 2023.\cite{git}}
 }
 
+\newglossaryentry{pyside}{
+      name=PySide6,
+      description={PySide is a Python binding of the cross-platform GUI toolkit Qt developed by The Qt Company, as part of the Qt for Python project. It is one of the alternatives to the standard library package Tkinter. Like Qt, PySide is free software. PySide supports Linux/X11, macOS, and Microsoft Windows. The project can also be cross compiled to embedded systems like Raspberry Pi, and Android devices.\cite{pyside1,pyside2}}
+}
+
 % 定义一个缩写词
 \newabbreviation{aes}{AES}{
       Adaptive Exponential Smoothing}
@@ -88,8 +93,13 @@
       Complex Exponential Smoothing}    
 
 \newabbreviation{mrtk}{MRTK}{
-      Microsoft Mixed Reality Toolkit-Unity}    
-      
+      Microsoft Mixed Reality Toolkit-Unity}  
+
+\newabbreviation{rvec}{RVEC}{
+            rotation vector}  
+
+\newabbreviation{tvec}{TVEC}{
+      translation vector}  
 
 \begin{document}
 
@@ -266,7 +276,7 @@ User Interface Design, and Design Notation and Diagrams.
             \\
             In this section, I will show the user interface design of the two main applications of my Part1. Both applications use the Python-based Qt package for user GUI design.
             I will also provide a brief description of the Main menu and the ArUco Marker Generator interface.
-               \begin{enumerate}
+            \begin{enumerate}
                   \item \textbf{Main Menu(Overlay and Tracking)}
                         % 描述主菜单的设计和功能。
                         \begin{figure}[H]
@@ -275,7 +285,7 @@ User Interface Design, and Design Notation and Diagrams.
                               \caption{Design of Overlay and Tracking Main Menu}
                         \end{figure}
 
-                     
+
                         The main menu of Overlay and Tracking is the central hub of the application, providing users with access to all the functionalities.
                         The Main Menu consists of the Video and Overlay Area, which displays the video image and overlay of the model, and the Menu Area, which is responsible for setting various parameters.
                         The menu includes buttons for model uploading, video source selection, ArUco marker settings, and model color adjustments.
@@ -328,6 +338,7 @@ User Interface Design, and Design Notation and Diagrams.
 \begin{enumerate}
 
       \item \textbf{Backend Implementation}
+      \label{sec:backend}
             % 详细说明系统所使用的数据结构和算法。
             \begin{enumerate}
                   \item \textbf{Pre-processing for video capture and upload}
@@ -402,8 +413,8 @@ Class VideoSourceWrapper:
         For each source in the list:
             Release source
                         \end{minted}
-                            % 视频源切换截图展示
-                            \begin{figure}[H]
+                        % 视频源切换截图展示
+                        \begin{figure}[H]
                               \centering
                               \includegraphics[width=0.4\textwidth]{stream_change.jpg}
                               \caption{Video Source Switching}
@@ -492,11 +503,11 @@ class SmoothedTransform:
             (1 - self.alpha) * self.transform
             return self.transform
                               \end{minted}
-                                 \begin{figure}[H]
-                                    \centering
-                                    \includegraphics[width=0.4\textwidth]{main_page.png}
-                                    \caption{Overlay and Tracking Main Menu(Without Overlay Activated)}
-                              \end{figure}
+                        \begin{figure}[H]
+                              \centering
+                              \includegraphics[width=0.4\textwidth]{main_page.png}
+                              \caption{Overlay and Tracking Main Menu(Without Overlay Activated)}
+                        \end{figure}
                   \item \textbf{Model Rendering and Overlay}
                         % 详述用于检测和追踪ArUco标记的算法，包括图像分割、模式识别和机器学习技术。
                         \\
@@ -524,7 +535,7 @@ renderWindow.AddRenderer(videoRenderer)
 renderWindow.AddRenderer(modelRenderer)
 renderWindow.AddRenderer(uiRenderer)
                               \end{minted}
-                             
+
                               \item \textit{Import and format conversion of video streams:}
                                     \\
                                     In order to implement VTK overlay, the video frames captured by OpenCV need to be converted into a format that VTK can handle. Here the video frames are converted by using VTK's \emph{vtkImageImport} method. The conversion process requires setting the correct data types and sizes and updating the memory pointers to the video frames to ensure that the video stream data captured from OpenCV can be integrated into the VTK rendering process. This ensures synchronisation and integrity of the video stream before and after conversion without causing video lag in VTK.\cite{vtk_image_import_doc,vtk_image_import_2023}
@@ -547,7 +558,7 @@ imageImporter.Update()
                               \end{minted}
                               \item \textit{Dynamic rendering and adjustment of 3D models:}
                                     \\
-                                    Rendering of 3D models is achieved by using components such as VTK's \emph{vtkActor} and \emph{vtkPolyDataMapper}. These components support loading models from external files (e.g. STL format) and allow transformations such as translation, scaling, rotation, etc. to be applied to the model. These transformations of the model can be adjusted in real time to support dynamic user interaction and visual modifications\cite{6037214}. The model can be rendered in the VTK overlay by using the \emph{vtkPolyDataMapper} map the model data to geometry and set the actor using the \emph{vtkActor} and \emph{AddActor} method to add the model to the corresponding rendering layer. Then can use the \emph{SetPosition} and \emph{SetOrientation} method to adjust the model position and orientation to match the video\cite{5357714}.The function of modifying the position of the model will play an important role in section (f) Marker Detection and Tracking. 
+                                    Rendering of 3D models is achieved by using components such as VTK's \emph{vtkActor} and \emph{vtkPolyDataMapper}. These components support loading models from external files (e.g. STL format) and allow transformations such as translation, scaling, rotation, etc. to be applied to the model. These transformations of the model can be adjusted in real time to support dynamic user interaction and visual modifications\cite{6037214}. The model can be rendered in the VTK overlay by using the \emph{vtkPolyDataMapper} map the model data to geometry and set the actor using the \emph{vtkActor} and \emph{AddActor} method to add the model to the corresponding rendering layer. Then can use the \emph{SetPosition} and \emph{SetOrientation} method to adjust the model position and orientation to match the video\cite{5357714}.The function of modifying the position of the model will play an important role in section (f) Marker Detection and Tracking.
                                     \paragraph{Code for the dynamic rendering and adjustment of 3D models:}
                                     \begin{minted}[frame=single, linenos=true, fontsize=\footnotesize]{python}
 # Load a 3D model from a file
@@ -570,8 +581,8 @@ actor.SetPosition(10, 0, 0)
 actor.SetOrientation(0, 90, 45)
                               \end{minted}
                         \end{itemize}
-                           % Overlay截图展示
-                           \begin{figure}[H]
+                        % Overlay截图展示
+                        \begin{figure}[H]
                               \centering
                               \includegraphics[width=0.4\textwidth]{overlay.png}
                               \caption{Overlay and Tracking Main Menu(With Overlay Activated)}
@@ -587,6 +598,7 @@ modelRenderer.SetMaximumNumberOfPeels(100)
 modelRenderer.SetOcclusionRatio(0.1)
                         \end{minted}
                   \item \textbf{Precise Control of Camera and Viewing:}
+                        \label{sec:precise}
                         \\
                         During the implementation of model overlay using VTK, it is important to maintain an accurate overlay between the 3D model and the background video stream. When using different cameras, deviations in the model overlay may occur due to different camera parameters such as focal length, projection, and position. In order to make the model appear accurately at the right position in the background video, the parameters of the camera should be modified. By getting the camera's focal length, position and projection parameters to modify the variables in video processing, the viewpoint between the 3D model view and the video stream background can be consistently matched when using a camera with different characteristics. It might be necessary to additionally adjust the cropping range and field of view of the camera to ensure the correct range of visual output. The \emph{vtkCamera} class is built to control the camera settings. Method like \emph{SetPosition}, \emph{SetFocalPoint}, and \emph{SetViewUp} are used to adjust the camera's position, focus point, and view direction, respectively.\cite{vtk_examples_camera,vtk_camera_doc_2023}
                         \paragraph{Code for Precise Control of Camera and Viewing:}
@@ -601,7 +613,8 @@ camera.SetViewUp(0, 1, 0)
                         % 介绍如何将三维模型精确地放置在虚拟环境中，可能涉及计算几何和物体识别算法。
                         \begin{itemize}
                               \item \textit{Loading Calibration Data:}
-
+                                    \\
+                                    Obtaining accurate camera calibration data before performing the spatial localisation of the model is necessary. It is first necessary to load the projection matrix and distortion coefficients of the camera in \hyperref[sec:precise]{(e) Precise Control of Camera and Viewing}, which have been acquired and stored in that section. This data is then read to calibrate the subsequent image processing and marker recognition so that it accurately reflects the actual camera viewing angle. The use of different calibration data affects the model's spatial localisation function and marker tracking accuracy.
                                     \paragraph{Pseudocode for the Loading Calibration Data:}
                                     \begin{minted}[frame=single, linenos=true, fontsize=\footnotesize]{python}
 Function _load_calibration(textfile):
@@ -612,7 +625,8 @@ Function _load_calibration(textfile):
     Return projection_matrix, distortion
                               \end{minted}
                               \item \textit{Initializing Video Source and Tracker Configuration:}
-
+                                    \\
+                                    Afterwards, the camera is initialised and the required tracking parameters are set according to the camera configuration obtained in the first step. This includes setting the video source selected by the user (e.g., camera or video file) and configuring the properties of the video stream (e.g., resolution and frame rate.). In addition, the associated rigid body is set up based on the acquired configuration information and the rigid body is used to compute its position and orientation based on the detected markers.
                                     \paragraph{Pseudocode for the Initializing Video Source and Tracker Configuration:}
                                     \begin{minted}[frame=single, linenos=true, fontsize=\footnotesize]{python}
 Method initialize_video_capture(video_source, configuration):
@@ -622,8 +636,9 @@ Method initialize_video_capture(video_source, configuration):
             For each property in configuration["capture properties"]:
                 self._capture.set(cv2 property, value)
                               \end{minted}
-                              \item \textit{Load ArUco dictionary}
-
+                              \item \textit{Load ArUco dictionary:}
+                                    \\
+                                    This section is used to load the dictionary corresponding to the ArUco token selected by the user. This dictionary represents the index corresponding to each ArUco. The ArUco dictionary is obtained and returned to OpenCV for tracking specific ArUco tokens.
                                     \paragraph{Pseudocode for the Load ArUco dictionary:}
                                     \begin{minted}[frame=single, linenos=true, fontsize=\footnotesize]{python}
 Function get_aruco_dictionary(configuration):
@@ -632,7 +647,8 @@ Function get_aruco_dictionary(configuration):
     Return aruco_dict
                               \end{minted}
                               \item \textit{Real-Time Marker Detection using OpenCV:}
-
+                                    \\
+                                    In the \emph{detect\_markers} method, detection of ArUco markers from a given video frame will be implemented. Firstly, the dictionary corresponding to the specific ArUco selected by the user is obtained from the previous section. Next, the default detection parameters are created using OpenCV's ArUco module. The method will identify the markers in the video frame by calling the \emph{cv2.aruco.detectMarkers} function. This function accepts three variables: the input video frame, the ArUco dictionary and the detection parameter. If the function detects markers in that video frame, it will mark the \emph{marker\_corners } not null, and then it will use the \emph{cv2.aruco.drawDetectedMarkers} function to draw those markers on the frame for visual observation (and optionally, not mark them). Finally, the method returns the corner positions of the detected markers \emph{ marker\_corners} and the \emph{ID marker\_ids} of the corresponding markers, providing positional data for the model tracking in later sections.
                                     \paragraph{Pseudocode for the Real-Time Marker Detection and Data Capture:}
                                     \begin{minted}[frame=single, linenos=true, fontsize=\footnotesize]{python}
 Method detect_markers(frame):
@@ -647,18 +663,26 @@ Method detect_markers(frame):
     Return marker_corners, marker_ids
                               \end{minted}
                               \item \textit{Estimate the pose of detected markers:}
-
+                                    \\
+                                    In the \emph{estimate\_pose } method, OpenCV's ArUco module is used to estimate the pose of the detected markers, which includes their \gls{rvec} and \gls{tvec}. The marker corners \emph{marker\_corners } identified from the video frames in the previous section are first checked to see if they are empty. If it is not null, it means that the marker detection was successful before the pose estimation is allowed. For the detected markers, the \emph{cv2.aruco.estimatePoseSingleMarkers} function is used to calculate the pose of the ArUco markers relative to the camera. This function takes as input the corner points of the markers obtained from the previous sections, the dimensions of the markers, the projection matrix of the camera, and the distortion coefficients. The method returns \gls{rvec} and \gls{tvec}, which are vectors describing the 3D position and orientation of the ArUco marker relative to the camera. If you need to visualise the pose, you can use the \emph{cv2.aruco.drawAxis} function to draw the marker's axes in the video frame.
                                     \paragraph{Pseudocode for the Estimate the pose of detected markers:}
                                     \begin{minted}[frame=single, linenos=true, fontsize=\footnotesize]{python}
 Method estimate_pose(marker_corners, marker_ids):
     If marker_corners are not empty:
         For each marker in marker_corners:
-            rvec, tvec, _ = cv2.aruco.estimatePoseSingleMarkers(marker_corners, marker_size, self._camera_projection_matrix, self._camera_distortion)
-            cv2.aruco.drawAxis(frame, self._camera_projection_matrix, self._camera_distortion, rvec, tvec, length_of_axis)  # Optional: for visualization
+            rvec, tvec, _ = 
+            cv2.aruco.estimatePoseSingleMarkers(marker_corners, 
+            marker_size, self._camera_projection_matrix, 
+            self._camera_distortion)
+            # Optional: for visualization
+            cv2.aruco.drawAxis(frame, self._camera_projection_matrix, 
+            self._camera_distortion, rvec, tvec, length_of_axis)  
         Return rvec, tvec
                               \end{minted}
                               \item \textit{Start Tracking and Outputting Marker Pose Data:}
-
+                                    \label{sec:tracking}
+                                    \\
+                                    In the \emph{start\_tracking} method, the current state is checked to see if it is "ready", and if it is confirmed to be "ready", the system state is set to "tracking". If the state is "ready", the system state will be set to "tracking", and then it will start to process the consecutive frames from the video source selected by the user. The video frames are read through the \emph{self.\_capture.read() }method in a loop, and if it succeeds in acquiring the frame, the processing will continue; if it fails, the tracking will be terminated. For each video frame, the system first detects and identifies the ArUco markers in the frame by calling the \emph{detect\_markers(frame) } method, which returns the marker's corner point and identifier. Subsequently, the use of the \emph{estimate\_pose(marker\_corners, marker\_ids)} method is used to compute the 3D poses of these markers, obtaining the markers' \gls{rvec} and \gls{tvec}, and, finally, the system stores these pose results for model tracking.
                                     \paragraph{Pseudocode for the Start Tracking and Outputting Marker Pose Data:}
                                     \begin{minted}[frame=single, linenos=true, fontsize=\footnotesize]{python}
 MMethod start_tracking():
@@ -672,15 +696,9 @@ MMethod start_tracking():
             rvec, tvec = estimate_pose(marker_corners, marker_ids)
             Process and store marker pose data
                               \end{minted}
-                              \item \textit{Tracking State Management:}
-                                    \paragraph{Pseudocode for the Tracking State Management:}
-                                    \begin{minted}[frame=single, linenos=true, fontsize=\footnotesize]{python}
-Method stop_tracking():
-    If self._state == "tracking":
-        self._state = "ready"
-        self._capture.release()
-                              \end{minted}
                               \item \textit{Update the position of the model:}
+                                    \\
+                                    In the \emph{update\_model\_position} method, the system reads a frame from the video source and detects and tracks the ArUco markers in the frame. If the markers are detected, the system updates the position of the model based on the marker's pose. The model's position is updated by applying the \gls{rvec} and \gls{tvec} obtained from the marker pose estimation to the model's transformation. The model's position is then updated in the VTK rendering window to reflect the new position based on the marker's pose. This process is repeated for each frame to ensure that the model's position is continuously updated based on the marker's pose, allowing the model to follow the movement of the markers in the video stream.
                                     \paragraph{Pseudocode for the Update the position of the model:}
                                     \begin{minted}[frame=single, linenos=true, fontsize=\footnotesize]{python}
 Method update_model_position:
@@ -698,10 +716,10 @@ Method update_model_position:
                               \caption{Overlay and Tracking}
                         \end{figure}
                   \item \textbf{Model Color change}
-                  \\
-                  In order to implement the model colour change functionality, it is necessary to reuse the model upload functionality mentioned in the \hyperref[sec:upload]{(a) Main Menu (Overlay and Tracking)} section. Before performing a model colour modification it will first check if a model exists in the VTK Overlay. If not, a warning box will be pushed to prompt the user to upload the model first. If the model is already loaded in VTK Overlay, when the model colour modification button is clicked in the Qt window, a colour picker dialog box will be opened in the Qt window allowing the user to select a colour. After the user selects a colour, a new model loader will be created and the model and colour will be reloaded using the model upload function mentioned in the \hyperref[sec:upload]{(a) Main Menu (Overlay and Tracking)} section. Once the model has been re-uploaded with the newly selected colours, update the VTK Render window to re-render the model Overlay to show the model with the modified colours.
-                  \paragraph{Code for the Model Color change:}
-                  \begin{minted}[frame=single, linenos=true, fontsize=\footnotesize]{python}
+                        \\
+                        In order to implement the model colour change functionality, it is necessary to reuse the model upload functionality mentioned in the \hyperref[sec:upload]{(a) Main Menu (Overlay and Tracking)} section. Before performing a model colour modification it will first check if a model exists in the VTK Overlay. If not, a warning box will be pushed to prompt the user to upload the model first. If the model is already loaded in VTK Overlay, when the model colour modification button is clicked in the Qt window, a colour picker dialog box will be opened in the Qt window allowing the user to select a colour. After the user selects a colour, a new model loader will be created and the model and colour will be reloaded using the model upload function mentioned in the \hyperref[sec:upload]{(a) Main Menu (Overlay and Tracking)} section. Once the model has been re-uploaded with the newly selected colours, update the VTK Render window to re-render the model Overlay to show the model with the modified colours.
+                        \paragraph{Pseudocode Code for the Model Color change:}
+                        \begin{minted}[frame=single, linenos=true, fontsize=\footnotesize]{python}
 Method change_model_color:
     Check if the model directory has been loaded
     If no models are loaded:
@@ -715,42 +733,183 @@ Method change_model_color:
         Add the loaded models to the VTK rendering window
         Re-render the window to update the color
                   \end{minted}
-                     % 模型颜色修改截图展示
-                     \begin{figure}[H]
-                        \centering
-                        \includegraphics[width=0.6\textwidth]{coulor.png}
-                        \caption{Colour Picker Dialog Box}
-                  \end{figure}
-                  \begin{figure}[H]
-                        \centering
-                        \includegraphics[width=0.3\textwidth]{upload.png}
-                        \caption{Color Changed Model}
-                  \end{figure}
+                        % 模型颜色修改截图展示
+                        \begin{figure}[H]
+                              \centering
+                              \includegraphics[width=0.6\textwidth]{coulor.png}
+                              \caption{Colour Picker Dialog Box}
+                        \end{figure}
+                        \begin{figure}[H]
+                              \centering
+                              \includegraphics[width=0.3\textwidth]{upload.png}
+                              \caption{Color Changed Model}
+                        \end{figure}
                   \item \textbf{ArUco Marker Settings}
-                        
-                  \begin{figure}[H]
-                        \centering
-                        \includegraphics[width=0.3\textwidth]{select_aruco.jpg}
-                        \caption{ArUco Dictionary Selection}
-                  \end{figure}
-                  \item \textbf{ArUco Generator}
+                        \\
+                        The ArUco parameters are set up by setting up a text box for entering the size of the markers and a drop-down menu for selecting the ArUco lexicon.
+                        \\\\
+                        Firstly, a label and a text input box are created in the Qt window, allowing the user to enter the size of the ArUco markers (in millimetres) and update the settings with a button. After clicking on the "Update Marker Size" button, the system will read the size value entered by the user, update the settings, and then restart via the \hyperref[sec:tracking]{Start Tracking and Outputting Marker Pose Data} section. restarting the tracking thread to apply the new settings.
+                        \\\\
+                        Second, a drop-down menu was also created for the user to select the different ArUco dictionaries they use, as well as a button to update the selected dictionary. Once the user has selected a dictionary via the drop-down menu, clicking on the "Update ArUco" button triggers the update of the dictionary, which works in the same way as updating the tag size.
+                        \paragraph{Pseudocode Code for the ArUco Marker Settings:}
+                        \begin{minted}[frame=single, linenos=true, fontsize=\footnotesize]{python}
+Method setup_marker_size_ui:
+    Create label "Enter Marker Size (mm):"
+    Add label to layout
 
-                  \begin{figure}[H]
-                        \centering
-                        \includegraphics[width=0.4\textwidth]{change_aruco.png}
-                        \caption{ArUco Generator Dictionary Changed}
-                  \end{figure}
-                  % ArUco 保存
-                  \begin{figure}[H]
-                        \centering
-                        \includegraphics[width=1.2\textwidth]{save.png}
-                        \caption{ArUco Marker Saved}
-                  \end{figure}
+    Create input field for marker size
+    Set default text of input field to "50"
+    Add input field to layout
+
+    Create button "Update Marker Size"
+    Connect button click event to method update_marker_size
+    Add button to layout
+
+Method update_marker_size:
+    Read value from marker size input field
+    Convert input value to float and store in marker size configuration
+    Reinitialize ArUco tracker with updated configuration
+    Start the ArUco tracker
+
+Method setup_dictionary_ui:
+    Create label "Select ArUco Dictionary:"
+    Add label to layout
+
+    Create dropdown for dictionary selection
+    Populate dropdown with dictionary options:
+        'DICT_4X4_50', 'DICT_4X4_100', etc.
+    Add dropdown to layout
+
+    Create button "Update Aruco"
+    Connect button click event to method update_dictionary
+    Add button to layout
+
+Method update_dictionary:
+    Get selected dictionary from dropdown
+    Update ArUco dictionary in configuration with selected item
+    Reinitialize ArUco tracker with updated configuration
+    Start the ArUco tracker
+
+                  \end{minted}
+                        \begin{figure}[H]
+                              \centering
+                              \includegraphics[width=0.3\textwidth]{select_aruco.jpg}
+                              \caption{ArUco Dictionary Selection}
+                        \end{figure}
+                  \item \textbf{ArUco Generator}
+                        \\
+                        The ArUco Marker Generator application is the same as Overlay and Tacking, and is implemented by combining the ArUco module of OpenCV with a Qt graphical interface.
+                        \\\\
+                        The application first creates a user interface with a drop-down menu that allows the user to select from a variety of predefined ArUco dictionaries. After the user selects a dictionary, OpenCV's \emph{ aruco.getPredefinedDictionary} method is called to retrieve the corresponding dictionary, and then the \emph{aruco.drawMarker} method is used to generate markers of the corresponding size and dictionary. After that, the generated marker image is converted to QImage and QPixmap and displayed in the Qt interface.
+                        \\\\
+                        In addition, the ArUco marker saving function is also implemented, allowing the user to save the generated markers locally as an image file via the standard file dialogue box. When user clicks the "Save Marker" button, it will trigger the \emph{save\_marker} method. This method will open a file save dialogue box, allowing the user to select the file storage path and format. Upon user confirmation, the marker will be generated again using the current user-selected dictionary configuration to ensure that the latest generated image is saved, and the \emph{cv2.imwrite} method will be used to write the image to the specified folder with the default ArUco Dictionary filename.
+                        \paragraph{Pseudocode Code for the ArUco Generator:}
+                        \begin{minted}[frame=single, linenos=true, fontsize=\footnotesize]{java}
+Class ArucoGenerator:
+    Method __init__:
+        Initialize GUI components
+        Set initial ArUco dictionary to DICT_4X4_50
+        Call init_ui to set up the user interface
+
+    Method init_ui:
+        Set window title to "ArUco Marker Generator"
+        Create vertical layout for widgets
+
+        Create dropdown for ArUco dictionary selection
+        Add ArUco dictionary options to dropdown
+        Connect dropdown change event to update_dictionary method
+        Add dropdown to layout
+
+        Create label to display marker image
+        Add label to layout
+
+        Create button "Save Marker"
+        Connect button click event to save_marker method
+        Add button to layout
+
+        Generate initial marker
+
+    Method update_dictionary:
+        Read selected dictionary name from dropdown
+        Update ArUco dictionary using selected name
+        Generate new marker based on updated dictionary
+
+    Method generate_marker:
+        Get predefined dictionary using current ArUco dictionary setting
+        Generate marker image for marker ID 0 with size 400x400 pixels
+        Call show_marker with generated marker image
+
+    Method show_marker(marker_image):
+        Convert marker image to QImage with Grayscale format
+        Convert QImage to QPixmap
+        Set QPixmap on image label for display
+
+    Method save_marker:
+        Get current dictionary name from dropdown
+        Set default filename based on selected dictionary and .png extension
+        Open save file dialog with default filename and filter for PNG
+        If file path is provided:
+            Generate marker image again to ensure current settings are used
+            Save marker image to file using OpenCV
+
+Start Point:
+    Initialize QApplication
+    Create instance of ArucoGenerator
+    Show window
+    Execute QApplication
+                        \end{minted}
+                        \begin{figure}[H]
+                              \centering
+                              \includegraphics[width=0.4\textwidth]{change_aruco.png}
+                              \caption{ArUco Generator Dictionary Changed}
+                        \end{figure}
+                        % ArUco 保存
+                        \begin{figure}[H]
+                              \centering
+                              \includegraphics[width=1.2\textwidth]{save.png}
+                              \caption{ArUco Marker Saved}
+                        \end{figure}
             \end{enumerate}
       \item \textbf{Frontend Implementation}
-            % 详细说明系统的用户界面设计和实现。
-            %通过用户界面进行交互式控制：
-            %在用户界面中，用户可以通过一个下拉菜单（QComboBox）从可用视频源中进行选择，并且对于基于文件的视频源，一个上传按钮（QPushButton）允许用户通过文件对话框选择并上传视频文件。视频源选择的变更会触发后端VideoSourceWrapper类的更新，该类管理多个视频源，提供灵活性并增强用户交互。这种设计使用户可以轻松切换视频输入源，并根据需要上传自定义内容。
+      \\
+      In this project, the front-end Qt interface is implemented through the \gls{pyside} framework. The various controls on the interface are organised by creating a vertical layout manager, QVBoxLayout. The margins and spacing of the layout were set to zero for the sake of indirection and to maximise space usage.
+      \\\\
+      The interface includes several features and key components that have been implemented in the previous section \hyperref[sec:backend]{Backend Implementation}: a drop-down menu that allows the user to select different video sources, a video upload button, an upload button that enables the user to upload a 3D model file, a colour selection button to adjust the display colour of the model, a text box to set the size of the actual ArUco icon and a drop-down menu for selecting the ArUco dictionary.
+      \\\\
+      These components are connected to the appropriate functional functions through signalling and slotting mechanisms to ensure that user actions trigger the appropriate response\cite{lazar2018mastering}. For example, the selection of a video source is done via a drop-down menu, and a function is called to update the video source used by the system when the selection is changed. Similarly, the colour change of a model is done by opening the colour dialog, and when the user selects a new colour, the system applies this colour to the 3D model.
+      \\\\
+      In addition, a VTK display window is integrated to display the video stream and the 3D model, which is adapted to the user's operating system to ensure compatibility. Due to the high extensibility of the Qt interface, new components and features can be easily added to the interface in the future.
+      
+            \paragraph{Code for the Frontend Implementation:}
+            \begin{minted}[frame=single, linenos=true, fontsize=\footnotesize]{python}
+class QtWidget(QWidget):
+    def __init__(self, video_source, dims=None):
+        super().__init__()
+        # Setup the layout for the widget
+        self.color_button = None
+        self.layout = QVBoxLayout(self)
+        self.layout.setContentsMargins(0, 0, 0, 0)
+        self.layout.setSpacing(0)
+
+        # Initialize the VTK overlay window, conditionally based on the OS
+        init_vtk_widget = platform.system() != 'Linux'
+        self.vtk_overlay_window = 
+        VTKOverlayWindow(offscreen=False, init_widget=init_vtk_widget)
+        self.layout.addWidget(self.vtk_overlay_window)
+
+        # Initialize the video source
+        self.video_source = TimestampedVideoSource(video_source, dims)
+
+        # Set up a timer to update the view periodically
+        self.timer = QTimer()
+        self.timer.timeout.connect(self.update_view)
+        self.update_rate = 30
+        self.model_dir = None
+        # Setup additional controls
+        self.setup_upload_button()
+        self.setup_video_source_controls()
+        self.setup_color_change_button()
+            \end{minted}
 \end{enumerate}
 
 \subsection{Part2: Endovascular Intervention Simulation}
