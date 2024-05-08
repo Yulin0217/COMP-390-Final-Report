@@ -1,0 +1,88 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{using}\PYG{+w}{ }\PYG{n}{UnityEngine}\PYG{p}{;}
+
+\PYG{n}{namespace}\PYG{+w}{ }\PYG{n}{Rope}
+\PYG{p}{\PYGZob{}}
+\PYG{+w}{    }\PYG{n}{public}\PYG{+w}{ }\PYG{n}{class}\PYG{+w}{ }\PYG{n}{RopeController}\PYG{+w}{ }\PYG{o}{:}\PYG{+w}{ }\PYG{n}{MonoBehaviour}
+\PYG{+w}{    }\PYG{p}{\PYGZob{}}
+\PYG{+w}{        }\PYG{p}{[}\PYG{n}{SerializeField}\PYG{p}{]}\PYG{+w}{ }\PYG{n}{private}\PYG{+w}{ }\PYG{n}{GameObject}\PYG{+w}{ }\PYG{n}{fragmentPrefab}\PYG{p}{;}
+\PYG{+w}{        }\PYG{p}{[}\PYG{n}{SerializeField}\PYG{p}{]}\PYG{+w}{ }\PYG{n}{private}\PYG{+w}{ }\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{fragmentCount}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mi}{80}\PYG{p}{;}
+\PYG{+w}{        }\PYG{p}{[}\PYG{n}{SerializeField}\PYG{p}{]}\PYG{+w}{ }\PYG{n}{private}\PYG{+w}{ }\PYG{n}{Vector3}\PYG{+w}{ }\PYG{n}{interval}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{new}\PYG{+w}{ }\PYG{n}{Vector3}\PYG{p}{(}\PYG{l+m+mf}{0f}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mf}{0f}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mf}{0.25f}\PYG{p}{);}
+\PYG{+w}{        }\PYG{p}{[}\PYG{n}{SerializeField}\PYG{p}{]}\PYG{+w}{ }\PYG{n}{private}\PYG{+w}{ }\PYG{n}{Material}\PYG{+w}{ }\PYG{n}{lineMaterial}\PYG{p}{;}
+
+\PYG{+w}{        }\PYG{n}{private}\PYG{+w}{ }\PYG{n}{GameObject}\PYG{p}{[]}\PYG{+w}{ }\PYG{n}{fragments}\PYG{p}{;}
+\PYG{+w}{        }\PYG{n}{private}\PYG{+w}{ }\PYG{k+kt}{float}\PYG{p}{[]}\PYG{+w}{ }\PYG{n}{xPositions}\PYG{p}{;}
+\PYG{+w}{        }\PYG{n}{private}\PYG{+w}{ }\PYG{k+kt}{float}\PYG{p}{[]}\PYG{+w}{ }\PYG{n}{yPositions}\PYG{p}{;}
+\PYG{+w}{        }\PYG{n}{private}\PYG{+w}{ }\PYG{k+kt}{float}\PYG{p}{[]}\PYG{+w}{ }\PYG{n}{zPositions}\PYG{p}{;}
+\PYG{+w}{        }\PYG{n}{private}\PYG{+w}{ }\PYG{n}{CatmullRomSpline}\PYG{+w}{ }\PYG{n}{splineX}\PYG{p}{;}
+\PYG{+w}{        }\PYG{n}{private}\PYG{+w}{ }\PYG{n}{CatmullRomSpline}\PYG{+w}{ }\PYG{n}{splineY}\PYG{p}{;}
+\PYG{+w}{        }\PYG{n}{private}\PYG{+w}{ }\PYG{n}{CatmullRomSpline}\PYG{+w}{ }\PYG{n}{splineZ}\PYG{p}{;}
+\PYG{+w}{        }\PYG{n}{private}\PYG{+w}{ }\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{splineFactor}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mi}{4}\PYG{p}{;}
+
+\PYG{+w}{        }\PYG{k+kt}{void}\PYG{+w}{ }\PYG{n+nf}{Start}\PYG{p}{()}
+\PYG{+w}{        }\PYG{p}{\PYGZob{}}
+\PYG{+w}{            }\PYG{n}{fragments}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{new}\PYG{+w}{ }\PYG{n}{GameObject}\PYG{p}{[}\PYG{n}{fragmentCount}\PYG{p}{];}
+\PYG{+w}{            }\PYG{n}{var}\PYG{+w}{ }\PYG{n}{position}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{Vector3}\PYG{p}{.}\PYG{n}{zero}\PYG{p}{;}
+\PYG{+w}{            }\PYG{c+c1}{// The desired total bend angle}
+\PYG{+w}{            }\PYG{n}{var}\PYG{+w}{ }\PYG{n}{bendAngle}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mf}{30f}\PYG{p}{;}
+\PYG{+w}{            }\PYG{c+c1}{// Number of segments over which to apply the bend}
+\PYG{+w}{            }\PYG{n}{var}\PYG{+w}{ }\PYG{n}{segmentToBend}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{;}
+
+\PYG{+w}{            }\PYG{k}{for}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{var}\PYG{+w}{ }\PYG{n}{i}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{;}\PYG{+w}{ }\PYG{n}{i}\PYG{+w}{ }\PYG{o}{\PYGZlt{}}\PYG{+w}{ }\PYG{n}{fragmentCount}\PYG{p}{;}\PYG{+w}{ }\PYG{n}{i}\PYG{o}{++}\PYG{p}{)}
+\PYG{+w}{            }\PYG{p}{\PYGZob{}}
+\PYG{+w}{                }\PYG{n}{fragments}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{Instantiate}\PYG{p}{(}\PYG{n}{fragmentPrefab}\PYG{p}{,}
+\PYG{+w}{                }\PYG{n}{position}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{Quaternion}\PYG{p}{.}\PYG{n}{identity}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{transform}\PYG{p}{);}
+
+\PYG{+w}{                }\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{i}\PYG{+w}{ }\PYG{o}{\PYGZgt{}}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{)}
+\PYG{+w}{                }\PYG{p}{\PYGZob{}}
+\PYG{+w}{                    }\PYG{n}{var}\PYG{+w}{ }\PYG{n}{joint}\PYG{+w}{ }\PYG{o}{=}
+\PYG{+w}{                    }\PYG{n}{fragments}\PYG{p}{[}\PYG{n}{i}\PYG{p}{].}\PYG{n}{AddComponent}\PYG{o}{\PYGZlt{}}\PYG{n}{FixedJoint}\PYG{o}{\PYGZgt{}}\PYG{p}{();}
+\PYG{+w}{                    }\PYG{n}{joint}\PYG{p}{.}\PYG{n}{connectedBody}\PYG{+w}{ }\PYG{o}{=}
+\PYG{+w}{                    }\PYG{n}{fragments}\PYG{p}{[}\PYG{n}{i}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{p}{].}\PYG{n}{GetComponent}\PYG{o}{\PYGZlt{}}\PYG{n}{Rigidbody}\PYG{o}{\PYGZgt{}}\PYG{p}{();}
+\PYG{+w}{                }\PYG{p}{\PYGZcb{}}
+
+\PYG{+w}{                }\PYG{c+c1}{// Calculate the bend for the initial segments}
+\PYG{+w}{                }\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{i}\PYG{+w}{ }\PYG{o}{\PYGZlt{}}\PYG{+w}{ }\PYG{n}{segmentToBend}\PYG{p}{)}
+\PYG{+w}{                }\PYG{p}{\PYGZob{}}
+\PYG{+w}{                    }\PYG{c+c1}{// Convert the total angle into radians}
+\PYG{+w}{                    }\PYG{c+c1}{// and distribute it across the specified segments}
+\PYG{+w}{                    }\PYG{n}{var}\PYG{+w}{ }\PYG{n}{radiansPerSegment}\PYG{+w}{ }\PYG{o}{=}
+\PYG{+w}{                    }\PYG{n}{Mathf}\PYG{p}{.}\PYG{n}{Deg2Rad}\PYG{+w}{ }\PYG{o}{*}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{bendAngle}\PYG{+w}{ }\PYG{o}{/}\PYG{+w}{ }\PYG{n}{segmentToBend}\PYG{p}{);}
+\PYG{+w}{                    }\PYG{c+c1}{// Use interval.z as the base distance between segments}
+\PYG{+w}{                    }\PYG{n}{var}\PYG{+w}{ }\PYG{n}{offsetX}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{Mathf}\PYG{p}{.}\PYG{n}{Sin}\PYG{p}{(}\PYG{n}{radiansPerSegment}\PYG{+w}{ }\PYG{o}{*}\PYG{+w}{ }\PYG{n}{i}\PYG{p}{)}\PYG{+w}{ }\PYG{o}{*}
+\PYG{+w}{                    }\PYG{n}{interval}\PYG{p}{.}\PYG{n}{z}\PYG{p}{;}
+\PYG{+w}{                    }\PYG{n}{var}\PYG{+w}{ }\PYG{n}{offsetZ}\PYG{+w}{ }\PYG{o}{=}
+\PYG{+w}{                    }\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{+w}{ }\PYG{n}{Mathf}\PYG{p}{.}\PYG{n}{Cos}\PYG{p}{(}\PYG{n}{radiansPerSegment}\PYG{+w}{ }\PYG{o}{*}\PYG{+w}{ }\PYG{n}{i}\PYG{p}{))}\PYG{+w}{ }\PYG{o}{*}\PYG{+w}{ }\PYG{n}{interval}\PYG{p}{.}\PYG{n}{z}\PYG{p}{;}
+
+\PYG{+w}{                    }\PYG{c+c1}{// Apply the calculated offset}
+\PYG{+w}{                    }\PYG{n}{position}\PYG{p}{.}\PYG{n}{x}\PYG{+w}{ }\PYG{o}{+=}\PYG{+w}{ }\PYG{n}{offsetX}\PYG{p}{;}
+\PYG{+w}{                    }\PYG{n}{position}\PYG{p}{.}\PYG{n}{z}\PYG{+w}{ }\PYG{o}{+=}\PYG{+w}{ }\PYG{n}{offsetZ}\PYG{p}{;}
+\PYG{+w}{                }\PYG{p}{\PYGZcb{}}
+\PYG{+w}{                }\PYG{k}{else}
+\PYG{+w}{                }\PYG{p}{\PYGZob{}}
+\PYG{+w}{                    }\PYG{n}{position}\PYG{+w}{ }\PYG{o}{+=}\PYG{+w}{ }\PYG{n}{interval}\PYG{p}{;}
+\PYG{+w}{                }\PYG{p}{\PYGZcb{}}
+\PYG{+w}{            }\PYG{p}{\PYGZcb{}}
+
+\PYG{+w}{            }\PYG{n}{var}\PYG{+w}{ }\PYG{n}{lineRenderer}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{GetComponent}\PYG{o}{\PYGZlt{}}\PYG{n}{LineRenderer}\PYG{o}{\PYGZgt{}}\PYG{p}{();}\PYGZbs{}
+\PYG{+w}{            }\PYG{c+c1}{// Make sure a material is assigned}
+\PYG{+w}{            }\PYG{n}{lineRenderer}\PYG{p}{.}\PYG{n}{material}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{lineMaterial}\PYG{p}{;}
+\PYG{+w}{            }\PYG{n}{lineRenderer}\PYG{p}{.}\PYG{n}{startWidth}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mf}{0.05f}\PYG{p}{;}
+\PYG{+w}{            }\PYG{n}{lineRenderer}\PYG{p}{.}\PYG{n}{endWidth}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mf}{0.05f}\PYG{p}{;}
+\PYG{+w}{            }\PYG{n}{lineRenderer}\PYG{p}{.}\PYG{n}{positionCount}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{fragmentCount}\PYG{p}{;}
+\PYG{+w}{            }\PYG{n}{lineRenderer}\PYG{p}{.}\PYG{n}{startColor}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{Color}\PYG{p}{.}\PYG{n}{white}\PYG{p}{;}
+\PYG{+w}{            }\PYG{n}{lineRenderer}\PYG{p}{.}\PYG{n}{endColor}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{Color}\PYG{p}{.}\PYG{n}{white}\PYG{p}{;}
+\PYG{+w}{        }\PYG{p}{\PYGZcb{}}
+
+\PYG{+w}{        }\PYG{k+kt}{void}\PYG{+w}{ }\PYG{n+nf}{LateUpdate}\PYG{p}{()}
+\PYG{+w}{        }\PYG{p}{\PYGZob{}}
+\PYG{+w}{            }\PYG{n}{var}\PYG{+w}{ }\PYG{n}{lineRenderer}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{GetComponent}\PYG{o}{\PYGZlt{}}\PYG{n}{LineRenderer}\PYG{o}{\PYGZgt{}}\PYG{p}{();}
+
+\PYG{+w}{            }\PYG{k}{for}\PYG{+w}{ }\PYG{p}{(}\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{i}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{;}\PYG{+w}{ }\PYG{n}{i}\PYG{+w}{ }\PYG{o}{\PYGZlt{}}\PYG{+w}{ }\PYG{n}{fragmentCount}\PYG{p}{;}\PYG{+w}{ }\PYG{n}{i}\PYG{o}{++}\PYG{p}{)}
+\PYG{+w}{            }\PYG{p}{\PYGZob{}}
+\PYG{+w}{                }\PYG{n}{lineRenderer}\PYG{p}{.}\PYG{n}{SetPosition}\PYG{p}{(}\PYG{n}{i}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{fragments}\PYG{p}{[}\PYG{n}{i}\PYG{p}{].}\PYG{n}{transform}\PYG{p}{.}\PYG{n}{position}\PYG{p}{);}
+\PYG{+w}{            }\PYG{p}{\PYGZcb{}}
+\PYG{+w}{        }\PYG{p}{\PYGZcb{}}
+\PYG{+w}{    }\PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

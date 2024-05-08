@@ -914,19 +914,236 @@ class QtWidget(QWidget):
 
 \subsection{Part2: Endovascular Intervention Simulation}
 % 在这里详细介绍关于“Endovascular Intervention Simulation”的设计和实现。
-
+Our project combines machine learning with AR/VR \cite{9376657,Ranne2023AiAReSegCD} to create an open-source simulator for autonomous cannulation in endovascular operations. This project try to offer a high-fidelity model of the catheter
+and aorta, integrating an advanced endovascular robot. It is designed to provide real-time force sensing and has shown, through prelimi-
+nary tests, to effectively mimic real-world robot behaviours\cite{jianu2022cathsim}. Furthermore, we aim to deploy CathSim on VR devices like
+HoloLens or Meta Quest\cite{Quest}, enhancing its accessibility and utility for medical professionals.
 \subsubsection{Design}
 % 描述“Endovascular Intervention Simulation”部分的设计细节。
+\begin{enumerate}
+      \item \textbf{Rope Design}
+      \label{sec:rope}
+      \\
+      Early in the design process, I considered two different approaches to Rope design and did an initial practice and comparison of them.
+      \\\\
+      Firstly, I used a Rope constructed from a slender cylinder cut into multiple sub-cylinders, each of which is equivalent to a node of a rope, and used Unity C\# scripts to control each node to enable the bending and elongation of the rope and to try and make this rope give feedback on the forces exerted by the outside world.
+      \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.8\textwidth]{blender design.png}
+            \caption{Rope Design in Blender}
+      \end{figure}
+      In the second approach, I attempted to splice multiple identical and separate cubes into a Rope using Unity C\# scripting directly. The bending and stretching of the rope was achieved by controlling each cube and their gaps directly through the script.
+      \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.8\textwidth]{cube.png}
+            \caption{Cube Fragement}
+      \end{figure}
+      Either way, there were a lot of serious and difficult to locate and solve problems in the early stages of the project, and both implementations had major flaws and loopholes.
 
+      \item \textbf{Model Design}
+      \\
+      The model used for this project was derived from a distribution made by Supervisor at the beginning of the project, with all members using the same Aorta model. In addition to the Aorta model, we have the Catheter model and the Catheter controller model.
+      \\\\
+      In order for Rope to have access to the Aorta model, the Aorta model needs to be modified using Blender. By optimising the number of triangles that the Aorta has, and by cutting and opening up the ends of the blood vessels in the Aorta model, the Rope can be inserted into the Aorta model without any problems.
+      \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.8\textwidth]{blender cut.png}
+            \caption{Cut Aorta Model}
+      \end{figure}
+      \item \textbf{Endovascular Intervention Simulation Design}
+      \\
+      Endovascular Intervention Simulation is the core part of Part2. It was planned to control the Rope and Catheter in some way, including movements such as rotation, forward, backward and bending. This would allow the Rope to enter the Aorta model and move under the control of the user, with force feedback (e.g. bending, etc.) when it touches the walls of the Aorta. When touching the Aorta wall it should also follow the path of the Aorta deeper under the control of the user, in which case the Rope should bend with the curve of the inner wall of the Aorta and remain inside the Aorta model without escaping.
+      \\\\
+      In the original design, it was planned to use a slider to control the forward and backward motion movement of Rope and Catheter. However, this control method has serious flaws, Rope can only move back and forth but not bend and rotate under the control of this method. So this control method was abandoned at the early stage of design.
+      \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.8\textwidth]{slider.png}
+            \caption{Slider Control Design}
+      \end{figure}
+      After that, we tried to use a cylinder to control Rope under the suggestion of Supervisor. Compared with the slider, the cylinder can control the Rope's forward, backward and rotation at the same time. However, since we are conducting the development of AR/VR project and the ultimate goal is to deploy it on AR/VR related devices, using a cylinder may not be convenient for users to operate it while using virtual reality devices. The design and implementation was previously discarded.
+      \\\\
+      In the end, we chose to use \gls{mrtk} for development. This development framework can provide a simulated palm for direct control of the Rope. Simulated finger pinching can be performed through the handle of the VR/AR device. Thus, the Rope can be simultaneously controlled with forward and backward motion, rotation and bending.
+      \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.8\textwidth]{hand1.png}
+            \caption{Virtual Hand Control}
+      \end{figure}
+      \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.8\textwidth]{hand2.png}
+            \caption{Finger Pinching}
+      \end{figure}
+      \item \textbf{User Interface Design}
+      \\
+      In the initial design of the project, I designed two different user interfaces, one for users using a flat display and one for users using VR/AR. In the interface designed for users using flat displays, the interaction is mostly realised using buttons, whereas the interface designed for VR/AR users takes into account factors such as interaction in virtual environments and mostly uses a virtual interface for interaction.
+      \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.8\textwidth]{UIUX.jpg}
+            \caption{AR/VR User Interface}
+      \end{figure}
+      \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.8\textwidth]{uiux2.png}
+            \caption{Flat Display User Interface}
+      \end{figure}
+      At this stage, the user interface is still in the design phase, as the core Endovascular Intervention Simulation component is still not up to the level of design that it was at the beginning of the project.
+      
+\end{enumerate}
 \subsubsection{Implementation}
-% 描述“Endovascular Intervention Simulation”部分的具体实现细节。
+\begin{enumerate}
+      \item \textbf{Framework Implementation}
+      \\
+      The \gls{mrtk} development framework needs to be built in Unity first at the start of the project.
+      \\\\
+      First you need to download the \href{https://learn.microsoft.com/en-us/windows/mixed-reality/develop/unity/welcome-to-mr-feature-tool}{Mixed Reality Feature Tool for Unity} and select the corresponding Unity project and the necessary feature packs in the tool. The tool will then automatically add the required MRTK development packages to the project\cite{mrtk_m}.
+      \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.8\textwidth]{mrtk1.png}
+            \caption{Mixed Reality Feature Tool for Unity\cite{mrtk_m}}
+      \end{figure}
+      \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.8\textwidth]{mrtk2.png}
+            \caption{Necessary Feature Packs\cite{mrtk_m}}
+      \end{figure}
+      In order to use this toolkit in the project, it needs to add the components \emph{MRTK XR Big} and \emph{MRTKInputSimulator} to the Asset for Unity. These components provide the necessary functionality to develop in HoloLens, such as hand simulation.
+      \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.8\textwidth]{mrtk_learn.png}
+            \caption{MRTK3 Framework Example\cite{mrtk_m}}
+      \end{figure}
+      \item \textbf{Rope Implementation}
+      As described in the Rope construction method described in the \hyperref[sec:rope]{Rope Design} section, the Rope construction was ultimately implemented using a method of splicing multiple Cubes using Unity C\# scripts.
+      \\\\
+      First create a Cube as a rope \emph{fragment prefab} and add the \emph{BoxCollider} component to give it a collision volume. It also needs to have the \emph{Rigidbody} component added to it to give it properties such as gravity and force impact so that it can react to gravity and external forces. After that, the Rope is generated and controlled directly by the C\# script where the \emph{RopeController} class resides. A dynamic rope is modelled by physical and visual components.
+      \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.8\textwidth]{cubezujian.png}
+            \caption{Fragment Prefab}
+      \end{figure}
+      The class uses \emph{fragmentPrefab} to define each segment of the rope (using the previously created Cube), and \emph{fragmentCount } to control the total length of the rope, using the \emph{interval} variable to define the spatial distance between segments. They can all be modified in Unity editor configuration. In the script's Start method, it first initialises an array of \emph{GameObject} to store the rope segments (all cloned from the same Cube). Each segment is then instantiated and placed one by one in a loop to form a linear structure. For each fragment that is not the first, a \emph{FixedJoint } component is added to it. A \emph{FixedJoint} is a special type of physical joint that is used to fix two objects together in terms of their physical behaviour so that they behave as a single unit in the simulation environment\cite{UnityFixedJoint2024}. When a FixedJoint is used to connect two objects, the two objects remain relatively unchanged in position and orientation, simulating an effect of being pinned or welded together. This is later connected to the \emph{Rigidbody} component created by the previous fragment, achieving physical adhesion between the fragments.
+      \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.5\textwidth]{rope colon.png}
+            \caption{Fragment Prefab Connected }
+      \end{figure}
+      \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.5\textwidth]{rope setting.png}
+            \caption{Rope Settings}
+      \end{figure}
+      Additionally, the same configuration that handles the initial bending of the rope is implemented in the script, whereby if a segment needs to have a bend applied, a trigonometric function is used to determine the offset of each segment by calculating the bending angle and the spacing of the segments of the rope. Specifically, it converts the total bending angle to radians for each segment, and then calculates to obtain offsets in the X and Z directions to visually realise the bending effect of the rope.
+      \\\\
+      Also, in order to simulate the real Endovascular Intervention, the anterior end of the Rope is bent to a certain extent. By setting \emph{bendAngle} and \emph{segmentToBend}, some segments of the anterior end of the Rope can be bent to achieve a more realistic simulation.
+      \\\\
+      Finally, to enhance the visual representation of the rope, a \emph{LineRenderer} component is added to the script that draws a continuous line between the rope segments. This can also be adjusted in the Unity editor by configuring properties such as material, line width and colour to ensure that the rope is visually appealing. In the \emph{LateUpdate } method, the script dynamically updates the position of each point of the \emph{LineRenderer} based on the real-time physical position of the segments to ensure that the line is updated as the segments move, ensuring visual continuity and dynamic response.
+      \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.5\textwidth]{render.png}
+            \caption{Line Renderer}
+      \end{figure}
+      \paragraph{Pseudocode for the Rope Implementation:}
+      \begin{minted}[frame=single, linenos=true, fontsize=\footnotesize]{C}
+using UnityEngine;
+
+namespace Rope
+{
+    public class RopeController : MonoBehaviour
+    {
+        [SerializeField] private GameObject fragmentPrefab;
+        [SerializeField] private int fragmentCount = 80;
+        [SerializeField] private Vector3 interval = new Vector3(0f, 0f, 0.25f);
+        [SerializeField] private Material lineMaterial; 
+
+        private GameObject[] fragments;
+        private float[] xPositions;
+        private float[] yPositions;
+        private float[] zPositions;
+        private CatmullRomSpline splineX;
+        private CatmullRomSpline splineY;
+        private CatmullRomSpline splineZ;
+        private int splineFactor = 4;
+
+        void Start()
+        {
+            fragments = new GameObject[fragmentCount];
+            var position = Vector3.zero;
+            // The desired total bend angle
+            var bendAngle = 30f; 
+            // Number of segments over which to apply the bend
+            var segmentToBend = 0; 
+
+            for (var i = 0; i < fragmentCount; i++)
+            {
+                fragments[i] = Instantiate(fragmentPrefab, 
+                position, Quaternion.identity, transform);
+
+                if (i > 0)
+                {
+                    var joint = 
+                    fragments[i].AddComponent<FixedJoint>();
+                    joint.connectedBody = 
+                    fragments[i - 1].GetComponent<Rigidbody>();
+                }
+
+                // Calculate the bend for the initial segments
+                if (i < segmentToBend)
+                {
+                    // Convert the total angle into radians 
+                    // and distribute it across the specified segments
+                    var radiansPerSegment = 
+                    Mathf.Deg2Rad * (bendAngle / segmentToBend);
+                    // Use interval.z as the base distance between segments
+                    var offsetX = Mathf.Sin(radiansPerSegment * i) * 
+                    interval.z; 
+                    var offsetZ = 
+                    (1 - Mathf.Cos(radiansPerSegment * i)) * interval.z;
+
+                    // Apply the calculated offset
+                    position.x += offsetX;
+                    position.z += offsetZ;
+                }
+                else
+                {
+                    position += interval;
+                }
+            }
+
+            var lineRenderer = GetComponent<LineRenderer>();\
+            // Make sure a material is assigned
+            lineRenderer.material = lineMaterial; 
+            lineRenderer.startWidth = 0.05f;
+            lineRenderer.endWidth = 0.05f;
+            lineRenderer.positionCount = fragmentCount;
+            lineRenderer.startColor = Color.white;
+            lineRenderer.endColor = Color.white;
+        }
+
+        void LateUpdate()
+        {
+            var lineRenderer = GetComponent<LineRenderer>();
+
+            for (int i = 0; i < fragmentCount; i++)
+            {
+                lineRenderer.SetPosition(i, fragments[i].transform.position);
+            }
+        }
+    }
+}
+      \end{minted}
+      \item \textbf{Model Implementation}
+      \item \textbf{Endovascular Intervention Simulation Implementation}
+\end{enumerate}
 
 
 % Testing & Evaluation
 \section{Testing \& Evaluation}
 \subsection{Part1: Real-world Model Interaction and Tracking}
-
+\subsubsection{Testing}
+\subsubsection{Evaluation}
 \subsection{Part2: Endovascular Intervention Simulation}
+\subsubsection{Testing}
+\subsubsection{Evaluation}
 
 % Project Ethics
 \section{Project Ethics}
