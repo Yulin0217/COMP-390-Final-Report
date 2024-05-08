@@ -110,6 +110,434 @@
       \verb 10.1007/s11548-020-02180-5
       \endverb
     \endentry
+    \entry{mujoco}{inproceedings}{}{}
+      \name{author}{3}{}{%
+        {{hash=b8e6506859bb7959c60c94c70a288a87}{%
+           family={Todorov},
+           familyi={T\bibinitperiod},
+           given={Emanuel},
+           giveni={E\bibinitperiod}}}%
+        {{hash=3b79ca47f08451987877fd8682e971e5}{%
+           family={Erez},
+           familyi={E\bibinitperiod},
+           given={Tom},
+           giveni={T\bibinitperiod}}}%
+        {{hash=58112cb88a80c1bc045b6eaab26a8695}{%
+           family={Tassa},
+           familyi={T\bibinitperiod},
+           given={Yuval},
+           giveni={Y\bibinitperiod}}}%
+      }
+      \strng{namehash}{abe7dc5f7371f04e3c8e93075cd4d474}
+      \strng{fullhash}{abe7dc5f7371f04e3c8e93075cd4d474}
+      \strng{fullhashraw}{abe7dc5f7371f04e3c8e93075cd4d474}
+      \strng{bibnamehash}{abe7dc5f7371f04e3c8e93075cd4d474}
+      \strng{authorbibnamehash}{abe7dc5f7371f04e3c8e93075cd4d474}
+      \strng{authornamehash}{abe7dc5f7371f04e3c8e93075cd4d474}
+      \strng{authorfullhash}{abe7dc5f7371f04e3c8e93075cd4d474}
+      \strng{authorfullhashraw}{abe7dc5f7371f04e3c8e93075cd4d474}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{2012 IEEE/RSJ International Conference on Intelligent Robots and Systems}
+      \field{title}{MuJoCo: A physics engine for model-based control}
+      \field{year}{2012}
+      \field{pages}{5026\bibrangedash 5033}
+      \range{pages}{8}
+      \verb{doi}
+      \verb 10.1109/IROS.2012.6386109
+      \endverb
+    \endentry
+    \entry{Juliani2018UnityAG}{article}{}{}
+      \name{author}{7}{}{%
+        {{hash=b40f803735aa0d2366759b65737b11b5}{%
+           family={Juliani},
+           familyi={J\bibinitperiod},
+           given={Arthur},
+           giveni={A\bibinitperiod}}}%
+        {{hash=c1c39ce6418c9ed4815935216ebefcc6}{%
+           family={Berges},
+           familyi={B\bibinitperiod},
+           given={Vincent-Pierre},
+           giveni={V\bibinithyphendelim P\bibinitperiod}}}%
+        {{hash=8b0aeda693c81812a3665e177e3690c8}{%
+           family={Vckay},
+           familyi={V\bibinitperiod},
+           given={Esh},
+           giveni={E\bibinitperiod}}}%
+        {{hash=a85dcf731e772b177341998a236d587a}{%
+           family={Gao},
+           familyi={G\bibinitperiod},
+           given={Yuan},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=fb3820da0b454a00e774b44fa9953777}{%
+           family={Henry},
+           familyi={H\bibinitperiod},
+           given={Hunter},
+           giveni={H\bibinitperiod}}}%
+        {{hash=12929a8d65a54e17cd2b48f49fa6ae58}{%
+           family={Mattar},
+           familyi={M\bibinitperiod},
+           given={Marwan},
+           giveni={M\bibinitperiod}}}%
+        {{hash=aa07b40814e5ccf4a0dfa7273e5f962d}{%
+           family={Lange},
+           familyi={L\bibinitperiod},
+           given={Danny},
+           giveni={D\bibinitperiod}}}%
+      }
+      \strng{namehash}{d9ff821bd901af8f7df96696b2a5349a}
+      \strng{fullhash}{89a61ac9c3e5654853d3dcf9cd0fad21}
+      \strng{fullhashraw}{89a61ac9c3e5654853d3dcf9cd0fad21}
+      \strng{bibnamehash}{d9ff821bd901af8f7df96696b2a5349a}
+      \strng{authorbibnamehash}{d9ff821bd901af8f7df96696b2a5349a}
+      \strng{authornamehash}{d9ff821bd901af8f7df96696b2a5349a}
+      \strng{authorfullhash}{89a61ac9c3e5654853d3dcf9cd0fad21}
+      \strng{authorfullhashraw}{89a61ac9c3e5654853d3dcf9cd0fad21}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{ArXiv}
+      \field{title}{Unity: A General Platform for Intelligent Agents}
+      \field{volume}{abs/1809.02627}
+      \field{year}{2018}
+      \verb{urlraw}
+      \verb https://api.semanticscholar.org/CorpusID:52185833
+      \endverb
+      \verb{url}
+      \verb https://api.semanticscholar.org/CorpusID:52185833
+      \endverb
+    \endentry
+    \entry{9376657}{article}{}{}
+      \name{author}{8}{}{%
+        {{hash=ec8286be07bb27e6a07623cf8bfc8b71}{%
+           family={Kundrat},
+           familyi={K\bibinitperiod},
+           given={Dennis},
+           giveni={D\bibinitperiod}}}%
+        {{hash=8f041101b7913b7bfe18c72b1372a152}{%
+           family={Dagnino},
+           familyi={D\bibinitperiod},
+           given={Giulio},
+           giveni={G\bibinitperiod}}}%
+        {{hash=a74ce90907c8ecef99a889c3dc5d21bd}{%
+           family={Kwok},
+           familyi={K\bibinitperiod},
+           given={Trevor\bibnamedelimb M.\bibnamedelimi Y.},
+           giveni={T\bibinitperiod\bibinitdelim M\bibinitperiod\bibinitdelim Y\bibinitperiod}}}%
+        {{hash=dc66a9c1cb773bf0e8c03d1aea8464b4}{%
+           family={Abdelaziz},
+           familyi={A\bibinitperiod},
+           given={Mohamed\bibnamedelimb E.\bibnamedelimi M.\bibnamedelimi K.},
+           giveni={M\bibinitperiod\bibinitdelim E\bibinitperiod\bibinitdelim M\bibinitperiod\bibinitdelim K\bibinitperiod}}}%
+        {{hash=a3c4a71ca93bfd652cc21525738a8550}{%
+           family={Chi},
+           familyi={C\bibinitperiod},
+           given={Wenqiang},
+           giveni={W\bibinitperiod}}}%
+        {{hash=f480ed206a30d0a24ab31eb69169599c}{%
+           family={Nguyen},
+           familyi={N\bibinitperiod},
+           given={Anh},
+           giveni={A\bibinitperiod}}}%
+        {{hash=a774d5945ad278c6faf3750314d8dd00}{%
+           family={Riga},
+           familyi={R\bibinitperiod},
+           given={Celia},
+           giveni={C\bibinitperiod}}}%
+        {{hash=fcdeef628f31c9c5305ee39311f1fcc6}{%
+           family={Yang},
+           familyi={Y\bibinitperiod},
+           given={Guang-Zhong},
+           giveni={G\bibinithyphendelim Z\bibinitperiod}}}%
+      }
+      \strng{namehash}{0b555563ea1e8856a2a1720c81af066c}
+      \strng{fullhash}{4c24c2d4c8a29356c8492cf6eebac6b5}
+      \strng{fullhashraw}{4c24c2d4c8a29356c8492cf6eebac6b5}
+      \strng{bibnamehash}{0b555563ea1e8856a2a1720c81af066c}
+      \strng{authorbibnamehash}{0b555563ea1e8856a2a1720c81af066c}
+      \strng{authornamehash}{0b555563ea1e8856a2a1720c81af066c}
+      \strng{authorfullhash}{4c24c2d4c8a29356c8492cf6eebac6b5}
+      \strng{authorfullhashraw}{4c24c2d4c8a29356c8492cf6eebac6b5}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE Transactions on Biomedical Engineering}
+      \field{number}{10}
+      \field{title}{An MR-Safe Endovascular Robotic Platform: Design, Control, and Ex-Vivo Evaluation}
+      \field{volume}{68}
+      \field{year}{2021}
+      \field{pages}{3110\bibrangedash 3121}
+      \range{pages}{12}
+      \verb{doi}
+      \verb 10.1109/TBME.2021.3065146
+      \endverb
+    \endentry
+    \entry{Li2022AnEC}{article}{}{}
+      \name{author}{5}{}{%
+        {{hash=ae84b1bbe5936f974a6548558e122a39}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={Xinming},
+           giveni={X\bibinitperiod}}}%
+        {{hash=0be4762412f6ca0fdcae880fd8bd034d}{%
+           family={Guo},
+           familyi={G\bibinitperiod},
+           given={Shuxiang},
+           giveni={S\bibinitperiod}}}%
+        {{hash=7ff7de3ff0cfe266873732c2deecbff5}{%
+           family={Shi},
+           familyi={S\bibinitperiod},
+           given={Peng},
+           giveni={P\bibinitperiod}}}%
+        {{hash=edaa549f982f24badee3f0fbc5c5dc1c}{%
+           family={Jin},
+           familyi={J\bibinitperiod},
+           given={Xiaoliang},
+           giveni={X\bibinitperiod}}}%
+        {{hash=e64d78311ea05392309c1b1475eea012}{%
+           family={Kawanishi},
+           familyi={K\bibinitperiod},
+           given={Masahiko},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{94792d451662b537fb452fd334753c8f}
+      \strng{fullhash}{01bc311a6f1a334444c082001a65bfbc}
+      \strng{fullhashraw}{01bc311a6f1a334444c082001a65bfbc}
+      \strng{bibnamehash}{01bc311a6f1a334444c082001a65bfbc}
+      \strng{authorbibnamehash}{01bc311a6f1a334444c082001a65bfbc}
+      \strng{authornamehash}{94792d451662b537fb452fd334753c8f}
+      \strng{authorfullhash}{01bc311a6f1a334444c082001a65bfbc}
+      \strng{authorfullhashraw}{01bc311a6f1a334444c082001a65bfbc}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Micromachines}
+      \field{title}{An Endovascular Catheterization Robotic System Using Collaborative Operation with Magnetically Controlled Haptic Force Feedback}
+      \field{volume}{13}
+      \field{year}{2022}
+      \verb{urlraw}
+      \verb https://api.semanticscholar.org/CorpusID:247827780
+      \endverb
+      \verb{url}
+      \verb https://api.semanticscholar.org/CorpusID:247827780
+      \endverb
+    \endentry
+    \entry{Mialhe2021FeasibilityOT}{article}{}{}
+      \name{author}{4}{}{%
+        {{hash=b36efacfc55b53a5775781f014d2ad9f}{%
+           family={Mialhe},
+           familyi={M\bibinitperiod},
+           given={Claude},
+           giveni={C\bibinitperiod}}}%
+        {{hash=1072c3331bd59a79b6b9a7bcf856e96c}{%
+           family={Chaudhuri},
+           familyi={C\bibinitperiod},
+           given={Arindam},
+           giveni={A\bibinitperiod}}}%
+        {{hash=27d76f0ecbd66caa0fbfaaf4a7b5a7ff}{%
+           family={Raffort},
+           familyi={R\bibinitperiod},
+           given={Juliette},
+           giveni={J\bibinitperiod}}}%
+        {{hash=1fdde45e3ce9c34463c4c05689eb1099}{%
+           family={Lareyre},
+           familyi={L\bibinitperiod},
+           given={Fabien},
+           giveni={F\bibinitperiod}}}%
+      }
+      \strng{namehash}{36a3c93fb5c5e1eedbfd1c1dae87093b}
+      \strng{fullhash}{65cd58227d78228230ebd14074342753}
+      \strng{fullhashraw}{65cd58227d78228230ebd14074342753}
+      \strng{bibnamehash}{65cd58227d78228230ebd14074342753}
+      \strng{authorbibnamehash}{65cd58227d78228230ebd14074342753}
+      \strng{authornamehash}{36a3c93fb5c5e1eedbfd1c1dae87093b}
+      \strng{authorfullhash}{65cd58227d78228230ebd14074342753}
+      \strng{authorfullhashraw}{65cd58227d78228230ebd14074342753}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Annals of vascular surgery}
+      \field{title}{Feasibility of the application of holographic augmented reality in endovascular surgery using Microsoft HoloLens head-mounted display.}
+      \field{year}{2021}
+      \verb{urlraw}
+      \verb https://api.semanticscholar.org/CorpusID:235675708
+      \endverb
+      \verb{url}
+      \verb https://api.semanticscholar.org/CorpusID:235675708
+      \endverb
+    \endentry
+    \entry{Liu2020AWA}{article}{}{}
+      \name{author}{12}{}{%
+        {{hash=2c112d9d43345185672db278b5111bc4}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={Peng},
+           giveni={P\bibinitperiod}}}%
+        {{hash=c39f04c7da848213c8d64abdf0d3f1b9}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={Chenmeng},
+           giveni={C\bibinitperiod}}}%
+        {{hash=bbcee826378491726fc91df353888910}{%
+           family={Xiao},
+           familyi={X\bibinitperiod},
+           given={Changlin},
+           giveni={C\bibinitperiod}}}%
+        {{hash=be15569d8ec7a6fd61b60627d26d5a78}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Zeshu},
+           giveni={Z\bibinitperiod}}}%
+        {{hash=cc05b7f7fa711aa617faefd63a19cff3}{%
+           family={Ma},
+           familyi={M\bibinitperiod},
+           given={Junqi},
+           giveni={J\bibinitperiod}}}%
+        {{hash=677116b54b0b8c8374557d0c26741645}{%
+           family={Gao},
+           familyi={G\bibinitperiod},
+           given={Jian},
+           giveni={J\bibinitperiod}}}%
+        {{hash=f8e0b6e003b8a3c86e1a5ae730e8aefb}{%
+           family={Shao},
+           familyi={S\bibinitperiod},
+           given={Pengfei},
+           giveni={P\bibinitperiod}}}%
+        {{hash=e74bbee256f5b8def6d020c181a9c6e8}{%
+           family={Valerio},
+           familyi={V\bibinitperiod},
+           given={Ian},
+           giveni={I\bibinitperiod}}}%
+        {{hash=6b160bd1b7b5f214a333ac5a40ad26c5}{%
+           family={Pawlik},
+           familyi={P\bibinitperiod},
+           given={Timothy\bibnamedelima M.},
+           giveni={T\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=f591d64afcd77e0aca5af1c0dde8c8d5}{%
+           family={Ding},
+           familyi={D\bibinitperiod},
+           given={Chengbiao},
+           giveni={C\bibinitperiod}}}%
+        {{hash=f7331824d0502c1f76e47c856be64a71}{%
+           family={Yilmaz},
+           familyi={Y\bibinitperiod},
+           given={Alper},
+           giveni={A\bibinitperiod}}}%
+        {{hash=a35fda79f6e61d9a255410b52105dbf9}{%
+           family={Xu},
+           familyi={X\bibinitperiod},
+           given={Ronald\bibnamedelima X.},
+           giveni={R\bibinitperiod\bibinitdelim X\bibinitperiod}}}%
+      }
+      \strng{namehash}{7d14a0636ad46629bf889dabba0025a9}
+      \strng{fullhash}{d240dafa6cbaf6a4b47825c53fad1ccb}
+      \strng{fullhashraw}{d240dafa6cbaf6a4b47825c53fad1ccb}
+      \strng{bibnamehash}{7d14a0636ad46629bf889dabba0025a9}
+      \strng{authorbibnamehash}{7d14a0636ad46629bf889dabba0025a9}
+      \strng{authornamehash}{7d14a0636ad46629bf889dabba0025a9}
+      \strng{authorfullhash}{d240dafa6cbaf6a4b47825c53fad1ccb}
+      \strng{authorfullhashraw}{d240dafa6cbaf6a4b47825c53fad1ccb}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Annals of Biomedical Engineering}
+      \field{title}{A Wearable Augmented Reality Navigation System for Surgical Telementoring Based on Microsoft HoloLens}
+      \field{volume}{49}
+      \field{year}{2020}
+      \field{pages}{287\bibrangedash 298}
+      \range{pages}{12}
+      \verb{urlraw}
+      \verb https://api.semanticscholar.org/CorpusID:219328694
+      \endverb
+      \verb{url}
+      \verb https://api.semanticscholar.org/CorpusID:219328694
+      \endverb
+    \endentry
+    \entry{Thabit2022EvaluationOM}{inproceedings}{}{}
+      \name{author}{4}{}{%
+        {{hash=5dc8c3f5071722b933561d3131c07545}{%
+           family={Thabit},
+           familyi={T\bibinitperiod},
+           given={Abdullah},
+           giveni={A\bibinitperiod}}}%
+        {{hash=60e1767a1dca1ffc5abdc3fb91dcdc4d}{%
+           family={Niessen},
+           familyi={N\bibinitperiod},
+           given={Wiro.\bibnamedelimi J.},
+           giveni={W\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=d8dceb02808f3f7cac8f7c3a1d034f82}{%
+           family={Wolvius},
+           familyi={W\bibinitperiod},
+           given={Eppo\bibnamedelima B.},
+           giveni={E\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+        {{hash=d686441e9f83c9662e2705ca709ce4c3}{%
+           family={Walsum},
+           familyi={W\bibinitperiod},
+           given={Theo},
+           giveni={T\bibinitperiod},
+           prefix={van},
+           prefixi={v\bibinitperiod}}}%
+      }
+      \strng{namehash}{8a51220937512f3c07b9e112f292212e}
+      \strng{fullhash}{66fc887056f368fe48684466d56c5380}
+      \strng{fullhashraw}{66fc887056f368fe48684466d56c5380}
+      \strng{bibnamehash}{66fc887056f368fe48684466d56c5380}
+      \strng{authorbibnamehash}{66fc887056f368fe48684466d56c5380}
+      \strng{authornamehash}{8a51220937512f3c07b9e112f292212e}
+      \strng{authorfullhash}{66fc887056f368fe48684466d56c5380}
+      \strng{authorfullhashraw}{66fc887056f368fe48684466d56c5380}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Medical Imaging}
+      \field{title}{Evaluation of marker tracking using mono and stereo vision in Microsoft HoloLens for surgical navigation}
+      \field{year}{2022}
+      \verb{urlraw}
+      \verb https://api.semanticscholar.org/CorpusID:247914326
+      \endverb
+      \verb{url}
+      \verb https://api.semanticscholar.org/CorpusID:247914326
+      \endverb
+    \endentry
+    \entry{Palumbo2022MicrosoftH2}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=ee3bf601fb00a605f39d7090e7e88891}{%
+           family={Palumbo},
+           familyi={P\bibinitperiod},
+           given={Arrigo},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{ee3bf601fb00a605f39d7090e7e88891}
+      \strng{fullhash}{ee3bf601fb00a605f39d7090e7e88891}
+      \strng{fullhashraw}{ee3bf601fb00a605f39d7090e7e88891}
+      \strng{bibnamehash}{ee3bf601fb00a605f39d7090e7e88891}
+      \strng{authorbibnamehash}{ee3bf601fb00a605f39d7090e7e88891}
+      \strng{authornamehash}{ee3bf601fb00a605f39d7090e7e88891}
+      \strng{authorfullhash}{ee3bf601fb00a605f39d7090e7e88891}
+      \strng{authorfullhashraw}{ee3bf601fb00a605f39d7090e7e88891}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Sensors (Basel, Switzerland)}
+      \field{title}{Microsoft HoloLens 2 in Medical and Healthcare Context: State of the Art and Future Prospects}
+      \field{volume}{22}
+      \field{year}{2022}
+      \verb{urlraw}
+      \verb https://api.semanticscholar.org/CorpusID:252891043
+      \endverb
+      \verb{url}
+      \verb https://api.semanticscholar.org/CorpusID:252891043
+      \endverb
+    \endentry
     \entry{QtWebsite}{misc}{}{}
       \name{author}{1}{}{%
         {{hash=8fdd00b7aac42271736575410d6a2219}{%
@@ -125,8 +553,8 @@
       \strng{authorfullhash}{8fdd00b7aac42271736575410d6a2219}
       \strng{authorfullhashraw}{8fdd00b7aac42271736575410d6a2219}
       \field{extraname}{1}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{[Online; accessed 29-April-2024]}
@@ -168,8 +596,8 @@
       \strng{authornamehash}{340ff298ce91155ae09c9a40578df722}
       \strng{authorfullhash}{340ff298ce91155ae09c9a40578df722}
       \strng{authorfullhashraw}{340ff298ce91155ae09c9a40578df722}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{isbn}{978-1-930934-19-1}
@@ -197,8 +625,8 @@
       \strng{authornamehash}{f7949b6ad7d5637c17aa5eeb31480f83}
       \strng{authorfullhash}{f7949b6ad7d5637c17aa5eeb31480f83}
       \strng{authorfullhashraw}{f7949b6ad7d5637c17aa5eeb31480f83}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{booktitle}{2013 IEEE International Conference on Medical Imaging Physics and Engineering}
@@ -227,8 +655,8 @@
       \strng{authornamehash}{094486b9bf66b2d238e3937cc49fca84}
       \strng{authorfullhash}{094486b9bf66b2d238e3937cc49fca84}
       \strng{authorfullhashraw}{094486b9bf66b2d238e3937cc49fca84}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{booktitle}{2005 IEEE Computer Society Conference on Computer Vision and Pattern Recognition (CVPR'05)}
@@ -257,8 +685,8 @@
       \strng{authorfullhash}{b6aea1a416c89509a7df1cbb69249cb6}
       \strng{authorfullhashraw}{b6aea1a416c89509a7df1cbb69249cb6}
       \field{extraname}{1}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{[Online; accessed 1-May-2024]}
@@ -384,8 +812,8 @@
       \strng{authornamehash}{7b64ea6b018ed9fc80a22ce3e7cc5e59}
       \strng{authorfullhash}{7b64ea6b018ed9fc80a22ce3e7cc5e59}
       \strng{authorfullhashraw}{7b64ea6b018ed9fc80a22ce3e7cc5e59}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{In the continuous optimization of computer graphics, game engine and virtual reality have become the focus of research and innovation in the current technology field. Rendering is a core technology to show a variety of graphic effects, which has been attached great importance to and applied by the whole society. Nowadays, although the rendering of large-scale and complex scenes has a wide range of applications, the actual optimization requirements are very high. Therefore, in the future technology application and research and development, based on higher and higher technical requirements, it is necessary to improve the efficiency of actual rendering while ensuring or improving the rendering quality. Therefore, this paper studies how to use the algorithm to improve the efficiency of actual rendering, so as to provide a new basis for future computer graphics research.}
@@ -433,8 +861,8 @@
       \strng{authornamehash}{8216b27ae3fb92a1814dc1ca75144a24}
       \strng{authorfullhash}{8216b27ae3fb92a1814dc1ca75144a24}
       \strng{authorfullhashraw}{8216b27ae3fb92a1814dc1ca75144a24}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{booktitle}{2015 IEEE International Conference on Computer Vision (ICCV)}
@@ -466,8 +894,8 @@
       \strng{authornamehash}{c272cca250fdae927e51976272c855ac}
       \strng{authorfullhash}{c272cca250fdae927e51976272c855ac}
       \strng{authorfullhashraw}{c272cca250fdae927e51976272c855ac}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{Adaptive exponential smoothing models are designed to improve performance by letting the smoothing parameter vary according to the most recent forecasting accuracy. This paper argues that the constant exponential smoothing results used in two comparative studies are inadequate as benchmarks. A reexamination does not indicate that adaptive exponential smoothing methods provide superior forecasts compared to those obtainable from constant exponential smoothing with a considerate choice of the smoothing constant. No support was found for the alleged advantages of the Dennis run based adaptive procedure.}
@@ -506,8 +934,8 @@
       \strng{authornamehash}{7c4c1f7ebef2fa82c9f9594521c1c14f}
       \strng{authorfullhash}{7c4c1f7ebef2fa82c9f9594521c1c14f}
       \strng{authorfullhashraw}{7c4c1f7ebef2fa82c9f9594521c1c14f}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{Abstract Adaptive exponential smoothing methods allow a smoothing parameter to change over time, in order to adapt to changes in the characteristics of the time series. However, these methods have tended to produce unstable forecasts and have performed poorly in empirical studies. This paper presents a new adaptive method, which enables a smoothing parameter to be modelled as a logistic function of a user-specified variable. The approach is analogous to that used to model the time-varying parameter in smooth transition models. Using simulated data, we show that the new approach has the potential to outperform existing adaptive methods and constant parameter methods when the estimation and evaluation samples both contain a level shift or both contain an outlier. An empirical study, using the monthly time series from the M3-Competition, gave encouraging results for the new approach. Copyright © 2004 John Wiley \& Sons, Ltd.}
@@ -546,8 +974,8 @@
       \strng{authornamehash}{abcdb78a564e00abcb81ee953f22cf04}
       \strng{authorfullhash}{abcdb78a564e00abcb81ee953f22cf04}
       \strng{authorfullhashraw}{abcdb78a564e00abcb81ee953f22cf04}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{howpublished}{\url{https://www.investopedia.com/terms/e/ema.asp}}
@@ -586,8 +1014,8 @@
       \strng{authornamehash}{fbae77b542896b647f450348d6eefe9c}
       \strng{authorfullhash}{1b14cf1ffcb4e7dcc83413fa1176be49}
       \strng{authorfullhashraw}{1b14cf1ffcb4e7dcc83413fa1176be49}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{booktitle}{2015 IEEE Conference on Computer Vision and Pattern Recognition (CVPR)}
@@ -614,8 +1042,8 @@
       \strng{authornamehash}{bdff898770186da749cb63755cb1db09}
       \strng{authorfullhash}{bdff898770186da749cb63755cb1db09}
       \strng{authorfullhashraw}{bdff898770186da749cb63755cb1db09}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{howpublished}{\url{https://medium.com/@vinay1996/complex-exponential-smoothing-ces-63d1c6ddfc78}}
@@ -649,8 +1077,8 @@
       \strng{authornamehash}{4b104476e3ec36ef94de52f31c93357f}
       \strng{authorfullhash}{4b104476e3ec36ef94de52f31c93357f}
       \strng{authorfullhashraw}{4b104476e3ec36ef94de52f31c93357f}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{Abstract Exponential smoothing has been one of the most popular forecasting methods used to support various decisions in organizations, in activities such as inventory management, scheduling, revenue management, and other areas. Although its relative simplicity and transparency have made it very attractive for research and practice, identifying the underlying trend remains challenging with significant impact on the resulting accuracy. This has resulted in the development of various modifications of trend models, introducing a model selection problem. With the aim of addressing this problem, we propose the complex exponential smoothing (CES), based on the theory of functions of complex variables. The basic CES approach involves only two parameters and does not require a model selection procedure. Despite these simplifications, CES proves to be competitive with, or even superior to existing methods. We show that CES has several advantages over conventional exponential smoothing models: it can model and forecast both stationary and non-stationary processes, and CES can capture both level and trend cases, as defined in the conventional exponential smoothing classification. CES is evaluated on several forecasting competition datasets, demonstrating better performance than established benchmarks. We conclude that CES has desirable features for time series modeling and opens new promising avenues for research.}
@@ -711,8 +1139,8 @@
       \strng{authornamehash}{ac14f3e1ca141c9c20715b63d8f80806}
       \strng{authorfullhash}{c28df58d80587042ead9c14ff330df3c}
       \strng{authorfullhashraw}{c28df58d80587042ead9c14ff330df3c}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{booktitle}{2016 8th International Conference on Intelligent Human-Machine Systems and Cybernetics (IHMSC)}
@@ -752,8 +1180,8 @@
       \strng{authornamehash}{6b29cd704dac7836015bb115870fdaa4}
       \strng{authorfullhash}{6b29cd704dac7836015bb115870fdaa4}
       \strng{authorfullhashraw}{6b29cd704dac7836015bb115870fdaa4}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{booktitle}{2011 International Conference on Computer Science and Service System (CSSS)}
@@ -800,8 +1228,8 @@
       \strng{authornamehash}{50c213e12555e4bc9861039be28f46b2}
       \strng{authorfullhash}{e929a29c4e43afea9ce4b7b9eb464578}
       \strng{authorfullhashraw}{e929a29c4e43afea9ce4b7b9eb464578}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{booktitle}{IET International Communication Conference on Wireless Mobile and Computing (CCWMC 2011)}
@@ -875,8 +1303,8 @@
       \strng{authornamehash}{092b0f48c0e1d7d8c4e4fdadb4142fa6}
       \strng{authorfullhash}{44546ae60410eb807c59a310e36de8f3}
       \strng{authorfullhashraw}{44546ae60410eb807c59a310e36de8f3}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{booktitle}{Proceedings of 2011 Cross Strait Quad-Regional Radio Science and Wireless Technology Conference}
@@ -916,8 +1344,8 @@
       \strng{authornamehash}{66113e03be87f580929ebbcadf3329a7}
       \strng{authorfullhash}{66113e03be87f580929ebbcadf3329a7}
       \strng{authorfullhashraw}{66113e03be87f580929ebbcadf3329a7}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{booktitle}{2009 IEEE International Conference on Intelligent Computing and Intelligent Systems}
@@ -952,8 +1380,8 @@
       \strng{authornamehash}{91ba753c44af950b718777dd6f3fc886}
       \strng{authorfullhash}{91ba753c44af950b718777dd6f3fc886}
       \strng{authorfullhashraw}{91ba753c44af950b718777dd6f3fc886}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{howpublished}{\url{https://www.kitware.com/vtk-technical-highlight-dual-depth-peeling/}}
@@ -963,16 +1391,16 @@
       \field{year}{2016}
     \endentry
     \entry{vtk_examples_camera}{misc}{}{}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labeltitlesource}{title}
       \field{howpublished}{\url{https://examples.vtk.org/site/Cxx/Visualization/Camera/}}
       \field{note}{Accessed: 2024-05-05}
       \field{title}{VTK Examples for Camera in C++}
     \endentry
     \entry{vtk_camera_doc_2023}{misc}{}{}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labeltitlesource}{title}
       \field{howpublished}{\url{https://www.geologie.uni-freiburg.de/root/manuals/vtkman/vtkCamera.html}}
       \field{note}{Accessed: 2024-05-05}
@@ -1002,78 +1430,12 @@
       \strng{authornamehash}{04889672206db9bc8c1d312fc1f738ef}
       \strng{authorfullhash}{04889672206db9bc8c1d312fc1f738ef}
       \strng{authorfullhashraw}{04889672206db9bc8c1d312fc1f738ef}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{Mastering Qt 5: Create stunning cross-platform applications using C++ with Qt Widgets and QML with Qt Quick}
       \field{year}{2018}
-    \endentry
-    \entry{9376657}{article}{}{}
-      \name{author}{8}{}{%
-        {{hash=ec8286be07bb27e6a07623cf8bfc8b71}{%
-           family={Kundrat},
-           familyi={K\bibinitperiod},
-           given={Dennis},
-           giveni={D\bibinitperiod}}}%
-        {{hash=8f041101b7913b7bfe18c72b1372a152}{%
-           family={Dagnino},
-           familyi={D\bibinitperiod},
-           given={Giulio},
-           giveni={G\bibinitperiod}}}%
-        {{hash=a74ce90907c8ecef99a889c3dc5d21bd}{%
-           family={Kwok},
-           familyi={K\bibinitperiod},
-           given={Trevor\bibnamedelimb M.\bibnamedelimi Y.},
-           giveni={T\bibinitperiod\bibinitdelim M\bibinitperiod\bibinitdelim Y\bibinitperiod}}}%
-        {{hash=dc66a9c1cb773bf0e8c03d1aea8464b4}{%
-           family={Abdelaziz},
-           familyi={A\bibinitperiod},
-           given={Mohamed\bibnamedelimb E.\bibnamedelimi M.\bibnamedelimi K.},
-           giveni={M\bibinitperiod\bibinitdelim E\bibinitperiod\bibinitdelim M\bibinitperiod\bibinitdelim K\bibinitperiod}}}%
-        {{hash=a3c4a71ca93bfd652cc21525738a8550}{%
-           family={Chi},
-           familyi={C\bibinitperiod},
-           given={Wenqiang},
-           giveni={W\bibinitperiod}}}%
-        {{hash=f480ed206a30d0a24ab31eb69169599c}{%
-           family={Nguyen},
-           familyi={N\bibinitperiod},
-           given={Anh},
-           giveni={A\bibinitperiod}}}%
-        {{hash=a774d5945ad278c6faf3750314d8dd00}{%
-           family={Riga},
-           familyi={R\bibinitperiod},
-           given={Celia},
-           giveni={C\bibinitperiod}}}%
-        {{hash=fcdeef628f31c9c5305ee39311f1fcc6}{%
-           family={Yang},
-           familyi={Y\bibinitperiod},
-           given={Guang-Zhong},
-           giveni={G\bibinithyphendelim Z\bibinitperiod}}}%
-      }
-      \strng{namehash}{0b555563ea1e8856a2a1720c81af066c}
-      \strng{fullhash}{4c24c2d4c8a29356c8492cf6eebac6b5}
-      \strng{fullhashraw}{4c24c2d4c8a29356c8492cf6eebac6b5}
-      \strng{bibnamehash}{0b555563ea1e8856a2a1720c81af066c}
-      \strng{authorbibnamehash}{0b555563ea1e8856a2a1720c81af066c}
-      \strng{authornamehash}{0b555563ea1e8856a2a1720c81af066c}
-      \strng{authorfullhash}{4c24c2d4c8a29356c8492cf6eebac6b5}
-      \strng{authorfullhashraw}{4c24c2d4c8a29356c8492cf6eebac6b5}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{IEEE Transactions on Biomedical Engineering}
-      \field{number}{10}
-      \field{title}{An MR-Safe Endovascular Robotic Platform: Design, Control, and Ex-Vivo Evaluation}
-      \field{volume}{68}
-      \field{year}{2021}
-      \field{pages}{3110\bibrangedash 3121}
-      \range{pages}{12}
-      \verb{doi}
-      \verb 10.1109/TBME.2021.3065146
-      \endverb
     \endentry
     \entry{Ranne2023AiAReSegCD}{article}{}{}
       \name{author}{4}{}{%
@@ -1108,8 +1470,8 @@
       \strng{authornamehash}{7e21297a5d5cd8e5dca7de1896ea9207}
       \strng{authorfullhash}{78136c4450b3e5e9e2cf4ded1249fc1d}
       \strng{authorfullhashraw}{78136c4450b3e5e9e2cf4ded1249fc1d}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{ArXiv}
@@ -1181,8 +1543,8 @@
       \strng{authornamehash}{06e7b8546a7ed20fb46b9ed12c505c9e}
       \strng{authorfullhash}{bed46afc4d369353c8edfda797b9ebea}
       \strng{authorfullhashraw}{bed46afc4d369353c8edfda797b9ebea}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{eprintclass}{cs.RO}
@@ -1207,8 +1569,8 @@
       \strng{authornamehash}{b228de76a536593748457606a3703893}
       \strng{authorfullhash}{b228de76a536593748457606a3703893}
       \strng{authorfullhashraw}{b228de76a536593748457606a3703893}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{howpublished}{\url{https://developer.oculus.com/documentation/unity/}}
@@ -1247,8 +1609,8 @@
       \endverb
     \endentry
     \entry{UnityFixedJoint2024}{misc}{}{}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labeltitlesource}{title}
       \field{howpublished}{Unity Documentation}
       \field{note}{Accessed: yyyy-mm-dd}
@@ -1259,6 +1621,36 @@
       \endverb
       \verb{url}
       \verb https://docs.unity3d.com/Manual/class-FixedJoint.html
+      \endverb
+    \endentry
+    \entry{UnityBoxCollider2024}{misc}{}{}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{Unity Documentation}
+      \field{note}{Accessed: yyyy-mm-dd}
+      \field{title}{Box Collider}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://docs.unity3d.com/Manual/class-BoxCollider.html
+      \endverb
+      \verb{url}
+      \verb https://docs.unity3d.com/Manual/class-BoxCollider.html
+      \endverb
+    \endentry
+    \entry{UnityMeshCollider2024}{misc}{}{}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{Unity Documentation}
+      \field{note}{Accessed: yyyy-mm-dd}
+      \field{title}{Mesh Collider}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://docs.unity3d.com/Manual/class-MeshCollider.html
+      \endverb
+      \verb{url}
+      \verb https://docs.unity3d.com/Manual/class-MeshCollider.html
       \endverb
     \endentry
     \entry{UoL_COMP390_2023-24}{misc}{}{}
@@ -1275,8 +1667,8 @@
       \strng{authornamehash}{3920f197e7c0faf9673548b734d15e37}
       \strng{authorfullhash}{3920f197e7c0faf9673548b734d15e37}
       \strng{authorfullhashraw}{3920f197e7c0faf9673548b734d15e37}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{Accessed: 2023-11-03}
@@ -1303,8 +1695,8 @@
       \strng{authornamehash}{ae9178757dd2a29cf80c1f5b9f34882e}
       \strng{authorfullhash}{ae9178757dd2a29cf80c1f5b9f34882e}
       \strng{authorfullhashraw}{ae9178757dd2a29cf80c1f5b9f34882e}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{month}{1}
@@ -1319,8 +1711,8 @@
       \endverb
     \endentry
     \entry{arucomarkers}{online}{}{}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labeltitlesource}{title}
       \field{title}{ArUco Markers}
       \field{urlday}{29}
@@ -1349,8 +1741,8 @@
       \strng{authornamehash}{38b863a4731f9082165e291d08953ee2}
       \strng{authorfullhash}{38b863a4731f9082165e291d08953ee2}
       \strng{authorfullhashraw}{38b863a4731f9082165e291d08953ee2}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{howpublished}{\url{https://www.blender.org}}
@@ -1379,8 +1771,8 @@
       \strng{authorfullhash}{b6aea1a416c89509a7df1cbb69249cb6}
       \strng{authorfullhashraw}{b6aea1a416c89509a7df1cbb69249cb6}
       \field{extraname}{2}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{[Online; accessed 1-May-2024]}
@@ -1408,8 +1800,8 @@
       \strng{authorfullhash}{b6aea1a416c89509a7df1cbb69249cb6}
       \strng{authorfullhashraw}{b6aea1a416c89509a7df1cbb69249cb6}
       \field{extraname}{3}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{[Online; accessed 3-May-2024]}
@@ -1437,8 +1829,8 @@
       \strng{authorfullhash}{b6aea1a416c89509a7df1cbb69249cb6}
       \strng{authorfullhashraw}{b6aea1a416c89509a7df1cbb69249cb6}
       \field{extraname}{4}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{[Online; accessed 3-May-2024]}
@@ -1466,8 +1858,8 @@
       \strng{authorfullhash}{140864078aeca1c7c35b4beb33c53c34}
       \strng{authorfullhashraw}{140864078aeca1c7c35b4beb33c53c34}
       \field{extraname}{2}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{howpublished}{\url{https://www.microsoft.com/opencv_libraryen-us/hololens}}
@@ -1490,8 +1882,8 @@
       \strng{authorfullhash}{b6aea1a416c89509a7df1cbb69249cb6}
       \strng{authorfullhashraw}{b6aea1a416c89509a7df1cbb69249cb6}
       \field{extraname}{5}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{[Online; accessed 29-April-2024]}
@@ -1519,8 +1911,8 @@
       \strng{authorfullhash}{b6aea1a416c89509a7df1cbb69249cb6}
       \strng{authorfullhashraw}{b6aea1a416c89509a7df1cbb69249cb6}
       \field{extraname}{6}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{[Online; accessed 7-May-2024]}
@@ -1548,8 +1940,8 @@
       \strng{authorfullhash}{8fdd00b7aac42271736575410d6a2219}
       \strng{authorfullhashraw}{8fdd00b7aac42271736575410d6a2219}
       \field{extraname}{2}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{Accessed: 2024-05-01}
@@ -1577,8 +1969,8 @@
       \strng{authorfullhash}{b6aea1a416c89509a7df1cbb69249cb6}
       \strng{authorfullhashraw}{b6aea1a416c89509a7df1cbb69249cb6}
       \field{extraname}{7}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{[Online; accessed 29-April-2024]}

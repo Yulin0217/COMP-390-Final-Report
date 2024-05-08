@@ -1,28 +1,30 @@
-\glossaryentry{OpenCV?\glossentry{opencv}|setentrycounter[]{page}"\glsnumberformat}{3}
-\glossaryentry{Qt?\glossentry{QT}|setentrycounter[]{page}"\glsnumberformat}{3}
-\glossaryentry{VTK?\glossentry{vtk}|setentrycounter[]{page}"\glsnumberformat}{3}
-\glossaryentry{Aruco Marker?\glossentry{aruco}|setentrycounter[]{page}"\glsnumberformat}{3}
-\glossaryentry{Alpha Blending?\glossentry{alpha}|setentrycounter[]{page}"\glsnumberformat}{13}
-\glossaryentry{Adaptive Exponential Smoothing?\glossentry{aesl}|setentrycounter[]{page}"\glsnumberformat}{13}
-\glossaryentry{AES?\glossentry{aes}|setentrycounter[]{page}"\glsnumberformat}{14}
-\glossaryentry{Exponential Moving Average?\glossentry{emal}|setentrycounter[]{page}"\glsnumberformat}{14}
-\glossaryentry{EMA?\glossentry{ema}|setentrycounter[]{page}"\glsnumberformat}{14}
-\glossaryentry{Complex Exponential Smoothing?\glossentry{cesl}|setentrycounter[]{page}"\glsnumberformat}{14}
-\glossaryentry{CES?\glossentry{ces}|setentrycounter[]{page}"\glsnumberformat}{14}
-\glossaryentry{RVEC?\glossentry{rvec}|setentrycounter[]{page}"\glsnumberformat}{22}
-\glossaryentry{TVEC?\glossentry{tvec}|setentrycounter[]{page}"\glsnumberformat}{22}
-\glossaryentry{RVEC?\glossentry{rvec}|setentrycounter[]{page}"\glsnumberformat}{22}
-\glossaryentry{TVEC?\glossentry{tvec}|setentrycounter[]{page}"\glsnumberformat}{22}
+\glossaryentry{OpenCV?\glossentry{opencv}|setentrycounter[]{page}"\glsnumberformat}{2}
+\glossaryentry{MRTK?\glossentry{mrtk}|setentrycounter[]{page}"\glsnumberformat}{2}
+\glossaryentry{OpenCV?\glossentry{opencv}|setentrycounter[]{page}"\glsnumberformat}{4}
+\glossaryentry{Qt?\glossentry{QT}|setentrycounter[]{page}"\glsnumberformat}{4}
+\glossaryentry{VTK?\glossentry{vtk}|setentrycounter[]{page}"\glsnumberformat}{4}
+\glossaryentry{Aruco Marker?\glossentry{aruco}|setentrycounter[]{page}"\glsnumberformat}{4}
+\glossaryentry{Alpha Blending?\glossentry{alpha}|setentrycounter[]{page}"\glsnumberformat}{14}
+\glossaryentry{Adaptive Exponential Smoothing?\glossentry{aesl}|setentrycounter[]{page}"\glsnumberformat}{14}
+\glossaryentry{AES?\glossentry{aes}|setentrycounter[]{page}"\glsnumberformat}{15}
+\glossaryentry{Exponential Moving Average?\glossentry{emal}|setentrycounter[]{page}"\glsnumberformat}{15}
+\glossaryentry{EMA?\glossentry{ema}|setentrycounter[]{page}"\glsnumberformat}{15}
+\glossaryentry{Complex Exponential Smoothing?\glossentry{cesl}|setentrycounter[]{page}"\glsnumberformat}{15}
+\glossaryentry{CES?\glossentry{ces}|setentrycounter[]{page}"\glsnumberformat}{15}
+\glossaryentry{RVEC?\glossentry{rvec}|setentrycounter[]{page}"\glsnumberformat}{23}
+\glossaryentry{TVEC?\glossentry{tvec}|setentrycounter[]{page}"\glsnumberformat}{23}
 \glossaryentry{RVEC?\glossentry{rvec}|setentrycounter[]{page}"\glsnumberformat}{23}
 \glossaryentry{TVEC?\glossentry{tvec}|setentrycounter[]{page}"\glsnumberformat}{23}
 \glossaryentry{RVEC?\glossentry{rvec}|setentrycounter[]{page}"\glsnumberformat}{24}
 \glossaryentry{TVEC?\glossentry{tvec}|setentrycounter[]{page}"\glsnumberformat}{24}
-\glossaryentry{PySide6?\glossentry{pyside}|setentrycounter[]{page}"\glsnumberformat}{32}
-\glossaryentry{MRTK?\glossentry{mrtk}|setentrycounter[]{page}"\glsnumberformat}{37}
-\glossaryentry{MRTK?\glossentry{mrtk}|setentrycounter[]{page}"\glsnumberformat}{39}
-\glossaryentry{Blender?\glossentry{blender}|setentrycounter[]{page}"\glsnumberformat}{49}
-\glossaryentry{MRTK?\glossentry{mrtk}|setentrycounter[]{page}"\glsnumberformat}{50}
-\glossaryentry{Microsoft Hololens?\glossentry{holo}|setentrycounter[]{page}"\glsnumberformat}{50}
-\glossaryentry{MRTK?\glossentry{mrtk}|setentrycounter[]{page}"\glsnumberformat}{50}
-\glossaryentry{Microsoft Hololens?\glossentry{holo}|setentrycounter[]{page}"\glsnumberformat}{51}
-\glossaryentry{GitHub?\glossentry{git}|setentrycounter[]{page}"\glsnumberformat}{52}
+\glossaryentry{RVEC?\glossentry{rvec}|setentrycounter[]{page}"\glsnumberformat}{25}
+\glossaryentry{TVEC?\glossentry{tvec}|setentrycounter[]{page}"\glsnumberformat}{25}
+\glossaryentry{PySide6?\glossentry{pyside}|setentrycounter[]{page}"\glsnumberformat}{33}
+\glossaryentry{MRTK?\glossentry{mrtk}|setentrycounter[]{page}"\glsnumberformat}{38}
+\glossaryentry{MRTK?\glossentry{mrtk}|setentrycounter[]{page}"\glsnumberformat}{40}
+\glossaryentry{Blender?\glossentry{blender}|setentrycounter[]{page}"\glsnumberformat}{54}
+\glossaryentry{MRTK?\glossentry{mrtk}|setentrycounter[]{page}"\glsnumberformat}{55}
+\glossaryentry{Microsoft Hololens?\glossentry{holo}|setentrycounter[]{page}"\glsnumberformat}{56}
+\glossaryentry{MRTK?\glossentry{mrtk}|setentrycounter[]{page}"\glsnumberformat}{56}
+\glossaryentry{Microsoft Hololens?\glossentry{holo}|setentrycounter[]{page}"\glsnumberformat}{56}
+\glossaryentry{GitHub?\glossentry{git}|setentrycounter[]{page}"\glsnumberformat}{57}

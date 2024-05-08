@@ -30,7 +30,6 @@
     name=Aruco Marker,
     description={ArUco markers are 2D binary-encoded fiducial patterns designed to be quickly located by computer vision systems. ArUco marker patterns are defined by a binary dictionary in OpenCV, and the various library functions return pattern IDs and pose information from scanned images.\cite{arucomarkers}}
 }
-
 \newglossaryentry{vtk}{
       name=VTK,
       description={The Visualization Toolkit (VTK) is an open-source, freely available software system for 3D computer graphics, modeling, image processing, volume rendering, scientific visualization, and 2D plotting. It supports a wide variety of visualization algorithms and advanced modeling techniques, and it takes advantage of both threaded and distributed memory parallel processing for speed and scalability, respectively.\cite{vtkBook}}
@@ -201,7 +200,11 @@ This work would not have been possible without the collective support and encour
 
 % Abstract 
 \section*{Abstract}
-This section should contain a concise summary of the document content.
+This project is divided into two parts, Part1: Real-world Model Interaction and Tracking and Part2: Endovascular Intervention Simulation. 
+\\\\
+Part1 includes Real-Time Video Capture and Overlay, which could overlay simulated models on real-world images, such as those captured from live camera or uploaded video. In addition, ArUco marker detection in video frames can be performed and the models can be tracked according to the markers. This process was implemented through the \gls{opencv} library and the SciKit-Surgery Augmented Reality\cite{Thompson_SciKit-Surgery_Compact_Libraries_2020} library in combination with Pyside6. 
+\\\\
+The goal of the second part was to create an Endovascular Intervention simulation tool for use in Augmented Reality (AR) and Mixed Reality (MR) environments. This part was developed through Unity combined with the \gls{mrtk} development framework.
 % Statement of Ethical Compliance
 \section*{Statement of Ethical Compliance}
 \begin{mdframed}
@@ -215,9 +218,24 @@ This section should contain a concise summary of the document content.
 
 % Introduction & Background
 \section{Introduction \& Background}
+This project is dedicated to the development of an open-source simulator of Endovascular Intervention that can be deployed in AR/VR devices, which is designed with two main parts: Part1: Real-world Model Interaction and Tracking and Part2: Endovascular Intervention Simulation.
+\\\\
+Part1 focuses on the superposition of the model and the real-world scene in the augmented reality environment, and the positioning in the virtual scene, while Part2 focuses on the endovascular intervention simulation, with an emphasis on the interaction of the Catheter and the Aorta walls during the simulation process, and their adaptation to AR/VR devices.
+\\\\
+The background research for this project is focused on the feasibility and implementation of Endovascular Intervention simulator in VR and AR systems, such as HoloLens. Also for the interaction between the catheter and the aorta during endovascular manipulation. Attention is also given to methods for overlaying display and virtual scenes in AR/VR, and research is desired on performing localisation in virtual environments relative to the display environment.
+\\\\
+In the past, physics simulations, such as collisions and deformation of objects, were often simulated using the Mujoco platform. MuJoCo Physics Engine are lauded for their ability to orchestrate complex simulations, especially in virtual spaces where high-fidelity interaction is critical\cite{mujoco}. The integration with Unity, further amplifies its capabilities. The combined strengths of MuJoCo and Unity form a comprehensive platform, melding the robust physics simulation of MuJoCo with Unity’s proficiency in real-time rendering and interaction\cite{Juliani2018UnityAG}. 
+\\\\
+In addition, the emergence of magnetic resonance-safe endovascular robotic platforms and the development of endovascular catheterised robotic systems equipped with magnetically-controlled haptic force feedback demonstrate the direction of the industry towards perceptible force sensing and hyper-realistic feedback in training scenarios.\cite{9376657,Li2022AnEC}
+\\\\
+The expansion into augmented reality (AR) for surgical applications has also been a significant point of interest in recent literature. The feasibility and benefits of using Microsoft HoloLens for holographic augmented reality in endovascular surgery have been explored, with findings supporting the device’s potential for clinical application\cite{Mialhe2021FeasibilityOT}. Similarly, studies on wearable AR navigation systems for surgical telementoring based on Microsoft HoloLens indicate that such technology could revolutionize surgical education and remote guidance\cite{Liu2020AWA}. The efficiency of marker tracking for surgical navigation using both mono and stereo vision in Microsoft HoloLens underscores the device’s applicability to the medical field\cite{Thabit2022EvaluationOM}. Additionally, the Microsoft HoloLens 2 has been analyzed extensively for its use in medical and healthcare contexts, showing promising prospects for future advancements\cite{Palumbo2022MicrosoftH2}. 
 
+\paragraph{About Specific Terminology or Acronyms}
 
-
+In order that the general computer science reader can accurately understand any specific terminologies or acronym that appears in this paper, a glossary has been created at the end of the paper and hyperlinks have been used wherever a specific terminology  or acronym appears in the text, which can be clicked on to jump to the corresponding section of the glossary.
+\\
+ % Add a label to the section that defines the glossary
+\hyperref[sec:glossary]{Hyperlink to glossary} % Use the label in the hyperlink
 \section{Design \& Implementation}
 
 \subsection{Part1: Real-world Model Interaction and Tracking}
@@ -1013,6 +1031,7 @@ HoloLens or Meta Quest\cite{Quest}, enhancing its accessibility and utility for 
             \caption{MRTK3 Framework Example\cite{mrtk_m}}
       \end{figure}
       \item \textbf{Rope Implementation}
+      \\
       As described in the Rope construction method described in the \hyperref[sec:rope]{Rope Design} section, the Rope construction was ultimately implemented using a method of splicing multiple Cubes using Unity C\# scripts.
       \\\\
       First create a Cube as a rope \emph{fragment prefab} and add the \emph{BoxCollider} component to give it a collision volume. It also needs to have the \emph{Rigidbody} component added to it to give it properties such as gravity and force impact so that it can react to gravity and external forces. After that, the Rope is generated and controlled directly by the C\# script where the \emph{RopeController} class resides. A dynamic rope is modelled by physical and visual components.
@@ -1033,7 +1052,11 @@ HoloLens or Meta Quest\cite{Quest}, enhancing its accessibility and utility for 
             \caption{Rope Settings}
       \end{figure}
       Additionally, the same configuration that handles the initial bending of the rope is implemented in the script, whereby if a segment needs to have a bend applied, a trigonometric function is used to determine the offset of each segment by calculating the bending angle and the spacing of the segments of the rope. Specifically, it converts the total bending angle to radians for each segment, and then calculates to obtain offsets in the X and Z directions to visually realise the bending effect of the rope.
-      \\\\
+      \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.8\textwidth]{React.png}
+            \caption{Rope Bending}
+      \end{figure}
       Also, in order to simulate the real Endovascular Intervention, the anterior end of the Rope is bent to a certain extent. By setting \emph{bendAngle} and \emph{segmentToBend}, some segments of the anterior end of the Rope can be bent to achieve a more realistic simulation.
       \\\\
       Finally, to enhance the visual representation of the rope, a \emph{LineRenderer} component is added to the script that draws a continuous line between the rope segments. This can also be adjusted in the Unity editor by configuring properties such as material, line width and colour to ensure that the rope is visually appealing. In the \emph{LateUpdate } method, the script dynamically updates the position of each point of the \emph{LineRenderer} based on the real-time physical position of the segments to ensure that the line is updated as the segments move, ensuring visual continuity and dynamic response.
@@ -1132,7 +1155,62 @@ namespace Rope
 }
       \end{minted}
       \item \textbf{Model Implementation}
-      \item \textbf{Endovascular Intervention Simulation Implementation}
+      \\
+      To give the model a collision volume, you need to add \emph{Collider} to it. There are two types of \emph{Collider} in Unity, \emph{Box Collider} and \emph{Mesh Collider}.
+      \\
+      Box Collider is a simple collider component that is usually applied to objects with regular geometry, such as cubes, rectangles, and so on. This collider has a low computational cost due to its simple geometry and is suitable for scenarios that deal with a large number of object collisions. Its main advantages are high computational efficiency and low computational cost. \cite{UnityBoxCollider2024}
+      \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.5\textwidth]{box.png}
+            \caption{Box Collider}
+      \end{figure}
+     
+      Mesh Collider, on the other hand, is a collider component that can handle complex model shapes, and is suitable for objects with irregular shapes and a high level of detail, such as Aorta. since it creates collision zones based on the real mesh of the model, it can provide very accurate collision detection, but this also means a higher computational cost. \cite{UnityMeshCollider2024}
+      \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.5\textwidth]{mesh.png}
+            \caption{Mesh Collider}
+      \end{figure}
+      In order to achieve more accurate interactions between Rope and Aorta, \emph{Mesh Collider} is used to achieve more detailed interactions, applying \emph{Mesh Collider} to the Aorta model and applying Aorta's mesh can achieve more accurate interactions. The image below shows the difference between using \emph{Box Collider} and \emph{Mesh Collider}, and it is clear that using \emph{Box Collider} does not allow Rope to enter the Aorta model.
+      \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.8\textwidth]{with box.png}
+            \caption{Using Box Collider}
+      \end{figure}
+      \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.8\textwidth]{with mesh.png}
+            \caption{Using Mesh Collider}
+      \end{figure}
+      \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.8\textwidth]{with mesh1.png}
+            \caption{Using Mesh Collider}
+      \end{figure}
+      Although the basic interaction between Rope and Aorta model is achieved, there are still many problems at this stage. For example, overstretching the Rope and exceeding its elastic limit will cause the Rope to become confused. Moreover, it is not possible to make the Rope deeper into the Aorta at this stage, and the problem of the Rope escaping from the Aorta during the insertion process may also occur.
+      \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.8\textwidth]{insert out.png}
+            \caption{Rope Insertion Out}
+      \end{figure}
+      \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.8\textwidth]{jittering.png}
+            \caption{Rope Jittering}
+      \end{figure}
+      \item \textbf{Current Stage}
+      \\
+      After completing all the parts, using the features of the MRTK, it is then possible to simulate with the virtual hand, which can be used to directly control the various postures of the Rope. Similarly, the same effect (except for rotation) can be achieved by using the mouse to click and drag the Rope directly.
+      \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.8\textwidth]{recent stage.png}
+            \caption{Initialize}
+      \end{figure}
+      \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.8\textwidth]{Insert.png}
+            \caption{Insertion}
+      \end{figure}
 \end{enumerate}
 
 
@@ -1230,5 +1308,5 @@ Overall, the development process of this project was full of difficulties and ch
 % References (The bibliography will be printed here)
 \printbibliography
 \printglossaries
-
+\label{sec:glossary}
 \end{document}

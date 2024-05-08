@@ -124,6 +124,7 @@
       \strng{authornamehash}{8fdd00b7aac42271736575410d6a2219}
       \strng{authorfullhash}{8fdd00b7aac42271736575410d6a2219}
       \strng{authorfullhashraw}{8fdd00b7aac42271736575410d6a2219}
+      \field{extraname}{1}
       \field{sortinit}{5}
       \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
@@ -977,6 +978,319 @@
       \field{note}{Accessed: 2024-05-05}
       \field{title}{Documentation for vtkCamera}
     \endentry
+    \entry{lazar2018mastering}{book}{}{}
+      \name{author}{2}{}{%
+        {{hash=a17074df613a11377a716a7dbd4fa2f2}{%
+           family={Lazar},
+           familyi={L\bibinitperiod},
+           given={Guillaume},
+           giveni={G\bibinitperiod}}}%
+        {{hash=cecb54c21e975c1521e07aba1c781207}{%
+           family={Penea},
+           familyi={P\bibinitperiod},
+           given={Robin},
+           giveni={R\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Packt Publishing Ltd}%
+      }
+      \strng{namehash}{04889672206db9bc8c1d312fc1f738ef}
+      \strng{fullhash}{04889672206db9bc8c1d312fc1f738ef}
+      \strng{fullhashraw}{04889672206db9bc8c1d312fc1f738ef}
+      \strng{bibnamehash}{04889672206db9bc8c1d312fc1f738ef}
+      \strng{authorbibnamehash}{04889672206db9bc8c1d312fc1f738ef}
+      \strng{authornamehash}{04889672206db9bc8c1d312fc1f738ef}
+      \strng{authorfullhash}{04889672206db9bc8c1d312fc1f738ef}
+      \strng{authorfullhashraw}{04889672206db9bc8c1d312fc1f738ef}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Mastering Qt 5: Create stunning cross-platform applications using C++ with Qt Widgets and QML with Qt Quick}
+      \field{year}{2018}
+    \endentry
+    \entry{9376657}{article}{}{}
+      \name{author}{8}{}{%
+        {{hash=ec8286be07bb27e6a07623cf8bfc8b71}{%
+           family={Kundrat},
+           familyi={K\bibinitperiod},
+           given={Dennis},
+           giveni={D\bibinitperiod}}}%
+        {{hash=8f041101b7913b7bfe18c72b1372a152}{%
+           family={Dagnino},
+           familyi={D\bibinitperiod},
+           given={Giulio},
+           giveni={G\bibinitperiod}}}%
+        {{hash=a74ce90907c8ecef99a889c3dc5d21bd}{%
+           family={Kwok},
+           familyi={K\bibinitperiod},
+           given={Trevor\bibnamedelimb M.\bibnamedelimi Y.},
+           giveni={T\bibinitperiod\bibinitdelim M\bibinitperiod\bibinitdelim Y\bibinitperiod}}}%
+        {{hash=dc66a9c1cb773bf0e8c03d1aea8464b4}{%
+           family={Abdelaziz},
+           familyi={A\bibinitperiod},
+           given={Mohamed\bibnamedelimb E.\bibnamedelimi M.\bibnamedelimi K.},
+           giveni={M\bibinitperiod\bibinitdelim E\bibinitperiod\bibinitdelim M\bibinitperiod\bibinitdelim K\bibinitperiod}}}%
+        {{hash=a3c4a71ca93bfd652cc21525738a8550}{%
+           family={Chi},
+           familyi={C\bibinitperiod},
+           given={Wenqiang},
+           giveni={W\bibinitperiod}}}%
+        {{hash=f480ed206a30d0a24ab31eb69169599c}{%
+           family={Nguyen},
+           familyi={N\bibinitperiod},
+           given={Anh},
+           giveni={A\bibinitperiod}}}%
+        {{hash=a774d5945ad278c6faf3750314d8dd00}{%
+           family={Riga},
+           familyi={R\bibinitperiod},
+           given={Celia},
+           giveni={C\bibinitperiod}}}%
+        {{hash=fcdeef628f31c9c5305ee39311f1fcc6}{%
+           family={Yang},
+           familyi={Y\bibinitperiod},
+           given={Guang-Zhong},
+           giveni={G\bibinithyphendelim Z\bibinitperiod}}}%
+      }
+      \strng{namehash}{0b555563ea1e8856a2a1720c81af066c}
+      \strng{fullhash}{4c24c2d4c8a29356c8492cf6eebac6b5}
+      \strng{fullhashraw}{4c24c2d4c8a29356c8492cf6eebac6b5}
+      \strng{bibnamehash}{0b555563ea1e8856a2a1720c81af066c}
+      \strng{authorbibnamehash}{0b555563ea1e8856a2a1720c81af066c}
+      \strng{authornamehash}{0b555563ea1e8856a2a1720c81af066c}
+      \strng{authorfullhash}{4c24c2d4c8a29356c8492cf6eebac6b5}
+      \strng{authorfullhashraw}{4c24c2d4c8a29356c8492cf6eebac6b5}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE Transactions on Biomedical Engineering}
+      \field{number}{10}
+      \field{title}{An MR-Safe Endovascular Robotic Platform: Design, Control, and Ex-Vivo Evaluation}
+      \field{volume}{68}
+      \field{year}{2021}
+      \field{pages}{3110\bibrangedash 3121}
+      \range{pages}{12}
+      \verb{doi}
+      \verb 10.1109/TBME.2021.3065146
+      \endverb
+    \endentry
+    \entry{Ranne2023AiAReSegCD}{article}{}{}
+      \name{author}{4}{}{%
+        {{hash=71133e39d193f0045422c29e53ab8be9}{%
+           family={Ranne},
+           familyi={R\bibinitperiod},
+           given={Alex},
+           giveni={A\bibinitperiod}}}%
+        {{hash=4e841e8634c5d012474182a0dd2b8b17}{%
+           family={Velikova},
+           familyi={V\bibinitperiod},
+           given={Yordanka},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=c107bbd317cd780c2aa7006dbe61d83f}{%
+           family={Navab},
+           familyi={N\bibinitperiod},
+           given={Nassir},
+           giveni={N\bibinitperiod}}}%
+        {{hash=235854d2006768d0644c0a884c89087d}{%
+           family={Baena},
+           familyi={B\bibinitperiod},
+           given={Ferdinando\bibnamedelima Rodriguez},
+           giveni={F\bibinitperiod\bibinitdelim R\bibinitperiod},
+           prefix={y},
+           prefixi={y\bibinitperiod}}}%
+      }
+      \strng{namehash}{7e21297a5d5cd8e5dca7de1896ea9207}
+      \strng{fullhash}{78136c4450b3e5e9e2cf4ded1249fc1d}
+      \strng{fullhashraw}{78136c4450b3e5e9e2cf4ded1249fc1d}
+      \strng{bibnamehash}{78136c4450b3e5e9e2cf4ded1249fc1d}
+      \strng{authorbibnamehash}{78136c4450b3e5e9e2cf4ded1249fc1d}
+      \strng{authornamehash}{7e21297a5d5cd8e5dca7de1896ea9207}
+      \strng{authorfullhash}{78136c4450b3e5e9e2cf4ded1249fc1d}
+      \strng{authorfullhashraw}{78136c4450b3e5e9e2cf4ded1249fc1d}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{ArXiv}
+      \field{title}{AiAReSeg: Catheter Detection and Segmentation in Interventional Ultrasound using Transformers}
+      \field{volume}{abs/2309.14492}
+      \field{year}{2023}
+      \verb{urlraw}
+      \verb https://api.semanticscholar.org/CorpusID:262826706
+      \endverb
+      \verb{url}
+      \verb https://api.semanticscholar.org/CorpusID:262826706
+      \endverb
+    \endentry
+    \entry{jianu2022cathsim}{misc}{}{}
+      \name{author}{9}{}{%
+        {{hash=6f803142bca7ca90df16c8490359fae6}{%
+           family={Jianu},
+           familyi={J\bibinitperiod},
+           given={Tudor},
+           giveni={T\bibinitperiod}}}%
+        {{hash=bf005c3f4b9f0cde638a031c613a0515}{%
+           family={Huang},
+           familyi={H\bibinitperiod},
+           given={Baoru},
+           giveni={B\bibinitperiod}}}%
+        {{hash=dc66a9c1cb773bf0e8c03d1aea8464b4}{%
+           family={Abdelaziz},
+           familyi={A\bibinitperiod},
+           given={Mohamed\bibnamedelimb E.\bibnamedelimi M.\bibnamedelimi K.},
+           giveni={M\bibinitperiod\bibinitdelim E\bibinitperiod\bibinitdelim M\bibinitperiod\bibinitdelim K\bibinitperiod}}}%
+        {{hash=ae3929d4c5bddcae1627659f6284a7ea}{%
+           family={Vu},
+           familyi={V\bibinitperiod},
+           given={Minh\bibnamedelima Nhat},
+           giveni={M\bibinitperiod\bibinitdelim N\bibinitperiod}}}%
+        {{hash=6771aebd444a933ce625d0221a16b969}{%
+           family={Fichera},
+           familyi={F\bibinitperiod},
+           given={Sebastiano},
+           giveni={S\bibinitperiod}}}%
+        {{hash=3ba6689a5c015273f3a83f4fcf384bff}{%
+           family={Lee},
+           familyi={L\bibinitperiod},
+           given={Chun-Yi},
+           giveni={C\bibinithyphendelim Y\bibinitperiod}}}%
+        {{hash=eb95f359d431f5dbfa2d774420870602}{%
+           family={Berthet-Rayne},
+           familyi={B\bibinithyphendelim R\bibinitperiod},
+           given={Pierre},
+           giveni={P\bibinitperiod}}}%
+        {{hash=235854d2006768d0644c0a884c89087d}{%
+           family={Baena},
+           familyi={B\bibinitperiod},
+           given={Ferdinando\bibnamedelima Rodriguez},
+           giveni={F\bibinitperiod\bibinitdelim R\bibinitperiod},
+           prefix={y},
+           prefixi={y\bibinitperiod}}}%
+        {{hash=f480ed206a30d0a24ab31eb69169599c}{%
+           family={Nguyen},
+           familyi={N\bibinitperiod},
+           given={Anh},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{06e7b8546a7ed20fb46b9ed12c505c9e}
+      \strng{fullhash}{bed46afc4d369353c8edfda797b9ebea}
+      \strng{fullhashraw}{bed46afc4d369353c8edfda797b9ebea}
+      \strng{bibnamehash}{06e7b8546a7ed20fb46b9ed12c505c9e}
+      \strng{authorbibnamehash}{06e7b8546a7ed20fb46b9ed12c505c9e}
+      \strng{authornamehash}{06e7b8546a7ed20fb46b9ed12c505c9e}
+      \strng{authorfullhash}{bed46afc4d369353c8edfda797b9ebea}
+      \strng{authorfullhashraw}{bed46afc4d369353c8edfda797b9ebea}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eprintclass}{cs.RO}
+      \field{eprinttype}{arXiv}
+      \field{title}{CathSim: An Open-source Simulator for Endovascular Intervention}
+      \field{year}{2022}
+      \verb{eprint}
+      \verb 2208.01455
+      \endverb
+    \endentry
+    \entry{Quest}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=b228de76a536593748457606a3703893}{%
+           family={{Meta Quest}},
+           familyi={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{b228de76a536593748457606a3703893}
+      \strng{fullhash}{b228de76a536593748457606a3703893}
+      \strng{fullhashraw}{b228de76a536593748457606a3703893}
+      \strng{bibnamehash}{b228de76a536593748457606a3703893}
+      \strng{authorbibnamehash}{b228de76a536593748457606a3703893}
+      \strng{authornamehash}{b228de76a536593748457606a3703893}
+      \strng{authorfullhash}{b228de76a536593748457606a3703893}
+      \strng{authorfullhashraw}{b228de76a536593748457606a3703893}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://developer.oculus.com/documentation/unity/}}
+      \field{note}{Accessed: 2023-11-02}
+      \field{title}{Meta Quest Development - Unity Documentation}
+      \field{year}{2023}
+    \endentry
+    \entry{mrtk_m}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=140864078aeca1c7c35b4beb33c53c34}{%
+           family={Microsoft},
+           familyi={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{140864078aeca1c7c35b4beb33c53c34}
+      \strng{fullhash}{140864078aeca1c7c35b4beb33c53c34}
+      \strng{fullhashraw}{140864078aeca1c7c35b4beb33c53c34}
+      \strng{bibnamehash}{140864078aeca1c7c35b4beb33c53c34}
+      \strng{authorbibnamehash}{140864078aeca1c7c35b4beb33c53c34}
+      \strng{authornamehash}{140864078aeca1c7c35b4beb33c53c34}
+      \strng{authorfullhash}{140864078aeca1c7c35b4beb33c53c34}
+      \strng{authorfullhashraw}{140864078aeca1c7c35b4beb33c53c34}
+      \field{extraname}{1}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{Microsoft Docs}
+      \field{note}{Accessed: 2024-05-01}
+      \field{title}{Welcome to Mixed Reality Feature Tool}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://learn.microsoft.com/en-us/windows/mixed-reality/develop/unity/welcome-to-mr-feature-tool
+      \endverb
+      \verb{url}
+      \verb https://learn.microsoft.com/en-us/windows/mixed-reality/develop/unity/welcome-to-mr-feature-tool
+      \endverb
+    \endentry
+    \entry{UnityFixedJoint2024}{misc}{}{}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{Unity Documentation}
+      \field{note}{Accessed: yyyy-mm-dd}
+      \field{title}{Fixed Joint}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://docs.unity3d.com/Manual/class-FixedJoint.html
+      \endverb
+      \verb{url}
+      \verb https://docs.unity3d.com/Manual/class-FixedJoint.html
+      \endverb
+    \endentry
+    \entry{UnityBoxCollider2024}{misc}{}{}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{Unity Documentation}
+      \field{note}{Accessed: yyyy-mm-dd}
+      \field{title}{Box Collider}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://docs.unity3d.com/Manual/class-BoxCollider.html
+      \endverb
+      \verb{url}
+      \verb https://docs.unity3d.com/Manual/class-BoxCollider.html
+      \endverb
+    \endentry
+    \entry{UnityMeshCollider2024}{misc}{}{}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{Unity Documentation}
+      \field{note}{Accessed: yyyy-mm-dd}
+      \field{title}{Mesh Collider}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://docs.unity3d.com/Manual/class-MeshCollider.html
+      \endverb
+      \verb{url}
+      \verb https://docs.unity3d.com/Manual/class-MeshCollider.html
+      \endverb
+    \endentry
     \entry{UoL_COMP390_2023-24}{misc}{}{}
       \name{author}{1}{}{%
         {{hash=3920f197e7c0faf9673548b734d15e37}{%
@@ -991,8 +1305,8 @@
       \strng{authornamehash}{3920f197e7c0faf9673548b734d15e37}
       \strng{authorfullhash}{3920f197e7c0faf9673548b734d15e37}
       \strng{authorfullhashraw}{3920f197e7c0faf9673548b734d15e37}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{Accessed: 2023-11-03}
@@ -1019,8 +1333,8 @@
       \strng{authornamehash}{ae9178757dd2a29cf80c1f5b9f34882e}
       \strng{authorfullhash}{ae9178757dd2a29cf80c1f5b9f34882e}
       \strng{authorfullhashraw}{ae9178757dd2a29cf80c1f5b9f34882e}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{month}{1}
@@ -1035,8 +1349,8 @@
       \endverb
     \endentry
     \entry{arucomarkers}{online}{}{}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labeltitlesource}{title}
       \field{title}{ArUco Markers}
       \field{urlday}{29}
@@ -1065,8 +1379,8 @@
       \strng{authornamehash}{38b863a4731f9082165e291d08953ee2}
       \strng{authorfullhash}{38b863a4731f9082165e291d08953ee2}
       \strng{authorfullhashraw}{38b863a4731f9082165e291d08953ee2}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{howpublished}{\url{https://www.blender.org}}
@@ -1095,8 +1409,8 @@
       \strng{authorfullhash}{b6aea1a416c89509a7df1cbb69249cb6}
       \strng{authorfullhashraw}{b6aea1a416c89509a7df1cbb69249cb6}
       \field{extraname}{2}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{[Online; accessed 1-May-2024]}
@@ -1124,8 +1438,8 @@
       \strng{authorfullhash}{b6aea1a416c89509a7df1cbb69249cb6}
       \strng{authorfullhashraw}{b6aea1a416c89509a7df1cbb69249cb6}
       \field{extraname}{3}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{[Online; accessed 3-May-2024]}
@@ -1153,8 +1467,8 @@
       \strng{authorfullhash}{b6aea1a416c89509a7df1cbb69249cb6}
       \strng{authorfullhashraw}{b6aea1a416c89509a7df1cbb69249cb6}
       \field{extraname}{4}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{[Online; accessed 3-May-2024]}
@@ -1181,8 +1495,9 @@
       \strng{authornamehash}{140864078aeca1c7c35b4beb33c53c34}
       \strng{authorfullhash}{140864078aeca1c7c35b4beb33c53c34}
       \strng{authorfullhashraw}{140864078aeca1c7c35b4beb33c53c34}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{extraname}{2}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{howpublished}{\url{https://www.microsoft.com/opencv_libraryen-us/hololens}}
@@ -1205,8 +1520,8 @@
       \strng{authorfullhash}{b6aea1a416c89509a7df1cbb69249cb6}
       \strng{authorfullhashraw}{b6aea1a416c89509a7df1cbb69249cb6}
       \field{extraname}{5}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{[Online; accessed 29-April-2024]}
@@ -1217,6 +1532,64 @@
       \endverb
       \verb{url}
       \verb https://en.wikipedia.org/w/index.php?title=Qt_(software)&oldid=1219937369
+      \endverb
+    \endentry
+    \entry{pyside1}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=b6aea1a416c89509a7df1cbb69249cb6}{%
+           family={{Wikipedia contributors}},
+           familyi={W\bibinitperiod}}}%
+      }
+      \strng{namehash}{b6aea1a416c89509a7df1cbb69249cb6}
+      \strng{fullhash}{b6aea1a416c89509a7df1cbb69249cb6}
+      \strng{fullhashraw}{b6aea1a416c89509a7df1cbb69249cb6}
+      \strng{bibnamehash}{b6aea1a416c89509a7df1cbb69249cb6}
+      \strng{authorbibnamehash}{b6aea1a416c89509a7df1cbb69249cb6}
+      \strng{authornamehash}{b6aea1a416c89509a7df1cbb69249cb6}
+      \strng{authorfullhash}{b6aea1a416c89509a7df1cbb69249cb6}
+      \strng{authorfullhashraw}{b6aea1a416c89509a7df1cbb69249cb6}
+      \field{extraname}{6}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{[Online; accessed 7-May-2024]}
+      \field{title}{PySide --- {Wikipedia}{,} The Free Encyclopedia}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://en.wikipedia.org/w/index.php?title=PySide&oldid=1214569279
+      \endverb
+      \verb{url}
+      \verb https://en.wikipedia.org/w/index.php?title=PySide&oldid=1214569279
+      \endverb
+    \endentry
+    \entry{pyside2}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=8fdd00b7aac42271736575410d6a2219}{%
+           family={{The Qt Company}},
+           familyi={T\bibinitperiod}}}%
+      }
+      \strng{namehash}{8fdd00b7aac42271736575410d6a2219}
+      \strng{fullhash}{8fdd00b7aac42271736575410d6a2219}
+      \strng{fullhashraw}{8fdd00b7aac42271736575410d6a2219}
+      \strng{bibnamehash}{8fdd00b7aac42271736575410d6a2219}
+      \strng{authorbibnamehash}{8fdd00b7aac42271736575410d6a2219}
+      \strng{authornamehash}{8fdd00b7aac42271736575410d6a2219}
+      \strng{authorfullhash}{8fdd00b7aac42271736575410d6a2219}
+      \strng{authorfullhashraw}{8fdd00b7aac42271736575410d6a2219}
+      \field{extraname}{2}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Accessed: 2024-05-01}
+      \field{title}{PySide6: Python bindings for the Qt cross-platform application framework}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://pypi.org/project/PySide6/
+      \endverb
+      \verb{url}
+      \verb https://pypi.org/project/PySide6/
       \endverb
     \endentry
     \entry{cv}{misc}{}{}
@@ -1233,9 +1606,9 @@
       \strng{authornamehash}{b6aea1a416c89509a7df1cbb69249cb6}
       \strng{authorfullhash}{b6aea1a416c89509a7df1cbb69249cb6}
       \strng{authorfullhashraw}{b6aea1a416c89509a7df1cbb69249cb6}
-      \field{extraname}{6}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{extraname}{7}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{[Online; accessed 29-April-2024]}
