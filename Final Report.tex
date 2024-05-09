@@ -1218,9 +1218,184 @@ namespace Rope
 \section{Testing \& Evaluation}
 \subsection{Part1: Real-world Model Interaction and Tracking}
 \subsubsection{Testing}
+To test the functionality of Part1, a unit test was created using the \emph{unittest} library\cite{PythonUnittest}.
+\begin{itemize}
+      \item \textbf{Initialization Test:}
+      \\
+      The test ensures that the video source and video frame parameters are set correctly when the class is instantiated. This test verifies that the constructor correctly receives and applies the incoming video source and corresponding parameters.
+      \item \textbf{Start Test:}
+      \\
+      Tests if the \emph{start} method starts the timer correctly. By simulating the timer's \emph{isActive} method to return False and re-calling the \emph{start} method, you can check if the timer is set to the normal start frequency.
+      \item \textbf{Stop Test:}
+      \\
+      Tests that the \emph{stop} method effectively stops the timer, and stops the video capture.
+      \item \textbf{Update Video Source Controls Test:}
+      \\
+      Tests that the video source selector and video upload button are set correctly. This includes checking that the video source selector is of type \emph{ QComboBox} and that the upload video button is visible in its initial state.
+      \item \textbf{Update View Test:}
+      \\
+      Detecting whether the screen can be refreshed properly ensures that the model position is instantly refreshed when ArUco marker tracking is performed.
+      \item \textbf{Teardown Test:}
+      \\
+      At the end of the test, ensure that you exit the \emph{QApplication} instance appropriately to avoid memory leaks or other resource hogging issues.  
+\end{itemize}
+\paragraph{Code for the Testing:}
+\begin{minted}[frame=single, linenos=true, fontsize=\footnotesize]{python}
+import unittest
+from PySide6.QtWidgets import QApplication
+from unittest.mock import MagicMock
+import sys
+
+# Import your BaseWidget class and other necessary modules
+from your_module import BaseWidget, TimestampedVideoSource, VTKOverlayWindow
+
+class TestBaseWidget(unittest.TestCase):
+    def setUp(self):
+        # Create an QApplication instance because QWidget requires it for initialization.
+        self.app = QApplication(sys.argv)
+        # Mock the real video source and dimensions
+        self.video_source = MagicMock()
+        self.dims = (640, 480)
+        # Instantiate BaseWidget
+        self.widget = BaseWidget(video_source=self.video_source, dims=self.dims)
+
+    def test_initialization(self):
+        # Test if initialization correctly sets up the video source and dimensions
+        self.assertIsInstance(self.widget.video_source, TimestampedVideoSource)
+        self.assertEqual(self.widget.video_source.source, self.video_source)
+        self.assertEqual(self.widget.video_source.dims, self.dims)
+
+    def test_start(self):
+        # Test if the timer starts running after calling the start method
+        self.widget.timer.isActive = MagicMock(return_value=False)
+        self.widget.start()
+        self.widget.timer.start.assert_called_once_with(1000.0 / self.widget.update_rate)
+
+    def test_stop(self):
+        # Test if the timer stops after calling the stop method
+        self.widget.stop()
+        self.assertTrue(self.widget.timer.stop.called)
+
+    def test_update_video_source_controls(self):
+        # Test if video source controls are set up correctly
+        self.assertIsInstance(self.widget.video_source_selector, QComboBox)
+        self.assertTrue(self.widget.upload_video_button.isVisible())
+
+    def test_update_view(self):
+        # Ensure that update_view throws NotImplementedError
+        with self.assertRaises(NotImplementedError):
+            self.widget.update_view()
+
+    def tearDown(self):
+        # Properly quit the QApplication instance
+        self.app.quit()
+
+if __name__ == '__main__':
+    unittest.main()
+\end{minted}
 \subsubsection{Evaluation}
+\begin{itemize}
+      \item \textbf{Functional Evaluation:}
+      \\
+      The part achieves features such as real-time video capture, model overlays and ArUco marker tracking that were requested during the design phase. Additional features such as model colour modification, video source switching, ArUco parameter setting and ArUco generator have been added. The part has been successfully implemented and tested, and the functionality is stable and reliable.
+      \item \textbf{Performance Evaluation:}
+      \\
+      After performance evaluation, this section can be used normally in most cases, but if the uploaded video frame rate is too high, the resolution is too high or the video is too large, it may cause the uploaded video interface to lag. In this case it may also cause video stuttering and poor tracking within the application interface.
+      \item \textbf{User Experience Evaluation:}
+      \\
+      The app's application interface is simple and logical, with relatively easy instructions and operations for various functions. However, when deploying the application, you may need to install the required open source libraries and configure the environment.
+      \item \textbf{Maintainability and scalability evaluation:}
+      \\
+      The application was developed using Pyside 6 for the front-end, and individual features were added as widgets with a high degree of maintainability and extensibility. The core functions of video capture, model tracking, and video source switching were split and organised into multiple classes for easy maintenance and upgrading afterwards.
+      \end{itemize}
 \subsection{Part2: Endovascular Intervention Simulation}
 \subsubsection{Testing}
+To test the functionality of Part2, a unit test was created using the \emph{Nunit} library\cite{NUnit2023}.
+\begin{enumerate}
+      \item \textbf{Test environment setup and cleanup:}
+            \begin{itemize}
+                  \item \textbf{SetUp method:}
+                  \\
+                  Before starting a new test using \emph{Nunit}, first build the test environment using the \emph{SetUp } method first. This creates a new GameObject object and adds the RopeController component to it for use in subsequent tests.
+                  \item \textbf{TearDown method:}
+                  \\
+                  Clean up the test environment by executing the \emph{TearDown} method after each test is completed. This destroys the GameObject object created in the \emph{SetUp } method and ensures that the environment is reset after each test is run, avoiding the need for different tests to interact with each other.
+            \end{itemize}
+            \item \textbf{Test Case Description:}
+            \begin{itemize}
+                  \item \textbf{Testing the correct number of segments:}
+                  \\
+                  This verifies that the specified number of fragments are created correctly when the \emph{Start} method in \emph{RopeController} is called.This test checks that the fragment array is the preset length of 80 to ensure that the fragments are initialised correctly.
+                  \item \textbf{Test the correctness of the segment position:}
+                  \\
+                  This test further checks that the position of each fragment is set correctly after the \emph{Start } method is called. This test ensures that each fragment is placed in the correct position by verifying the incremental position of each fragment on the z-axis (the default is 0.25 units of length per interval).
+                  \item \textbf{Testing LineRenderer position updates:}
+                  \\
+                  After executing the \emph{LateUpdate} method, it will be verified that the position array of the \emph{LineRenderer} component has been updated and matches the current position of the fragment. This test checks that visual elements, such as line rendering, respond correctly to background data changes.
+            \end{itemize}
+      \end{enumerate}
+\begin{minted}[frame=single, linenos=true, fontsize=\footnotesize]{Java}
+using NUnit.Framework;
+using UnityEngine;
+using UnityEngine.TestTools;
+
+namespace Rope.Tests
+{
+    public class RopeControllerTests
+    {
+        private RopeController _ropeController;
+        private GameObject _ropeControllerGameObject;
+
+        [SetUp]
+        public void SetUp()
+        {
+            _ropeControllerGameObject = new GameObject();
+            _ropeController = _ropeControllerGameObject.AddComponent<RopeController>();
+        }
+
+        [TearDown]
+        public void TearDown()
+        {
+            Object.Destroy(_ropeControllerGameObject);
+        }
+
+        [Test]
+        public void Start_WithValidParameters_CreatesCorrectNumberOfFragments()
+        {
+            _ropeController.Start();
+
+            Assert.AreEqual(80, _ropeController.fragments.Length);
+        }
+
+        [Test]
+        public void Start_WithValidParameters_CreatesFragmentsWithCorrectPositions()
+        {
+            _ropeController.Start();
+
+            for (int i = 0; i < _ropeController.fragments.Length; i++)
+            {
+                Assert.AreEqual(i * 0.25f, 
+                _ropeController.fragments[i].transform.position.z);
+            }
+        }
+
+        [Test]
+        public void LateUpdate_WithValidParameters_UpdatesLineRendererPositions()
+        {
+            _ropeController.Start();
+            _ropeController.LateUpdate();
+
+            var lineRenderer = _ropeController.GetComponent<LineRenderer>();
+
+            for (int i = 0; i < _ropeController.fragments.Length; i++)
+            {
+                Assert.AreEqual(_ropeController.fragments[i].transform.position, 
+                lineRenderer.GetPosition(i));
+            }
+        }
+    }
+}
+\end{minted}
 \subsubsection{Evaluation}
 
 % Project Ethics
@@ -1232,9 +1407,11 @@ permitted by our ethical guidelines. It was verified with the project supervisor
 ethical approval. Therefore, there are no other ethical issues involved in this project.
 % Conclusion & Future Work
 \section{Conclusion \& Future Work}
-\subsection{Conclusion}
-
-\subsection{Future Work}
+In this project Part1: Real-world Model Interaction and Tracking, real-time video capture and model overlay, as well as model detection and tracking of ArUco markers, were achieved by combining the OpenCV library with the SciKit-Surgery augmented reality library and Pyside6. In the future, it is planned to add various features to facilitate operation in VR/AR environments, and to further explore the deep integration of Part1 and Part2 and deployment in various AR/VR devices. The project will also be explored for remote deployment for tele-surgery or remote training.
+\\\\
+However, in Part2: Endovascular Intervention Simulation, the project faced significant challenges, which led to delays in the project schedule and incomplete final results. Despite these challenges, the basic requirements of the project were eventually completed through multiple designs and evaluations during the course of the project. The Endovascular Intervention Simulation for HoloLens was developed using the Unity engine in conjunction with the Microsoft Mixed Reality Toolkit-Unity (MRTK) development framework, and although it did not achieve all of the functionality that was designed in the early stages of the project, it was still a valuable development experience. Although not all of the features designed at the beginning of the project were implemented, this project was still a valuable development experience. In the future, we plan to continue to improve the unfinished features, further optimise the interaction between the core Aorta and Rope, and try more physical simulation methods to achieve better simulation effects. At the same time, it is hoped to add Rope's force feedback function and more suggestive and helpful functions. There are also plans to expand this project to all kinds of VR/VR devices, not limited to \gls{holo}, and to make it more accessible to the public.
+\\\\
+In the future, it is expected that this project will be further improved to realise a complete open source endovascular intervention simulation tool, which will not only become a powerful teaching and training tool, but also be able to play a greater role in medical practice.
 
 \section{BCS Criteria \& Self-Reflection}
 This section will be used to state that my project met the six outcomes expected by the Chartered Institute of Information Technology\cite{BCS2020}.

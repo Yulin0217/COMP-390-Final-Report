@@ -1653,6 +1653,52 @@
       \verb https://docs.unity3d.com/Manual/class-MeshCollider.html
       \endverb
     \endentry
+    \entry{PythonUnittest}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=c7b5508dc5e59a2846d22617276cc27c}{%
+           family={{Python Software Foundation}},
+           familyi={P\bibinitperiod}}}%
+      }
+      \strng{namehash}{c7b5508dc5e59a2846d22617276cc27c}
+      \strng{fullhash}{c7b5508dc5e59a2846d22617276cc27c}
+      \strng{fullhashraw}{c7b5508dc5e59a2846d22617276cc27c}
+      \strng{bibnamehash}{c7b5508dc5e59a2846d22617276cc27c}
+      \strng{authorbibnamehash}{c7b5508dc5e59a2846d22617276cc27c}
+      \strng{authornamehash}{c7b5508dc5e59a2846d22617276cc27c}
+      \strng{authorfullhash}{c7b5508dc5e59a2846d22617276cc27c}
+      \strng{authorfullhashraw}{c7b5508dc5e59a2846d22617276cc27c}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://docs.python.org/3/library/unittest.html}}
+      \field{note}{Accessed: 2023-05-01}
+      \field{title}{unittest -- Unit testing framework}
+      \field{year}{2023}
+    \endentry
+    \entry{NUnit2023}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=465e1ddf58493608ed19e42607791e87}{%
+           family={{NUnit Development Team}},
+           familyi={N\bibinitperiod}}}%
+      }
+      \strng{namehash}{465e1ddf58493608ed19e42607791e87}
+      \strng{fullhash}{465e1ddf58493608ed19e42607791e87}
+      \strng{fullhashraw}{465e1ddf58493608ed19e42607791e87}
+      \strng{bibnamehash}{465e1ddf58493608ed19e42607791e87}
+      \strng{authorbibnamehash}{465e1ddf58493608ed19e42607791e87}
+      \strng{authornamehash}{465e1ddf58493608ed19e42607791e87}
+      \strng{authorfullhash}{465e1ddf58493608ed19e42607791e87}
+      \strng{authorfullhashraw}{465e1ddf58493608ed19e42607791e87}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://nunit.org/}}
+      \field{note}{Accessed on 2023-05-01}
+      \field{title}{NUnit: A unit-testing framework for all .Net languages}
+      \field{year}{2023}
+    \endentry
     \entry{UoL_COMP390_2023-24}{misc}{}{}
       \name{author}{1}{}{%
         {{hash=3920f197e7c0faf9673548b734d15e37}{%
@@ -1711,8 +1757,8 @@
       \endverb
     \endentry
     \entry{arucomarkers}{online}{}{}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labeltitlesource}{title}
       \field{title}{ArUco Markers}
       \field{urlday}{29}

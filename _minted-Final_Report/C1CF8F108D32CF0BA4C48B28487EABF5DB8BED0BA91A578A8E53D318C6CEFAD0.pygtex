@@ -1,0 +1,62 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{using}\PYG{+w}{ }\PYG{n}{NUnit}\PYG{p}{.}\PYG{n+na}{Framework}\PYG{p}{;}
+\PYG{n}{using}\PYG{+w}{ }\PYG{n}{UnityEngine}\PYG{p}{;}
+\PYG{n}{using}\PYG{+w}{ }\PYG{n}{UnityEngine}\PYG{p}{.}\PYG{n+na}{TestTools}\PYG{p}{;}
+
+\PYG{n}{namespace}\PYG{+w}{ }\PYG{n}{Rope}\PYG{p}{.}\PYG{n+na}{Tests}
+\PYG{p}{\PYGZob{}}
+\PYG{+w}{    }\PYG{k+kd}{public}\PYG{+w}{ }\PYG{k+kd}{class} \PYG{n+nc}{RopeControllerTests}
+\PYG{+w}{    }\PYG{p}{\PYGZob{}}
+\PYG{+w}{        }\PYG{k+kd}{private}\PYG{+w}{ }\PYG{n}{RopeController}\PYG{+w}{ }\PYG{n}{\PYGZus{}ropeController}\PYG{p}{;}
+\PYG{+w}{        }\PYG{k+kd}{private}\PYG{+w}{ }\PYG{n}{GameObject}\PYG{+w}{ }\PYG{n}{\PYGZus{}ropeControllerGameObject}\PYG{p}{;}
+
+\PYG{+w}{        }\PYG{o}{[}\PYG{n}{SetUp}\PYG{o}{]}
+\PYG{+w}{        }\PYG{k+kd}{public}\PYG{+w}{ }\PYG{k+kt}{void}\PYG{+w}{ }\PYG{n+nf}{SetUp}\PYG{p}{()}
+\PYG{+w}{        }\PYG{p}{\PYGZob{}}
+\PYG{+w}{            }\PYG{n}{\PYGZus{}ropeControllerGameObject}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{k}{new}\PYG{+w}{ }\PYG{n}{GameObject}\PYG{p}{();}
+\PYG{+w}{            }\PYG{n}{\PYGZus{}ropeController}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{\PYGZus{}ropeControllerGameObject}\PYG{p}{.}\PYG{n+na}{AddComponent}\PYG{o}{\PYGZlt{}}\PYG{n}{RopeController}\PYG{o}{\PYGZgt{}}\PYG{p}{();}
+\PYG{+w}{        }\PYG{p}{\PYGZcb{}}
+
+\PYG{+w}{        }\PYG{o}{[}\PYG{n}{TearDown}\PYG{o}{]}
+\PYG{+w}{        }\PYG{k+kd}{public}\PYG{+w}{ }\PYG{k+kt}{void}\PYG{+w}{ }\PYG{n+nf}{TearDown}\PYG{p}{()}
+\PYG{+w}{        }\PYG{p}{\PYGZob{}}
+\PYG{+w}{            }\PYG{n}{Object}\PYG{p}{.}\PYG{n+na}{Destroy}\PYG{p}{(}\PYG{n}{\PYGZus{}ropeControllerGameObject}\PYG{p}{);}
+\PYG{+w}{        }\PYG{p}{\PYGZcb{}}
+
+\PYG{+w}{        }\PYG{o}{[}\PYG{n}{Test}\PYG{o}{]}
+\PYG{+w}{        }\PYG{k+kd}{public}\PYG{+w}{ }\PYG{k+kt}{void}\PYG{+w}{ }\PYG{n+nf}{Start\PYGZus{}WithValidParameters\PYGZus{}CreatesCorrectNumberOfFragments}\PYG{p}{()}
+\PYG{+w}{        }\PYG{p}{\PYGZob{}}
+\PYG{+w}{            }\PYG{n}{\PYGZus{}ropeController}\PYG{p}{.}\PYG{n+na}{Start}\PYG{p}{();}
+
+\PYG{+w}{            }\PYG{n}{Assert}\PYG{p}{.}\PYG{n+na}{AreEqual}\PYG{p}{(}\PYG{l+m+mi}{80}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{\PYGZus{}ropeController}\PYG{p}{.}\PYG{n+na}{fragments}\PYG{p}{.}\PYG{n+na}{Length}\PYG{p}{);}
+\PYG{+w}{        }\PYG{p}{\PYGZcb{}}
+
+\PYG{+w}{        }\PYG{o}{[}\PYG{n}{Test}\PYG{o}{]}
+\PYG{+w}{        }\PYG{k+kd}{public}\PYG{+w}{ }\PYG{k+kt}{void}\PYG{+w}{ }\PYG{n+nf}{Start\PYGZus{}WithValidParameters\PYGZus{}CreatesFragmentsWithCorrectPositions}\PYG{p}{()}
+\PYG{+w}{        }\PYG{p}{\PYGZob{}}
+\PYG{+w}{            }\PYG{n}{\PYGZus{}ropeController}\PYG{p}{.}\PYG{n+na}{Start}\PYG{p}{();}
+
+\PYG{+w}{            }\PYG{k}{for}\PYG{+w}{ }\PYG{p}{(}\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{i}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{;}\PYG{+w}{ }\PYG{n}{i}\PYG{+w}{ }\PYG{o}{\PYGZlt{}}\PYG{+w}{ }\PYG{n}{\PYGZus{}ropeController}\PYG{p}{.}\PYG{n+na}{fragments}\PYG{p}{.}\PYG{n+na}{Length}\PYG{p}{;}\PYG{+w}{ }\PYG{n}{i}\PYG{o}{++}\PYG{p}{)}
+\PYG{+w}{            }\PYG{p}{\PYGZob{}}
+\PYG{+w}{                }\PYG{n}{Assert}\PYG{p}{.}\PYG{n+na}{AreEqual}\PYG{p}{(}\PYG{n}{i}\PYG{+w}{ }\PYG{o}{*}\PYG{+w}{ }\PYG{l+m+mf}{0.25f}\PYG{p}{,}
+\PYG{+w}{                }\PYG{n}{\PYGZus{}ropeController}\PYG{p}{.}\PYG{n+na}{fragments}\PYG{o}{[}\PYG{n}{i}\PYG{o}{]}\PYG{p}{.}\PYG{n+na}{transform}\PYG{p}{.}\PYG{n+na}{position}\PYG{p}{.}\PYG{n+na}{z}\PYG{p}{);}
+\PYG{+w}{            }\PYG{p}{\PYGZcb{}}
+\PYG{+w}{        }\PYG{p}{\PYGZcb{}}
+
+\PYG{+w}{        }\PYG{o}{[}\PYG{n}{Test}\PYG{o}{]}
+\PYG{+w}{        }\PYG{k+kd}{public}\PYG{+w}{ }\PYG{k+kt}{void}\PYG{+w}{ }\PYG{n+nf}{LateUpdate\PYGZus{}WithValidParameters\PYGZus{}UpdatesLineRendererPositions}\PYG{p}{()}
+\PYG{+w}{        }\PYG{p}{\PYGZob{}}
+\PYG{+w}{            }\PYG{n}{\PYGZus{}ropeController}\PYG{p}{.}\PYG{n+na}{Start}\PYG{p}{();}
+\PYG{+w}{            }\PYG{n}{\PYGZus{}ropeController}\PYG{p}{.}\PYG{n+na}{LateUpdate}\PYG{p}{();}
+
+\PYG{+w}{            }\PYG{k+kd}{var}\PYG{+w}{ }\PYG{n}{lineRenderer}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{\PYGZus{}ropeController}\PYG{p}{.}\PYG{n+na}{GetComponent}\PYG{o}{\PYGZlt{}}\PYG{n}{LineRenderer}\PYG{o}{\PYGZgt{}}\PYG{p}{();}
+
+\PYG{+w}{            }\PYG{k}{for}\PYG{+w}{ }\PYG{p}{(}\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{i}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{;}\PYG{+w}{ }\PYG{n}{i}\PYG{+w}{ }\PYG{o}{\PYGZlt{}}\PYG{+w}{ }\PYG{n}{\PYGZus{}ropeController}\PYG{p}{.}\PYG{n+na}{fragments}\PYG{p}{.}\PYG{n+na}{Length}\PYG{p}{;}\PYG{+w}{ }\PYG{n}{i}\PYG{o}{++}\PYG{p}{)}
+\PYG{+w}{            }\PYG{p}{\PYGZob{}}
+\PYG{+w}{                }\PYG{n}{Assert}\PYG{p}{.}\PYG{n+na}{AreEqual}\PYG{p}{(}\PYG{n}{\PYGZus{}ropeController}\PYG{p}{.}\PYG{n+na}{fragments}\PYG{o}{[}\PYG{n}{i}\PYG{o}{]}\PYG{p}{.}\PYG{n+na}{transform}\PYG{p}{.}\PYG{n+na}{position}\PYG{p}{,}
+\PYG{+w}{                }\PYG{n}{lineRenderer}\PYG{p}{.}\PYG{n+na}{GetPosition}\PYG{p}{(}\PYG{n}{i}\PYG{p}{));}
+\PYG{+w}{            }\PYG{p}{\PYGZcb{}}
+\PYG{+w}{        }\PYG{p}{\PYGZcb{}}
+\PYG{+w}{    }\PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

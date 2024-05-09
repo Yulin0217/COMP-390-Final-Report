@@ -1,0 +1,53 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kn}{import} \PYG{n+nn}{unittest}
+\PYG{k+kn}{from} \PYG{n+nn}{PySide6.QtWidgets} \PYG{k+kn}{import} \PYG{n}{QApplication}
+\PYG{k+kn}{from} \PYG{n+nn}{unittest.mock} \PYG{k+kn}{import} \PYG{n}{MagicMock}
+\PYG{k+kn}{import} \PYG{n+nn}{sys}
+
+\PYG{c+c1}{\PYGZsh{} Import your BaseWidget class and other necessary modules}
+\PYG{k+kn}{from} \PYG{n+nn}{your\PYGZus{}module} \PYG{k+kn}{import} \PYG{n}{BaseWidget}\PYG{p}{,} \PYG{n}{TimestampedVideoSource}\PYG{p}{,} \PYG{n}{VTKOverlayWindow}
+
+\PYG{k}{class} \PYG{n+nc}{TestBaseWidget}\PYG{p}{(}\PYG{n}{unittest}\PYG{o}{.}\PYG{n}{TestCase}\PYG{p}{):}
+    \PYG{k}{def} \PYG{n+nf}{setUp}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{p}{):}
+        \PYG{c+c1}{\PYGZsh{} Create an QApplication instance because QWidget requires it for initialization.}
+        \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{app} \PYG{o}{=} \PYG{n}{QApplication}\PYG{p}{(}\PYG{n}{sys}\PYG{o}{.}\PYG{n}{argv}\PYG{p}{)}
+        \PYG{c+c1}{\PYGZsh{} Mock the real video source and dimensions}
+        \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{video\PYGZus{}source} \PYG{o}{=} \PYG{n}{MagicMock}\PYG{p}{()}
+        \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{dims} \PYG{o}{=} \PYG{p}{(}\PYG{l+m+mi}{640}\PYG{p}{,} \PYG{l+m+mi}{480}\PYG{p}{)}
+        \PYG{c+c1}{\PYGZsh{} Instantiate BaseWidget}
+        \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{widget} \PYG{o}{=} \PYG{n}{BaseWidget}\PYG{p}{(}\PYG{n}{video\PYGZus{}source}\PYG{o}{=}\PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{video\PYGZus{}source}\PYG{p}{,} \PYG{n}{dims}\PYG{o}{=}\PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{dims}\PYG{p}{)}
+
+    \PYG{k}{def} \PYG{n+nf}{test\PYGZus{}initialization}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{p}{):}
+        \PYG{c+c1}{\PYGZsh{} Test if initialization correctly sets up the video source and dimensions}
+        \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{assertIsInstance}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{widget}\PYG{o}{.}\PYG{n}{video\PYGZus{}source}\PYG{p}{,} \PYG{n}{TimestampedVideoSource}\PYG{p}{)}
+        \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{assertEqual}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{widget}\PYG{o}{.}\PYG{n}{video\PYGZus{}source}\PYG{o}{.}\PYG{n}{source}\PYG{p}{,} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{video\PYGZus{}source}\PYG{p}{)}
+        \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{assertEqual}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{widget}\PYG{o}{.}\PYG{n}{video\PYGZus{}source}\PYG{o}{.}\PYG{n}{dims}\PYG{p}{,} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{dims}\PYG{p}{)}
+
+    \PYG{k}{def} \PYG{n+nf}{test\PYGZus{}start}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{p}{):}
+        \PYG{c+c1}{\PYGZsh{} Test if the timer starts running after calling the start method}
+        \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{widget}\PYG{o}{.}\PYG{n}{timer}\PYG{o}{.}\PYG{n}{isActive} \PYG{o}{=} \PYG{n}{MagicMock}\PYG{p}{(}\PYG{n}{return\PYGZus{}value}\PYG{o}{=}\PYG{k+kc}{False}\PYG{p}{)}
+        \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{widget}\PYG{o}{.}\PYG{n}{start}\PYG{p}{()}
+        \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{widget}\PYG{o}{.}\PYG{n}{timer}\PYG{o}{.}\PYG{n}{start}\PYG{o}{.}\PYG{n}{assert\PYGZus{}called\PYGZus{}once\PYGZus{}with}\PYG{p}{(}\PYG{l+m+mf}{1000.0} \PYG{o}{/} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{widget}\PYG{o}{.}\PYG{n}{update\PYGZus{}rate}\PYG{p}{)}
+
+    \PYG{k}{def} \PYG{n+nf}{test\PYGZus{}stop}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{p}{):}
+        \PYG{c+c1}{\PYGZsh{} Test if the timer stops after calling the stop method}
+        \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{widget}\PYG{o}{.}\PYG{n}{stop}\PYG{p}{()}
+        \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{assertTrue}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{widget}\PYG{o}{.}\PYG{n}{timer}\PYG{o}{.}\PYG{n}{stop}\PYG{o}{.}\PYG{n}{called}\PYG{p}{)}
+
+    \PYG{k}{def} \PYG{n+nf}{test\PYGZus{}update\PYGZus{}video\PYGZus{}source\PYGZus{}controls}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{p}{):}
+        \PYG{c+c1}{\PYGZsh{} Test if video source controls are set up correctly}
+        \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{assertIsInstance}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{widget}\PYG{o}{.}\PYG{n}{video\PYGZus{}source\PYGZus{}selector}\PYG{p}{,} \PYG{n}{QComboBox}\PYG{p}{)}
+        \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{assertTrue}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{widget}\PYG{o}{.}\PYG{n}{upload\PYGZus{}video\PYGZus{}button}\PYG{o}{.}\PYG{n}{isVisible}\PYG{p}{())}
+
+    \PYG{k}{def} \PYG{n+nf}{test\PYGZus{}update\PYGZus{}view}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{p}{):}
+        \PYG{c+c1}{\PYGZsh{} Ensure that update\PYGZus{}view throws NotImplementedError}
+        \PYG{k}{with} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{assertRaises}\PYG{p}{(}\PYG{n+ne}{NotImplementedError}\PYG{p}{):}
+            \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{widget}\PYG{o}{.}\PYG{n}{update\PYGZus{}view}\PYG{p}{()}
+
+    \PYG{k}{def} \PYG{n+nf}{tearDown}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{p}{):}
+        \PYG{c+c1}{\PYGZsh{} Properly quit the QApplication instance}
+        \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{app}\PYG{o}{.}\PYG{n}{quit}\PYG{p}{()}
+
+\PYG{k}{if} \PYG{n+nv+vm}{\PYGZus{}\PYGZus{}name\PYGZus{}\PYGZus{}} \PYG{o}{==} \PYG{l+s+s1}{\PYGZsq{}\PYGZus{}\PYGZus{}main\PYGZus{}\PYGZus{}\PYGZsq{}}\PYG{p}{:}
+    \PYG{n}{unittest}\PYG{o}{.}\PYG{n}{main}\PYG{p}{()}
+\end{Verbatim}
