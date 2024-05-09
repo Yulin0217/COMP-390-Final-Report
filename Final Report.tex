@@ -1008,6 +1008,7 @@ HoloLens or Meta Quest\cite{Quest}, enhancing its accessibility and utility for 
       
 \end{enumerate}
 \subsubsection{Implementation}
+\label{sec:implementation}
 \begin{enumerate}
       \item \textbf{Framework Implementation}
       \\
@@ -1397,7 +1398,18 @@ namespace Rope.Tests
 }
 \end{minted}
 \subsubsection{Evaluation}
-
+\begin{itemize}
+      \item \textbf{Functional Evaluation:}
+      \\
+      This section implements the most basic functional requirements of the design phase of the project, such as the main simulation processes of Endovascular Intervention, the methods of interaction and manipulation applicable in VR/AR environments, and so on. This part successfully simulated the process of Catheter entering Aorta and completed the basic simulation of the interaction between the two. However, the functionality of this part still has many major flaws, which have been mentioned in the \hyperref[sec:implementation]{Part2 Implementation} section, such as Rope jumping out of the model, sometimes not being able to correctly feed back the interaction process between the Aorta and Rope, and Rope experiencing abnormal jitter phenomena. Rope can't get deep into Aorta, etc. Moreover, at present, this part does not have a user interface, and there is no practice of deploying it on AR/VR devices, and the performance and functionality on VR/AR devices are still unknown.
+      \item \textbf{Performance Evaluation:}
+      \\
+      For performance analysis, this part runs fine in Unity's MRTK framework with good performance optimisation and does not experience lagging crashes, etc. However, since it has not been deployed to real VR/AR devices for the time being, the performance on the devices is still unknown.
+     
+      \item \textbf{Maintainability and scalability evaluation:}
+      \\
+      This part is built by \gls{mrtk}for the framework, has a very strong maintainability and extensibility, you can add a lot of functions and components provided by MRTK, in the future can be very easy to optimise for the AR/VR equipment and functionality of the complement. The core parts of the interaction simulation for Rope and Aorta are written by C\# scripts, and are modularised in portability with clear annotations and documentation, making them highly maintainable.
+ \end{itemize}
 % Project Ethics
 \section{Project Ethics}
 I have read and abide by the University’s ethical guidelines\cite{UoL_COMP390_2023-24}. The project did not involve direct interaction with human
